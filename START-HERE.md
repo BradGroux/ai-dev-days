@@ -12,6 +12,17 @@ Start with the TAMU event links:
 4. [Windows setup](curriculum/setup-guides/windows.md)
 5. [First success lab](labs/first-success.md)
 
+## I am attending the InfraGard Houston AI-CSC session
+
+Start with the InfraGard event packet:
+
+1. [Attendee links](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md)
+2. [Agenda](event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md)
+3. [Optional prep](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md)
+4. [Prompt pack](event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)
+5. [Scenario cards](event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md)
+6. [Agent team project](projects/infragard-agent-team/README.md)
+
 ## I am attending another workshop
 
 Use the evergreen setup docs first:

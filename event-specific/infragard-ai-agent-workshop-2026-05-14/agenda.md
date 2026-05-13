@@ -1,116 +1,162 @@
 # Agenda - InfraGard AI Agent Workshop
 
-**Event:** InfraGard Houston AI Agent Teams Session  
-**Target date:** 2026-05-14  
-**Recommended duration:** 90 minutes total; Brad content + Q&A approximately 80 minutes  
-**Theme:** Agent-based practical workflows with security bookends for critical infrastructure.  
-**Registration:** https://www.linkedin.com/company/infragard-houston/  
-**Facilitator:** Richard Garodnick
+- **Event:** May 2026 Meeting-InfraGard Houston Artificial Intelligence CSC
+- **Session title:** AI Agent Teams for Critical Infrastructure: Practical Workflows, Security Guardrails, and Governed Automation
+- **Date/time:** Thursday, May 14, 2026, 11:30 AM-1:00 PM Central
+- **Duration:** 90 minutes total
+- **Presenter:** Brad Groux
+- **Facilitator:** Richard Garodnick
+- **Event link:** https://www.eventbrite.com/e/may-2026-meeting-infragard-houston-artificial-intelligence-csc-tickets-1987707441465
 
-## 0:00-0:05 - Welcome and Why This Follow-Up Exists
+## Goal
 
-**Lead:** Andrew / Richard
+Move attendees from "AI agents are interesting and risky" to "I know how to design one small, safe agent-assisted workflow and verify the result."
 
-- Prior AI overview generated strong feedback: attendees wanted more depth, tool names, and practical steps.
-- Set expectations: this is a 90-minute event, with Brad owning roughly 80 minutes including audience questions.
-- OpenClaw is the example environment, but the concepts transfer broadly.
+## 11:30-11:35 - Welcome And Why This Follow-Up Exists
 
-## 0:05-0:10 - Facilitated Security Frame
+**Lead:** Richard / Andrew
 
-**Facilitator / presenter:** Richard Garodnick + Brad Groux
+- Welcome the InfraGard Houston audience.
+- State that the March session covered the AI-agent landscape; this one is practical.
+- Set the boundary: this is not a live install clinic or a vendor pitch.
+- Tell attendees to use sanitized examples and avoid secrets or sensitive operational details.
 
-**Purpose:** Give the critical-infrastructure/security bookend without eating into Brad's content block.
+## 11:35-11:43 - Security And Critical Infrastructure Frame
 
-**Key points:**
+**Lead:** Richard + Brad
 
-- AI agents are being actively explored by builders, operators, and threat actors.
-- Critical infrastructure professionals need hands-on literacy because you cannot defend or govern what you do not understand.
-- Working principle: **experiment hands-on, but verify everything.**
+**Purpose:** Create the security bookend before the workflow demo.
 
-## 0:10-0:25 - Agent Teams and Markdown Memory
+Key points:
 
-**Lead:** Brad
+- Shadow AI and agent tools are already appearing inside organizations.
+- Threat actors can use the same pattern: OSINT, phishing, recon, exploit chaining, and persistence work can be accelerated.
+- Defenders cannot govern what they do not understand.
+- Safe adoption starts with low-risk workflows, bounded data, human approval, and verification.
 
-- What an AI agent team is.
-- Why specialized roles outperform one generic assistant.
-- Why Markdown is useful as durable memory:
-  - human-readable
-  - portable
-  - easy to version
-  - easy for agents to parse
-  - auditable
-- The human remains the orchestrator.
+Transition line:
 
-## 0:25-0:55 - Conceptual OpenClaw Workflow Demo
+> The practical answer is not "ban everything" or "trust everything." The practical answer is to learn the workflow, set guardrails, and verify output.
+
+## 11:43-11:57 - Agent Teams And Durable Memory
 
 **Lead:** Brad
 
-- OpenClaw as an example command center for personal and team workflows.
-- Keep this conceptual and workflow-focused; do not burn Brad's 80-minute content/Q&A block on live setup troubleshooting.
-- Web portal first; chat surfaces later.
-- Example setup paths:
-  - GitHub Copilot
-  - Codex
-  - Claude Code
-  - Ollama/open model paths
-  - manual setup for people who prefer deterministic commands
-- Demonstrate the mindset:
-  - ask the agent/coding assistant to help install or configure
-  - inspect what it changed
-  - verify the result
-  - iterate when output differs by provider
+Explain the operating model:
 
-## 0:55-1:15 - Critical Infrastructure Use Cases
+- A chatbot answers. An agent follows a goal, uses tools, handles context, and reports back.
+- An agent team splits work into roles: process mapper, security reviewer, documentation writer, implementation planner, automation scout.
+- Markdown is useful because it is readable by people, usable by agents, renderable by GitHub, and easy to version.
+- The human remains the orchestrator and final approver.
+
+Demo anchor:
+
+- Open [`prompt-pack.md`](prompt-pack.md).
+- Show the first "create my memory file" prompt.
+- Show how role prompts are explicit about scope, data safety, and verification.
+
+## 11:57-12:25 - Practical Workflow Demo
 
 **Lead:** Brad
 
-**Real-world examples** from practical workflow scenarios:
+Use one sanitized scenario from [`scenario-cards.md`](scenario-cards.md). Recommended default:
 
-### Heavy haul trucking
+- field report to customer-ready summary, because it translates across energy, water, logistics, healthcare operations, and security teams without exposing real data.
 
-- **Challenge:** Quadrupled business overnight due to data center builds; now moving HVAC systems and water filtration systems instead of generic cargo.
-- **AWS requirement:** Real-time load tracking.
-- **Manual baseline:** Spreadsheets, emails, no visibility into live shipments.
-- **Solution pattern:** Agentic workflows helped move toward real-time tracking much faster than conventional project pacing.
-- **Key insight:** The tools unlock speed and enable small teams to compete with larger operations.
+Demo flow:
 
-### Oilfield water testing and chemical manufacturing
+1. Define the process in plain English.
+2. Create a Markdown memory file.
+3. Ask a process mapper to clarify steps, owners, inputs, and outputs.
+4. Ask a security reviewer to identify data boundaries and approval points.
+5. Ask a documentation writer to produce a draft SOP or checklist.
+6. Ask an implementation planner for a low-risk next step.
+7. Review the output live and show what you would reject or revise.
 
-- **Challenge:** Valuable field data trapped in manual workflows, spreadsheets, emails, and photo sharing.
-- **Solution pattern:** Move toward structured app/portal/reporting workflows.
-- **Key insight:** Blue-collar and field-heavy businesses have enormous AI leverage because they have real operational data and neglected process gaps.
+Do not chase live setup issues. If OpenClaw, Codex, Claude Code, or another assistant is available, use it. If not, run the demo as a prompt walkthrough in the browser or editor.
 
-**Core theme:** These tools help teams move from manual, email/spreadsheet-based processes to structured, data-driven automation. The speed of iteration is key: proof of concepts in days, MVPs in weeks, learning from failures quickly.
+## 12:25-12:40 - Critical Infrastructure Use Cases
 
-## 1:15-1:25 - Governance, Enterprise Path, and Q&A
+**Lead:** Brad
 
-**Facilitator / presenter:** Richard Garodnick + Brad Groux
+Use these as practical patterns, not client-identifying case studies:
 
-**Key points:**
+### Heavy Haul Logistics
 
-- Dog-food personally before organization-wide rollout.
-- Start with low-risk workflows: documentation, summaries, checklists, process mapping, internal analysis.
-- Use enterprise governance for enterprise use: identity, access control, audit logs, data boundaries, credential handling.
-- OpenClaw concepts transfer to Microsoft Agent 365 and other governed enterprise tooling.
-- Maintain human approval loops for external actions, production changes, sensitive data, and security-impacting work.
+- Manual coordination, spreadsheet/email tracking, and high-value loads.
+- Agent workflow: map the dispatch process, identify data handoffs, draft a tracking plan, produce customer-status language, and create verification gates.
+- Lesson: small teams can move faster when they convert institutional knowledge into structured workflows.
 
-**Q&A priority:** Take questions throughout if they clarify the concept, but reserve this block for audience-specific application questions.
+### Oilfield / Water Testing Field Reporting
 
-## 1:25-1:30 - Close and Follow-Up
+- Field notes, lab results, photos, and customer reporting trapped in manual workflows.
+- Agent workflow: turn field capture into structured report drafts, flag missing data, and prepare customer-ready summaries for human review.
+- Lesson: the biggest leverage is often in boring operational data that already exists.
+
+### SOC / Compliance Evidence
+
+- Repetitive alert triage, control evidence gathering, policy review, and incident timelines.
+- Agent workflow: summarize, classify, draft, and cross-check against known controls.
+- Lesson: agents are useful for drafting and organizing, but humans certify security conclusions.
+
+### OT/IT Coordination
+
+- Different teams, vocabularies, and risk tolerance.
+- Agent workflow: translate operational constraints into IT/security language, draft change plans, and identify approval gates.
+- Lesson: agent output can improve communication, but never bypass change control.
+
+## 12:40-12:55 - Governance Path And Q&A
+
+**Lead:** Richard + Brad
+
+Use audience questions, but keep returning to this adoption path:
+
+1. Personal literacy with sanitized examples.
+2. One low-risk internal workflow.
+3. Explicit data boundaries and approval gates.
+4. Logging and review.
+5. Enterprise identity/access controls before broad rollout.
+6. Continuous verification and incident response planning.
+
+Guardrail checklist:
+
+- What data can the agent see?
+- What tools can it use?
+- What can it change?
+- What must a human approve?
+- What gets logged?
+- How do we stop it fast?
+
+## 12:55-1:00 - Close And 30-Day Challenge
 
 **Lead:** Richard / Andrew + Brad
 
-- Point attendees to the repo and event-specific folder.
-- Share community Discord: https://discord.gg/Gmfkm7QVSF
-- Closing challenge: pick one low-risk process and document it as Markdown, then ask an agent to improve it.
+Point attendees to:
 
-## Closing Challenge
+- [`attendee-links.md`](attendee-links.md)
+- [`prompt-pack.md`](prompt-pack.md)
+- [`../../projects/infragard-agent-team/memory-template.md`](../../projects/infragard-agent-team/memory-template.md)
+- community Discord: https://discord.gg/Gmfkm7QVSF
 
-Pick one low-risk process in your work and document it as a Markdown SOP. Then ask an agent to help improve it, automate part of it, or turn it into a checklist.
+Closing challenge:
 
-## Final Constraints
+> Pick one low-risk process this week. Write it down in Markdown. Ask an agent to map it, risk-review it, and draft one useful artifact. Verify the result before using it.
 
-- Title should be agent-based; OpenClaw is the example environment, not the headline.
-- Conceptual demo only; no extended live setup.
-- Do not incorporate Texas A&M lessons into this InfraGard version.
-- No InfraGard-specific limits noted around recording, screenshots, repo links, or attendee follow-up materials.
+## Drop If Behind
+
+Cut these first:
+
+- deep install troubleshooting
+- extended tool comparisons
+- live channel setup
+- long enterprise platform debate
+- custom audience-specific consulting
+
+Protect these:
+
+- security boundary
+- agent team concept
+- Markdown memory
+- one practical demo
+- verification habits
+- 30-day challenge

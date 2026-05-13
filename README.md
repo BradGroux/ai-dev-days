@@ -33,6 +33,17 @@ For the May 2 TAMU workshop, use these files first:
 9. Markdown thinking lab: [`labs/markdown-thinking-layer.md`](labs/markdown-thinking-layer.md)
 10. Beaver Badges: [`projects/beaver-badges/README.md`](projects/beaver-badges/README.md)
 
+## InfraGard Houston attendees: start here
+
+For the May 14 InfraGard Houston AI-CSC virtual session, use these files first:
+
+1. Attendee links: [`event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md)
+2. Agenda: [`event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md)
+3. Optional prep: [`event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md)
+4. Prompt pack: [`event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)
+5. Scenario cards: [`event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md)
+6. Agent team project: [`projects/infragard-agent-team/README.md`](projects/infragard-agent-team/README.md)
+
 ## Learn more with the community
 
 Dev Days is the starting line, not the finish line. If you want a calmer place to ask follow-up questions, keep building with other operators, and hear about future training, join the Start Small, Think Big community:

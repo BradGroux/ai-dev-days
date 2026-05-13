@@ -1,121 +1,134 @@
 # Facilitator Notes - InfraGard AI Agent Workshop
 
-These notes turn the 2026-04-27 planning call into a practical run-of-show aid for Brad, Richard, Andrew, and any InfraGard host/moderator.
+Use these notes for Brad, Richard, Andrew, and any InfraGard host/moderator.
 
-## Workshop Intent
+## Session Intent
 
-This is not a generic AI overview. The prior InfraGard session already proved there is interest, but the feedback split in two directions:
+This is the practical follow-up to the March 2026 "AI Agents Unplugged" session. The March talk established the agent landscape: agents are multi-step workers, enterprise platforms are moving toward agent identity and governance, and critical infrastructure teams face both opportunity and new attack surfaces.
 
-- some attendees wanted the macro/security picture kept clear and accessible
-- many practitioners wanted tool names, setup paths, workflow detail, and a real practical agent-based path
-
-The workshop should deliberately move **macro → micro → macro**:
+The May session should move macro to micro to macro:
 
 1. why critical infrastructure professionals should care
-2. how agent workflows actually look in practice
-3. how to adopt safely inside an organization
+2. how a practical agent-assisted workflow is built
+3. how to adopt safely with governance, verification, and human approval
 
-## Recommended Moderator Framing
+## Opening Frame
 
-Use this before the panel/demo starts:
+Use this near the start:
 
-> The goal today is practical literacy. OpenClaw is the learning environment, but the durable skill is understanding how agent teams work, how context and memory are managed, how to verify outputs, and how to think about security and governance before using these tools in critical infrastructure environments.
+> The goal today is practical literacy. OpenClaw is the example environment, but the durable skill is understanding how agent teams work, how memory and context are managed, how to verify output, and how to think about security before using these tools in critical infrastructure environments.
 
-Set expectations clearly:
+Set expectations:
 
-- attendees do not need to become developers during the session
-- attendees should not paste secrets, customer data, network details, or regulated data into public tools
-- attendees should use sanitized examples
-- tooling may behave differently by model/provider; that is part of the lesson
+- This is not a live install clinic.
+- Attendees do not need to become developers during the session.
+- Sanitized examples only.
+- Do not paste secrets, customer data, network details, regulated data, or unpatched vulnerability details into public tools.
+- Model and tool behavior will vary; that is part of the lesson.
 
-## Security Bookend - Opening Panel Questions
+## Security Bookend Questions
 
-Use 2-4 of these. Keep it crisp so the live workflow demo still has enough time.
+Use 2-4. Keep it crisp so Brad has time for the workflow demo.
 
 ### For Richard
 
-1. What should critical infrastructure professionals understand about threat actors experimenting with agentic AI?
-2. Why does hands-on literacy matter for defenders, even if they are not planning to deploy OpenClaw directly?
-3. Where do you see the biggest near-term risks: credential exposure, data leakage, vulnerable generated code, over-trust, or something else?
-4. How should leaders think about the difference between personal experimentation and enterprise rollout?
+1. What should critical infrastructure professionals understand about threat actors using agentic AI?
+2. Where do you see the biggest near-term risks: credential exposure, data leakage, over-trust, prompt injection, agent impersonation, or something else?
+3. How should leaders separate personal experimentation from enterprise rollout?
+4. Why does hands-on literacy matter even for leaders who will never personally deploy OpenClaw?
 
 ### For Brad
 
-1. Why use OpenClaw as the workshop environment instead of keeping this abstract?
-2. What does "agent team" mean in plain English?
+1. What does "agent team" mean in plain English?
+2. Why use OpenClaw as the example environment instead of keeping this abstract?
 3. Why does Markdown matter as memory/context for agents?
-4. What should attendees verify after an agent installs or changes something?
-5. How do these concepts transfer to Microsoft Agent 365, GitHub Copilot, Codex, Claude Code, Ollama, or other ecosystems?
+4. What should attendees verify after an agent produces an output or changes something?
+5. What is a safe first workflow for someone in security, operations, or infrastructure?
 
 ### Joint Discussion
 
-- What is a safe first process for someone in security, infrastructure, OT/IT, operations, healthcare, energy, legal, or maritime?
-- What should never be used as a first process?
-- Where does human approval need to remain mandatory?
+- What should never be a first workflow?
+- Where should human approval remain mandatory?
+- How do you tell the difference between useful automation and unsafe autonomy?
+
+## Prior Deck Themes To Reuse
+
+Carry these forward from the March session, but keep them practical:
+
+- Agents are not chatbots. They can plan, use tools, remember context, and report back.
+- If you can write an SOP for it, an agent can often help execute, check, or improve it.
+- Enterprise guardrails need four layers: policy, access, observability, and human intervention.
+- Agents need identity and least privilege, not shared human credentials.
+- If you cannot reconstruct what an agent did, you cannot investigate or govern it.
+- Prompt injection, data exfiltration, malicious tools/plugins, agent impersonation, and agent-to-agent lateral movement are real threat surfaces.
+- Critical infrastructure has high-value use cases, but production control actions require stricter approval and audit.
+
+Avoid relying on unverified launch/version claims during the live session. If naming specific vendor platforms, frame them as examples of a broader enterprise trend: agent identity, access control, observability, and governed orchestration.
 
 ## Demo Anchors
 
-Brad's demo should be conceptual and workflow-focused. Do not spend Brad’s 80-minute content/Q&A block on live setup mechanics:
+Brad's demo should stay conceptual and workflow-focused:
 
-1. **Start with the web portal/conceptual flow.** Do not spend the session on Teams/WhatsApp/Telegram/Discord integrations.
-2. **Mention setup paths, do not troubleshoot them live.** Example framing: "After the session, point your coding assistant at the repo and ask it to help get OpenClaw running."
-3. **Inspect what changed.** Show attendees that trust requires review.
-4. **Verify the result.** Run the app, inspect config, check logs, or ask a second model to review output.
-5. **Iterate when models differ.** Different providers will produce different results; that is normal.
-6. **Capture memory in Markdown.** Durable plain-text context is the reusable part.
+1. Start with a sanitized workflow, not tool setup.
+2. Show a Markdown memory file.
+3. Assign specialized agent roles.
+4. Ask for clarifying questions before plans.
+5. Ask for a risk/guardrail checklist.
+6. Ask for a useful artifact: SOP, checklist, summary, rollout plan, or backlog.
+7. Review the output and show what needs verification.
+
+Good line:
+
+> Agents produce. Humans judge.
 
 ## Real-World Example Talking Points
 
-### Heavy Haul Trucking
+### Heavy Haul Logistics
 
-- 35-year-old company, historically spreadsheet/email-driven
-- business quadrupled quickly because of data-center build demand
-- loads shifted toward HVAC and water filtration systems for data centers
-- AWS contract requires real-time load tracking through 2032
-- agent-assisted workflows helped move from manual coordination to a real-time tracking system in weeks
+- A long-running logistics business faces new tracking demands from large infrastructure/data-center work.
+- Manual baseline: spreadsheets, email, phone calls, and status ambiguity.
+- Agent workflow: map dispatch, identify data handoffs, draft customer status updates, create a tracking implementation plan, and define verification gates.
+- Lesson: smaller operational teams can move faster when they convert institutional knowledge into structured workflows.
 
-Primary lesson: automation-first thinking lets smaller, operationally smart teams compete faster.
+### Field Testing / Reporting
 
-### Oilfield Water Testing and Chemical Manufacturing
+- Field and lab data often exists, but is scattered across photos, spreadsheets, email, and informal messaging.
+- Agent workflow: structure field notes, detect missing data, draft customer-safe reports, and prepare portal or workflow requirements.
+- Lesson: the value is not magic AI. The value is turning messy operational data into repeatable process.
 
-- roughly 80-person company generating about $100M/year
-- high-value field and well-site data existed but was not being analyzed effectively
-- manual baseline included spreadsheets, email, and WhatsApp photos of sample/test results
-- agent-assisted work created a path toward field photo capture, customer portal delivery, and faster reporting
+### SOC / Compliance
 
-Primary lesson: institutional knowledge plus structured automation can unlock data that smaller operators already have but are not using.
+- Agents can draft incident timelines, collect evidence lists, summarize low-risk alerts, and prepare review packets.
+- Humans certify findings, approve escalation, and own regulated decisions.
+- Lesson: use agents to reduce repetitive coordination, not to bypass accountability.
 
-## Enterprise/Governance Closing Bookend
+## Governance Closing
 
-Close with pragmatic safety guidance, not fear:
+Close with pragmatic guidance:
 
-- dog-food the workflow personally before organizational rollout
-- start with low-risk documentation, planning, analysis, and checklist workflows
-- use identity/governance platforms for enterprise adoption; Microsoft 365/Agent 365 is the natural path for Microsoft-heavy organizations
-- protect credentials with secrets managers/environment variables, not pasted chat text
-- keep humans in approval loops for operational or security-sensitive changes
-- use cross-model review for high-risk outputs, especially generated code or security analysis
-- document assumptions, changes, approvals, and verification steps
+- dog-food with sanitized personal or internal workflows first
+- start with read-only or draft-only tasks
+- define data boundaries before tool use
+- use identity, access control, audit logs, and revocation before enterprise rollout
+- keep secrets in vaults or approved secret stores, not prompts
+- require human approval for external messages, production changes, security-impacting work, and regulated decisions
+- keep a circuit breaker: if you cannot stop it fast, you cannot contain it fast
 
 Useful one-liner:
 
 > You cannot govern or defend what you do not understand, but understanding it does not mean turning it loose on production.
 
-## Promotion / Broadcast Checklist
+## Moderator Watchouts
 
-Before broad distribution, confirm these final details:
+- If install questions start consuming time, point to the repo and move on.
+- If vendor comparisons take over, redirect to the workflow pattern.
+- If someone asks about sensitive real data, reinforce sanitized examples and workplace policy.
+- If discussion gets too abstract, ask: "What is the process, what data is involved, and what would you verify?"
 
-- registration / InfraGard Houston link: https://www.linkedin.com/company/infragard-houston/: https://www.linkedin.com/company/infragard-houston/
-- final virtual meeting platform/link policy through InfraGard Houston: use InfraGard/LinkedIn listing unless Andrew provides a separate virtual room policy
-- community Discord invite/link: https://discord.gg/Gmfkm7QVSF
-- preferred Brad bio from prior InfraGard broadcast
-- Richard is listed as facilitator
-- whether attendees should clone the repo or simply bookmark it
+## Follow-Up Links
 
-## Final Planning Decisions
-
-- Title direction: agent-based, not OpenClaw-forward.
-- Richard Garodnick is the facilitator.
-- Demo direction: conceptual workflow demo, not live setup-heavy.
-- Texas A&M lessons: none should feed into this InfraGard version.
-- InfraGard limits: no special limits noted around recording, screenshots, repo links, or attendee follow-up materials.
+- Event start page: [`attendee-links.md`](attendee-links.md)
+- Prompt pack: [`prompt-pack.md`](prompt-pack.md)
+- Scenario cards: [`scenario-cards.md`](scenario-cards.md)
+- Agent team project: [`../../projects/infragard-agent-team/`](../../projects/infragard-agent-team/)
+- Community Discord: https://discord.gg/Gmfkm7QVSF

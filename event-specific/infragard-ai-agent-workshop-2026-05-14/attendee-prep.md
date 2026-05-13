@@ -1,128 +1,123 @@
 # Attendee Prep - InfraGard AI Agent Workshop
 
-You can attend without completing these steps. The session will use a conceptual demo, so setup is optional; preparing ahead will make the follow-up work more useful.
+You can attend without installing anything. The session is virtual and workflow-focused. Prep is optional, but it will make the follow-up work more useful.
 
-## Accounts
+## Before The Session
 
-Create or confirm access to:
+Do these if you have time:
 
-- **GitHub:** https://github.com (free account)
-- **A coding assistant or agentic AI tool,** such as:
-  - GitHub Copilot (free trial or paid; integrates with VS Code)
-  - Codex (via playground or IDE integration)
-  - Claude Code (Claude.ai or via API)
-  - ChatGPT with Code Interpreter
-  - Ollama with local open models
-  - any other coding assistant you have access to
-- **Optional:** OpenClaw access (if provided by InfraGard or set up after the session)
+1. Bookmark the workshop repo: https://github.com/BradGroux/openclaw-dev-days
+2. Open the event start page: [`attendee-links.md`](attendee-links.md)
+3. Pick one low-risk process you might want to improve.
+4. Create a simple Markdown note using the template below.
 
-## Install Helpful Apps
+## Optional Accounts And Tools
 
-Recommended (all free or low-cost):
+Useful, not mandatory:
 
-- **Visual Studio Code** (free) — Brad's primary editor for the demo
-- **Git** (free) — version control; comes with Mac; easy install on Windows
-- **Obsidian** or another Markdown editor — for taking notes during the session
-- A modern browser (Edge, Chrome, Arc) — for accessing GitHub, Obsidian web, and other tools
+- GitHub account: https://github.com
+- Visual Studio Code: https://code.visualstudio.com/
+- Obsidian or another Markdown editor: https://obsidian.md/
+- Git: https://git-scm.com/
+- A coding assistant or agentic AI tool you already have access to, such as GitHub Copilot, Codex, Claude Code, ChatGPT, OpenClaw, or another approved workplace tool.
 
-**Platform-specific setup guides:**
+If your employer has approved AI tooling, use that path. Do not bypass workplace policy for this workshop.
 
-- **Mac:** [`../../curriculum/setup-guides/mac.md`](../../curriculum/setup-guides/mac.md)
-- **Windows:** [`../../curriculum/setup-guides/windows.md`](../../curriculum/setup-guides/windows.md)
+## Optional Clone
 
-## Clone or Bookmark the Repo
-
-**Repo:** https://github.com/BradGroux/openclaw-dev-days
-
-**If you're comfortable with Git:**
+If you are comfortable with Git:
 
 ```bash
 git clone https://github.com/BradGroux/openclaw-dev-days.git
 cd openclaw-dev-days
 ```
 
-This gives you all the materials locally and lets you take notes in files that sync.
+If Git is new to you, just use the GitHub website. That is enough for the session.
 
-**If Git is new to you:**
+## Pick One Low-Risk Process
 
-Just bookmark the repo and follow along in your browser. You can always clone later.
+Good examples:
 
-## Create a Markdown Memory File
+- writing or improving an SOP
+- turning meeting notes into action items
+- drafting a maintenance checklist
+- summarizing sanitized log output
+- mapping an incident response handoff
+- converting field notes into a customer-safe report draft
+- building a project plan for a small internal improvement
 
-Create a file called `memory.md` (or `my-notes.md` if you prefer). You can start from the reusable project template at [`../../projects/infragard-agent-team/memory-template.md`](../../projects/infragard-agent-team/memory-template.md), or use this shorter three-section version:
+Poor first examples:
+
+- anything involving passwords, tokens, keys, or credentials
+- private customer, patient, employee, or case data
+- internal network diagrams, IP addresses, or unpatched vulnerability details
+- production control actions
+- anything externally visible without approval
+
+## Create A Markdown Memory Note
+
+Create a file named `infragard-memory.md` or paste this into any note app:
 
 ```markdown
-# My InfraGard Agent Workshop Notes
+# My InfraGard Agent Workshop Memory
 
 ## Process I want to improve
 
-Describe one thing from work or life that is repetitive, manual, or poorly documented.
+Describe one low-risk process that is repetitive, messy, or poorly documented.
 
-Examples:
-- Creating SOPs for a recurring task
-- Reviewing logs for patterns or issues
-- Drafting project plans or status reports
-- Organizing field data or operational notes
-- Incident checklist or runbook
+## Why it matters
 
-## What kind of agent would help me
+What gets better if this process improves?
 
-Think about the role. Examples:
-- security analyst (log review, vulnerability scanning)
-- SOP writer (documentation)
-- project manager (planning, coordination)
-- infrastructure assistant (system documentation)
-- log triage helper (automated analysis)
+## Current workflow
 
-## What I need to be careful with
+1. [step]
+2. [step]
+3. [step]
 
-List sensitive data, credentials, customer information, regulated data, or operational risks that should NOT be exposed or shared casually.
+## People or roles involved
 
-Examples:
-- API keys, passwords, tokens
-- customer names or contract details
-- IP addresses or internal network topology
-- security vulnerabilities (until patched)
-- health/medical data, HIPAA-regulated info
-- energy sector operational details
+- [role]
+- [role]
+
+## Data involved
+
+Safe to share:
+- [sanitized data]
+
+Do not share:
+- [sensitive data]
+
+## Agent team I might use
+
+- Process mapper:
+- Security reviewer:
+- Documentation writer:
+- Implementation planner:
+- Automation scout:
+
+## First useful output
+
+I want the agent team to produce:
+
+## Verification plan
+
+I will check the output by:
 ```
 
-Bring this file to the workshop. You'll use it to jot notes and capture ideas as Brad demos the workflows.
+## Safety Reminder
 
-## Bring One Use Case
+Do not paste secrets, API keys, passwords, tokens, private keys, customer data, patient data, sensitive operational details, internal IPs, network diagrams, or unpatched vulnerability details into public tools or shared workshop material.
 
-Come with **one realistic process** from your work or domain. Good examples:
+Use sanitized examples. Treat agent output as a draft until you verify it.
 
-- Creating or improving an SOP or runbook
-- Reviewing a log file or troubleshooting output
-- Drafting a project plan or security assessment
-- Documenting a workflow or incident response checklist
-- Summarizing meeting notes into action items
-- Turning spreadsheet/email chaos into a structured checklist or plan
-- Analyzing field data or operational metrics
+## During The Session
 
-You don't need to have it perfectly defined. Just come with the problem in mind.
+Have these open:
 
-## Security Reminders
+- [`attendee-links.md`](attendee-links.md)
+- [`prompt-pack.md`](prompt-pack.md)
+- [`scenario-cards.md`](scenario-cards.md)
+- [`../../projects/infragard-agent-team/memory-template.md`](../../projects/infragard-agent-team/memory-template.md)
 
-- **Do NOT paste passwords, API keys, tokens, private keys, or sensitive customer data** into public tools or during the workshop.
-- Use low-risk or sanitized examples while learning.
-- Treat AI-generated output as a draft until you verify it.
-- Keep a human in the approval loop for operational and security-sensitive changes.
-- If you're unsure whether something is safe to share, don't share it. Ask the facilitators.
-
-## Community and Follow-Up
-
-- Registration / InfraGard Houston: https://www.linkedin.com/company/infragard-houston/
-- Community Discord: https://discord.gg/Gmfkm7QVSF
-- Repo links, screenshots, and recording: no special InfraGard limits noted.
-
-## Optional: Review These Before the Event
-
-If you want to get ahead, review:
-
-- The event README: [`event-specific/infragard-ai-agent-workshop-2026-05-14/README.md`](./README.md)
-- The detailed agenda: [`event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md`](./agenda.md)
-- The project template: [`projects/infragard-agent-team/`](../../projects/infragard-agent-team/)
-
-No pressure if you don't have time—Brad will recap the key ideas during the session.
+The target outcome is one practical workflow plan, not tool setup perfection.

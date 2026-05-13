@@ -1,99 +1,98 @@
 # InfraGard AI Agent Workshop - 2026-05-14
 
-**Event Title:** AI Agent Teams for Critical Infrastructure: Practical Workflows, Security Guardrails, and Governed Automation  
-**Format:** Virtual, 90 minutes total; Brad content + Q&A approximately 80 minutes; final time per InfraGard listing  
-**Presenter:** Brad Groux  
-**Facilitator:** Richard Garodnick  
-**Audience:** InfraGard Houston members across cybersecurity, IT, OT, infrastructure, energy, maritime, healthcare, legal, and other critical infrastructure sectors.  
-**Location / registration:** https://www.linkedin.com/company/infragard-houston/  
-**Organizer:** Andrew Brorsen, InfraGard Houston AI council
+- **Event title:** AI Agent Teams for Critical Infrastructure: Practical Workflows, Security Guardrails, and Governed Automation
+- **Eventbrite listing:** [May 2026 Meeting-InfraGard Houston Artificial Intelligence CSC](https://www.eventbrite.com/e/may-2026-meeting-infragard-houston-artificial-intelligence-csc-tickets-1987707441465)
+- **Time:** Thursday, May 14, 2026, 11:30 AM-1:00 PM Central
+- **Format:** Virtual, 90 minutes total. Brad should plan for about 80 minutes of content plus audience questions.
+- **Presenter:** Brad Groux
+- **Facilitator:** Richard Garodnick
+- **Organizer:** InfraGard Houston Artificial Intelligence CSC
+- **Audience:** InfraGard Houston members across cybersecurity, IT, OT, critical infrastructure, energy, maritime, healthcare, legal, logistics, operations, and adjacent sectors.
+- **Info contact from listing:** ArtificialIntelligence-CSC@infragardhouston.org
+
+## Start Here
+
+- Attendees: [`attendee-links.md`](attendee-links.md)
+- Optional prep: [`attendee-prep.md`](attendee-prep.md)
+- Session agenda: [`agenda.md`](agenda.md)
+- Practical prompt pack: [`prompt-pack.md`](prompt-pack.md)
+- Scenario cards: [`scenario-cards.md`](scenario-cards.md)
+- Agent team project: [`../../projects/infragard-agent-team/`](../../projects/infragard-agent-team/)
+
+## Presenter Packet
+
+- Facilitator runbook: [`facilitator-runbook.md`](facilitator-runbook.md)
+- Speaker notes: [`speaker-notes-80-minute.md`](speaker-notes-80-minute.md)
+- Demo script: [`demo-script.md`](demo-script.md)
+- Fallback plan: [`fallback-plan.md`](fallback-plan.md)
+- Day-before checklist: [`day-before-checklist.md`](day-before-checklist.md)
+- Reference links: [`reference-links.md`](reference-links.md)
 
 ## Purpose
 
-This session is a practical follow-up to Brad's prior InfraGard AI overview. Strong feedback from that session emphasized two needs:
+This session is the practical follow-up to Brad's March 2026 InfraGard AI agents overview. The prior talk covered what agents are, why enterprise guardrails matter, and why critical infrastructure teams should care. This session moves from awareness to practice.
 
-1. **Deeper literacy:** attendees wanted tool names, workflow details, and hands-on steps rather than abstract concepts.
-2. **Confidence for mixed audiences:** some attendees are senior leaders (staying macro), while others are practitioners and engineers who work in the field daily and want to go deeper.
+The session should answer four questions:
 
-This 90-minute event bridges both with a facilitator-led, workflow-first approach:
+1. What is an AI agent team in plain English?
+2. How do you give agents useful memory, roles, and boundaries?
+3. How do you verify agent work before trusting it?
+4. How can critical infrastructure teams experiment safely without handing sensitive operations to ungoverned tools?
 
-- **Security context (Richard + Brad):** frame the risk/reward of AI agents in critical infrastructure, address threat actor adoption, and establish guardrails before the workflow demo.
-- **Conceptual workflow demo (Brad):** show how AI agents work, how to use Markdown as memory, common setup paths across multiple providers, and verification practices without turning the session into live setup troubleshooting.
-- **Real-world examples (Brad):** logistics, oilfield/water testing, infrastructure monitoring, OT/IT coordination, and how these workflows move teams beyond spreadsheets and email.
+OpenClaw is the example environment, not the headline. The durable lesson is agent-based work design: process mapping, memory, verification, guardrails, and human approval loops.
 
-OpenClaw is the example/demo environment for this event. The broader concepts transfer to enterprise agent ecosystems (Microsoft Agent 365), other coding assistants (GitHub Copilot, Codex, Claude Code), and agentic AI platforms broadly.
+## Core Message
 
-## What Attendees Will Learn
+The technology will change. The operating model matters more.
 
-- how to think automation-first and agent-first
-- how AI agents can act as specialized teammates
-- why Markdown is useful as simple, auditable agent memory
-- how to approach setup with GitHub Copilot, Codex, Claude Code, Ollama/open models, or other coding assistants
-- how to verify agent work instead of blindly trusting it
-- how agentic workflows apply to critical infrastructure, cybersecurity, infrastructure operations, OT/IT, and business process improvement
-- what security guardrails matter before enterprise adoption
+Attendees should leave understanding how to:
 
-## Suggested Run of Show
+- turn a fuzzy process into a clear workflow
+- assign specialized agent roles instead of relying on one generic chatbot
+- preserve context in plain Markdown
+- separate low-risk experimentation from enterprise rollout
+- verify output before using it
+- keep humans in approval loops for sensitive, operational, or externally visible work
 
-| Segment | Time | Presenter(s) | Purpose |
+## Prior Session Carry-Forward
+
+The March session established the landscape:
+
+- agents are not just chatbots; they can use tools, follow plans, keep context, and execute multi-step work
+- enterprise adoption requires policy, identity/access, observability, and human intervention points
+- shadow AI is already a security issue
+- prompt injection, data exposure, tool/plugin risk, agent impersonation, and agent-to-agent lateral movement are real threat surfaces
+- critical infrastructure teams have useful agent opportunities in SOC triage, threat intelligence, compliance evidence, incident response, SOPs, field reporting, and operational coordination
+
+This session turns that into a practical workflow attendees can repeat.
+
+## Recommended Run Of Show
+
+| Segment | Time | Lead | Purpose |
 |---|---:|---|---|
-| **Welcome and context** | 5 min | Andrew / Richard | Recap prior AI session feedback and set expectations for the 90-minute event |
-| **Security and critical infrastructure frame** | 5 min | Richard + Brad | Establish threat/risk framing and why hands-on literacy matters |
-| **Agent teams and durable context** | 15 min | Brad | Agents as specialized teammates; Markdown as durable, auditable memory; trust-but-verify mindset |
-| **Conceptual OpenClaw workflow demo** | 30 min | Brad | Show the agent workflow pattern without spending the session on live setup; explain common paths across GitHub Copilot, Codex, Claude Code, Ollama/open models |
-| **Real-world use cases** | 20 min | Brad | Heavy haul logistics, oilfield/water testing, infrastructure monitoring, OT/IT coordination |
-| **Governance, enterprise path, and Q&A** | 10 min | Richard + Brad | Identity, credential safety, human approval loops, staged rollout practices, and audience questions |
-| **Close and follow-up** | 5 min | Richard / Andrew + Brad | Point attendees to repo, event materials, and community Discord |
+| Welcome and why this follow-up exists | 5 min | Richard / Andrew | Set expectations, remind attendees this is practical literacy |
+| Security and critical infrastructure frame | 8 min | Richard + Brad | Threat actors, shadow AI, and why hands-on literacy matters |
+| Agent teams and durable memory | 14 min | Brad | Agents, roles, Markdown memory, boundaries, and verification |
+| Practical workflow demo | 28 min | Brad | Use a sanitized process, create memory, assign roles, review output |
+| Real-world use cases | 15 min | Brad | Heavy haul logistics, field reporting, SOC/compliance, OT/IT coordination |
+| Governance path and Q&A | 15 min | Richard + Brad | Identity, access, audit, approval loops, rollout path, audience questions |
+| Close and 30-day challenge | 5 min | Richard / Andrew + Brad | Point to repo, prompt pack, Discord, and next action |
 
-**Timing note:** Brad should have roughly 80 minutes total for content and questions. The facilitator/host framing should stay tight so the session does not collapse into setup mechanics.
+If Q&A starts early, let it happen. The room is likely mixed between senior leaders and hands-on practitioners. Keep answers tied to the same pattern: define the process, bound the data, give the agent a role, verify the output, then decide whether automation is safe.
 
-## Recommended Prep
+## Attendee Outcome
 
-Attendees who want to follow along hands-on should:
+The minimum useful outcome is not installing every tool. It is leaving with:
 
-1. Review [`attendee-prep.md`](attendee-prep.md) and [`agenda.md`](agenda.md).
-2. Set up a coding assistant (GitHub Copilot, Codex, Claude Code, or another) on your machine.
-3. Bring one low-risk process from work or life that is repetitive or poorly documented.
-4. Optional: clone the repo and create a `memory.md` file to take notes during the session.
+- one low-risk workflow to improve
+- one Markdown memory file
+- one agent team design
+- one security/guardrail checklist
+- one verified artifact to improve after the session
+- one 30-day next step
 
-Platform-specific setup guides:
+## Safety Boundary
 
-- Mac: [`../../curriculum/setup-guides/mac.md`](../../curriculum/setup-guides/mac.md)
-- Windows: [`../../curriculum/setup-guides/windows.md`](../../curriculum/setup-guides/windows.md)
+Use sanitized examples. Do not put secrets, API keys, private data, customer records, internal network details, regulated data, unpatched vulnerability details, or sensitive operational details into public tools, shared files, screenshots, or GitHub.
 
-Project reference:
-
-- [`projects/infragard-agent-team`](../../projects/infragard-agent-team) — template for designing your own agent team
-- [`facilitator-notes.md`](facilitator-notes.md) — moderator prompts, security bookends, demo anchors, and follow-up checklist
-- Community Discord: https://discord.gg/Gmfkm7QVSF
-
-Resource hub: https://github.com/BradGroux/openclaw-dev-days
-
-## Core Messages
-
-### Primary (Brad)
-
-**The technology will change. The mindset matters more.**
-
-The durable skill is learning how to:
-
-- break work into clear processes
-- give agents specialized roles
-- preserve context in plain, auditable files (Markdown)
-- verify output before trusting it
-- think automation-first and agent-first
-- give people faith to figure things out themselves
-
-For critical infrastructure, that literacy is now part of understanding both opportunity and risk.
-
-### Secondary (Richard)
-
-**Threat actors are already here.**
-
-Threat actors adopt cutting-edge tools faster and more creatively than defenders. Understanding how to use agentic workflows safely is essential for critical infrastructure professionals who want to stay ahead—not just using the tools, but understanding their risks and guardrails.
-
-### Tertiary (Cross-theme)
-
-**This is figuring it out together.**
-
-Neither Brad, Richard, nor InfraGard has all the answers. Things will change, ideas will shift, and that's okay. Attendees are invited to participate in a learning community, ask questions, and help shape how these tools are used safely in critical infrastructure.
+For high-risk work, agents draft. Humans approve.

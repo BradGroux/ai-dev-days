@@ -132,12 +132,14 @@ An agent team helped them:
 ## Resources
 
 - OpenClaw Dev Days main repo: https://github.com/BradGroux/openclaw-dev-days
-- Workshop agenda and materials: `event-specific/infragard-ai-agent-workshop-2026-05-14/`
+- Workshop agenda and materials: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/)
+- Attendee links: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md)
+- Prompt pack: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)
+- Scenario cards: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md)
 - Community Discord: https://discord.gg/Gmfkm7QVSF
-- Brad's blog/updates: [link to be shared during workshop]
 
 ## Questions?
 
 - During the workshop, ask Brad, Richard, or Andrew.
 - After the workshop, ask in the community Discord.
-- Review the workshop transcript if Brad/InfraGard posts it after the session.
+- Revisit the event packet and repeat the same process with another low-risk workflow.
