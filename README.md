@@ -38,11 +38,13 @@ For the May 2 TAMU workshop, use these files first:
 For the May 14 InfraGard Houston AI-CSC virtual session, use these files first:
 
 1. Attendee links: [`event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md)
-2. Agenda: [`event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md)
-3. Optional prep: [`event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md)
-4. Prompt pack: [`event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)
-5. Scenario cards: [`event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md)
-6. Agent team project: [`projects/infragard-agent-team/README.md`](projects/infragard-agent-team/README.md)
+2. Requirements: [`event-specific/infragard-ai-agent-workshop-2026-05-14/requirements.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/requirements.md)
+3. Agenda: [`event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md)
+4. Optional prep: [`event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-prep.md)
+5. Prompt pack: [`event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)
+6. Scenario cards: [`event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md`](event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md)
+7. Agent team project: [`projects/infragard-agent-team/README.md`](projects/infragard-agent-team/README.md)
+8. OpenClaw follow-up install: [`setup-guides/openclaw-mac.md`](setup-guides/openclaw-mac.md) or [`setup-guides/openclaw-windows.md`](setup-guides/openclaw-windows.md)
 
 ## Learn more with the community
 

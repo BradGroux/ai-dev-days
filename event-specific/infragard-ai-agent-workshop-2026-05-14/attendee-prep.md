@@ -8,8 +8,9 @@ Do these if you have time:
 
 1. Bookmark the workshop repo: https://github.com/BradGroux/openclaw-dev-days
 2. Open the event start page: [`attendee-links.md`](attendee-links.md)
-3. Pick one low-risk process you might want to improve.
-4. Create a simple Markdown note using the template below.
+3. Review the event requirements: [`requirements.md`](requirements.md)
+4. Pick one low-risk process you might want to improve.
+5. Create a simple Markdown note using the template below.
 
 ## Optional Accounts And Tools
 
@@ -22,6 +23,8 @@ Useful, not mandatory:
 - A coding assistant or agentic AI tool you already have access to, such as GitHub Copilot, Codex, Claude Code, ChatGPT, OpenClaw, or another approved workplace tool.
 
 If your employer has approved AI tooling, use that path. Do not bypass workplace policy for this workshop.
+
+Optional OpenClaw follow-up paths are linked from [`requirements.md`](requirements.md), including Mac setup, Windows setup, and AI-assisted install.
 
 ## Optional Clone
 

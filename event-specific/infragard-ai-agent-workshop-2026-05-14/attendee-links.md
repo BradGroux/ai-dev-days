@@ -7,6 +7,8 @@ Start here for the InfraGard Houston AI Agent Workshop.
 - Event registration/info: https://www.eventbrite.com/e/may-2026-meeting-infragard-houston-artificial-intelligence-csc-tickets-1987707441465
 - Workshop repo: https://github.com/BradGroux/openclaw-dev-days
 - Event overview: [`README.md`](README.md)
+- Requirements: [`requirements.md`](requirements.md)
+- Slide deck: [`slides.html`](slides.html)
 - Agenda: [`agenda.md`](agenda.md)
 - Optional prep: [`attendee-prep.md`](attendee-prep.md)
 - Community Discord: https://discord.gg/Gmfkm7QVSF
@@ -24,6 +26,10 @@ Open these files:
 
 You do not need to install these during the session. Use whichever path is already available to you:
 
+- Requirements checklist: [`requirements.md`](requirements.md)
+- Visual Studio Code: https://code.visualstudio.com/
+- Obsidian: https://obsidian.md/
+- Git: https://git-scm.com/
 - OpenClaw setup: [`../../setup-guides/openclaw-mac.md`](../../setup-guides/openclaw-mac.md) or [`../../setup-guides/openclaw-windows.md`](../../setup-guides/openclaw-windows.md)
 - AI-assisted OpenClaw install: [`../../setup-guides/ai-assisted-openclaw-install.md`](../../setup-guides/ai-assisted-openclaw-install.md)
 - First success lab: [`../../labs/first-success.md`](../../labs/first-success.md)

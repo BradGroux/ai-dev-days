@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Agent Teams for Critical Infrastructure - InfraGard Houston AI-CSC</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{--bg:#06090f;--s1:#0c1220;--s2:#111a2e;--bdr:#1e2d4a;--t:#ecf0ff;--t2:#97a4c0;--acc:#5ce1e6;--acc2:#8b7dff;--pink:#ff4ecd;--grn:#34d399;--red:#f87171;--amb:#fbbf24;--shadow:rgba(0,0,0,.35);--logo-opacity:.76;--grad:linear-gradient(135deg,var(--acc),var(--pink),var(--acc2))}
+html[data-theme="light"]{--bg:#f6f8ff;--s1:#ffffff;--s2:#ecf1ff;--bdr:#cbd5f5;--t:#101729;--t2:#4d5a75;--shadow:rgba(18,30,60,.16);--logo-opacity:.88}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--t);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{transition:background .2s ease,color .2s ease}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.stage{width:100vw;height:100vh;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(255,78,205,.11),transparent 30%),radial-gradient(circle at 12% 78%,rgba(92,225,230,.12),transparent 34%),var(--bg)}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;background:transparent}
+.slide.active{display:flex}
+.pad{padding:72px 82px 76px}
+.full-center{display:flex;flex-direction:column;justify-content:center;flex:1}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:42px;flex:1;align-items:center}
+.two-column{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.three-column{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.kicker{color:var(--acc);font-size:14px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px}
+h1{font-size:clamp(46px,5.3vw,78px);line-height:1.03;font-weight:850;letter-spacing:-.02em;max-width:1120px}
+h2{font-size:clamp(36px,4vw,58px);line-height:1.08;font-weight:800;letter-spacing:-.015em;max-width:1080px}
+h3{font-size:28px;line-height:1.18;font-weight:750}
+.sub{color:var(--t2);font-size:clamp(21px,1.9vw,30px);line-height:1.42;margin-top:18px;max-width:980px}
+.small{color:var(--t2);font-size:18px;line-height:1.45}
+.gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--bdr);border-radius:14px;padding:24px;box-shadow:0 18px 50px var(--shadow)}
+html[data-theme="light"] .card{background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(245,248,255,.78))}
+.card-title{display:flex;align-items:center;gap:12px;font-weight:760;font-size:23px;margin-bottom:10px;color:var(--t)}
+.card-title i{color:var(--acc);width:22px;height:22px;flex-shrink:0}
+.card p{color:var(--t2);font-size:19px;line-height:1.42}
+ul{list-style:none;display:grid;gap:12px}
+li{display:flex;align-items:flex-start;gap:12px;color:var(--t2);font-size:22px;line-height:1.38}
+li i{color:var(--acc);flex-shrink:0;margin-top:3px;width:22px;height:22px}
+.logo{position:absolute;top:28px;right:40px;height:46px;opacity:var(--logo-opacity);z-index:20;pointer-events:none}
+html[data-theme="light"] .logo{background:rgba(6,9,15,.82);border-radius:12px;padding:8px 10px;height:62px}
+.nav{position:absolute;top:24px;left:28px;display:flex;gap:10px;z-index:30}
+.nav button{background:rgba(255,255,255,.08);border:1px solid var(--bdr);color:var(--t);width:46px;height:46px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
+html[data-theme="light"] .nav button{background:rgba(255,255,255,.78)}
+.nav button:hover{border-color:var(--acc);background:rgba(92,225,230,.14)}
+.footer{position:absolute;left:72px;right:72px;bottom:20px;display:flex;justify-content:space-between;align-items:center;color:var(--t2);font-size:17px;letter-spacing:.02em;z-index:25}
+.progress{position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(255,255,255,.07);z-index:26}
+.progress-bar{height:100%;background:var(--grad);transition:width .25s ease}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+.kpi{background:var(--s1);border:1px solid var(--bdr);border-radius:14px;padding:22px;text-align:center;box-shadow:0 16px 44px var(--shadow)}
+.kpi-val{font-size:clamp(32px,3.2vw,50px);font-weight:850;line-height:1;white-space:nowrap}
+.kpi-label{font-size:13px;color:var(--t2);margin-top:8px;letter-spacing:.08em;text-transform:uppercase}
+.flow{display:flex;align-items:center;gap:0;justify-content:center;flex-wrap:wrap}
+.flow-node{background:var(--s2);border:1px solid var(--bdr);border-radius:12px;padding:22px 24px;text-align:center;min-width:150px;flex:1}
+.flow-node .flow-header{display:inline-flex;align-items:center;gap:12px;justify-content:center;font-size:24px;font-weight:760}
+.flow-node i{color:var(--acc);width:30px;height:30px}
+.flow-node span{display:block;color:var(--t2);font-size:16px;margin-top:7px;line-height:1.35}
+.flow-arrow{color:var(--acc2);font-size:34px;font-weight:800;padding:0 8px}
+.arch{display:flex;flex-direction:column;gap:12px}
+.arch-layer{background:var(--s1);border:1px solid var(--bdr);border-radius:11px;padding:20px 26px;display:flex;align-items:flex-start;gap:20px}
+.arch-layer i{color:var(--acc);flex-shrink:0;width:34px;height:34px;margin-top:2px}
+.arch-layer-title{font-weight:760;font-size:24px}
+.arch-layer-desc{font-size:20px;color:var(--t2);line-height:1.38;margin-top:3px}
+.rail{background:var(--s1);border-left:3px solid var(--acc);border-radius:0 10px 10px 0;padding:16px 22px}
+.rail-title{font-weight:760;font-size:22px;color:var(--t);margin-bottom:4px}
+.rail-desc{font-size:19px;color:var(--t2);line-height:1.38}
+.codebox{background:#050812;color:#d6fbff;border:1px solid var(--bdr);border-radius:14px;padding:20px 22px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:17px;line-height:1.48;white-space:pre-wrap;box-shadow:0 18px 50px var(--shadow)}
+html[data-theme="light"] .codebox{background:#172033;color:#eaf8ff}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--bdr);background:rgba(255,255,255,.055);border-radius:999px;padding:8px 13px;color:var(--t2);font-size:15px;font-weight:650}
+.quote{border-left:4px solid var(--pink);padding:22px 28px;background:rgba(255,78,205,.07);border-radius:0 14px 14px 0;font-size:30px;line-height:1.35;color:var(--t)}
+.danger{border-color:rgba(248,113,113,.38);background:linear-gradient(180deg,rgba(248,113,113,.1),rgba(248,113,113,.025))}
+.success{border-color:rgba(52,211,153,.38);background:linear-gradient(180deg,rgba(52,211,153,.1),rgba(52,211,153,.025))}
+.warning{border-color:rgba(251,191,36,.38);background:linear-gradient(180deg,rgba(251,191,36,.1),rgba(251,191,36,.025))}
+.qr{width:154px;height:154px;border-radius:12px;border:1px solid var(--bdr);background:#fff;padding:5px}
+.contact-list{display:flex;flex-direction:column;gap:11px;font-size:20px}
+.contact-list a{display:flex;align-items:center;gap:12px;color:var(--acc)}
+.contact-list i{width:22px;height:22px}
+@media(max-width:900px){.pad{padding:62px 34px 74px}.split,.two-column,.three-column{grid-template-columns:1fr;gap:18px}.logo{height:28px;top:20px;right:22px}.nav{top:16px;left:18px}.nav button{width:40px;height:40px}.footer{left:34px;right:34px;font-size:13px}.kpi-row{grid-template-columns:1fr 1fr}.flow-node{min-width:130px}.flow-arrow{display:none}li{font-size:18px}.card p{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+<img class="logo" src="https://i.imgur.com/N929lJx.png" alt="Digital Meld"/>
+
+<section class="slide active" data-title="AI Agent Teams for Critical Infrastructure">
+  <div class="pad full-center" style="align-items:center;text-align:center">
+    <div class="kicker">InfraGard Houston AI-CSC &middot; May 14, 2026</div>
+    <h1>AI Agent Teams for <span class="gradient-text">Critical Infrastructure</span></h1>
+    <p class="sub" style="text-align:center">Practical workflows, security guardrails, and governed automation</p>
+    <div class="kpi-row" style="margin-top:46px;max-width:880px;width:100%">
+      <div class="kpi"><div class="kpi-val gradient-text">80 min</div><div class="kpi-label">Brad block + Q&amp;A</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--grn)">Virtual</div><div class="kpi-label">InfraGard Houston</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--acc2)">Practical</div><div class="kpi-label">Workflow patterns</div></div>
+    </div>
+    <div style="margin-top:30px" class="pill"><i data-lucide="calendar"></i> 11:30 AM - 1:00 PM Central</div>
+  </div>
+</section>
+
+<section class="slide" data-title="About Brad">
+  <div class="pad split" style="grid-template-columns:1fr 1.35fr">
+    <div>
+      <div class="kicker">About Brad Groux</div>
+      <h2>CEO, Digital Meld</h2>
+      <p class="sub">Enterprise technologist, OpenClaw contributor, and builder of agent-driven workflows for real operating teams.</p>
+      <div class="contact-list" style="margin-top:28px">
+        <a href="https://linkedin.com/in/bradgroux" target="_blank" rel="noopener"><i data-lucide="briefcase-business"></i> linkedin.com/in/bradgroux</a>
+        <a href="https://twitter.com/bradgroux" target="_blank" rel="noopener"><i data-lucide="at-sign"></i> @bradgroux on Twitter</a>
+        <a href="https://github.com/bradgroux" target="_blank" rel="noopener"><i data-lucide="code-xml"></i> github.com/bradgroux</a>
+        <a href="https://youtube.com/bradgroux" target="_blank" rel="noopener"><i data-lucide="play-square"></i> youtube.com/bradgroux</a>
+        <a href="https://linktr.ee/digitalmeld" target="_blank" rel="noopener"><i data-lucide="link"></i> linktr.ee/digitalmeld</a>
+      </div>
+    </div>
+    <div class="arch">
+      <div class="arch-layer"><i data-lucide="building-2"></i><div><div class="arch-layer-title">25+ years in enterprise IT</div><div class="arch-layer-desc">NASA contractor background, Microsoft platforms, large-scale deployments, practical operations.</div></div></div>
+      <div class="arch-layer"><i data-lucide="bot"></i><div><div class="arch-layer-title">OpenClaw contributor and maintainer</div><div class="arch-layer-desc">Open-source agent workflows, Microsoft Teams integration, and operator-oriented automation.</div></div></div>
+      <div class="arch-layer"><i data-lucide="kanban-square"></i><div><div class="arch-layer-title">Creator, Veritas Kanban</div><div class="arch-layer-desc">Task telemetry, agent orchestration, and delivery management for real build loops.</div></div></div>
+      <div class="arch-layer"><i data-lucide="mic"></i><div><div class="arch-layer-title">Start Small, Think Big</div><div class="arch-layer-desc">Community, training, office hours, and practical AI adoption for builders and operators.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Why This Follow-Up Exists">
+  <div class="pad full-center">
+    <div class="kicker">From Awareness To Practice</div>
+    <h2>The last talk answered what agents are. Today is about using them safely.</h2>
+    <div class="three-column" style="margin-top:32px">
+      <div class="card"><div class="card-title"><i data-lucide="book-open"></i> Prior session</div><p>Agent basics, enterprise platforms, guardrails, and critical infrastructure threat surfaces.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="wrench"></i> This session</div><p>Practical agent team design, Markdown memory, verification, and a repeatable workflow demo.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="shield-check"></i> Outcome</div><p>One low-risk process, one memory file, one agent team, one guardrail checklist, one next step.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Session Map">
+  <div class="pad full-center">
+    <div class="kicker">80-Minute Working Session</div>
+    <h2>Macro, micro, macro.</h2>
+    <div class="flow" style="margin-top:34px">
+      <div class="flow-node"><div class="flow-header"><i data-lucide="shield-alert"></i> Security Frame</div><span>Threat actors, shadow AI, and why literacy matters</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="network"></i> Agent Team</div><span>Roles, memory, boundaries, and outputs</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="play-circle"></i> Demo</div><span>One sanitized workflow from process to artifact</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="landmark"></i> Governance</div><span>Enterprise path, guardrails, and Q&amp;A</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Prior Session Carry-Forward">
+  <div class="pad full-center">
+    <div class="kicker">What We Are Carrying Forward</div>
+    <h2>Agents are useful because they combine context, tools, memory, and review.</h2>
+    <div class="two-column" style="margin-top:30px">
+      <div class="arch">
+        <div class="arch-layer"><i data-lucide="brain"></i><div><div class="arch-layer-title">LLM brain</div><div class="arch-layer-desc">Reasoning engine that needs clear context and boundaries.</div></div></div>
+        <div class="arch-layer"><i data-lucide="plug"></i><div><div class="arch-layer-title">Tools</div><div class="arch-layer-desc">Files, APIs, shell commands, search, calendars, tickets, docs, and other systems.</div></div></div>
+        <div class="arch-layer"><i data-lucide="database"></i><div><div class="arch-layer-title">Memory</div><div class="arch-layer-desc">Markdown, task history, vector stores, repo files, and reusable project knowledge.</div></div></div>
+      </div>
+      <div class="card warning">
+        <div class="card-title"><i data-lucide="alert-triangle"></i> The risk is not theoretical</div>
+        <ul>
+          <li><i data-lucide="check"></i> Shadow AI is already inside organizations.</li>
+          <li><i data-lucide="check"></i> Prompt injection changes how data can attack tools.</li>
+          <li><i data-lucide="check"></i> Agent credentials become new privileged identities.</li>
+          <li><i data-lucide="check"></i> Logs and review decide whether you can govern it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Chatbot To Agent Team">
+  <div class="pad full-center">
+    <div class="kicker">The Shift</div>
+    <h2>A chatbot answers. An agent team works a process.</h2>
+    <div class="three-column" style="margin-top:32px">
+      <div class="card"><div class="card-title"><i data-lucide="message-circle"></i> Chatbot</div><p>Single-turn responses. Weak continuity. Good for quick drafting and explanation.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="bot"></i> Agent</div><p>Goal-directed work. Tools, files, memory, steps, and reporting back.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="users"></i> Agent Team</div><p>Specialized roles working the same process from different angles.</p></div>
+    </div>
+    <div class="quote" style="margin-top:34px">If you can write an SOP for it, an agent can usually help map it, check it, draft it, or improve it.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="The Agent Team">
+  <div class="pad full-center">
+    <div class="kicker">Five Useful Roles</div>
+    <h2>Do not ask one generic assistant to be the whole company.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card"><div class="card-title"><i data-lucide="map"></i> Process Mapper</div><p>Turns messy work into steps, owners, inputs, outputs, decisions, and handoffs.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="shield"></i> Security Reviewer</div><p>Finds sensitive data, access risks, compliance issues, approval gates, and audit needs.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="file-text"></i> Documentation Writer</div><p>Drafts SOPs, checklists, runbooks, templates, and explainers.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="list-checks"></i> Implementation Planner</div><p>Breaks improvements into tasks, gates, rollback criteria, and next actions.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="radar"></i> Automation Scout</div><p>Suggests safe automation opportunities ranked by impact, effort, and risk.</p></div>
+      <div class="card success"><div class="card-title"><i data-lucide="user-check"></i> Human Orchestrator</div><p>Sets scope, approves sensitive work, verifies outputs, and owns the decision.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Markdown Memory">
+  <div class="pad split">
+    <div>
+      <div class="kicker">Why Markdown Matters</div>
+      <h2>Plain text is the shared memory layer.</h2>
+      <p class="sub">Markdown is readable by people, parseable by agents, renderable by GitHub, and easy to version.</p>
+      <ul style="margin-top:24px">
+        <li><i data-lucide="eye"></i> Humans can inspect it.</li>
+        <li><i data-lucide="git-branch"></i> Teams can version it.</li>
+        <li><i data-lucide="bot"></i> Agents can reuse it.</li>
+        <li><i data-lucide="shield-check"></i> Reviewers can audit it.</li>
+      </ul>
+    </div>
+    <div class="codebox"># Workflow Memory
+
+## Goal
+Improve a low-risk process.
+
+## Data Boundary
+Use sanitized examples only.
+
+## Agent Team
+- Process Mapper
+- Security Reviewer
+- Documentation Writer
+
+## Verification
+Human reviews before use.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="The Repeatable Pattern">
+  <div class="pad full-center">
+    <div class="kicker">Operating Model</div>
+    <h2>The workflow is stable even when the tool changes.</h2>
+    <div class="flow" style="margin-top:34px">
+      <div class="flow-node"><div class="flow-header"><i data-lucide="clipboard"></i> Process</div><span>What happens now?</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="lock"></i> Data</div><span>What is safe?</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="badge"></i> Role</div><span>What should the agent do?</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="file-check"></i> Artifact</div><span>What gets produced?</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="check-circle"></i> Verify</div><span>What must be checked?</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Safety Boundary">
+  <div class="pad full-center">
+    <div class="kicker">Security Before Automation</div>
+    <h2>Use sanitized examples. Treat output as draft work.</h2>
+    <div class="two-column" style="margin-top:30px">
+      <div class="card danger">
+        <div class="card-title"><i data-lucide="ban"></i> Do not paste</div>
+        <ul>
+          <li><i data-lucide="x"></i> Passwords, keys, tokens, private keys</li>
+          <li><i data-lucide="x"></i> Customer, patient, employee, legal, or regulated records</li>
+          <li><i data-lucide="x"></i> Internal IPs, network diagrams, firewall rules</li>
+          <li><i data-lucide="x"></i> Unpatched vulnerabilities or production control details</li>
+        </ul>
+      </div>
+      <div class="card success">
+        <div class="card-title"><i data-lucide="check-circle"></i> Do instead</div>
+        <ul>
+          <li><i data-lucide="check"></i> Use mock names and sanitized facts</li>
+          <li><i data-lucide="check"></i> Keep first workflows read-only or draft-only</li>
+          <li><i data-lucide="check"></i> Review every output before use</li>
+          <li><i data-lucide="check"></i> Keep humans in approval loops</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Demo Scenario">
+  <div class="pad full-center">
+    <div class="kicker">Practical Demo</div>
+    <h2>Field report to customer-ready summary.</h2>
+    <div class="two-column" style="margin-top:32px">
+      <div class="card"><div class="card-title"><i data-lucide="clipboard-list"></i> Current state</div><p>Field notes arrive in different formats. Missing data is discovered late. Customer updates vary by coordinator.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="target"></i> First useful output</div><p>A field-report checklist, customer-summary template, guardrail list, and safe pilot plan.</p></div>
+    </div>
+    <div class="rail" style="margin-top:26px"><div class="rail-title">Why this scenario works</div><div class="rail-desc">It translates across energy, water, healthcare operations, logistics, security, and infrastructure without needing private data.</div></div>
+  </div>
+</section>
+
+<section class="slide" data-title="Demo Memory File">
+  <div class="pad split" style="grid-template-columns:1.15fr 1fr">
+    <div>
+      <div class="kicker">Step 1</div>
+      <h2>Create memory before asking for output.</h2>
+      <p class="sub">The agent should start from stable context, not scattered chat fragments.</p>
+    </div>
+    <div class="codebox"># InfraGard Demo Memory
+
+## Workflow
+Field technicians collect site observations.
+A coordinator creates customer-safe summaries.
+
+## Current Pain
+- inconsistent notes
+- missing data found late
+- slow reporting
+
+## Data Boundary
+Use mock site names and mock measurements.
+No customer names, photos, locations, or regulated data.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="Ask Before Assuming">
+  <div class="pad full-center">
+    <div class="kicker">Step 2</div>
+    <h2>Good agents ask questions before they plan.</h2>
+    <div class="codebox" style="margin-top:32px">Read this Markdown memory.
+
+Before proposing a solution, ask me three clarifying questions that would help you map this workflow safely.
+
+Do not ask for secrets, customer data, regulated data, internal network details, or private operational details.</div>
+    <div class="three-column" style="margin-top:24px">
+      <div class="card"><div class="card-title"><i data-lucide="help-circle"></i> Scope</div><p>What exact output should this workflow produce?</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="users"></i> Owners</div><p>Who captures, reviews, approves, and sends the report?</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="shield"></i> Boundary</div><p>Which data must stay out of the tool?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Process Mapper">
+  <div class="pad split">
+    <div>
+      <div class="kicker">Step 3</div>
+      <h2>Map the workflow before automating anything.</h2>
+      <p class="sub">The first win is clarity: steps, owners, inputs, outputs, handoffs, and missing information.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-layer"><i data-lucide="list-tree"></i><div><div class="arch-layer-title">Steps</div><div class="arch-layer-desc">Capture notes, review completeness, draft summary, approve, send.</div></div></div>
+      <div class="arch-layer"><i data-lucide="shuffle"></i><div><div class="arch-layer-title">Handoffs</div><div class="arch-layer-desc">Technician to coordinator to reviewer to customer contact.</div></div></div>
+      <div class="arch-layer"><i data-lucide="search"></i><div><div class="arch-layer-title">Gaps</div><div class="arch-layer-desc">Missing measurements, unclear photos, undefined approval path.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Security Reviewer">
+  <div class="pad full-center">
+    <div class="kicker">Step 4</div>
+    <h2>Guardrails come before automation.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card danger"><div class="card-title"><i data-lucide="database-zap"></i> Sensitive data</div><p>Customer names, exact site locations, photos, regulated records, and proprietary details stay out.</p></div>
+      <div class="card warning"><div class="card-title"><i data-lucide="key-round"></i> Access</div><p>The first version is draft-only. No direct system writes, no customer sends, no production control.</p></div>
+      <div class="card success"><div class="card-title"><i data-lucide="clipboard-check"></i> Approval</div><p>Human reviewer approves facts, safety language, and customer-ready wording.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Documentation Writer">
+  <div class="pad split">
+    <div>
+      <div class="kicker">Step 5</div>
+      <h2>Turn the process into something people can use.</h2>
+      <p class="sub">A practical artifact beats an impressive abstract answer.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><i data-lucide="file-text"></i> Field report checklist</div>
+      <ul>
+        <li><i data-lucide="check"></i> Site alias and date</li>
+        <li><i data-lucide="check"></i> Required measurements captured</li>
+        <li><i data-lucide="check"></i> Exceptions or missing data flagged</li>
+        <li><i data-lucide="check"></i> Reviewer approval recorded</li>
+        <li><i data-lucide="check"></i> Customer summary generated from approved facts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Implementation Planner">
+  <div class="pad full-center">
+    <div class="kicker">Step 6</div>
+    <h2>The safest first experiment is usually draft-only.</h2>
+    <div class="two-column" style="margin-top:30px">
+      <div class="card success"><div class="card-title"><i data-lucide="play"></i> First pilot</div><p>Use five sanitized historical examples. Generate summaries. Compare against human-written reports. Keep the agent out of production systems.</p></div>
+      <div class="card warning"><div class="card-title"><i data-lucide="octagon-alert"></i> Stop conditions</div><p>Stop if the agent invents measurements, loses safety caveats, asks for sensitive data, or suggests bypassing review.</p></div>
+    </div>
+    <div class="rail" style="margin-top:24px"><div class="rail-title">Measure success</div><div class="rail-desc">Less missing data, faster draft turnaround, consistent customer wording, and fewer review corrections.</div></div>
+  </div>
+</section>
+
+<section class="slide" data-title="Verification Reviewer">
+  <div class="pad split">
+    <div>
+      <div class="kicker">Step 7</div>
+      <h2>Verification is part of the workflow.</h2>
+      <p class="sub">Do not bolt it on later. Ask the agent to challenge its own output, then use human judgment.</p>
+    </div>
+    <div class="codebox">Act as a skeptical reviewer.
+
+Identify:
+1. factual assumptions,
+2. missing edge cases,
+3. unsafe recommendations,
+4. human approval points,
+5. tests or checks,
+6. questions before production use.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="Good Output">
+  <div class="pad full-center">
+    <div class="kicker">What Good Looks Like</div>
+    <h2>Useful agent output is specific, bounded, and reviewable.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card"><div class="card-title"><i data-lucide="target"></i> Specific</div><p>Names the process, expected artifact, owners, inputs, outputs, and decision points.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="shield-check"></i> Bounded</div><p>States what data stays out, what tools are allowed, and what requires approval.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="search-check"></i> Reviewable</div><p>Lists assumptions, verification steps, stop conditions, and unanswered questions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Use Case: Heavy Haul Logistics">
+  <div class="pad split">
+    <div>
+      <div class="kicker">Real-World Pattern</div>
+      <h2>Heavy haul logistics: status clarity becomes customer value.</h2>
+      <p class="sub">Manual dispatch coordination can become structured status capture, customer-safe updates, and exception escalation.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-layer"><i data-lucide="truck"></i><div><div class="arch-layer-title">Manual baseline</div><div class="arch-layer-desc">Calls, spreadsheets, email, and inconsistent customer visibility.</div></div></div>
+      <div class="arch-layer"><i data-lucide="route"></i><div><div class="arch-layer-title">Agent-assisted workflow</div><div class="arch-layer-desc">Map dispatch handoffs, standardize status fields, draft updates, flag exceptions.</div></div></div>
+      <div class="arch-layer"><i data-lucide="chart-no-axes-combined"></i><div><div class="arch-layer-title">Operator lesson</div><div class="arch-layer-desc">Small teams move faster when institutional knowledge becomes repeatable process.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Use Case: Field Data">
+  <div class="pad split">
+    <div class="arch">
+      <div class="arch-layer"><i data-lucide="flask-conical"></i><div><div class="arch-layer-title">Field and lab data</div><div class="arch-layer-desc">High-value information often lives in photos, spreadsheets, emails, and informal notes.</div></div></div>
+      <div class="arch-layer"><i data-lucide="file-output"></i><div><div class="arch-layer-title">Agent-assisted reporting</div><div class="arch-layer-desc">Normalize notes, detect missing data, draft summaries, prepare customer-review packets.</div></div></div>
+      <div class="arch-layer"><i data-lucide="user-check"></i><div><div class="arch-layer-title">Human approval</div><div class="arch-layer-desc">People verify facts, safety wording, and customer-facing language before release.</div></div></div>
+    </div>
+    <div>
+      <div class="kicker">Real-World Pattern</div>
+      <h2>Field data is where the boring work becomes valuable.</h2>
+      <p class="sub">The leverage is not magic. It is turning messy operational data into structured, reviewed, reusable workflow.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Use Case: SOC And Compliance">
+  <div class="pad full-center">
+    <div class="kicker">Real-World Pattern</div>
+    <h2>Security teams should start with draft, read-only, evidence-heavy workflows.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card"><div class="card-title"><i data-lucide="radar"></i> Low-severity triage</div><p>Summarize, classify, gather context, and draft analyst notes for review.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="file-search"></i> Evidence packets</div><p>Collect control evidence lists, owner questions, and review checklists.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="clock"></i> Incident timelines</div><p>Draft timelines from sanitized notes and logs, then verify against source systems.</p></div>
+    </div>
+    <div class="quote" style="margin-top:30px">Agents can draft and organize. Humans own the security conclusion.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="Use Case: OT And IT Coordination">
+  <div class="pad full-center">
+    <div class="kicker">Real-World Pattern</div>
+    <h2>Agents can improve coordination without touching control systems.</h2>
+    <div class="flow" style="margin-top:34px">
+      <div class="flow-node"><div class="flow-header"><i data-lucide="factory"></i> OT constraint</div><span>Safety, availability, maintenance window</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="server"></i> IT change</div><span>Patch, config, access, monitoring</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="shield"></i> Security review</div><span>Risk, approvals, rollback, audit</span></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node"><div class="flow-header"><i data-lucide="file-check"></i> Change packet</div><span>Clear plan humans can approve</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Guardrails That Scale">
+  <div class="pad full-center">
+    <div class="kicker">Enterprise Guardrails</div>
+    <h2>Four layers matter before broad rollout.</h2>
+    <div class="two-column" style="margin-top:30px">
+      <div class="arch">
+        <div class="arch-layer"><i data-lucide="scroll-text"></i><div><div class="arch-layer-title">Policy</div><div class="arch-layer-desc">What the agent can and cannot do.</div></div></div>
+        <div class="arch-layer"><i data-lucide="key-round"></i><div><div class="arch-layer-title">Access</div><div class="arch-layer-desc">Least privilege, scoped credentials, revocation, identity separation.</div></div></div>
+      </div>
+      <div class="arch">
+        <div class="arch-layer"><i data-lucide="activity"></i><div><div class="arch-layer-title">Observability</div><div class="arch-layer-desc">Logs, task IDs, actions, token usage, approvals, and review history.</div></div></div>
+        <div class="arch-layer"><i data-lucide="hand"></i><div><div class="arch-layer-title">Human intervention</div><div class="arch-layer-desc">Approval gates, stop conditions, and a fast circuit breaker.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Threat Surfaces">
+  <div class="pad full-center">
+    <div class="kicker">Security Lens</div>
+    <h2>Agents introduce new ways for data and tools to be abused.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card danger"><div class="card-title"><i data-lucide="message-square-warning"></i> Prompt injection</div><p>Malicious content inside data tells the agent to ignore instructions or leak information.</p></div>
+      <div class="card danger"><div class="card-title"><i data-lucide="database-zap"></i> Data exposure</div><p>Overbroad read access can turn ordinary agent output into exfiltration.</p></div>
+      <div class="card danger"><div class="card-title"><i data-lucide="plug-zap"></i> Tool risk</div><p>Plugins, scripts, and integrations become supply-chain and privilege boundaries.</p></div>
+      <div class="card warning"><div class="card-title"><i data-lucide="badge-alert"></i> Agent identity</div><p>Shared human credentials make forensics and accountability weak.</p></div>
+      <div class="card warning"><div class="card-title"><i data-lucide="network"></i> Agent chaining</div><p>Agent-to-agent handoffs become new authorization decisions.</p></div>
+      <div class="card warning"><div class="card-title"><i data-lucide="trending-up"></i> Runaway scope</div><p>"While I am at it" is scope creep, cost risk, and security risk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Adoption Ladder">
+  <div class="pad full-center">
+    <div class="kicker">Governed Rollout</div>
+    <h2>Start small, add privilege slowly.</h2>
+    <div class="arch" style="margin-top:30px">
+      <div class="arch-layer"><i data-lucide="user"></i><div><div class="arch-layer-title">1. Personal literacy</div><div class="arch-layer-desc">Sanitized examples, local notes, no private data.</div></div></div>
+      <div class="arch-layer"><i data-lucide="file-text"></i><div><div class="arch-layer-title">2. Draft-only internal workflow</div><div class="arch-layer-desc">SOPs, summaries, checklists, plans, evidence lists.</div></div></div>
+      <div class="arch-layer"><i data-lucide="eye"></i><div><div class="arch-layer-title">3. Read-only assisted workflow</div><div class="arch-layer-desc">Approved data sources, logging, reviewer sign-off.</div></div></div>
+      <div class="arch-layer"><i data-lucide="lock-keyhole"></i><div><div class="arch-layer-title">4. Governed enterprise workflow</div><div class="arch-layer-desc">Identity, least privilege, audit, approvals, incident response, revocation.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Do Not Start Here">
+  <div class="pad full-center">
+    <div class="kicker">Bad First Workflows</div>
+    <h2>Some work should wait until governance exists.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card danger"><div class="card-title"><i data-lucide="send"></i> External sends</div><p>Customer emails, legal notices, public posts, or regulatory statements without approval.</p></div>
+      <div class="card danger"><div class="card-title"><i data-lucide="server-crash"></i> Production changes</div><p>Infrastructure changes, control actions, firewall updates, IAM edits, deployment changes.</p></div>
+      <div class="card danger"><div class="card-title"><i data-lucide="file-lock"></i> Sensitive records</div><p>Patient, employee, legal, investigative, customer, or regulated data in unapproved tools.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="OpenClaw As Learning Environment">
+  <div class="pad split">
+    <div>
+      <div class="kicker">Example Environment</div>
+      <h2>OpenClaw makes the workflow visible.</h2>
+      <p class="sub">The point is not that every attendee must deploy OpenClaw today. The point is to see how agents use memory, tools, approvals, and logs.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-layer"><i data-lucide="layout-dashboard"></i><div><div class="arch-layer-title">Dashboard first</div><div class="arch-layer-desc">Start with visible responses before channel setup.</div></div></div>
+      <div class="arch-layer"><i data-lucide="folder-open"></i><div><div class="arch-layer-title">Files as context</div><div class="arch-layer-desc">Markdown memory, prompt packs, and project docs become reusable agent context.</div></div></div>
+      <div class="arch-layer"><i data-lucide="search-check"></i><div><div class="arch-layer-title">Review loop</div><div class="arch-layer-desc">Inspect changes, verify outputs, and iterate from evidence.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Tooling Transfers">
+  <div class="pad full-center">
+    <div class="kicker">The Tool Will Change</div>
+    <h2>The operating model transfers across ecosystems.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card"><div class="card-title"><i data-lucide="code"></i> Coding assistants</div><p>Codex, Claude Code, GitHub Copilot, and similar tools can help create files, plans, and checks.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="building-2"></i> Enterprise platforms</div><p>Microsoft, Google, NVIDIA, and others are moving toward identity, governance, and orchestration.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="server"></i> Local/open paths</div><p>OpenClaw and open models can teach the workflow pattern without tying the lesson to one vendor.</p></div>
+    </div>
+    <div class="quote" style="margin-top:32px">Process, memory, role, boundary, artifact, verification. That is the durable skill.</div>
+  </div>
+</section>
+
+<section class="slide" data-title="30-Day Challenge">
+  <div class="pad full-center">
+    <div class="kicker">After Today</div>
+    <h2>One low-risk workflow in 30 days.</h2>
+    <div class="three-column" style="margin-top:30px">
+      <div class="card"><div class="card-title"><i data-lucide="calendar-days"></i> Week 1</div><p>Write the process in Markdown. Sanitize the example. Define data boundaries.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="bot"></i> Week 2</div><p>Run Process Mapper and Security Reviewer. Capture clarifying questions.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="file-check"></i> Week 3</div><p>Draft one artifact: SOP, checklist, summary template, or implementation plan.</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="search-check"></i> Week 4</div><p>Verify with a human reviewer. Decide keep, change, or stop.</p></div>
+      <div class="card success"><div class="card-title"><i data-lucide="bar-chart-3"></i> Metric</div><p>Time saved, fewer missing fields, better consistency, fewer review corrections.</p></div>
+      <div class="card warning"><div class="card-title"><i data-lucide="octagon-alert"></i> Stop condition</div><p>The agent asks for sensitive data, invents facts, bypasses approval, or expands scope.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="SSTB.ai">
+  <div class="pad split" style="grid-template-columns:1fr 1fr">
+    <div>
+      <div class="kicker">Start Small, Think Big</div>
+      <h2>SSTB.ai is the follow up path.</h2>
+      <p class="sub">Free office hours on the SSTB Discord server, practical AI/operator playbooks, and deeper guided training.</p>
+      <div style="display:flex;gap:16px;align-items:center;margin-top:28px">
+        <a href="https://discord.gg/Gmfkm7QVSF" target="_blank" rel="noopener"><img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://discord.gg/Gmfkm7QVSF&bgcolor=ffffff&color=111827&format=png" alt="QR code for SSTB Discord"/></a>
+        <div class="contact-list">
+          <a href="https://sstb.ai" target="_blank" rel="noopener"><i data-lucide="globe"></i> sstb.ai</a>
+          <a href="https://discord.gg/Gmfkm7QVSF" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> SSTB Discord office hours</a>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--pink);background:linear-gradient(180deg,rgba(255,78,205,.12),rgba(139,125,255,.05))">
+      <div class="kicker" style="color:var(--pink)">InfraGard Member Offer</div>
+      <div style="font-size:52px;font-weight:850;line-height:1;margin-top:12px">75% off</div>
+      <p class="sub" style="margin-top:12px">Use this discount code for InfraGard members:</p>
+      <div class="codebox" style="font-size:36px;text-align:center;margin-top:22px;color:#fff">SSTB-IGCLAW</div>
+      <p class="small" style="margin-top:16px">Use it after the session for deeper training and guided implementation support.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Resources">
+  <div class="pad full-center">
+    <div class="kicker">Clickable Resources</div>
+    <h2>Everything here is meant to be used after the session.</h2>
+    <div class="two-column" style="margin-top:30px">
+      <div class="arch">
+        <div class="arch-layer"><i data-lucide="code-xml"></i><div><div class="arch-layer-title">Workshop repo</div><div class="arch-layer-desc"><a href="https://github.com/BradGroux/openclaw-dev-days" target="_blank" rel="noopener">github.com/BradGroux/openclaw-dev-days</a></div></div></div>
+        <div class="arch-layer"><i data-lucide="file-text"></i><div><div class="arch-layer-title">Prompt pack</div><div class="arch-layer-desc"><a href="prompt-pack.md" target="_blank" rel="noopener">event prompt-pack.md</a></div></div></div>
+        <div class="arch-layer"><i data-lucide="layers"></i><div><div class="arch-layer-title">Scenario cards</div><div class="arch-layer-desc"><a href="scenario-cards.md" target="_blank" rel="noopener">event scenario-cards.md</a></div></div></div>
+      </div>
+      <div class="arch">
+        <div class="arch-layer"><i data-lucide="shield"></i><div><div class="arch-layer-title">NIST AI RMF</div><div class="arch-layer-desc"><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">nist.gov/itl/ai-risk-management-framework</a></div></div></div>
+        <div class="arch-layer"><i data-lucide="landmark"></i><div><div class="arch-layer-title">CISA AI resources</div><div class="arch-layer-desc"><a href="https://www.cisa.gov/ai" target="_blank" rel="noopener">cisa.gov/ai</a></div></div></div>
+        <div class="arch-layer"><i data-lucide="crosshair"></i><div><div class="arch-layer-title">MITRE ATLAS</div><div class="arch-layer-desc"><a href="https://atlas.mitre.org/" target="_blank" rel="noopener">atlas.mitre.org</a></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Q&A">
+  <div class="pad full-center" style="align-items:center;text-align:center">
+    <div class="kicker">Questions</div>
+    <h2>No softballs required.</h2>
+    <p class="sub" style="text-align:center">Hard questions about security implications, real failures, governance, first workflows, and what I would not automate are welcome.</p>
+    <div class="three-column" style="margin-top:38px;width:100%">
+      <div class="card"><div class="card-title"><i data-lucide="shield-alert"></i> Risk</div><p>What can go wrong?</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="wrench"></i> Practice</div><p>What should I try first?</p></div>
+      <div class="card"><div class="card-title"><i data-lucide="landmark"></i> Governance</div><p>How do we roll this out safely?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Contact">
+  <div class="pad split" style="grid-template-columns:1fr 1fr">
+    <div>
+      <div class="kicker">Stay Connected</div>
+      <h2>Brad Groux</h2>
+      <p class="sub">Digital Meld &middot; InfraGard Houston AI-CSC &middot; OpenClaw contributor</p>
+      <div class="contact-list" style="margin-top:28px">
+        <a href="https://linktr.ee/digitalmeld" target="_blank" rel="noopener"><i data-lucide="link"></i> linktr.ee/digitalmeld</a>
+        <a href="https://linkedin.com/in/bradgroux" target="_blank" rel="noopener"><i data-lucide="briefcase-business"></i> linkedin.com/in/bradgroux</a>
+        <a href="https://twitter.com/bradgroux" target="_blank" rel="noopener"><i data-lucide="at-sign"></i> @bradgroux on Twitter</a>
+        <a href="https://github.com/bradgroux" target="_blank" rel="noopener"><i data-lucide="code-xml"></i> github.com/bradgroux</a>
+        <a href="https://youtube.com/bradgroux" target="_blank" rel="noopener"><i data-lucide="play-square"></i> youtube.com/bradgroux</a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;flex-direction:column">
+      <a href="https://linktr.ee/digitalmeld" target="_blank" rel="noopener"><img class="qr" style="width:244px;height:244px" src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://linktr.ee/digitalmeld&bgcolor=ffffff&color=111827&format=png" alt="QR code for Digital Meld links"/></a>
+      <p class="small" style="margin-top:18px;text-align:center">Scan for resources, slides, and contact links.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="nav">
+  <button onclick="prev()" aria-label="Previous slide"><i data-lucide="chevron-left"></i></button>
+  <button onclick="next()" aria-label="Next slide"><i data-lucide="chevron-right"></i></button>
+  <button onclick="toggleTheme()" aria-label="Toggle light mode" title="Toggle light mode"><i data-lucide="sun-moon"></i></button>
+</div>
+<div class="footer"><span id="slideTitle"></span><span id="pageNo"></span></div>
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+slides.forEach((s,i)=>s.id='slide'+(i+1));
+let idx=0;
+function setTheme(theme){
+  document.documentElement.dataset.theme=theme;
+  localStorage.setItem('deck-theme',theme);
+}
+function toggleTheme(){
+  setTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
+  lucide.createIcons();
+}
+function show(){
+  slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  document.getElementById('slideTitle').textContent=slides[idx].dataset.title||'';
+  document.getElementById('pageNo').textContent=(idx+1)+' / '+slides.length;
+  document.getElementById('progressBar').style.width=((idx+1)/slides.length*100)+'%';
+  history.replaceState(null,null,'#slide'+(idx+1));
+  lucide.createIcons();
+}
+function next(){idx=Math.min(slides.length-1,idx+1);show()}
+function prev(){idx=Math.max(0,idx-1);show()}
+function goHash(){
+  const h=location.hash.match(/^#slide(\d+)$/);
+  if(!h)return;
+  const n=parseInt(h[1],10)-1;
+  if(n>=0&&n<slides.length&&n!==idx){idx=n;show()}
+}
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next()}
+  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev()}
+  if(e.key==='Home'){idx=0;show()}
+  if(e.key==='End'){idx=slides.length-1;show()}
+  if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.();
+  if(e.key.toLowerCase()==='t')toggleTheme();
+});
+setTheme(localStorage.getItem('deck-theme')||'dark');
+const h=location.hash.match(/^#slide(\d+)$/);
+if(h){const n=parseInt(h[1],10)-1;if(n>=0&&n<slides.length)idx=n}
+window.addEventListener('hashchange',goHash);
+show();
+</script>
+</body>
+</html>

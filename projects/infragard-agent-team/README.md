@@ -29,6 +29,11 @@ Optional fifth role:
 
 Use [`memory-template.md`](memory-template.md) as your starting point, or create a file called `memory.md` in this folder with:
 
+Pick one path:
+
+- **Choose your own adventure:** use a low-risk process from your own work.
+- **Use a pre-seeded adventure:** pick one of the starter scenarios below and customize it after the session.
+
 ```markdown
 # My InfraGard Agent Team
 
@@ -45,19 +50,19 @@ What data or systems are involved? What sensitive information is at risk? What a
 ## Agent Team
 
 ### Process Mapper
-[Your prompts or instructions for this role]
+Map this process into clear steps, owners, handoffs, decision points, inputs, outputs, bottlenecks, and missing information. Ask clarifying questions before making assumptions.
 
 ### Security Reviewer
-[Your prompts or instructions for this role]
+Review this process for sensitive data, credential exposure, privacy or compliance concerns, operational risk, unsafe automation, approval gates, and human review points. Return a concise guardrail checklist.
 
 ### Documentation Writer
-[Your prompts or instructions for this role]
+Turn the mapped process and guardrail checklist into a practical SOP, checklist, runbook, or briefing note. Keep it plain, reviewable, and safe to share.
 
 ### Implementation Planner
-[Your prompts or instructions for this role]
+Create a low-risk implementation plan with tasks, owners, milestones, verification gates, rollback or stop conditions, and a 30-day next action.
 
 ### Automation Scout (optional)
-[Your prompts or instructions for this role]
+Identify read-only or low-risk automation opportunities. Rank each idea by impact, effort, and risk. Recommend the safest first experiment and what should remain human-approved.
 
 ## First Output
 
@@ -68,6 +73,60 @@ What is the first thing I want this team to produce?
 - An implementation plan?
 - A list of automation opportunities?
 ```
+
+## Pre-Seeded Adventures
+
+Use one of these if you do not want to start from a blank page. Each adventure maps to the full event [scenario cards](../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md), [prompt pack](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md), and [demo script](../../event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md).
+
+### 1. Field Report To Customer Summary
+
+**Process:** A field technician captures observations and measurements. A coordinator turns inconsistent notes into a customer-safe summary, but missing data is often caught late.
+
+**First output:** Field report checklist and customer-summary template.
+
+**Use when:** you want an operations example that works across energy, water, healthcare operations, infrastructure services, and field teams.
+
+**Prompt path:** [Field report prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-1---field-report-to-customer-summary)
+
+### 2. Heavy Haul Load Status
+
+**Process:** Dispatch status lives across calls, spreadsheets, texts, and emails. Customers want reliable updates, but exceptions are handled manually by whoever notices first.
+
+**First output:** Customer-safe status update template and exception escalation checklist.
+
+**Use when:** you want a logistics, construction, data-center supply chain, transportation, or field-operations example.
+
+**Prompt path:** [Heavy haul prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-2---heavy-haul-load-status)
+
+### 3. Low-Severity Alert Triage
+
+**Process:** Analysts triage repetitive low-severity alerts. Notes vary by analyst, escalation criteria are inconsistent, and evidence collection is repetitive.
+
+**First output:** Triage checklist and escalation criteria.
+
+**Use when:** you want a SOC, IT, MSP, OT security, or compliance example.
+
+**Prompt path:** [Alert triage prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-3---low-severity-alert-triage)
+
+### 4. Compliance Evidence Packet
+
+**Process:** Evidence collection is scattered before audits or reviews. Screenshots, logs, approvals, policy references, and owners are inconsistent.
+
+**First output:** Evidence packet checklist and owner request template.
+
+**Use when:** you want a governance, audit, healthcare, energy, finance, legal, or leadership example.
+
+**Prompt path:** [Compliance prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-4---compliance-evidence-packet)
+
+### 5. OT/IT Change Coordination
+
+**Process:** A planned change crosses IT, OT, vendor, security, and operations owners. Risks, approval paths, rollback criteria, and communication expectations are not written clearly.
+
+**First output:** Change coordination checklist and approval/rollback template.
+
+**Use when:** you want a manufacturing, utilities, maritime, healthcare facilities, energy, water, or critical-operations example.
+
+**Prompt path:** [OT/IT prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-5---otit-change-coordination)
 
 ## Success Criteria
 
@@ -132,6 +191,9 @@ An agent team helped them:
 ## Resources
 
 - OpenClaw Dev Days main repo: https://github.com/BradGroux/openclaw-dev-days
+- OpenClaw Mac install: [`../../setup-guides/openclaw-mac.md`](../../setup-guides/openclaw-mac.md)
+- OpenClaw Windows install: [`../../setup-guides/openclaw-windows.md`](../../setup-guides/openclaw-windows.md)
+- AI-assisted OpenClaw install: [`../../setup-guides/ai-assisted-openclaw-install.md`](../../setup-guides/ai-assisted-openclaw-install.md)
 - Workshop agenda and materials: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/)
 - Attendee links: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md)
 - Prompt pack: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)

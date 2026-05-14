@@ -20,6 +20,16 @@ The curriculum is built around a simple progression:
 - [Orchestration and repair loops](modules/orchestration-and-repair-loops.md)
 - [Agent roles](agent-roles/README.md)
 
+## OpenClaw Setup
+
+Installing OpenClaw is part of the curriculum, even when an event does not spend live session time on installs. Use the direct setup path for the attendee's platform, then run the first-success lab.
+
+- [Mac OpenClaw setup](../setup-guides/openclaw-mac.md)
+- [Windows OpenClaw setup](../setup-guides/openclaw-windows.md)
+- [AI-assisted OpenClaw install](../setup-guides/ai-assisted-openclaw-install.md)
+- [Microsoft Foundry key setup](../setup-guides/microsoft-foundry.md)
+- [First success lab](../labs/first-success.md)
+
 ## Hands-On Labs
 
 - [First success](../labs/first-success.md)

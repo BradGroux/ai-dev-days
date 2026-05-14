@@ -54,6 +54,13 @@ The first win is non-negotiable:
 
 Primary lab: [First success](../labs/first-success.md)
 
+Install paths:
+
+- [Mac OpenClaw setup](../setup-guides/openclaw-mac.md)
+- [Windows OpenClaw setup](../setup-guides/openclaw-windows.md)
+- [AI-assisted OpenClaw install](../setup-guides/ai-assisted-openclaw-install.md)
+- [Microsoft Foundry key setup](../setup-guides/microsoft-foundry.md)
+
 ### 2. Markdown Memory
 
 Attendees learn that agents need visible context, not vague intent.
