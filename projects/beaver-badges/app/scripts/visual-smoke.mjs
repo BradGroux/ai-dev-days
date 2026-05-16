@@ -1,38 +1,15 @@
 #!/usr/bin/env node
 import { chromium } from '@playwright/test'
-import { spawn } from 'node:child_process'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
+import { createServer } from 'vite'
 
 const appRoot = process.cwd()
 const repoRoot = path.resolve(appRoot, '../../..')
 const appUrl = 'http://127.0.0.1:5173/'
 const screenshotDir = process.env.VISUAL_SMOKE_ARTIFACT_DIR || path.join(os.tmpdir(), 'openclaw-dev-days-visual-smoke')
-
-function wait(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
-async function waitForServer(url, server, timeoutMs = 30000) {
-  const deadline = Date.now() + timeoutMs
-
-  while (Date.now() < deadline) {
-    if (server.exitCode !== null) {
-      throw new Error(`Vite server exited early with code ${server.exitCode}`)
-    }
-
-    try {
-      const response = await fetch(url)
-      if (response.ok) return
-    } catch {
-      await wait(250)
-    }
-  }
-
-  throw new Error(`Timed out waiting for ${url}`)
-}
 
 async function assertNoHorizontalOverflow(page, label) {
   const metrics = await page.evaluate(() => ({
@@ -107,34 +84,26 @@ async function smokeArchitectureShowcase(browser) {
 
 await fs.mkdir(screenshotDir, { recursive: true })
 
-const server = spawn(
-  'npm',
-  ['run', 'dev', '--', '--host', '127.0.0.1', '--port', '5173', '--strictPort'],
-  {
-    cwd: appRoot,
-    stdio: ['ignore', 'pipe', 'pipe'],
+const server = await createServer({
+  root: appRoot,
+  logLevel: 'error',
+  server: {
+    host: '127.0.0.1',
+    port: 5173,
+    strictPort: true,
   },
-)
-
-let serverOutput = ''
-server.stdout.on('data', (chunk) => {
-  serverOutput += chunk.toString()
 })
-server.stderr.on('data', (chunk) => {
-  serverOutput += chunk.toString()
-})
+await server.listen()
 
 let browser
 try {
-  await waitForServer(appUrl, server)
   browser = await chromium.launch()
   await smokeBeaverBadges(browser)
   await smokeArchitectureShowcase(browser)
   console.log(`Visual smoke passed. Screenshots: ${screenshotDir}`)
 } catch (error) {
-  console.error(serverOutput)
   throw error
 } finally {
   if (browser) await browser.close()
-  server.kill('SIGTERM')
+  await server.close()
 }
