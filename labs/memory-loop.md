@@ -4,6 +4,8 @@
 
 Show why OpenClaw is more than a chatbot: it can use durable Markdown context, agent instructions, and task lists to improve future work.
 
+AI literacy focus: practice directing AI effectively with clear context, useful constraints, and a reusable memory artifact.
+
 ## Step 1 — Create an OpenClaw workspace folder
 
 Mac/Linux:
@@ -77,6 +79,7 @@ Create `workshop-goal-summary.md` with:
 - three next actions
 - one risk
 - one decision you made
+- one thing you verified or still need to verify
 
 ## Done means
 
@@ -84,3 +87,4 @@ Create `workshop-goal-summary.md` with:
 - OpenClaw used the memory context, agent instruction, and task list
 - `workshop-goal-summary.md` exists
 - attendee can explain how memory changed the answer
+- attendee can explain what they still need to review before trusting the output

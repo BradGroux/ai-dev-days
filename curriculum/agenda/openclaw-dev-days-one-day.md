@@ -14,6 +14,9 @@
 - Roles beat one giant assistant.
 - Contracts make agent output reviewable.
 - The human remains the orchestrator.
+- AI literacy means understanding, directing, evaluating, and responsibly using AI in context.
+
+Source alignment: [U.S. Department of Labor AI Literacy Framework](../../docs/ai-literacy-framework-alignment.md).
 
 ## 9:00-9:45 AM - Orientation, Agents, and Operator Thinking
 
@@ -23,6 +26,7 @@ Cover:
 
 - what OpenClaw is
 - what agents are in practical terms
+- what AI can and cannot reliably do
 - role, context, tools, memory, output, and review
 - why models need explicit context
 - why the workshop uses Markdown
@@ -67,6 +71,7 @@ Cover:
 - memory notes
 - task lists
 - public safety
+- how clear context helps direct AI effectively
 
 Primary module and lab:
 
@@ -125,6 +130,7 @@ Cover:
 - rubric review
 - edge cases
 - pass/fail summaries
+- why humans remain accountable for accepted AI outputs
 
 Primary module and lab:
 
@@ -167,6 +173,7 @@ Cover:
 - diagnosis notes
 - patch plans
 - next iteration
+- responsible tool and context boundaries
 
 Primary module and lab:
 
@@ -188,6 +195,7 @@ Cover:
 - what not to publish
 - how to keep using the agent team
 - one 30-day build goal
+- one AI literacy skill to practice next
 
 Closing prompt:
 
@@ -198,4 +206,3 @@ Based on my workshop-memory.md, my agent role, and what I built today, propose a
 Done means:
 
 - attendee knows the next practical action after the workshop
-

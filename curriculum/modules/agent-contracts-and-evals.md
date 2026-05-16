@@ -17,6 +17,8 @@ An agent without an output contract is hard to trust. The goal of this module is
 
 Good agent work is not just generated. It is specified, tested, reviewed, and improved.
 
+This module supports the Department of Labor AI Literacy Framework content area "Evaluate AI Outputs" by giving attendees a repeatable way to check accuracy, relevance, structure, safety, and usefulness before accepting an AI-generated artifact.
+
 ## Concepts
 
 ### Output Contract
@@ -70,6 +72,7 @@ Examples:
 - did the agent ignore a constraint?
 - is the risk real or generic?
 - is the next step specific enough?
+- would you be accountable for using or sharing this output?
 
 ### Edge Cases
 
@@ -105,6 +108,7 @@ Use [Agent contract evaluation](../../labs/agent-contract-evaluation.md).
 - Use the Beaver Badges project if attendees need a shared scenario.
 - Ask attendees to evaluate one real output from their own agent.
 - Reinforce that a failed check is useful information, not a workshop failure.
+- Reinforce that review is an AI literacy habit, not an optional quality-control add-on.
 
 ## Done Means
 
@@ -114,4 +118,3 @@ Attendees can explain:
 - how they checked the result
 - what failed
 - what they would change in the instruction
-

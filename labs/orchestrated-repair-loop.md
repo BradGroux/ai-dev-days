@@ -6,6 +6,8 @@ Practice a small builder-reviewer-diagnoser loop using Markdown artifacts.
 
 This lab works even when attendees are not ready to run code.
 
+AI literacy focus: evaluate AI outputs, repair failures, and keep the human responsible for acceptance.
+
 ## Done Means
 
 - a builder creates an artifact
@@ -103,6 +105,10 @@ Accept / revise / defer
 
 ## Why
 
+## What I Verified
+
+## What I Will Not Ship Yet
+
 ## Next Action
 - [ ] 
 ```
@@ -114,4 +120,3 @@ Answer:
 ```text
 What did the repair loop catch that a single prompt might have missed?
 ```
-

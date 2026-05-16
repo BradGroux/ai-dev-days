@@ -492,6 +492,59 @@ h1 {
   border-color: transparent;
 }
 
+.progress-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.utility-button {
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 11px 14px;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: 160ms ease;
+}
+
+.utility-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.utility-button.danger {
+  color: #fecdd3;
+  border-color: rgba(251, 113, 133, 0.24);
+}
+
+.utility-button:disabled {
+  cursor: not-allowed;
+  color: #64748b;
+  opacity: 0.62;
+}
+
+.export-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.export-panel span,
+.visit-date {
+  color: #9fb0c7;
+  font-size: 0.84rem;
+}
+
+.export-panel textarea {
+  min-height: 180px;
+  resize: vertical;
+  border-radius: 14px;
+  padding: 12px;
+  color: #dbe7f7;
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  font: 0.78rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+}
+
 .cards-grid,
 .badge-stack {
   gap: 14px;
@@ -628,7 +681,8 @@ h1 {
   }
 
   .hero-actions,
-  .filter-group {
+  .filter-group,
+  .utility-button {
     width: 100%;
   }
 

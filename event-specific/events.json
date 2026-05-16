@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "slug": "tamu-openclaw-2026-05-02",
+      "title": "TAMU OpenClaw Dev Days",
+      "date": "2026-05-02",
+      "status": "completed",
+      "audience": "Texas A&M workshop attendees",
+      "listedInRoot": true,
+      "entrypoint": "event-specific/tamu-openclaw-2026-05-02/attendee-links.md",
+      "agenda": "curriculum/agenda/tamu-2026-05-02.md",
+      "setupPath": "event-specific/tamu-openclaw-2026-05-02/openclaw-onboarding-tamu-gpt-5-5.md",
+      "facilitatorRunbook": "event-specific/tamu-openclaw-2026-05-02/facilitator-runbook.md",
+      "requiredFiles": [
+        "event-specific/tamu-openclaw-2026-05-02/attendee-links.md",
+        "event-specific/tamu-openclaw-2026-05-02/requirements.md",
+        "event-specific/tamu-openclaw-2026-05-02/facilitator-runbook.md",
+        "event-specific/tamu-openclaw-2026-05-02/fallback-plan.md",
+        "event-specific/tamu-openclaw-2026-05-02/day-before-checklist.md"
+      ]
+    },
+    {
+      "slug": "infragard-ai-agent-workshop-2026-05-14",
+      "title": "InfraGard Houston AI Agent Workshop",
+      "date": "2026-05-14",
+      "status": "completed",
+      "audience": "InfraGard Houston AI-CSC members and critical infrastructure practitioners",
+      "listedInRoot": true,
+      "entrypoint": "event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md",
+      "agenda": "event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md",
+      "setupPath": "event-specific/infragard-ai-agent-workshop-2026-05-14/requirements.md",
+      "facilitatorRunbook": "event-specific/infragard-ai-agent-workshop-2026-05-14/facilitator-runbook.md",
+      "requiredFiles": [
+        "event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md",
+        "event-specific/infragard-ai-agent-workshop-2026-05-14/requirements.md",
+        "event-specific/infragard-ai-agent-workshop-2026-05-14/facilitator-runbook.md",
+        "event-specific/infragard-ai-agent-workshop-2026-05-14/fallback-plan.md",
+        "event-specific/infragard-ai-agent-workshop-2026-05-14/day-before-checklist.md",
+        "event-specific/infragard-ai-agent-workshop-2026-05-14/agenda.md"
+      ]
+    }
+  ]
+}

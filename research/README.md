@@ -10,6 +10,7 @@ These files are not attendee instructions. They may include older assumptions, d
 - finding future curriculum ideas
 - tracing source material behind modules
 - improving facilitator notes
+- updating AI literacy alignment as public workforce guidance evolves
 
 ## Do not use research for
 
@@ -24,6 +25,15 @@ These files are not attendee instructions. They may include older assumptions, d
 - [Windows OpenClaw setup](../setup-guides/openclaw-windows.md)
 - [Microsoft Foundry key setup](../setup-guides/microsoft-foundry.md)
 - [First success lab](../labs/first-success.md)
+
+## Current source-backed framework docs
+
+- [AI Literacy Framework alignment](../docs/ai-literacy-framework-alignment.md)
+- [DOL AI Literacy Framework source note](dol-ai-literacy-framework.md)
+
+## New research notes
+
+Start with the [source note template](source-note-template.md). Mark source freshness, publication safety, intended audience, and follow-up actions before turning research into attendee-facing material.
 
 Before publishing or quoting research content, run:
 

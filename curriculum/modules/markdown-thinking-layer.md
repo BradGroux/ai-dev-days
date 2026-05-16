@@ -28,6 +28,8 @@ Markdown is the shared operating layer for the workshop.
 - Obsidian can organize it.
 - OpenClaw can use it as durable context.
 
+This module supports the Department of Labor AI Literacy Framework content area "Direct AI Effectively" by teaching attendees to provide context, constraints, examples, and task structure in a durable format.
+
 ## What to show in screenshots
 
 Keep this visual and fast. Use screenshots instead of live editing during the first hour.
@@ -90,6 +92,8 @@ Before using GitHub or shared repositories, say this clearly:
 Do not put secrets, API keys, private data, client information, sensitive personal notes, or anything confidential in a public repository or shared note.
 
 When in doubt, keep it local.
+
+This also supports the framework content area "Use AI Responsibly": the person operating the tool remains accountable for what is shared, saved, and reused.
 
 ## Later hands-on exercise
 
@@ -155,3 +159,4 @@ Thank the GitHub team for making approachable learning material that helps new b
 - Emphasize that agent-created data is valuable when captured, reviewed, and reused.
 - Use task lists as the bridge from notes into agent work plans.
 - Keep the first win local and safe before anything is published.
+- Tie the module back to AI literacy: clear context is a core skill, not clerical cleanup.

@@ -14,9 +14,12 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Facilitators: use [`RUNBOOK.md`](RUNBOOK.md).
 - Organizers: copy [`event-specific/_template/`](event-specific/_template/) for a new event.
 - Curriculum: use [`curriculum/README.md`](curriculum/README.md) and [`curriculum/course-map.md`](curriculum/course-map.md).
-- Contributors: review [`PUBLICATION-SAFETY.md`](PUBLICATION-SAFETY.md) and run `./scripts/publication-scan.sh` before publishing.
+- AI literacy alignment: use [`docs/ai-literacy-framework-alignment.md`](docs/ai-literacy-framework-alignment.md).
+- Contributors: review [`PUBLICATION-SAFETY.md`](PUBLICATION-SAFETY.md), run `./scripts/publication-scan.sh`, and run `node scripts/audit-repo.mjs` before publishing.
 - Architecture: use [`docs/openclaw-architecture.md`](docs/openclaw-architecture.md) or the visual [`docs/openclaw-architecture-showcase.html`](docs/openclaw-architecture-showcase.html).
+- Codebase health: see [`docs/codebase-audit.md`](docs/codebase-audit.md).
 - Changes: see [`CHANGELOG.md`](CHANGELOG.md).
+- Event metadata: see [`event-specific/events.json`](event-specific/events.json) and [`event-specific/refresh-checklist.md`](event-specific/refresh-checklist.md).
 
 ## TAMU attendees: start here
 
@@ -71,6 +74,8 @@ For non-TAMU workshops or personal setup, use the direct OpenClaw installer for 
 - Leave behind reusable material other organizers can run with
 - Convert curiosity into actual adoption after the event
 
+The curriculum is aligned to the U.S. Department of Labor's AI Literacy Framework: understand AI principles, explore AI uses directly, direct AI effectively, evaluate AI outputs, and use AI responsibly. See the [AI Literacy Framework alignment](docs/ai-literacy-framework-alignment.md) for the source citation and workshop mapping.
+
 ## Core stance
 - **First success beats feature coverage.** If people don’t get a working loop early, the rest doesn’t matter.
 - **Dashboard first. Channels second.** Messaging integrations are cool and fragile. They are not the critical path.
@@ -84,6 +89,7 @@ For non-TAMU workshops or personal setup, use the direct OpenClaw installer for 
 - `helper-runbook/` — facilitator triage and rescue-lane guidance
 - `troubleshooting/` — common install/model/provider failures
 - `docs/` — reusable explainers and visual docs, including the OpenClaw architecture showcase
+- `docs/ai-literacy-framework-alignment.md` — mapping to the U.S. Department of Labor AI Literacy Framework
 - `event-specific/` — event-specific materials plus a reusable event template
 - `research/` — source notes and planning context; not attendee instructions
 - `scripts/` — lightweight repo maintenance and publication safety checks

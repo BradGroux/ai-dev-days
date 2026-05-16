@@ -94,7 +94,9 @@ Possible badge names:
   "name": "string",
   "city": "string",
   "state": "string",
-  "visited": false
+  "region": "string",
+  "visited": false,
+  "visitedAt": "YYYY-MM-DD"
 }
 ```
 
@@ -105,7 +107,8 @@ Possible badge names:
   "id": "string",
   "name": "string",
   "requiredVisits": 5,
-  "description": "string"
+  "description": "string",
+  "roadmap": false
 }
 ```
 
@@ -124,6 +127,9 @@ Possible badge names:
 - Vite
 - Tailwind CSS
 - JSON-backed seed data
+- data-driven region filters
+- local-only progress persistence
+- reset and JSON export controls
 - client-side state for workshop simplicity
 
 ## Workshop Agent Mapping

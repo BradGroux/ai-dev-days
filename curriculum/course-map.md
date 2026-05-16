@@ -14,6 +14,8 @@ The subject is not "prompting tricks." The subject is operator skill:
 - preserve useful memory
 - decide what ships
 
+The course is aligned to the U.S. Department of Labor's AI Literacy Framework. See [AI Literacy Framework alignment](../docs/ai-literacy-framework-alignment.md) for the source citation and mapping.
+
 ## Audience
 
 This curriculum works for mixed rooms:
@@ -31,14 +33,28 @@ For technical rooms, lean harder into evaluation, orchestration, error correctio
 By the end, attendees should be able to:
 
 - install and verify OpenClaw
+- explain core AI concepts, capabilities, limits, and why model output needs review
 - explain OpenClaw as a gateway, dashboard, workspace, and operator loop
+- identify practical AI uses for their own work or project context
 - create a Markdown memory note that improves future agent work
 - write a focused agent role with boundaries and expected output
+- direct AI with clear context, constraints, prompt structure, and iteration
 - turn a project idea into an agent task list
 - evaluate agent output against a simple contract
 - use a runner or reviewer loop to catch failures
+- apply public-safe, accountable, least-privilege AI use habits
 - distinguish live workshop scope from roadmap scope
 - leave with one 30-day build goal
+
+## DOL AI Literacy Mapping
+
+| DOL area | Curriculum proof point |
+| --- | --- |
+| Understand AI Principles | Orientation, first success, model/context/memory explanation |
+| Explore AI Uses Directly | Attendee project prompts, Beaver Badges, role-based product work |
+| Direct AI Effectively | Markdown memory, agent instructions, task lists, prompt boundaries |
+| Evaluate AI Outputs | Contracts, deterministic checks, reviewer rubrics, repair loops |
+| Use AI Responsibly | Publication safety, credential handling, least-privilege roles, human acceptance |
 
 ## Curriculum Ladder
 
@@ -71,6 +87,7 @@ Teach:
 - OpenClaw workspace notes
 - task lists as agent plans
 - public safety before sharing
+- clear context and iteration as AI direction skills
 
 Primary modules and labs:
 
@@ -102,6 +119,7 @@ Teach:
 - reviewer rubrics
 - edge cases
 - pass/fail summaries
+- human accountability for accepted outputs
 
 Primary module and lab:
 
@@ -120,6 +138,7 @@ Teach:
 - failure reports
 - diagnosis notes
 - next-iteration patch plans
+- least-privilege tool and context boundaries
 
 Primary module and lab:
 
@@ -145,6 +164,7 @@ Close with a practical continuation plan:
 - what contract or test to add next
 - what to avoid publishing
 - what to ship in 30 days
+- what AI skill to strengthen next
 
 ## Recommended Paths
 
@@ -187,4 +207,3 @@ Protect:
 - one useful agent instruction
 - one evaluation or review checkpoint
 - one next step
-

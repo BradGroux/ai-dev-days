@@ -15,6 +15,8 @@ The pattern is simple:
 
 Orchestration is not automation for its own sake. It is a way to make work inspectable, recoverable, and safer.
 
+This module supports the Department of Labor AI Literacy Framework content areas "Evaluate AI Outputs" and "Use AI Responsibly." The repair loop makes failures visible, keeps the human accountable for acceptance, and limits which agents receive which tools or context.
+
 ## Core Roles
 
 ### Orchestrator
@@ -86,6 +88,8 @@ Examples:
 
 For beginner rooms, explain this as "give each agent the smallest useful job." For advanced rooms, discuss tool allowlists, workspace boundaries, credential handling, and audit logs.
 
+Responsible AI use in this curriculum means that each agent receives only the context and capabilities needed for the current task, and the human orchestrator decides whether the result is safe enough to keep, share, or ship.
+
 ## Repair Loop
 
 Use this loop:
@@ -119,4 +123,3 @@ Attendees can describe:
 - what failed
 - what the repair plan says
 - what the human decided
-

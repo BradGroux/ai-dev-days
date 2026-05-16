@@ -20,6 +20,8 @@ That makes the work:
 - easier to evaluate
 - easier to combine into a real workflow
 
+This section supports the Department of Labor AI Literacy Framework by helping attendees explore direct AI use, direct AI effectively through role instructions, and use AI responsibly with boundaries and human review.
+
 ## Recommended Workshop Flow
 If you're running through the OpenClaw Dev Days startup exercise, use the roles in roughly this order:
 
@@ -58,6 +60,7 @@ A strong workshop pattern is:
 - compare outputs
 - merge the best recommendations into one build plan
 - ship a working MVP before polishing the edges
+- name which outputs are drafts, which are decisions, and which still need human verification
 
 ## Included Roles
 - [Market Researcher](./market-researcher/AGENTS.md)
@@ -86,4 +89,3 @@ The point is not just to generate output. The point is to show attendees how age
 - [Coder Prompts](./coder/prompts.md)
 - [Outreach Assistant Prompts](./outreach-assistant/prompts.md)
 - [Startup Team Prompts](./startup-team/prompts.md)
-

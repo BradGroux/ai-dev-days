@@ -32,10 +32,31 @@ Then open the local URL printed by Vite.
 ```bash
 cd projects/beaver-badges/app
 npm ci
-npm run build
+npm run check
 ```
 
-A successful build means the workshop demo app is ready enough to use.
+The check runs TypeScript validation and a production build. A successful check means the workshop demo app is ready enough to use.
+
+## Visual smoke check
+
+```bash
+cd projects/beaver-badges/app
+npx playwright install chromium
+npm run smoke:visual
+```
+
+The smoke check starts Vite, verifies desktop and mobile rendering, checks region filtering, exercises reset/export controls, and opens the architecture showcase HTML.
+
+## Current MVP
+
+- JSON-backed locations with explicit regions
+- region filtering
+- visited-state toggles
+- local-only saved progress
+- visit dates
+- reset and JSON export controls
+- reachable badge progress for the five-stop demo route
+- roadmap badge display for larger milestone ideas
 
 ## Workshop tasks
 

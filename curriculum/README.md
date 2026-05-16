@@ -11,10 +11,13 @@ The curriculum is built around a simple progression:
 5. Orchestrate a small team through a working loop.
 6. Control context, cost, risk, and handoff.
 
+This progression is also mapped to the U.S. Department of Labor's AI Literacy Framework: understand AI principles, explore AI uses directly, direct AI effectively, evaluate AI outputs, and use AI responsibly. The delivery model emphasizes hands-on learning, context, human judgment, prerequisites, continued learning, enabling roles, and agility.
+
 ## Core Files
 
 - [Course map](course-map.md)
 - [One-day agenda](agenda/openclaw-dev-days-one-day.md)
+- [AI Literacy Framework alignment](../docs/ai-literacy-framework-alignment.md)
 - [Markdown thinking layer](modules/markdown-thinking-layer.md)
 - [Agent contracts and evaluations](modules/agent-contracts-and-evals.md)
 - [Orchestration and repair loops](modules/orchestration-and-repair-loops.md)
@@ -45,4 +48,3 @@ Installing OpenClaw is part of the curriculum, even when an event does not spend
 ## Facilitator Stance
 
 Protect the first working loop. The deeper material is valuable only after attendees have seen OpenClaw respond, used a Markdown memory file, and understood that the human remains the orchestrator.
-

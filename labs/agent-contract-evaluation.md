@@ -4,6 +4,8 @@
 
 Create a simple output contract for an agent, test one response against it, and improve the instruction.
 
+AI literacy focus: evaluate AI outputs for structure, relevance, safety, and accountability before using them.
+
 ## Done Means
 
 - you have an output contract
@@ -52,6 +54,7 @@ Checks:
 - Out of Scope has no more than three bullets
 - Review Risk is specific
 - no secrets, private data, or API keys appear
+- final output is treated as a draft until a human accepts it
 ```
 
 ## Step 3 - Ask OpenClaw for the Artifact
@@ -78,11 +81,13 @@ Create `feature-brief-review.md`:
 - [ ] Out of Scope has no more than three bullets
 - [ ] Review Risk is specific
 - [ ] No secrets, private data, or API keys appear
+- [ ] I would be comfortable being accountable for using this output
 
 ## Notes
 - What worked:
 - What failed:
 - What surprised me:
+- What I verified:
 
 ## Instruction Improvement
 Next time, I will tell the agent:
@@ -117,4 +122,3 @@ Write one sentence:
 ```text
 The contract helped because ________.
 ```
-

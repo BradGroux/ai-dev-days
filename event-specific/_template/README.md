@@ -8,6 +8,8 @@ cp -R event-specific/_template event-specific/<event-slug>-YYYY-MM-DD
 
 Then update every placeholder with event-specific details.
 
+Also add the new event to [`../events.json`](../events.json) so the repo audit can validate event entry points and required workshop files.
+
 ## Event basics
 
 - Event name: `<EVENT_NAME>`
@@ -32,3 +34,4 @@ Then update every placeholder with event-specific details.
 - [Markdown thinking-layer lab](../../labs/markdown-thinking-layer.md)
 - [Helper install triage](../../helper-runbook/install-triage.md)
 - [Publication safety](../../PUBLICATION-SAFETY.md)
+- [Event refresh checklist](../refresh-checklist.md)

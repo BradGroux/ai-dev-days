@@ -41,9 +41,11 @@ Run the room from:
 2. [Curriculum overview](curriculum/README.md)
 3. [Course map](curriculum/course-map.md)
 4. [One-day agenda](curriculum/agenda/openclaw-dev-days-one-day.md)
-5. [Helper install triage](helper-runbook/install-triage.md)
-6. [Publication safety guidelines](PUBLICATION-SAFETY.md)
-7. [Event template](event-specific/_template/README.md)
+5. [AI Literacy Framework alignment](docs/ai-literacy-framework-alignment.md)
+6. [Helper install triage](helper-runbook/install-triage.md)
+7. [Publication safety guidelines](PUBLICATION-SAFETY.md)
+8. [Event template](event-specific/_template/README.md)
+9. [Event refresh checklist](event-specific/refresh-checklist.md)
 
 ## I just want to install OpenClaw
 
@@ -52,6 +54,7 @@ Use the direct installer for your platform:
 - [Mac setup](setup-guides/openclaw-mac.md)
 - [Windows setup](setup-guides/openclaw-windows.md)
 - [Microsoft Foundry key setup](setup-guides/microsoft-foundry.md)
+- [Install command refresh checklist](setup-guides/openclaw-install-refresh-checklist.md)
 
 ## I want to understand the OpenClaw architecture
 
@@ -79,4 +82,5 @@ Before committing public-facing material, run:
 
 ```bash
 ./scripts/publication-scan.sh
+node scripts/audit-repo.mjs
 ```

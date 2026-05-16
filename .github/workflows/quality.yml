@@ -1,0 +1,54 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  repo-and-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: projects/beaver-badges/app/package-lock.json
+
+      - name: Run publication scan
+        run: ./scripts/publication-scan.sh
+
+      - name: Run repo audit
+        run: node scripts/audit-repo.mjs
+
+      - name: Install Beaver Badges dependencies
+        working-directory: projects/beaver-badges/app
+        run: npm ci
+
+      - name: Install Playwright browser
+        working-directory: projects/beaver-badges/app
+        run: npx playwright install --with-deps chromium
+
+      - name: Check Beaver Badges app
+        working-directory: projects/beaver-badges/app
+        run: npm run check
+
+      - name: Run visual smoke tests
+        working-directory: projects/beaver-badges/app
+        env:
+          VISUAL_SMOKE_ARTIFACT_DIR: ${{ runner.temp }}/visual-smoke
+        run: npm run smoke:visual
+
+      - name: Upload visual smoke screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-smoke
+          path: ${{ runner.temp }}/visual-smoke
+          if-no-files-found: ignore

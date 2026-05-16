@@ -1,6 +1,6 @@
 [
   {"id":"first-stop","name":"First Stop","requiredVisits":1,"description":"You checked in at your first location."},
   {"id":"road-warrior","name":"Road Warrior","requiredVisits":5,"description":"You visited five locations."},
-  {"id":"texas-traveler","name":"Texas Traveler","requiredVisits":10,"description":"You are building real road trip momentum."},
-  {"id":"beaver-legend","name":"Beaver Legend","requiredVisits":25,"description":"You are deep into completionist territory."}
+  {"id":"texas-traveler","name":"Texas Traveler","requiredVisits":10,"description":"You are building real road trip momentum.","roadmap":true},
+  {"id":"beaver-legend","name":"Beaver Legend","requiredVisits":25,"description":"You are deep into completionist territory.","roadmap":true}
 ]
