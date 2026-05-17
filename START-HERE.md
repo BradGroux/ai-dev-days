@@ -44,8 +44,9 @@ Run the room from:
 5. [AI Literacy Framework alignment](docs/ai-literacy-framework-alignment.md)
 6. [Helper install triage](helper-runbook/install-triage.md)
 7. [Publication safety guidelines](PUBLICATION-SAFETY.md)
-8. [Event template](event-specific/_template/README.md)
-9. [Event refresh checklist](event-specific/refresh-checklist.md)
+8. [Contributor workflow](CONTRIBUTING.md)
+9. [Event template](event-specific/_template/README.md)
+10. [Event refresh checklist](event-specific/refresh-checklist.md)
 
 ## I just want to install OpenClaw
 
@@ -83,4 +84,5 @@ Before committing public-facing material, run:
 ```bash
 ./scripts/publication-scan.sh
 node scripts/audit-repo.mjs
+node scripts/check-external-links.mjs
 ```

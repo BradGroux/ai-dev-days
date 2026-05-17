@@ -32,7 +32,10 @@
 
 ## Purpose
 
-This session is the practical follow-up to Brad's March 2026 InfraGard AI agents overview. The prior talk covered what agents are, why enterprise guardrails matter, and why critical infrastructure teams should care. This session moves from awareness to practice.
+This session is the practical follow-up to Brad's March 2026 InfraGard AI agents
+overview. The prior talk covered what agents are, why enterprise guardrails
+matter, and why critical infrastructure teams should care. This session moves
+from awareness to practice.
 
 The session should answer four questions:
 
@@ -80,7 +83,10 @@ This session turns that into a practical workflow attendees can repeat.
 | Governance path and Q&A | 15 min | Richard + Brad | Identity, access, audit, approval loops, rollout path, audience questions |
 | Close and 30-day challenge | 5 min | Richard / Andrew + Brad | Point to repo, prompt pack, Discord, and next action |
 
-If Q&A starts early, let it happen. The room is likely mixed between senior leaders and hands-on practitioners. Keep answers tied to the same pattern: define the process, bound the data, give the agent a role, verify the output, then decide whether automation is safe.
+If Q&A starts early, let it happen. The room is likely mixed between senior
+leaders and hands-on practitioners. Keep answers tied to the same pattern:
+define the process, bound the data, give the agent a role, verify the output,
+then decide whether automation is safe.
 
 ## Attendee Outcome
 
@@ -95,6 +101,9 @@ The minimum useful outcome is not installing every tool. It is leaving with:
 
 ## Safety Boundary
 
-Use sanitized examples. Do not put secrets, API keys, private data, customer records, internal network details, regulated data, unpatched vulnerability details, or sensitive operational details into public tools, shared files, screenshots, or GitHub.
+Use sanitized examples. Do not put secrets, API keys, private data, customer
+records, internal network details, regulated data, unpatched vulnerability
+details, or sensitive operational details into public tools, shared files,
+screenshots, or GitHub.
 
 For high-risk work, agents draft. Humans approve.

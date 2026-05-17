@@ -15,7 +15,10 @@ The pattern is simple:
 
 Orchestration is not automation for its own sake. It is a way to make work inspectable, recoverable, and safer.
 
-This module supports the Department of Labor AI Literacy Framework content areas "Evaluate AI Outputs" and "Use AI Responsibly." The repair loop makes failures visible, keeps the human accountable for acceptance, and limits which agents receive which tools or context.
+This module supports the Department of Labor AI Literacy Framework content areas
+"Evaluate AI Outputs" and "Use AI Responsibly." The repair loop makes failures
+visible, keeps the human accountable for acceptance, and limits which agents
+receive which tools or context.
 
 ## Core Roles
 

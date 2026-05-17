@@ -1,0 +1,34 @@
+name: Workshop Maintenance
+description: Track updates to workshop content, event packets, setup docs, or repo checks.
+title: "[Maintenance]: "
+labels:
+  - maintenance
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What content, event packet, setup guide, or repo workflow needs work?
+      placeholder: Describe the specific repo area and why it needs attention.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Include current behavior, desired behavior, and any event deadline.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Required Checks
+      options:
+        - label: Public-facing content avoids secrets, private data, and sensitive operational details.
+          required: true
+        - label: Local links and event metadata should be updated if navigation changes.
+          required: false
+        - label: Changelog should be updated if this changes public material or maintainer workflow.
+          required: false

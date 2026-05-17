@@ -2,7 +2,10 @@
 
 ## Purpose
 
-This document gives workshop attendees a practical mental model for OpenClaw architecture. It is not meant to replace the official OpenClaw docs. It translates the design into a flow that facilitators can teach and operators can use when they are debugging, extending, or explaining an agent workflow.
+This document gives workshop attendees a practical mental model for OpenClaw
+architecture. It is not meant to replace the official OpenClaw docs. It
+translates the design into a flow that facilitators can teach and operators can
+use when they are debugging, extending, or explaining an agent workflow.
 
 OpenClaw is easiest to understand as a local-first control plane for useful AI agents:
 

@@ -4,7 +4,10 @@ Use these notes for Brad, Richard, Andrew, and any InfraGard host/moderator.
 
 ## Session Intent
 
-This is the practical follow-up to the March 2026 "AI Agents Unplugged" session. The March talk established the agent landscape: agents are multi-step workers, enterprise platforms are moving toward agent identity and governance, and critical infrastructure teams face both opportunity and new attack surfaces.
+This is the practical follow-up to the March 2026 "AI Agents Unplugged" session.
+The March talk established the agent landscape: agents are multi-step workers,
+enterprise platforms are moving toward agent identity and governance, and
+critical infrastructure teams face both opportunity and new attack surfaces.
 
 The May session should move macro to micro to macro:
 
@@ -16,7 +19,10 @@ The May session should move macro to micro to macro:
 
 Use this near the start:
 
-> The goal today is practical literacy. OpenClaw is the example environment, but the durable skill is understanding how agent teams work, how memory and context are managed, how to verify output, and how to think about security before using these tools in critical infrastructure environments.
+> The goal today is practical literacy. OpenClaw is the example environment, but
+> the durable skill is understanding how agent teams work, how memory and context
+> are managed, how to verify output, and how to think about security before using
+> these tools in critical infrastructure environments.
 
 Set expectations:
 

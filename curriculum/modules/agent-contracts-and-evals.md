@@ -17,7 +17,10 @@ An agent without an output contract is hard to trust. The goal of this module is
 
 Good agent work is not just generated. It is specified, tested, reviewed, and improved.
 
-This module supports the Department of Labor AI Literacy Framework content area "Evaluate AI Outputs" by giving attendees a repeatable way to check accuracy, relevance, structure, safety, and usefulness before accepting an AI-generated artifact.
+This module supports the Department of Labor AI Literacy Framework content area
+"Evaluate AI Outputs" by giving attendees a repeatable way to check accuracy,
+relevance, structure, safety, and usefulness before accepting an AI-generated
+artifact.
 
 ## Concepts
 

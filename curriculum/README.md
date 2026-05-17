@@ -11,7 +11,11 @@ The curriculum is built around a simple progression:
 5. Orchestrate a small team through a working loop.
 6. Control context, cost, risk, and handoff.
 
-This progression is also mapped to the U.S. Department of Labor's AI Literacy Framework: understand AI principles, explore AI uses directly, direct AI effectively, evaluate AI outputs, and use AI responsibly. The delivery model emphasizes hands-on learning, context, human judgment, prerequisites, continued learning, enabling roles, and agility.
+This progression is also mapped to the U.S. Department of Labor's AI Literacy
+Framework: understand AI principles, explore AI uses directly, direct AI
+effectively, evaluate AI outputs, and use AI responsibly. The delivery model
+emphasizes hands-on learning, context, human judgment, prerequisites, continued
+learning, enabling roles, and agility.
 
 ## Core Files
 

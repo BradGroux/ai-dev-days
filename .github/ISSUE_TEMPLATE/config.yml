@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Public safety guidance
+    url: https://github.com/BradGroux/openclaw-dev-days/blob/master/PUBLICATION-SAFETY.md
+    about: Review publication safety rules before sharing event materials.

@@ -15,7 +15,8 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Organizers: copy [`event-specific/_template/`](event-specific/_template/) for a new event.
 - Curriculum: use [`curriculum/README.md`](curriculum/README.md) and [`curriculum/course-map.md`](curriculum/course-map.md).
 - AI literacy alignment: use [`docs/ai-literacy-framework-alignment.md`](docs/ai-literacy-framework-alignment.md).
-- Contributors: review [`PUBLICATION-SAFETY.md`](PUBLICATION-SAFETY.md), run `./scripts/publication-scan.sh`, and run `node scripts/audit-repo.mjs` before publishing.
+- Contributors: review [`CONTRIBUTING.md`](CONTRIBUTING.md) and
+  [`PUBLICATION-SAFETY.md`](PUBLICATION-SAFETY.md) before publishing.
 - Architecture: use [`docs/openclaw-architecture.md`](docs/openclaw-architecture.md) or the visual [`docs/openclaw-architecture-showcase.html`](docs/openclaw-architecture-showcase.html).
 - Codebase health: see [`docs/codebase-audit.md`](docs/codebase-audit.md).
 - Changes: see [`CHANGELOG.md`](CHANGELOG.md).
@@ -74,7 +75,11 @@ For non-TAMU workshops or personal setup, use the direct OpenClaw installer for 
 - Leave behind reusable material other organizers can run with
 - Convert curiosity into actual adoption after the event
 
-The curriculum is aligned to the U.S. Department of Labor's AI Literacy Framework: understand AI principles, explore AI uses directly, direct AI effectively, evaluate AI outputs, and use AI responsibly. See the [AI Literacy Framework alignment](docs/ai-literacy-framework-alignment.md) for the source citation and workshop mapping.
+The curriculum is aligned to the U.S. Department of Labor's AI Literacy Framework:
+understand AI principles, explore AI uses directly, direct AI effectively,
+evaluate AI outputs, and use AI responsibly. See the
+[AI Literacy Framework alignment](docs/ai-literacy-framework-alignment.md) for
+the source citation and workshop mapping.
 
 ## Core stance
 - **First success beats feature coverage.** If people don’t get a working loop early, the rest doesn’t matter.
@@ -93,6 +98,7 @@ The curriculum is aligned to the U.S. Department of Labor's AI Literacy Framewor
 - `event-specific/` — event-specific materials plus a reusable event template
 - `research/` — source notes and planning context; not attendee instructions
 - `scripts/` — lightweight repo maintenance and publication safety checks
+- `CONTRIBUTING.md` — contributor workflow, verification, and review checklist
 - `PUBLICATION-SAFETY.md` — public repo safety guidelines for contributors
 
 ## Event-specific content

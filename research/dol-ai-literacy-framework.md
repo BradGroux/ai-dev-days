@@ -2,15 +2,22 @@
 
 ## Source
 
-- U.S. Department of Labor, Employment and Training Administration, [US Department of Labor releases AI literacy framework providing foundational content areas, delivery principles to guide nationwide efforts](https://www.dol.gov/newsroom/releases/eta/eta20260213), February 13, 2026.
-- U.S. Department of Labor, Employment and Training Administration, [TEN 07-25 complete document](https://www.dol.gov/sites/dolgov/files/ETA/advisories/TEN/2025/TEN%2007-25/TEN%2007-25%20%28complete%20document%29.pdf), February 13, 2026.
+- U.S. Department of Labor, Employment and Training Administration,
+  [US Department of Labor releases AI literacy framework providing foundational content areas, delivery principles to guide nationwide efforts](https://www.dol.gov/newsroom/releases/eta/eta20260213),
+  February 13, 2026.
+- U.S. Department of Labor, Employment and Training Administration,
+  [TEN 07-25 complete document](https://www.dol.gov/sites/dolgov/files/ETA/advisories/TEN/2025/TEN%2007-25/TEN%2007-25%20%28complete%20document%29.pdf),
+  February 13, 2026.
 - U.S. Department of Labor, [AI Literacy Framework graphic](https://www.dol.gov/sites/dolgov/files/OPA/newsreleases/2026/02/ETA-20260212-hi.jpg), February 2026.
 
 ## Summary
 
 The DOL framework defines AI literacy as foundational competencies that help people use and evaluate AI technologies responsibly, with an emphasis on generative AI in modern workplaces.
 
-The framework is voluntary guidance for workers, employers, training providers, teachers and faculty, state and local agencies, and workforce or education stakeholders. It is intended to support flexible program design across industries, roles, educational settings, and workforce contexts.
+The framework is voluntary guidance for workers, employers, training providers,
+teachers and faculty, state and local agencies, and workforce or education
+stakeholders. It is intended to support flexible program design across
+industries, roles, educational settings, and workforce contexts.
 
 ## Foundational Content Areas
 

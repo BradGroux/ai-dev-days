@@ -76,7 +76,12 @@ What is the first thing I want this team to produce?
 
 ## Pre-Seeded Adventures
 
-Use one of these if you do not want to start from a blank page. Each adventure maps to the full event [scenario cards](../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md), [prompt pack](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md), and [demo script](../../event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md).
+Use one of these if you do not want to start from a blank page. Each adventure
+maps to the full event
+[scenario cards](../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md),
+[prompt pack](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md),
+and
+[demo script](../../event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md).
 
 ### 1. Field Report To Customer Summary
 

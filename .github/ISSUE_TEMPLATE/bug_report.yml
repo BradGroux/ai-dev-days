@@ -1,0 +1,38 @@
+name: Bug Report
+description: Report broken setup instructions, sample app behavior, links, or checks.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is broken, stale, confusing, or failing?
+      placeholder: Include the file, command, or workflow where the problem appears.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Steps, commands, links, or screenshots needed to confirm the issue.
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      description: What should happen instead?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Publication Safety
+      options:
+        - label: I did not include secrets, private data, customer records, or sensitive operational details.
+          required: true

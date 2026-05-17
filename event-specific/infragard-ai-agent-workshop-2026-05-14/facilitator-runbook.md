@@ -22,7 +22,10 @@ Protect the practical workflow. The session is not complete if attendees only he
 
 Read or paraphrase:
 
-> Use sanitized examples today. Do not paste secrets, API keys, passwords, private customer data, regulated data, internal network details, unpatched vulnerabilities, or sensitive operational details into public tools or shared files. Treat agent output as a draft until verified.
+> Use sanitized examples today. Do not paste secrets, API keys, passwords,
+> private customer data, regulated data, internal network details, unpatched
+> vulnerabilities, or sensitive operational details into public tools or shared
+> files. Treat agent output as a draft until verified.
 
 ## Timing Control
 

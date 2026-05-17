@@ -2,7 +2,11 @@
 
 ## Short Announcement
 
-Join Brad Groux for a practical InfraGard Houston AI-CSC session on AI agent teams, security guardrails, and governed automation for critical infrastructure. This virtual session moves beyond AI overview into practical agent literacy: how agents work, how to give them useful memory, where they fit in real workflows, and how to verify outputs safely.
+Join Brad Groux for a practical InfraGard Houston AI-CSC session on AI agent
+teams, security guardrails, and governed automation for critical
+infrastructure. This virtual session moves beyond AI overview into practical
+agent literacy: how agents work, how to give them useful memory, where they fit
+in real workflows, and how to verify outputs safely.
 
 - **Register:** https://www.eventbrite.com/e/may-2026-meeting-infragard-houston-artificial-intelligence-csc-tickets-1987707441465
 - **Date/time:** Thursday, May 14, 2026, 11:30 AM-1:00 PM Central
@@ -31,7 +35,10 @@ What attendees will learn:
 - where agent workflows apply in critical infrastructure, security, field reporting, compliance evidence, and operations
 - what guardrails matter before broader enterprise rollout
 
-The demo will stay practical and conceptual rather than turning the session into live install troubleshooting. OpenClaw is the example environment, but the durable takeaway is the operating model: define the process, bound the data, give the agent a role, verify output, and keep humans in approval loops.
+The demo will stay practical and conceptual rather than turning the session into
+live install troubleshooting. OpenClaw is the example environment, but the
+durable takeaway is the operating model: define the process, bound the data,
+give the agent a role, verify output, and keep humans in approval loops.
 
 - **Register:** https://www.eventbrite.com/e/may-2026-meeting-infragard-houston-artificial-intelligence-csc-tickets-1987707441465
 - **Date/time:** Thursday, May 14, 2026, 11:30 AM-1:00 PM Central

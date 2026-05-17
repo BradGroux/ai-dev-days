@@ -2,7 +2,11 @@
 
 ## Problem
 
-Critical infrastructure professionals are being asked to understand AI agents, but most introductory content is either too abstract (high-level strategy) or too tool-specific (how to use OpenClaw). Attendees need a **practical, reusable template** for designing a small AI agent team around a real but low-risk process in their own work.
+Critical infrastructure professionals are being asked to understand AI agents,
+but most introductory content is either too abstract (high-level strategy) or
+too tool-specific (how to use OpenClaw). Attendees need a **practical, reusable
+template** for designing a small AI agent team around a real but low-risk process
+in their own work.
 
 The workshop is one event. The project is the lasting takeaway—something attendees can do again and again with any process.
 

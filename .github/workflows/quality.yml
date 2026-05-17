@@ -30,6 +30,9 @@ jobs:
       - name: Run repo audit
         run: node scripts/audit-repo.mjs
 
+      - name: Check external links
+        run: node scripts/check-external-links.mjs
+
       - name: Install Beaver Badges dependencies
         working-directory: projects/beaver-badges/app
         run: npm ci

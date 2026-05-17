@@ -21,6 +21,14 @@ const warnings = []
 let suppressedWarnings = 0
 const files = []
 const maxWarningsToPrint = 60
+const intentionalRepeatedLocalLinks = new Set([
+  'event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md::prompt-pack.md',
+  'event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md::scenario-cards.md',
+  'event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md::demo-script.md',
+  'event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md::demo-script.md',
+  'event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md::prompt-pack.md',
+  'projects/infragard-agent-team/README.md::../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md',
+])
 
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -83,6 +91,10 @@ function addWarning(message) {
   }
 
   suppressedWarnings += 1
+}
+
+function isIntentionalRepeatedLocalLink(relativePath, link) {
+  return intentionalRepeatedLocalLinks.has(`${relativePath}::${link}`)
 }
 
 function readJson(relativePath) {
@@ -295,6 +307,7 @@ function checkMarkdownQuality(filePath, text) {
 
   for (const [link, count] of localLinkCounts.entries()) {
     if (count > 5) {
+      if (isIntentionalRepeatedLocalLink(relativePath, link)) continue
       addWarning(`${relativePath} links to ${link} ${count} times`)
     }
   }

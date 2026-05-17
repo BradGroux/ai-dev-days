@@ -32,6 +32,7 @@ The main maintainability gaps were not security blockers. They were repeatabilit
 - Added local Markdown/HTML link validation that ignores code fences and external URLs.
 - Added event metadata and event-packet validation.
 - Added warning-oriented Markdown quality checks.
+- Added conservative external link checking for public Markdown and HTML files.
 - Added required-file checks for the main repo entry points and Beaver Badges app assets.
 - Added Beaver Badges JSON validation for required location fields, duplicate IDs, badge ordering, and milestone sanity.
 - Split Beaver Badges app logic into typed progress helpers and focused React components.
@@ -47,6 +48,7 @@ Run these before publishing or using the sample app in a workshop:
 ```bash
 ./scripts/publication-scan.sh
 node scripts/audit-repo.mjs
+node scripts/check-external-links.mjs
 cd projects/beaver-badges/app
 npm run check
 npm run smoke:visual
