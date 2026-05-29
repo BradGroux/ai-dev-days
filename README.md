@@ -22,6 +22,19 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Changes: see [`CHANGELOG.md`](CHANGELOG.md).
 - Event metadata: see [`event-specific/events.json`](event-specific/events.json) and [`event-specific/refresh-checklist.md`](event-specific/refresh-checklist.md).
 
+## GitHub Build creator demo: start here
+
+For the June 1, 2026 OpenClaw creator pre-day demo at GitHub HQ, use these files first:
+
+1. Presenter packet: [`event-specific/github-build-creators-2026-06-01/README.md`](event-specific/github-build-creators-2026-06-01/README.md)
+2. Slide deck:
+   [`slides.html`](event-specific/github-build-creators-2026-06-01/slides.html) /
+   [`slides.pdf`](event-specific/github-build-creators-2026-06-01/slides.pdf) /
+   [`slides.pptx`](event-specific/github-build-creators-2026-06-01/slides.pptx)
+3. Speaker notes: [`event-specific/github-build-creators-2026-06-01/speaker-notes-15-minute.md`](event-specific/github-build-creators-2026-06-01/speaker-notes-15-minute.md)
+4. Demo script: [`event-specific/github-build-creators-2026-06-01/demo-script.md`](event-specific/github-build-creators-2026-06-01/demo-script.md)
+5. Prompt pack: [`event-specific/github-build-creators-2026-06-01/prompt-pack.md`](event-specific/github-build-creators-2026-06-01/prompt-pack.md)
+
 ## TAMU attendees: start here
 
 For the May 2 TAMU workshop, use these files first:
