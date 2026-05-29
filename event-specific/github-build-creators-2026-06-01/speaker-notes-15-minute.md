@@ -54,12 +54,12 @@ Use [`demo-script.md`](demo-script.md). Recommended path: creator conference rec
 Demo beats:
 
 1. Start with the workflow, not the model.
-2. Create or open a Markdown memory note.
+2. Open the checked-in memory, PRD, and SOP demo files.
 3. Ask the agent to clarify before drafting.
 4. Run the Content Planner role.
 5. Run the Safety Reviewer role.
 6. Run the Verification Reviewer role.
-7. Show the draft output and point out what still requires human judgment.
+7. Show the draft or fallback output and point out what still requires human judgment.
 
 Do not chase tool setup if something is slow. Use the fallback plan and narrate the pattern.
 
