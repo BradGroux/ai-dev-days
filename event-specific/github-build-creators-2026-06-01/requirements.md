@@ -7,17 +7,19 @@ This short demo does not require attendees to install OpenClaw. It only requires
 - Laptop with local admin access.
 - Power adapter.
 - USB-C or HDMI display adapter.
-- Local copy of [`slides.html`](slides.html), [`slides.pdf`](slides.pdf), and [`slides.pptx`](slides.pptx).
+- Local copy of [`slides.html`](slides.html).
+- Final [`slides.pdf`](slides.pdf) export regenerated after slide approval.
 - OpenClaw installed and already onboarded.
 - Model provider configured and tested before arriving.
 - Clean demo workspace with no private files.
-- `creator-demo-memory.md` staged from [`prompt-pack.md`](prompt-pack.md).
+- Checked-in demo files from [`demo/`](demo/) opened locally.
 
 ## Network fallback
 
 - Local slide files available offline.
 - Hotspot available if venue Wi-Fi is unreliable.
 - Fallback prompt-read demo available in [`fallback-plan.md`](fallback-plan.md).
+- Concrete fallback output available in [`demo/expected-output.md`](demo/expected-output.md).
 
 ## Public safety
 

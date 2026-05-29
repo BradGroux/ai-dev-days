@@ -20,7 +20,13 @@ Use the same pattern from the prior InfraGard deck, shortened for the 10-minute 
 
 ## Setup
 
-Open a clean demo workspace with no private files. Create `creator-demo-memory.md` with the starter content from [`prompt-pack.md`](prompt-pack.md).
+Open a clean demo workspace with no private files. Use the checked-in demo files:
+
+- [`demo/sample-public-notes.md`](demo/sample-public-notes.md)
+- [`demo/creator-content-pack-memory.md`](demo/creator-content-pack-memory.md)
+- [`demo/creator-content-pack-prd.md`](demo/creator-content-pack-prd.md)
+- [`demo/creator-content-pack-sop.md`](demo/creator-content-pack-sop.md)
+- [`demo/expected-output.md`](demo/expected-output.md)
 
 Use a sanitized example:
 
@@ -32,16 +38,18 @@ Use a sanitized example:
 
 ## 10-Minute Run Sequence
 
-1. Show `creator-demo-memory.md`.
-2. Run [1. Clarify Before Drafting](prompt-pack.md#1-clarify-before-drafting).
-3. Answer with simple generic choices:
+1. Show [`demo/creator-content-pack-memory.md`](demo/creator-content-pack-memory.md).
+2. Show the PRD acceptance criteria in [`demo/creator-content-pack-prd.md`](demo/creator-content-pack-prd.md).
+3. Show the safety method in [`demo/creator-content-pack-sop.md`](demo/creator-content-pack-sop.md).
+4. Run [1. Clarify Before Drafting](prompt-pack.md#1-clarify-before-drafting).
+5. Answer with simple generic choices:
    - Output: recap post and 3-minute video outline.
    - Tone: practical, technical, not hype-heavy.
    - Boundary: use only public-safe notes.
-4. Run [2. Content Planner](prompt-pack.md#2-content-planner).
-5. Run [3. Safety Reviewer](prompt-pack.md#3-safety-reviewer).
-6. Run [4. Draft One Artifact](prompt-pack.md#4-draft-one-artifact).
-7. Run [5. Verification Reviewer](prompt-pack.md#5-verification-reviewer).
+6. Run [2. Content Planner](prompt-pack.md#2-content-planner).
+7. Run [3. Safety Reviewer](prompt-pack.md#3-safety-reviewer).
+8. Run [4. Draft One Artifact](prompt-pack.md#4-draft-one-artifact).
+9. Run [5. Verification Reviewer](prompt-pack.md#5-verification-reviewer).
 
 ## Presenter Talking Points While Output Streams
 
@@ -66,6 +74,8 @@ Say:
 > The exact words matter less than the operating pattern: context, role, boundary, artifact, verification.
 
 Then narrate the expected output using the bullets above.
+
+If you want a concrete fallback artifact, open [`demo/expected-output.md`](demo/expected-output.md).
 
 ## Do Not Demo
 

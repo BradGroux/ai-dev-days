@@ -7,14 +7,18 @@ Use this on Sunday, May 31, 2026.
 - [ ] Confirm GitHub office check-in code or attendee-list status.
 - [ ] Confirm arrival target: 3:45 PM Pacific on Monday, June 1, 2026.
 - [ ] Confirm presentation slot: 4:00-4:10 PM Pacific.
-- [ ] Download local copies of [`slides.html`](slides.html), [`slides.pdf`](slides.pdf), and [`slides.pptx`](slides.pptx).
+- [ ] Download a local copy of [`slides.html`](slides.html).
+- [ ] Confirm the latest [`slides.pdf`](slides.pdf) opens locally.
 - [ ] Put the deck on the desktop or another easy-to-find folder.
 - [ ] Confirm laptop charger, HDMI/USB-C adapter, and hotspot fallback.
 
 ## Demo Environment
 
 - [ ] Open a clean demo workspace with no private data.
-- [ ] Create or stage `creator-demo-memory.md` from [`prompt-pack.md`](prompt-pack.md).
+- [ ] Open [`demo/creator-content-pack-memory.md`](demo/creator-content-pack-memory.md).
+- [ ] Open [`demo/creator-content-pack-prd.md`](demo/creator-content-pack-prd.md).
+- [ ] Open [`demo/creator-content-pack-sop.md`](demo/creator-content-pack-sop.md).
+- [ ] Open [`demo/expected-output.md`](demo/expected-output.md) as the fallback artifact.
 - [ ] Confirm OpenClaw starts and the dashboard responds.
 - [ ] Confirm the model provider works.
 - [ ] Close unrelated apps, browser tabs, email, chat, and notifications.
@@ -32,6 +36,6 @@ Use this on Sunday, May 31, 2026.
 
 1. [`slides.html`](slides.html)
 2. OpenClaw dashboard
-3. `creator-demo-memory.md`
+3. [`demo/creator-content-pack-memory.md`](demo/creator-content-pack-memory.md)
 4. [`prompt-pack.md`](prompt-pack.md)
 5. [`fallback-plan.md`](fallback-plan.md)

@@ -1,6 +1,13 @@
 # Prompt Pack
 
-Use these prompts with the demo memory file from [`demo-script.md`](demo-script.md). Keep examples sanitized.
+Use these prompts with the repo-backed demo files under [`demo/`](demo/). Keep examples sanitized.
+
+## Demo Files
+
+- [`demo/sample-public-notes.md`](demo/sample-public-notes.md)
+- [`demo/creator-content-pack-memory.md`](demo/creator-content-pack-memory.md)
+- [`demo/creator-content-pack-prd.md`](demo/creator-content-pack-prd.md)
+- [`demo/creator-content-pack-sop.md`](demo/creator-content-pack-sop.md)
 
 ## Demo Memory Starter
 
@@ -29,7 +36,7 @@ A short recap post and a 3-minute video segment outline.
 ## 1. Clarify Before Drafting
 
 ```text
-Read the Creator Demo Memory.
+Read the Creator Content Pack Memory, PRD, SOP, and sample public notes.
 
 Before drafting anything, ask three clarifying questions that would help you produce useful creator content safely.
 
@@ -41,7 +48,7 @@ Do not ask for secrets, private DMs, sponsor terms, attendee contact data, unrel
 ```text
 Act as a Content Planner.
 
-Using the Creator Demo Memory and my answers, map the smallest useful content plan.
+Using the Creator Content Pack Memory, PRD, SOP, sample public notes, and my answers, map the smallest useful content plan.
 
 Return:
 1. the core audience,
@@ -59,7 +66,7 @@ Keep it practical and concise.
 ```text
 Act as a Safety Reviewer.
 
-Review the proposed content plan before anything is drafted.
+Review the proposed content plan against the SOP before anything is drafted.
 
 Return:
 1. data that must stay out,
