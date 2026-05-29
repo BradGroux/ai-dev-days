@@ -1,6 +1,32 @@
 {
   "events": [
     {
+      "slug": "github-build-creators-2026-06-01",
+      "title": "OpenClaw Creator Demo at GitHub Build",
+      "date": "2026-06-01",
+      "status": "planned",
+      "audience": "technical creators and influencers at GitHub HQ before Microsoft Build",
+      "listedInRoot": true,
+      "entrypoint": "event-specific/github-build-creators-2026-06-01/README.md",
+      "agenda": "event-specific/github-build-creators-2026-06-01/speaker-notes-15-minute.md",
+      "setupPath": "event-specific/github-build-creators-2026-06-01/day-before-checklist.md",
+      "facilitatorRunbook": "event-specific/github-build-creators-2026-06-01/facilitator-runbook.md",
+      "requiredFiles": [
+        "event-specific/github-build-creators-2026-06-01/README.md",
+        "event-specific/github-build-creators-2026-06-01/attendee-links.md",
+        "event-specific/github-build-creators-2026-06-01/requirements.md",
+        "event-specific/github-build-creators-2026-06-01/facilitator-runbook.md",
+        "event-specific/github-build-creators-2026-06-01/slides.html",
+        "event-specific/github-build-creators-2026-06-01/slides.pdf",
+        "event-specific/github-build-creators-2026-06-01/slides.pptx",
+        "event-specific/github-build-creators-2026-06-01/speaker-notes-15-minute.md",
+        "event-specific/github-build-creators-2026-06-01/demo-script.md",
+        "event-specific/github-build-creators-2026-06-01/prompt-pack.md",
+        "event-specific/github-build-creators-2026-06-01/fallback-plan.md",
+        "event-specific/github-build-creators-2026-06-01/day-before-checklist.md"
+      ]
+    },
+    {
       "slug": "tamu-openclaw-2026-05-02",
       "title": "TAMU OpenClaw Dev Days",
       "date": "2026-05-02",

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>OpenClaw at GitHub Build Creators</title>
+<style>
+:root{
+  --bg:#071016;
+  --panel:#0d1821;
+  --panel2:#122230;
+  --ink:#edf6fb;
+  --muted:#9bb3c3;
+  --line:#244455;
+  --cyan:#5eead4;
+  --blue:#60a5fa;
+  --pink:#f472b6;
+  --amber:#fbbf24;
+  --green:#34d399;
+  --red:#fb7185;
+  --shadow:rgba(0,0,0,.34);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Inter,Roboto,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{background:linear-gradient(135deg,#071016 0%,#0a1621 48%,#10162a 100%)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.stage{width:100vw;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:66px 78px 70px}
+.slide.active{display:flex}
+.slide:before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(180deg,var(--cyan),var(--blue),var(--pink));opacity:.95}
+.slide:after{content:"";position:absolute;right:-140px;top:-180px;width:420px;height:420px;border:1px solid rgba(94,234,212,.12);border-radius:50%;box-shadow:0 0 0 90px rgba(96,165,250,.035),0 0 0 180px rgba(244,114,182,.025);pointer-events:none}
+.center{justify-content:center}
+.split{display:grid;grid-template-columns:1.02fr .98fr;gap:42px;align-items:center;flex:1}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kicker{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:14px}
+h1{font-size:72px;line-height:1.02;letter-spacing:0;font-weight:860;max-width:1040px}
+h2{font-size:54px;line-height:1.07;letter-spacing:0;font-weight:830;max-width:1040px}
+h3{font-size:27px;line-height:1.16;font-weight:760}
+.sub{font-size:25px;line-height:1.42;color:var(--muted);max-width:900px;margin-top:18px}
+.gradient{background:linear-gradient(100deg,var(--cyan),var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:999px;padding:9px 14px;color:var(--muted);font-size:16px;font-weight:650}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));border:1px solid var(--line);border-radius:10px;padding:22px 23px;box-shadow:0 16px 42px var(--shadow)}
+.card.accent{border-color:rgba(94,234,212,.55)}
+.card.warn{border-color:rgba(251,191,36,.48);background:linear-gradient(180deg,rgba(251,191,36,.12),rgba(255,255,255,.02))}
+.card.good{border-color:rgba(52,211,153,.48);background:linear-gradient(180deg,rgba(52,211,153,.12),rgba(255,255,255,.02))}
+.card.hot{border-color:rgba(244,114,182,.5);background:linear-gradient(180deg,rgba(244,114,182,.12),rgba(255,255,255,.02))}
+.label{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:21px;font-weight:780;margin-bottom:10px}
+.mark{width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:#071016;background:var(--cyan);font-size:14px;flex:0 0 auto}
+.mark.blue{background:var(--blue)}
+.mark.pink{background:var(--pink)}
+.mark.amber{background:var(--amber)}
+.mark.green{background:var(--green)}
+.card p,.card li{font-size:19px;line-height:1.42;color:var(--muted)}
+ul{list-style:none;display:grid;gap:11px}
+li{position:relative;padding-left:22px}
+li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+.qr{width:162px;height:162px;background:#fff;border-radius:10px;padding:7px;border:1px solid rgba(255,255,255,.28)}
+.intro-grid{display:grid;grid-template-columns:1fr 250px;gap:42px;align-items:end}
+.contact-box{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:22px}
+.contact-box strong{font-size:20px}
+.diagram{display:grid;gap:14px}
+.node{display:flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.node-title{font-size:22px;font-weight:780;color:var(--ink)}
+.node-desc{font-size:18px;color:var(--muted);line-height:1.35;margin-top:2px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+.step{position:relative;min-height:154px;padding:20px 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.step-num{font-size:14px;font-weight:900;color:#071016;background:var(--cyan);display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:8px;margin-bottom:12px}
+.step h3{font-size:22px;margin-bottom:8px}
+.step p{font-size:17px;color:var(--muted);line-height:1.35}
+.code{background:#050b11;border:1px solid #244455;border-radius:10px;padding:18px 20px;color:#dffcff;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:17px;line-height:1.45;white-space:pre-wrap;box-shadow:0 16px 42px var(--shadow)}
+.watch{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.schedule{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.event{display:grid;grid-template-columns:84px 1fr;gap:15px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.date{border-radius:9px;background:linear-gradient(145deg,var(--cyan),var(--blue));color:#071016;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:72px}
+.date span:first-child{font-size:15px;letter-spacing:.08em}
+.date span:last-child{font-size:28px;line-height:1}
+.event h3{font-size:21px;margin-bottom:4px}
+.event p{font-size:16px;color:var(--muted);line-height:1.35}
+.footer{position:absolute;left:78px;right:78px;bottom:22px;display:flex;justify-content:space-between;color:#7894a7;font-size:15px;z-index:5}
+.nav{position:absolute;top:22px;right:24px;display:flex;gap:8px;z-index:20}
+.nav button{width:42px;height:42px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font-size:19px;cursor:pointer}
+.nav button:hover{border-color:var(--cyan)}
+.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:7}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));transition:width .2s ease}
+@media(max-width:900px){
+  .slide{padding:58px 32px 66px}
+  .split,.two,.three,.intro-grid,.watch,.schedule{grid-template-columns:1fr}
+  h1{font-size:46px}
+  h2{font-size:36px}
+  .sub{font-size:20px}
+  .flow{grid-template-columns:1fr}
+  .footer{left:32px;right:32px;font-size:12px}
+  .nav{top:14px;right:14px}
+}
+@media print{
+  @page{size:13.333in 7.5in;margin:0}
+  html,body{overflow:visible;background:#071016}
+  .stage{height:auto;overflow:visible}
+  .slide{position:relative;display:flex !important;width:13.333in;height:7.5in;max-height:none;break-after:page;page-break-after:always}
+  .nav,.progress{display:none}
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <section class="slide active" data-title="OpenClaw at GitHub Build">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">GitHub Build Creator Pre-Day Demo · June 1, 2026</div>
+      <div class="intro-grid">
+        <div>
+          <h1>OpenClaw in <span class="gradient">10 minutes</span></h1>
+          <p class="sub">A local-first control plane for giving agents durable context, bounded access, integrations, and a visible workflow.</p>
+          <div class="meta">
+            <span class="pill">Brad Groux</span>
+            <span class="pill">Digital Meld</span>
+            <span class="pill">OpenClaw maintainer</span>
+            <span class="pill">GitHub HQ, San Francisco</span>
+          </div>
+        </div>
+        <div class="contact-box">
+          <img class="qr" src="assets/sstb-discord-qr.png" alt="QR code for the SSTB Discord server"/>
+          <strong>SSTB Discord</strong>
+          <span style="color:var(--muted);font-size:16px">Office hours, follow-up, and Dev Days material</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Why OpenClaw">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Why It Matters</div>
+      <h2>Useful agents need more than a prompt box.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card accent"><div class="label"><span class="mark">C</span>Context</div><p>Workspace files, Markdown memory, session history, and instructions make the agent less generic.</p></div>
+        <div class="card hot"><div class="label"><span class="mark pink">A</span>Access</div><p>Tools, files, clients, channels, and nodes let the agent act inside a bounded environment.</p></div>
+        <div class="card good"><div class="label"><span class="mark green">V</span>Visibility</div><p>Streaming output, logs, review checkpoints, and saved state make the work inspectable.</p></div>
+      </div>
+      <p class="sub" style="max-width:1060px;margin-top:34px">The point is not faster generic content. The point is repeatable work you can inspect, reuse, and improve.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Architecture In 60 Seconds">
+    <div class="split">
+      <div>
+        <div class="kicker">Mental Model</div>
+        <h2>Gateway, runtime, tools, memory.</h2>
+        <p class="sub">OpenClaw routes work into serialized agent runs that assemble context, call models, execute tools, stream progress, and persist useful state.</p>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark">1</span><div><div class="node-title">Clients and channels</div><div class="node-desc">Dashboard, CLI, automations, WebChat, and messaging entry points.</div></div></div>
+        <div class="node"><span class="mark blue">2</span><div><div class="node-title">OpenClaw Gateway</div><div class="node-desc">The always-on switchboard for routing and events.</div></div></div>
+        <div class="node"><span class="mark pink">3</span><div><div class="node-title">Agent runtime</div><div class="node-desc">Assembles context, talks to models, calls tools, and streams output.</div></div></div>
+        <div class="node"><span class="mark green">4</span><div><div class="node-title">Files, memory, tools, nodes</div><div class="node-desc">The working surface that turns answers into useful workflows.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Creator Workflows">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Creator Use Cases</div>
+      <h2>Creators already run messy multi-step workflows.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark">R</span>Research</div><p>Guest prep, source trails, release notes, conference context, and technical explainers.</p></div>
+        <div class="card"><div class="label"><span class="mark blue">S</span>Structure</div><p>Turn notes into episode outlines, clip plans, recap posts, newsletters, and community prompts.</p></div>
+        <div class="card"><div class="label"><span class="mark amber">G</span>Guardrails</div><p>Keep private DMs, sponsor terms, contact data, credentials, and unreleased details out.</p></div>
+      </div>
+      <div class="card warn" style="margin-top:28px">
+        <div class="label"><span class="mark amber">!</span>The safe first win</div>
+        <p>Draft-only content planning with public-safe notes. No live posting. No private accounts. No credentials. Human review before anything leaves the workspace.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="The SOP">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The Repeatable Pattern</div>
+      <h2>Context, role, boundary, artifact, verification.</h2>
+      <div class="flow">
+        <div class="step"><div class="step-num">1</div><h3>Context</h3><p>Write the workflow memory in Markdown.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Role</h3><p>Choose the agent role for this pass.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Boundary</h3><p>Name unsafe data and forbidden actions.</p></div>
+        <div class="step"><div class="step-num">4</div><h3>Artifact</h3><p>Ask for one useful output, not everything.</p></div>
+        <div class="step"><div class="step-num">5</div><h3>Verify</h3><p>Challenge assumptions before using it.</p></div>
+      </div>
+      <p class="sub" style="margin-top:32px">This is the same operating model from the InfraGard workshop, compressed for a creator demo.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Live Demo">
+    <div class="split">
+      <div>
+        <div class="kicker">Live Demo</div>
+        <h2>Conference notes to creator content pack.</h2>
+        <p class="sub">We start with a public-safe memory file, ask clarifying questions, plan the output, draft one artifact, then verify it.</p>
+      </div>
+      <div class="code"># Creator Demo Memory
+
+## Goal
+Turn public-safe Build week notes into a creator content pack.
+
+## Boundary
+No private DMs, sponsor terms, attendee contact data,
+unreleased announcements, credentials, or customer details.
+
+## Output
+Short recap post and 3-minute video outline.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="What To Watch">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">What To Watch In The Demo</div>
+      <h2>The agent should slow down before it speeds up.</h2>
+      <div class="watch">
+        <div class="card good"><div class="label"><span class="mark green">OK</span>Good signs</div><ul><li>Asks clarifying questions.</li><li>Restates the data boundary.</li><li>Creates a small output plan.</li><li>Names assumptions and checks.</li></ul></div>
+        <div class="card warn"><div class="label"><span class="mark amber">NO</span>Stop signs</div><ul><li>Asks for private data.</li><li>Invents facts or dates.</li><li>Tries to post or send content.</li><li>Turns a draft task into broad automation.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Stay Connected">
+    <div class="split">
+      <div>
+        <div class="kicker">Follow-Up Path</div>
+        <h2>Join the SSTB Discord.</h2>
+        <p class="sub">Free office hours, OpenClaw Dev Days material, practical AI/operator playbooks, and follow-up after Build week.</p>
+        <div class="meta">
+          <span class="pill">Office hours</span>
+          <span class="pill">Prompt packs</span>
+          <span class="pill">OpenClaw workflows</span>
+        </div>
+      </div>
+      <div class="contact-box" style="justify-self:center;width:300px">
+        <img class="qr" style="width:220px;height:220px" src="assets/sstb-discord-qr.png" alt="QR code for the SSTB Discord server"/>
+        <strong>https://discord.gg/Gmfkm7QVSF</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Build Week Schedule">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Where To Find Me During Microsoft Build Week</div>
+      <h2>All times are local Pacific time.</h2>
+      <div class="schedule">
+        <div class="event"><div class="date"><span>MON</span><span>Jun 1</span></div><div><h3>GitHub Build on Tap</h3><p>6:00-8:30 PM · SF Brewing Co</p></div></div>
+        <div class="event"><div class="date"><span>TUE</span><span>Jun 2</span></div><div><h3>BUILD: Open Source Zone</h3><p>9:00 AM-5:00 PM · Conference floor</p></div></div>
+        <div class="event"><div class="date"><span>TUE</span><span>Jun 2</span></div><div><h3>Breakout with Peter Steinberger</h3><p>4:30-5:15 PM · BRK245</p></div></div>
+        <div class="event"><div class="date"><span>TUE</span><span>Jun 2</span></div><div><h3>Dev Your Own Way</h3><p>6:00-9:00 PM · Terra Event Gallery</p></div></div>
+        <div class="event"><div class="date"><span>WED</span><span>Jun 3</span></div><div><h3>BUILD: Open Source Zone</h3><p>12:00-5:00 PM · Conference floor</p></div></div>
+        <div class="event"><div class="date"><span>WED</span><span>Jun 3</span></div><div><h3>OpenClaw: After Hours @GitHub</h3><p>5:30-9:00 PM · GitHub Offices</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="nav">
+  <button type="button" onclick="prev()" aria-label="Previous slide">‹</button>
+  <button type="button" onclick="next()" aria-label="Next slide">›</button>
+</div>
+<div class="footer"><span id="slideTitle"></span><span id="pageNo"></span></div>
+<div class="progress"><div id="progressBar"></div></div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+slides.forEach((slide,index)=>slide.id='slide'+(index+1));
+let idx=0;
+function show(){
+  slides.forEach((slide,index)=>slide.classList.toggle('active',index===idx));
+  document.getElementById('slideTitle').textContent=slides[idx].dataset.title||'';
+  document.getElementById('pageNo').textContent=(idx+1)+' / '+slides.length;
+  document.getElementById('progressBar').style.width=((idx+1)/slides.length*100)+'%';
+  history.replaceState(null,'','#slide'+(idx+1));
+}
+function next(){idx=Math.min(slides.length-1,idx+1);show()}
+function prev(){idx=Math.max(0,idx-1);show()}
+function goHash(){
+  const match=location.hash.match(/^#slide(\d+)$/);
+  if(!match)return;
+  const nextIndex=parseInt(match[1],10)-1;
+  if(nextIndex>=0&&nextIndex<slides.length){idx=nextIndex;show()}
+}
+document.addEventListener('keydown',event=>{
+  if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();next()}
+  if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();prev()}
+  if(event.key==='Home'){idx=0;show()}
+  if(event.key==='End'){idx=slides.length-1;show()}
+  if(event.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.();
+});
+window.addEventListener('hashchange',goHash);
+goHash();
+show();
+</script>
+</body>
+</html>

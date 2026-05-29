@@ -2,6 +2,16 @@
 
 Use this page to choose the shortest useful path through the repo.
 
+## I am preparing for the GitHub Build creator demo
+
+Start with the June 1, 2026 GitHub Build creator demo packet:
+
+1. [Presenter packet](event-specific/github-build-creators-2026-06-01/README.md)
+2. [Slide deck](event-specific/github-build-creators-2026-06-01/slides.html)
+3. [Speaker notes](event-specific/github-build-creators-2026-06-01/speaker-notes-15-minute.md)
+4. [Demo script](event-specific/github-build-creators-2026-06-01/demo-script.md)
+5. [Prompt pack](event-specific/github-build-creators-2026-06-01/prompt-pack.md)
+
 ## I am attending the TAMU workshop
 
 Start with the TAMU event links:
