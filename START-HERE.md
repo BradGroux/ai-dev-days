@@ -2,6 +2,17 @@
 
 Use this page to choose the shortest useful path through the repo.
 
+## I am preparing for the Microsoft Build Open Source Zone
+
+Start with the June 2-3, 2026 OpenClaw Open Source Zone floor packet:
+
+1. [Presenter packet](event-specific/github-open-source-zone-build-2026-06-02-03/README.md)
+2. [PRD](event-specific/github-open-source-zone-build-2026-06-02-03/PRD.md)
+3. [Slide deck](event-specific/github-open-source-zone-build-2026-06-02-03/slides.html)
+4. [Talking points](event-specific/github-open-source-zone-build-2026-06-02-03/talking-points.md)
+5. [Demo script](event-specific/github-open-source-zone-build-2026-06-02-03/demo-script.md)
+6. [Prompt pack](event-specific/github-open-source-zone-build-2026-06-02-03/prompt-pack.md)
+
 ## I am preparing for the GitHub Build creator demo
 
 Start with the June 1, 2026 GitHub Build creator demo packet:

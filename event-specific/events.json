@@ -1,6 +1,33 @@
 {
   "events": [
     {
+      "slug": "github-open-source-zone-build-2026-06-02-03",
+      "title": "OpenClaw at Microsoft Build Open Source Zone",
+      "date": "2026-06-02",
+      "status": "planned",
+      "audience": "Microsoft Build Open Source Zone attendees, AI developers, technical leaders, enterprise developers, founders, and open source maintainers",
+      "listedInRoot": true,
+      "entrypoint": "event-specific/github-open-source-zone-build-2026-06-02-03/README.md",
+      "agenda": "event-specific/github-open-source-zone-build-2026-06-02-03/speaker-notes-floor.md",
+      "setupPath": "event-specific/github-open-source-zone-build-2026-06-02-03/day-before-checklist.md",
+      "facilitatorRunbook": "event-specific/github-open-source-zone-build-2026-06-02-03/facilitator-runbook.md",
+      "requiredFiles": [
+        "event-specific/github-open-source-zone-build-2026-06-02-03/README.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/PRD.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/attendee-links.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/requirements.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/facilitator-runbook.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/slides.html",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/slides.pdf",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/speaker-notes-floor.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/talking-points.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/demo-script.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/prompt-pack.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/fallback-plan.md",
+        "event-specific/github-open-source-zone-build-2026-06-02-03/day-before-checklist.md"
+      ]
+    },
+    {
       "slug": "github-build-creators-2026-06-01",
       "title": "OpenClaw Creator Demo at GitHub Build",
       "date": "2026-06-01",
