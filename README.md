@@ -22,6 +22,19 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Changes: see [`CHANGELOG.md`](CHANGELOG.md).
 - Event metadata: see [`event-specific/events.json`](event-specific/events.json) and [`event-specific/refresh-checklist.md`](event-specific/refresh-checklist.md).
 
+## Microsoft Build Open Source Zone: start here
+
+For the June 2-3, 2026 OpenClaw Open Source Zone floor presence at Microsoft Build, use these files first:
+
+1. Presenter packet: [`event-specific/github-open-source-zone-build-2026-06-02-03/README.md`](event-specific/github-open-source-zone-build-2026-06-02-03/README.md)
+2. PRD: [`event-specific/github-open-source-zone-build-2026-06-02-03/PRD.md`](event-specific/github-open-source-zone-build-2026-06-02-03/PRD.md)
+3. Slide deck:
+   [`slides.html`](event-specific/github-open-source-zone-build-2026-06-02-03/slides.html) /
+   [`slides.pdf`](event-specific/github-open-source-zone-build-2026-06-02-03/slides.pdf)
+4. Talking points: [`event-specific/github-open-source-zone-build-2026-06-02-03/talking-points.md`](event-specific/github-open-source-zone-build-2026-06-02-03/talking-points.md)
+5. Demo script: [`event-specific/github-open-source-zone-build-2026-06-02-03/demo-script.md`](event-specific/github-open-source-zone-build-2026-06-02-03/demo-script.md)
+6. Prompt pack: [`event-specific/github-open-source-zone-build-2026-06-02-03/prompt-pack.md`](event-specific/github-open-source-zone-build-2026-06-02-03/prompt-pack.md)
+
 ## GitHub Build creator demo: start here
 
 For the June 1, 2026 OpenClaw creator pre-day demo at GitHub HQ, use these files first:
