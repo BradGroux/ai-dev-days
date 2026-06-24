@@ -10,6 +10,10 @@ Use these links after the workshop to recreate the workflow.
 - Source corpus: [demo/source-corpus/](demo/source-corpus/)
 - App output spec: [demo/app-output-spec.md](demo/app-output-spec.md)
 - Goal prompt: [demo/goal-prompt.md](demo/goal-prompt.md)
+- Local app: [demo/app/index.html](demo/app/index.html)
+- Slides: [slides.html](slides.html)
+- PDF deck: [slides.pdf](slides.pdf)
+- Speaker notes: [speaker-notes-45-minute.md](speaker-notes-45-minute.md)
 
 ## OpenClaw
 

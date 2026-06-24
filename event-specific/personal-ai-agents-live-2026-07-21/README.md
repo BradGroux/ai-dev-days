@@ -28,14 +28,18 @@ This packet supports a 45-minute workshop showing the full path from messy stake
 - App output spec: [demo/app-output-spec.md](demo/app-output-spec.md)
 - Issue artifacts: [demo/issue-artifacts.md](demo/issue-artifacts.md)
 - Source corpus: [demo/source-corpus/](demo/source-corpus/)
+- Local app: [demo/app/index.html](demo/app/index.html)
+- Slides: [slides.html](slides.html)
+- PDF deck: [slides.pdf](slides.pdf)
+- Speaker notes: [speaker-notes-45-minute.md](speaker-notes-45-minute.md)
 
 ## Demo Outcome
 
 The final output is the E Corp Cyber Escalation Command Center: a local-only static app for triaging fictional cyber risks, issues, and threats.
 
-The app should include a command center, evidence feed, executive brief, fabricated repo page, and build trace.
+The app includes a command center, evidence feed, executive brief, fabricated repo page, build trace, local persistence, JSON export, and reset.
 
-The final packet should also include a local HTML slide deck, PDF export, and 45-minute speaker notes once the app direction is stable.
+The final packet also includes a local HTML slide deck, PDF export, and 45-minute speaker notes.
 
 ## Safety Boundary
 
