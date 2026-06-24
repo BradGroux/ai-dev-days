@@ -338,6 +338,7 @@ h2 {
   margin-top: 0.25rem;
   color: var(--text);
   font-size: 1.6rem;
+  line-height: 1;
 }
 
 .toolbar,
@@ -579,10 +580,30 @@ td em {
   grid-row: span 2;
 }
 
+#brief-content > .metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+#brief-content > .metric-row .metric {
+  min-width: 0;
+  min-height: 4.45rem;
+  align-content: center;
+}
+
+#brief-content > .metric-row .metric span:not(.icon-badge) {
+  white-space: nowrap;
+}
+
 .brief-card h3,
 .issue-card h3,
 .risk-line h3 {
   margin-top: 0;
+}
+
+.section-title {
+  margin-bottom: 0.95rem;
 }
 
 .brief-card ul,
@@ -601,9 +622,17 @@ td em {
 
 .risk-line {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: start;
   gap: 0.55rem 0.8rem;
   padding: 0.85rem;
+}
+
+.risk-line > .severity {
+  align-self: start;
+  justify-self: end;
+  justify-content: center;
+  min-width: 4.4rem;
 }
 
 .risk-line strong,
@@ -630,13 +659,67 @@ td em {
 }
 
 .heatmap {
+  width: 100%;
   min-width: 0;
-  font-size: 0.86rem;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.heatmap-card {
+  overflow: hidden;
+}
+
+.heatmap .division-col {
+  width: 34%;
+}
+
+.heatmap .severity-col {
+  width: 16.5%;
 }
 
 .heatmap th,
 .heatmap td {
-  padding: 0.55rem;
+  padding: 0.45rem 0.35rem;
+  vertical-align: middle;
+}
+
+.heatmap th {
+  text-align: center;
+  font-size: 0.66rem;
+  letter-spacing: 0.075em;
+  white-space: nowrap;
+}
+
+.heatmap th abbr {
+  text-decoration: none;
+}
+
+.heatmap .threshold.critical {
+  color: var(--red);
+}
+
+.heatmap .threshold.high {
+  color: var(--amber);
+}
+
+.heatmap .threshold.medium {
+  color: var(--blue);
+}
+
+.heatmap .threshold.low {
+  color: var(--green);
+}
+
+.heatmap th:first-child,
+.heatmap .division-name {
+  text-align: left;
+}
+
+.heatmap .division-name {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.15;
 }
 
 .heatmap .heat {
@@ -644,7 +727,21 @@ td em {
   font-weight: 900;
 }
 
+.heatmap .heat span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.1rem;
+  min-height: 1.9rem;
+  border-radius: 7px;
+  color: var(--muted);
+}
+
 .heat.critical {
+  color: var(--red);
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.heat.critical span {
   color: var(--red);
   background: rgba(251, 113, 133, 0.12);
 }
@@ -654,9 +751,24 @@ td em {
   background: rgba(251, 191, 36, 0.12);
 }
 
+.heat.high span {
+  color: var(--amber);
+  background: rgba(251, 191, 36, 0.12);
+}
+
 .heat.medium {
   color: var(--blue);
   background: rgba(96, 165, 250, 0.12);
+}
+
+.heat.medium span {
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.12);
+}
+
+.heat.low span {
+  color: var(--green);
+  background: rgba(52, 211, 153, 0.12);
 }
 
 .notice {
@@ -820,6 +932,10 @@ td em {
   .brief-card.wide {
     grid-row: auto;
   }
+
+  #brief-content > .metric-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -833,5 +949,31 @@ td em {
 
   .view-header {
     display: block;
+  }
+
+  #brief-content > .metric-row {
+    grid-template-columns: 1fr;
+  }
+
+  .heatmap {
+    font-size: 0.76rem;
+  }
+
+  .heatmap .heat span {
+    width: 1.8rem;
+    min-height: 1.7rem;
+  }
+
+  .risk-line {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-line > .severity {
+    justify-self: start;
+  }
+
+  .risk-line p,
+  .risk-line em {
+    grid-column: 1;
   }
 }

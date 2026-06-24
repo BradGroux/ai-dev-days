@@ -277,7 +277,7 @@ function renderBriefShell(escalations) {
         ${sectionHeading('Top executive risks', 'brief', 'red')}
         <div class="stack">${top.map(renderTopRisk).join('')}</div>
       </section>
-      <section class="brief-card">
+      <section class="brief-card heatmap-card">
         ${sectionHeading('Severity heatmap', 'scope', 'amber')}
         ${renderHeatmap(escalations)}
       </section>
@@ -353,22 +353,31 @@ function renderTopRisk(item) {
 
 function renderHeatmap(escalations) {
   const divisions = unique(escalations.map((item) => item.division));
-  const severities = ['critical', 'high', 'medium', 'low'];
+  const severities = [
+    { key: 'critical', label: 'Crit', title: 'Critical' },
+    { key: 'high', label: 'High', title: 'High' },
+    { key: 'medium', label: 'Med', title: 'Medium' },
+    { key: 'low', label: 'Low', title: 'Low' }
+  ];
   return `
     <table class="heatmap">
+      <colgroup>
+        <col class="division-col">
+        ${severities.map((item) => `<col class="severity-col ${escapeAttr(item.key)}-col">`).join('')}
+      </colgroup>
       <thead>
         <tr>
-          <th>Division</th>
-          ${severities.map((item) => `<th>${escapeHtml(item)}</th>`).join('')}
+          <th scope="col">Division</th>
+          ${severities.map((item) => `<th scope="col" class="threshold ${escapeAttr(item.key)}"><abbr title="${escapeAttr(item.title)}">${escapeHtml(item.label)}</abbr></th>`).join('')}
         </tr>
       </thead>
       <tbody>
         ${divisions.map((division) => `
           <tr>
-            <td>${escapeHtml(division)}</td>
+            <td class="division-name">${escapeHtml(division)}</td>
             ${severities.map((severity) => {
-              const count = escalations.filter((item) => item.division === division && item.severity === severity).length;
-              return `<td class="heat ${count ? severity : ''}">${count}</td>`;
+              const count = escalations.filter((item) => item.division === division && item.severity === severity.key).length;
+              return `<td class="heat ${count ? severity.key : ''}"><span>${count}</span></td>`;
             }).join('')}
           </tr>
         `).join('')}
