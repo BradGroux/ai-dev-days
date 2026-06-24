@@ -173,35 +173,141 @@ function renderEvidenceCard(item) {
 
 function renderBriefShell(escalations) {
   const top = [...escalations].sort((a, b) => severityRank(b.severity) - severityRank(a.severity)).slice(0, 4);
+  const blockers = [
+    ...new Set([
+      ...state.data.briefDefaults.blockers,
+      ...escalations.filter((item) => item.status === 'blocked').map((item) => item.title)
+    ])
+  ];
   document.getElementById('brief-content').innerHTML = `
     <div class="metric-row">
       ${metric('Critical', escalations.filter((item) => item.severity === 'critical').length)}
       ${metric('Open', escalations.filter((item) => item.status === 'open').length)}
       ${metric('Blocked', escalations.filter((item) => item.status === 'blocked').length)}
+      ${metric('Decisions', state.data.briefDefaults.unresolvedDecisions.length)}
     </div>
-    <div class="placeholder compact">
-      <strong>Executive brief data ready</strong>
-      <p>Top items are already derived from the queue. Heatmap, blockers, and decision summary land in the next app batch.</p>
-      <ul>${top.map((item) => `<li>${escapeHtml(item.title)}</li>`).join('')}</ul>
+    <div class="brief-layout">
+      <section class="brief-card wide">
+        <h3>Top executive risks</h3>
+        <div class="stack">${top.map(renderTopRisk).join('')}</div>
+      </section>
+      <section class="brief-card">
+        <h3>Severity heatmap</h3>
+        ${renderHeatmap(escalations)}
+      </section>
+      <section class="brief-card">
+        <h3>Blockers</h3>
+        <ul>${blockers.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      </section>
+      <section class="brief-card">
+        <h3>Unresolved decisions</h3>
+        <ul>${state.data.briefDefaults.unresolvedDecisions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      </section>
+      <section class="brief-card">
+        <h3>Recommended next actions</h3>
+        <ul>${state.data.briefDefaults.recommendedActions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      </section>
     </div>
   `;
 }
 
 function renderRepoShell() {
+  const artifacts = state.data.issueArtifacts;
   document.getElementById('repo-content').innerHTML = `
-    <div class="placeholder compact">
-      <strong>Fabricated repo data ready</strong>
-      <p>${state.local.showSimulatedActivity ? 'Simulated commit and PR activity is enabled.' : 'Simulated commit and PR activity is hidden.'}</p>
+    <div class="notice">
+      <strong>Fabricated local repo:</strong>
+      <span>This view teaches issue breakdown. It does not call GitHub or create live issues, commits, or pull requests.</span>
+    </div>
+    <div class="metric-row">
+      ${metric('Issues', artifacts.length)}
+      ${metric('Milestones', unique(artifacts.map((item) => item.milestone)).length)}
+      ${metric('Simulated activity', state.local.showSimulatedActivity ? 'Shown' : 'Hidden')}
+    </div>
+    <div class="repo-grid">
+      ${artifacts.map(renderIssueArtifact).join('')}
     </div>
   `;
 }
 
 function renderTraceShell() {
   document.getElementById('trace-content').innerHTML = `
-    <div class="placeholder compact">
-      <strong>Build Trace data ready</strong>
-      <p>${state.data.buildTrace.length} artifact steps loaded from local seed data.</p>
-    </div>
+    <ol class="trace-list">
+      ${state.data.buildTrace.map((item) => `
+        <li>
+          <span>${escapeHtml(item.id)}</span>
+          <h3>${escapeHtml(item.step)}</h3>
+          <p>${escapeHtml(item.summary)}</p>
+          <code>${escapeHtml(item.source)}</code>
+        </li>
+      `).join('')}
+    </ol>
+  `;
+}
+
+function renderTopRisk(item) {
+  return `
+    <article class="risk-line">
+      <div>
+        <strong>${escapeHtml(item.title)}</strong>
+        <span>${escapeHtml(item.division)} · owner ${escapeHtml(item.owner)} · decision ${escapeHtml(item.decisionOwner)}</span>
+      </div>
+      <span class="severity ${escapeAttr(item.severity)}">${escapeHtml(item.severity)}</span>
+      <p>${escapeHtml(item.businessImpact)}</p>
+      <em>${escapeHtml(item.nextAction)}</em>
+    </article>
+  `;
+}
+
+function renderHeatmap(escalations) {
+  const divisions = unique(escalations.map((item) => item.division));
+  const severities = ['critical', 'high', 'medium', 'low'];
+  return `
+    <table class="heatmap">
+      <thead>
+        <tr>
+          <th>Division</th>
+          ${severities.map((item) => `<th>${escapeHtml(item)}</th>`).join('')}
+        </tr>
+      </thead>
+      <tbody>
+        ${divisions.map((division) => `
+          <tr>
+            <td>${escapeHtml(division)}</td>
+            ${severities.map((severity) => {
+              const count = escalations.filter((item) => item.division === division && item.severity === severity).length;
+              return `<td class="heat ${count ? severity : ''}">${count}</td>`;
+            }).join('')}
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderIssueArtifact(item) {
+  return `
+    <article class="issue-card">
+      <header>
+        <span>${escapeHtml(item.id)}</span>
+        <strong>${escapeHtml(item.title)}</strong>
+      </header>
+      <p>${escapeHtml(item.implementationNotes)}</p>
+      <div class="tag-row">${item.labels.map((label) => `<span class="tag">${escapeHtml(label)}</span>`).join('')}</div>
+      <dl>
+        <dt>Milestone</dt>
+        <dd>${escapeHtml(item.milestone)}</dd>
+        <dt>Acceptance</dt>
+        <dd><ul>${item.acceptanceCriteria.map((criterion) => `<li>${escapeHtml(criterion)}</li>`).join('')}</ul></dd>
+        <dt>Evidence needed</dt>
+        <dd>${item.evidenceNeeded.map(escapeHtml).join(', ')}</dd>
+      </dl>
+      ${state.local.showSimulatedActivity ? `
+        <div class="simulated">
+          <strong>${escapeHtml(item.simulatedPr)}</strong>
+          <ul>${item.simulatedCommits.map((commit) => `<li>${escapeHtml(commit)}</li>`).join('')}</ul>
+        </div>
+      ` : ''}
+    </article>
   `;
 }
 

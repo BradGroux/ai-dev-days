@@ -456,6 +456,257 @@ td em {
   white-space: nowrap;
 }
 
+.brief-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 1rem;
+}
+
+.brief-card,
+.issue-card,
+.notice,
+.trace-list li,
+.risk-line {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.brief-card {
+  padding: 1rem;
+}
+
+.brief-card.wide {
+  grid-row: span 2;
+}
+
+.brief-card h3,
+.issue-card h3,
+.risk-line h3 {
+  margin-top: 0;
+}
+
+.brief-card ul,
+.issue-card ul,
+.simulated ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.risk-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.55rem 0.8rem;
+  padding: 0.85rem;
+}
+
+.risk-line strong,
+.risk-line span,
+.risk-line p,
+.risk-line em {
+  display: block;
+}
+
+.risk-line span,
+.risk-line p {
+  color: var(--muted);
+}
+
+.risk-line p {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.risk-line em {
+  grid-column: 1 / -1;
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.heatmap {
+  min-width: 0;
+  font-size: 0.86rem;
+}
+
+.heatmap th,
+.heatmap td {
+  padding: 0.55rem;
+}
+
+.heatmap .heat {
+  text-align: center;
+  font-weight: 900;
+}
+
+.heat.critical {
+  color: var(--red);
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.heat.high {
+  color: var(--amber);
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.heat.medium {
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.12);
+}
+
+.notice {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+}
+
+.notice strong {
+  color: var(--cyan);
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.issue-card {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.issue-card header {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.issue-card header span {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.issue-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.issue-card dl {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.issue-card dt {
+  color: var(--faint);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.issue-card dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.simulated {
+  padding: 0.75rem;
+  border: 1px solid rgba(94, 234, 212, 0.28);
+  border-radius: 8px;
+  background: rgba(94, 234, 212, 0.06);
+}
+
+.simulated strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--cyan);
+}
+
+.trace-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: trace;
+}
+
+.trace-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 0.9rem;
+  padding: 1rem;
+}
+
+.trace-list li::before {
+  counter-increment: trace;
+  content: counter(trace);
+  display: grid;
+  place-items: center;
+  grid-row: span 3;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  color: #061018;
+  background: var(--cyan);
+  font-weight: 900;
+}
+
+.trace-list span {
+  color: var(--faint);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.trace-list h3,
+.trace-list p {
+  margin: 0;
+}
+
+.trace-list p {
+  color: var(--muted);
+}
+
+.trace-list code {
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 0.28rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--cyan);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 980px) {
+  .brief-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .brief-card.wide {
+    grid-row: auto;
+  }
+}
+
 @media (max-width: 760px) {
   .app-header {
     display: block;
