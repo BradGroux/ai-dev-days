@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Using Personal AI in 2026: OpenClaw and the New Developer Workflow</title>
+<style>
+:root{
+  --bg:#071016;
+  --panel:#0d1821;
+  --panel2:#122431;
+  --ink:#edf6fb;
+  --muted:#9db6c8;
+  --line:#244657;
+  --cyan:#5eead4;
+  --blue:#60a5fa;
+  --green:#34d399;
+  --amber:#fbbf24;
+  --pink:#f472b6;
+  --red:#fb7185;
+  --shadow:rgba(0,0,0,.34);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Inter,Roboto,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{background:linear-gradient(135deg,#071016 0%,#0b1821 46%,#15172b 100%)}
+a{color:var(--cyan);text-decoration:none}
+.stage{width:100vw;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:66px 78px 70px;overflow:hidden}
+.slide.active{display:flex}
+.slide:before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(180deg,var(--cyan),var(--blue),var(--pink));opacity:.95}
+.slide:after{content:"";position:absolute;right:-120px;top:-160px;width:380px;height:380px;border:1px solid rgba(94,234,212,.12);border-radius:50%;box-shadow:0 0 0 88px rgba(96,165,250,.035),0 0 0 170px rgba(244,114,182,.024);pointer-events:none}
+.center{justify-content:center}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;flex:1}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kicker{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:14px}
+h1{font-size:66px;line-height:1.02;letter-spacing:0;font-weight:860;max-width:1060px}
+h2{font-size:50px;line-height:1.08;letter-spacing:0;font-weight:830;max-width:1060px}
+h3{font-size:24px;line-height:1.18;font-weight:760}
+.sub{font-size:24px;line-height:1.42;color:var(--muted);max-width:920px;margin-top:18px}
+.gradient{background:linear-gradient(100deg,var(--cyan),var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:999px;padding:9px 14px;color:var(--muted);font-size:16px;font-weight:650}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));border:1px solid var(--line);border-radius:8px;padding:22px 23px;box-shadow:0 16px 42px var(--shadow)}
+.card.accent{border-color:rgba(94,234,212,.55)}
+.card.warn{border-color:rgba(251,191,36,.48);background:linear-gradient(180deg,rgba(251,191,36,.12),rgba(255,255,255,.02))}
+.card.good{border-color:rgba(52,211,153,.48);background:linear-gradient(180deg,rgba(52,211,153,.12),rgba(255,255,255,.02))}
+.card.hot{border-color:rgba(244,114,182,.5);background:linear-gradient(180deg,rgba(244,114,182,.12),rgba(255,255,255,.02))}
+.label{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:20px;font-weight:780;margin-bottom:10px}
+.mark{width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:#071016;background:var(--cyan);font-size:14px;flex:0 0 auto}
+.mark.blue{background:var(--blue)}
+.mark.pink{background:var(--pink)}
+.mark.amber{background:var(--amber)}
+.mark.green{background:var(--green)}
+.mark.red{background:var(--red)}
+.card p,.card li{font-size:18px;line-height:1.42;color:var(--muted)}
+ul{list-style:none;display:grid;gap:11px}
+li{position:relative;padding-left:22px}
+li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:28px}
+.step{min-height:132px;padding:16px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.step-num{font-size:13px;font-weight:900;color:#071016;background:var(--cyan);display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;border-radius:8px;margin-bottom:10px}
+.step h3{font-size:18px;margin-bottom:7px}
+.step p{font-size:14px;color:var(--muted);line-height:1.32}
+.code{background:#050b11;border:1px solid #244455;border-radius:8px;padding:18px 20px;color:#dffcff;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:16px;line-height:1.45;white-space:pre-wrap;box-shadow:0 16px 42px var(--shadow)}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:16px}
+.row strong{color:var(--cyan);font-size:20px}
+.row p{color:var(--muted);font-size:17px;line-height:1.38}
+.mock{border:1px solid var(--line);border-radius:10px;background:#08131c;box-shadow:0 20px 60px var(--shadow);overflow:hidden}
+.mock-top{display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--line);background:#0e1c27}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--red)}
+.dot:nth-child(2){background:var(--amber)}
+.dot:nth-child(3){background:var(--green)}
+.mock-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
+.queue{display:grid;gap:9px}
+.queue div{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px;border:1px solid var(--line);border-radius:7px;background:rgba(255,255,255,.04);font-size:15px}
+.queue span{color:var(--muted)}
+.sev{font-weight:900;color:var(--red)}
+.sev.high{color:var(--amber)}
+.trace{display:grid;gap:8px}
+.trace div{border-left:3px solid var(--cyan);padding:7px 10px;background:rgba(94,234,212,.06);font-size:15px;color:var(--muted)}
+.footer{position:absolute;left:78px;right:78px;bottom:22px;display:flex;justify-content:space-between;color:#7894a7;font-size:15px;z-index:5}
+.nav{position:absolute;top:22px;right:24px;display:flex;gap:8px;z-index:20}
+.nav button{width:42px;height:42px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font-size:19px;cursor:pointer}
+.nav button:hover{border-color:var(--cyan)}
+.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:7}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));transition:width .2s ease}
+@media(max-width:900px){
+  .slide{padding:58px 32px 66px}
+  .split,.two,.three,.matrix,.mock-body,.row,.flow{grid-template-columns:1fr}
+  h1{font-size:42px}
+  h2{font-size:34px}
+  .sub{font-size:19px}
+  .footer{left:32px;right:32px;font-size:12px}
+  .nav{top:14px;right:14px}
+}
+@media print{
+  @page{size:13.333in 7.5in;margin:0}
+  html,body{overflow:visible;background:#071016}
+  .stage{width:13.333in;height:auto;overflow:visible}
+  .slide{position:relative;display:flex !important;width:13.333in;height:7.5in;max-height:none;overflow:hidden;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .nav,.progress,.footer{display:none}
+  .slide{padding:66px 78px 70px}
+  .split,.two,.matrix,.mock-body{grid-template-columns:1fr 1fr}
+  .three{grid-template-columns:repeat(3,1fr)}
+  .flow{grid-template-columns:repeat(7,1fr)}
+  h1{font-size:66px}
+  h2{font-size:50px}
+  .sub{font-size:24px}
+  .gradient{background:none;-webkit-background-clip:initial;-webkit-text-fill-color:var(--blue);color:var(--blue)}
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <section class="slide active" data-title="Title">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Personal AI Agents LIVE · July 21, 2026</div>
+      <h1>Using Personal AI in 2026: <span class="gradient">OpenClaw and the New Developer Workflow</span></h1>
+      <p class="sub">A 45-minute hands-on workshop: messy discovery to PRD, PRD to issues, issues to /goal, /goal to a working local app.</p>
+      <div class="meta">
+        <span class="pill">Brad Groux</span>
+        <span class="pill">Digital Meld</span>
+        <span class="pill">OpenClaw Maintainer</span>
+        <span class="pill">Local-only demo</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="One-off prompts fail">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The problem</div>
+      <h2>One-off prompts skip the work that makes software shippable.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card warn"><div class="label"><span class="mark amber">1</span>Context gets lost</div><p>Stakeholder nuance, constraints, source confidence, and decision history disappear between chats.</p></div>
+        <div class="card hot"><div class="label"><span class="mark pink">2</span>Plans stay vague</div><p>Requirements, risks, acceptance criteria, and sequencing are implied instead of written down.</p></div>
+        <div class="card"><div class="label"><span class="mark">3</span>Code starts early</div><p>The agent builds before the team agrees what problem the product is supposed to solve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Responsibility split">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The split</div>
+      <h2>OpenClaw plans. Codex builds. The repo preserves the trail.</h2>
+      <div class="two" style="margin-top:30px">
+        <div class="card accent"><div class="label"><span class="mark">O</span>OpenClaw</div><ul><li>Ingests stakeholder context</li><li>Runs the grill-with-docs loop</li><li>Forces missing decisions into the open</li><li>Generates the PRD contract</li></ul></div>
+        <div class="card good"><div class="label"><span class="mark green">C</span>Codex</div><ul><li>Turns PRD into issue artifacts</li><li>Creates the /goal prompt</li><li>Implements scoped work</li><li>Runs verification and merges PRs</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Scenario">
+    <div class="split">
+      <div>
+        <div class="kicker">Fictional scenario</div>
+        <h2>E Corp Cyber Escalation Command Center</h2>
+        <p class="sub">A fictional Mr. Robot-inspired company needs to triage recovery risks, issues, and threat signals without connecting live systems.</p>
+      </div>
+      <div class="card">
+        <div class="label"><span class="mark red">!</span>First useful win</div>
+        <p>Angela filters critical escalations, checks reviewed evidence, assigns an owner, and exports a concise executive brief.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Corpus and safety">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Source corpus</div>
+      <h2>The demo starts with business context, not code.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark">D</span>Docs</div><p>Company brief, stakeholder brief, discovery transcript, systems, people, and signals.</p></div>
+        <div class="card"><div class="label"><span class="mark blue">C</span>Comms</div><p>Fabricated emails, memos, and chat excerpts that create realistic ambiguity.</p></div>
+        <div class="card warn"><div class="label"><span class="mark amber">S</span>Safety</div><p>No private records, no live accounts, no credentials, no sends, no operational attack steps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Grill loop">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">$grill-with-docs</div>
+      <h2>The planning loop makes the hidden decisions explicit.</h2>
+      <div class="matrix">
+        <div class="row"><strong>Users</strong><p>Who triages, who decides, who reviews evidence, and who needs the brief?</p></div>
+        <div class="row"><strong>Scope</strong><p>What belongs in the first local app, and what stays out?</p></div>
+        <div class="row"><strong>Safety</strong><p>What must remain draft-only, fictional, reviewed, and local?</p></div>
+        <div class="row"><strong>Proof</strong><p>What would prove the workflow worked by the end of the workshop?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="PRD">
+    <div class="split">
+      <div>
+        <div class="kicker">The contract</div>
+        <h2>The PRD becomes the handoff point.</h2>
+        <p class="sub">It names the app, product output, presentation output, non-goals, app requirements, safety requirements, and acceptance criteria.</p>
+      </div>
+      <pre class="code">PRD.md
+Problem
+Goal
+Product Output
+Presentation Output
+App Requirements
+Safety Requirements
+Acceptance Criteria</pre>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Issues">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Issue artifacts</div>
+      <h2>The PRD turns into scoped implementation work.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark">1</span>Data and shell</div><p>Seed JSON, static app files, and five-tab structure.</p></div>
+        <div class="card"><div class="label"><span class="mark blue">2</span>Workflow views</div><p>Queue, evidence feed, executive brief, fabricated repo, and Build Trace.</p></div>
+        <div class="card"><div class="label"><span class="mark green">3</span>Handoff</div><p>Slides, PDF, speaker notes, smoke checks, and repo audit.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="/goal">
+    <div class="split">
+      <div>
+        <div class="kicker">Implementation start</div>
+        <h2>/goal is the durable start line.</h2>
+        <p class="sub">It carries the PRD, issue artifacts, source corpus, app spec, ordering, safety boundary, and verification gates into the build loop.</p>
+      </div>
+      <pre class="code">/goal Build the E Corp Cyber Escalation
+Command Center static app.
+
+Read:
+- PRD.md
+- app-output-spec.md
+- issue-artifacts.md
+- source-corpus/
+
+Verify:
+- all tabs render
+- filters and local state work
+- export and reset work</pre>
+    </div>
+  </section>
+
+  <section class="slide" data-title="App output">
+    <div class="split">
+      <div>
+        <div class="kicker">The artifact</div>
+        <h2>A local command center, not a static report.</h2>
+        <p class="sub">The app runs from local HTML, CSS, JavaScript, and JSON. It filters, edits local state, marks evidence reviewed, exports JSON, and resets cleanly.</p>
+      </div>
+      <div class="mock" aria-label="Command center mockup">
+        <div class="mock-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="mock-body">
+          <div class="queue">
+            <div><span>Identity recovery backlog</span><b class="sev">critical</b></div>
+            <div><span>Healthcare portal access review</span><b class="sev">critical</b></div>
+            <div><span>E Coin fraud signal quality</span><b class="sev high">high</b></div>
+          </div>
+          <div class="trace">
+            <div>Command Center</div>
+            <div>Evidence Feed</div>
+            <div>Executive Brief</div>
+            <div>Fabricated Repo</div>
+            <div>Build Trace</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Build Trace">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Proof</div>
+      <h2>The Build Trace shows the artifact chain.</h2>
+      <div class="flow">
+        <div class="step"><span class="step-num">1</span><h3>Corpus</h3><p>Briefs, transcript, emails, memos, chats, signals.</p></div>
+        <div class="step"><span class="step-num">2</span><h3>Grill</h3><p>Questions force scope and safety decisions.</p></div>
+        <div class="step"><span class="step-num">3</span><h3>PRD</h3><p>Requirements become the contract.</p></div>
+        <div class="step"><span class="step-num">4</span><h3>Issues</h3><p>Work becomes scoped and reviewable.</p></div>
+        <div class="step"><span class="step-num">5</span><h3>/goal</h3><p>The build loop starts with context.</p></div>
+        <div class="step"><span class="step-num">6</span><h3>App</h3><p>Local command center output.</p></div>
+        <div class="step"><span class="step-num">7</span><h3>Export</h3><p>State is reviewable JSON.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Recreate">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Recreate it</div>
+      <h2>The repo documents the steps so attendees can run the pattern later.</h2>
+      <div class="two" style="margin-top:30px">
+        <div class="card accent"><div class="label"><span class="mark">R</span>Run the path</div><ul><li>Read the packet README</li><li>Open the prompt pack</li><li>Use the checked-in corpus if live generation is slow</li><li>Start from the saved /goal prompt</li></ul></div>
+        <div class="card warn"><div class="label"><span class="mark amber">F</span>Fallback cleanly</div><ul><li>Use the full corpus</li><li>Use the implementation plan</li><li>Use the finished app as proof</li><li>Keep all external action manual</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Links">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Follow-up</div>
+      <h2>Start with a bounded workflow and leave a trail.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark">1</span>OpenClaw</div><p><a href="https://github.com/openclaw/openclaw">github.com/openclaw/openclaw</a><br><a href="https://docs.openclaw.ai">docs.openclaw.ai</a></p></div>
+        <div class="card"><div class="label"><span class="mark blue">2</span>Workshop repo</div><p><a href="https://github.com/BradGroux/openclaw-dev-days">github.com/BradGroux/openclaw-dev-days</a></p></div>
+        <div class="card good"><div class="label"><span class="mark green">3</span>Hard stop line</div><p>Do not automate external actions until the context, boundary, review path, and rollback are clear.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer"><span>Personal AI Agents LIVE · OpenClaw workshop</span><span id="counter">1 / 13</span></div>
+  <div class="nav"><button type="button" id="prev" aria-label="Previous slide">‹</button><button type="button" id="next" aria-label="Next slide">›</button></div>
+  <div class="progress"><div id="progress"></div></div>
+</main>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let current=0;
+const counter=document.getElementById('counter');
+const progress=document.getElementById('progress');
+function show(index){
+  current=Math.max(0,Math.min(slides.length-1,index));
+  slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));
+  counter.textContent=`${current+1} / ${slides.length}`;
+  progress.style.width=`${((current+1)/slides.length)*100}%`;
+}
+document.getElementById('prev').addEventListener('click',()=>show(current-1));
+document.getElementById('next').addEventListener('click',()=>show(current+1));
+document.addEventListener('keydown',(event)=>{
+  if(event.key==='ArrowRight'||event.key==='PageDown')show(current+1);
+  if(event.key==='ArrowLeft'||event.key==='PageUp')show(current-1);
+});
+show(0);
+</script>
+</body>
+</html>
