@@ -47,15 +47,32 @@ function setActiveTab(tabName) {
 
 async function loadSeedData() {
   try {
-    const response = await fetch('data/app-seed.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error(`Seed data request failed: ${response.status}`);
-    state.data = await response.json();
+    state.data = location.protocol === 'file:' ? embeddedSeedData() : await fetchSeedData();
     renderAll();
     setStatus('Seed data loaded', 'ready');
   } catch (error) {
-    renderLoadError(error);
-    setStatus('Data fallback', 'error');
+    try {
+      state.data = embeddedSeedData();
+      renderAll();
+      setStatus('Seed data loaded', 'ready');
+    } catch {
+      renderLoadError(error);
+      setStatus('Data unavailable', 'error');
+    }
   }
+}
+
+async function fetchSeedData() {
+  const response = await fetch('data/app-seed.json', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`Seed data request failed: ${response.status}`);
+  return response.json();
+}
+
+function embeddedSeedData() {
+  if (!window.ECORP_APP_SEED) throw new Error('Embedded seed data was not available.');
+  return typeof structuredClone === 'function'
+    ? structuredClone(window.ECORP_APP_SEED)
+    : JSON.parse(JSON.stringify(window.ECORP_APP_SEED));
 }
 
 function renderAll() {
@@ -500,7 +517,7 @@ function renderLoadError(error) {
   document.querySelectorAll('.placeholder').forEach((el) => {
     el.innerHTML = `
       <strong>App shell loaded</strong>
-      <p>Seed data was not available. Serve this directory locally to load <code>data/app-seed.json</code>.</p>
+      <p>Seed data was not available. Reload the checked-in demo folder or serve this directory locally.</p>
       <p>${escapeHtml(error.message)}</p>
     `;
   });
