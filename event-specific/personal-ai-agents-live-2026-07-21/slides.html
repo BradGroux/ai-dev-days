@@ -45,6 +45,8 @@ body{background:linear-gradient(135deg,#071016 0%,#0b1821 46%,#15172b 100%)}
 :root[data-theme="light"] body{background:linear-gradient(135deg,#f8fbff 0%,#eef6fb 46%,#e7eef9 100%)}
 a{color:var(--cyan);text-decoration:none}
 .stage{width:100vw;height:100vh;position:relative;overflow:hidden}
+.dm-logo{position:fixed;top:22px;left:28px;width:142px;height:auto;z-index:18;opacity:.88;pointer-events:none}
+:root[data-theme="light"] .dm-logo{background:rgba(6,16,24,.86);border-radius:10px;padding:8px 10px;width:162px}
 .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:66px 78px 70px;overflow:hidden}
 .slide.active{display:flex}
 .slide:before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(180deg,var(--cyan),var(--blue),var(--pink));opacity:.95}
@@ -94,6 +96,7 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
 .step{min-height:136px;padding:16px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
 .step h3{font-size:18px;margin:9px 0 7px}
 .step p{font-size:14px;color:var(--muted);line-height:1.32}
+.flow-note{margin-top:22px;max-width:940px;color:var(--muted);font-size:21px;line-height:1.38}
 .code{background:#050b11;border:1px solid #244455;border-radius:8px;padding:18px 20px;color:#dffcff;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:16px;line-height:1.45;white-space:pre-wrap;box-shadow:0 16px 42px var(--shadow)}
 :root[data-theme="light"] .code{background:#0e1c27;color:#effbff}
 .matrix{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
@@ -127,6 +130,7 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
 .progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:7}
 .progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));transition:width .2s ease}
 @media(max-width:900px){
+  .dm-logo{width:112px;top:16px;left:20px}
   .slide{padding:58px 32px 66px}
   .split,.two,.three,.matrix,.mock-body,.row,.flow,.intro{grid-template-columns:1fr}
   h1{font-size:42px}
@@ -142,6 +146,7 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
   .slide{position:relative;display:flex !important;width:13.333in;height:7.5in;max-height:none;overflow:hidden;break-after:page;page-break-after:always}
   .slide:last-child{break-after:auto;page-break-after:auto}
   .nav,.progress,.footer{display:none}
+  .dm-logo{width:142px;top:22px;left:28px}
   .slide{padding:66px 78px 70px}
   .split,.two,.matrix,.mock-body{grid-template-columns:1fr 1fr}
   .three{grid-template-columns:repeat(3,1fr)}
@@ -156,6 +161,7 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
 </head>
 <body>
 <!-- Inline SVG icons are from the open source Lucide icon set, ISC licensed. -->
+<img class="dm-logo" src="assets/digital-meld-logo.png" alt="Digital Meld logo">
 <main class="stage">
   <section class="slide active" data-title="Title">
     <div class="center" style="display:flex;flex-direction:column;flex:1">
@@ -175,14 +181,14 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
       <div>
         <div class="kicker">Your facilitator</div>
         <h2>Brad Groux</h2>
-        <p class="sub">Co-founder of Digital Meld, OpenClaw contributor and maintainer, and builder of practical agent workflows that end in inspectable artifacts.</p>
+        <p class="sub">CEO of Digital Meld, OpenClaw contributor and maintainer, and builder of practical agent workflows that end in inspectable artifacts.</p>
       </div>
       <div class="follow-card" style="padding:24px">
         <div class="intro">
           <img class="headshot" src="assets/brad-groux-headshot.png" alt="Brad Groux headshot">
           <div>
             <div style="font-size:26px;font-weight:840;color:var(--cyan)">Builder, operator, maintainer</div>
-            <div style="color:var(--muted);font-size:18px;margin-top:5px">OpenClaw, Digital Meld, Dev Days, and repo-backed demos.</div>
+            <div style="color:var(--muted);font-size:18px;margin-top:5px">Digital Meld CEO, OpenClaw maintainer, and repo-backed demo builder.</div>
             <div class="link-list">
               <a href="https://github.com/BradGroux"><span class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></span>github.com/BradGroux</a>
               <a href="https://twitter.com/BradGroux"><span class="link-icon line"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h6"/><path d="M8 16h4"/></svg></span>twitter.com/BradGroux</a>
@@ -220,9 +226,9 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
   <section class="slide" data-title="Scenario">
     <div class="split">
       <div>
-        <div class="kicker">Fictional scenario</div>
+        <div class="kicker">Scenario</div>
         <h2>E Corp Cyber Escalation Command Center</h2>
-        <p class="sub">A fictional Mr. Robot-inspired company needs to triage recovery risks, issues, and threat signals without connecting live systems.</p>
+        <p class="sub">A Mr. Robot-inspired agentic delivery experience: discovery becomes a PRD, the PRD becomes issues and /goal prompts, and the work lands as a command center app.</p>
       </div>
       <div class="card">
         <div class="label"><span class="icon-badge red"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>First useful win</div>
@@ -234,11 +240,12 @@ li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;bor
   <section class="slide" data-title="Corpus and safety">
     <div class="center" style="display:flex;flex-direction:column;flex:1">
       <div class="kicker">Source corpus</div>
-      <h2>The demo starts with business context, not code.</h2>
+      <h2>The demo starts with a context packet, not code.</h2>
+      <p class="sub">Source corpus means the working set of briefs, discovery notes, messages, systems, people, and signals OpenClaw reads before it grills the plan or drafts the PRD.</p>
       <div class="three" style="margin-top:30px">
-        <div class="card"><div class="label"><span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>Docs</div><p>Company brief, stakeholder brief, discovery transcript, systems, people, and signals.</p></div>
-        <div class="card"><div class="label"><span class="icon-badge blue"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h7"/><path d="M15 3h6v6"/><path d="m21 3-7 7"/></svg></span>Comms</div><p>Fabricated emails, memos, and chat excerpts that create realistic ambiguity.</p></div>
-        <div class="card warn"><div class="label"><span class="icon-badge amber"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.5a1.3 1.3 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Safety</div><p>No private records, no live accounts, no credentials, no sends, no operational attack steps.</p></div>
+        <div class="card"><div class="label"><span class="icon-badge"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>Briefs</div><p>Company shape, workshop goal, target users, operating constraints, and the first useful product outcome.</p></div>
+        <div class="card"><div class="label"><span class="icon-badge blue"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h7"/><path d="M15 3h6v6"/><path d="m21 3-7 7"/></svg></span>Signals</div><p>Stakeholder notes, escalation themes, evidence snippets, ownership gaps, and risk language the app must preserve.</p></div>
+        <div class="card warn"><div class="label"><span class="icon-badge amber"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.5a1.3 1.3 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Boundaries</div><p>What the demo may display, what stays draft-only, what requires human review, and what must never be automated.</p></div>
       </div>
     </div>
   </section>
@@ -279,9 +286,9 @@ Acceptance Criteria</pre>
       <div class="kicker">Issue artifacts</div>
       <h2>The PRD turns into scoped implementation work.</h2>
       <div class="three" style="margin-top:30px">
-        <div class="card"><div class="label"><span class="icon-badge"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>Data and shell</div><p>Seed JSON, static app files, and five-tab structure.</p></div>
-        <div class="card"><div class="label"><span class="icon-badge blue"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>Workflow views</div><p>Queue, evidence feed, executive brief, fabricated repo, and Build Trace.</p></div>
-        <div class="card"><div class="label"><span class="icon-badge green"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Handoff</div><p>Slides, PDF, speaker notes, smoke checks, and repo audit.</p></div>
+        <div class="card"><div class="label"><span class="icon-badge"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>Escalation data</div><p>Risks, signals, severity, evidence, owners, statuses, and decision-ready executive summary fields.</p></div>
+        <div class="card"><div class="label"><span class="icon-badge blue"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>Command workflow</div><p>Triage queue, evidence review, owner and status edits, executive brief, repo backlog, and Build Trace.</p></div>
+        <div class="card"><div class="label"><span class="icon-badge green"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>App proof</div><p>Local persistence, export JSON, reset path, responsive layout, smoke checks, and PR-backed delivery.</p></div>
       </div>
     </div>
   </section>
@@ -291,7 +298,7 @@ Acceptance Criteria</pre>
       <div>
         <div class="kicker">Implementation start</div>
         <h2>/goal is the durable start line.</h2>
-        <p class="sub">It carries the PRD, issue artifacts, source corpus, app spec, ordering, safety boundary, and verification gates into the build loop.</p>
+        <p class="sub">It carries the PRD, issue artifacts, source corpus, app spec, ordering, safety boundary, and verification gates into the build loop. The source corpus is the context packet the agent can cite while building.</p>
       </div>
       <pre class="code">/goal Build the E Corp Cyber Escalation
 Command Center static app.
@@ -300,7 +307,7 @@ Read:
 - PRD.md
 - app-output-spec.md
 - issue-artifacts.md
-- source-corpus/
+- source-corpus/ context packet
 
 Verify:
 - all tabs render
@@ -328,7 +335,7 @@ Verify:
             <div>Command Center</div>
             <div>Evidence Feed</div>
             <div>Executive Brief</div>
-            <div>Fabricated Repo</div>
+            <div>Repo Backlog</div>
             <div>Build Trace</div>
           </div>
         </div>
@@ -349,6 +356,7 @@ Verify:
         <div class="step"><span class="icon-badge amber"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/></svg></span><h3>App</h3><p>Local command center output.</p></div>
         <div class="step"><span class="icon-badge green"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span><h3>Export</h3><p>State is reviewable JSON.</p></div>
       </div>
+      <p class="flow-note">This is the part attendees should copy: every jump in the chain has a checked-in artifact, a human review point, and a verification step. If the live run stalls, the Build Trace still shows exactly where to resume.</p>
     </div>
   </section>
 
@@ -383,18 +391,18 @@ Verify:
       <div>
         <div class="kicker">Follow-up</div>
         <h2>Start with a bounded workflow and leave a trail.</h2>
-        <p class="sub">Use the repo packet, OpenClaw docs, and Discord to recreate the workflow after the event.</p>
+        <p class="sub">Use the repo packet, OpenClaw docs, and the SSTB.ai Discord to recreate the workflow after the event.</p>
         <div class="link-list" style="margin-top:24px">
           <a href="https://github.com/openclaw/openclaw"><span class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></span>github.com/openclaw/openclaw</a>
           <a href="https://docs.openclaw.ai"><span class="link-icon line"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg></span>docs.openclaw.ai</a>
           <a href="https://github.com/BradGroux/openclaw-dev-days"><span class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></span>github.com/BradGroux/openclaw-dev-days</a>
-          <a href="https://where.bradgroux.com"><span class="link-icon line"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.1 0l2.8-2.8a5 5 0 0 0-7.1-7.1L11 4.9"/><path d="M14 11a5 5 0 0 0-7.1 0l-2.8 2.8a5 5 0 0 0 7.1 7.1L13 19.1"/></svg></span>where.bradgroux.com</a>
+          <a href="https://www.bradgroux.com"><span class="link-icon line"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.1 0l2.8-2.8a5 5 0 0 0-7.1-7.1L11 4.9"/><path d="M14 11a5 5 0 0 0-7.1 0l-2.8 2.8a5 5 0 0 0 7.1 7.1L13 19.1"/></svg></span>www.bradgroux.com</a>
         </div>
       </div>
       <div class="contact-box">
-        <a href="https://discord.com/invite/clawd"><img class="qr" src="assets/openclaw-discord-qr.png" alt="QR code for the official OpenClaw Discord server"></a>
-        <strong style="font-size:24px">Join the OpenClaw Discord</strong>
-        <span style="color:var(--muted);font-size:17px">discord.com/invite/clawd</span>
+        <a href="https://discord.gg/Gmfkm7QVSF"><img class="qr" src="assets/sstb-discord-qr.png" alt="QR code for the SSTB.ai Discord server"></a>
+        <strong style="font-size:24px">Join the SSTB.ai Discord</strong>
+        <span style="color:var(--muted);font-size:17px">discord.gg/Gmfkm7QVSF</span>
       </div>
     </div>
   </section>
@@ -409,6 +417,7 @@ Verify:
 </main>
 <script>
 const slides=[...document.querySelectorAll('.slide')];
+slides.forEach((slide,index)=>slide.id=`slide${index+1}`);
 let current=0;
 const counter=document.getElementById('counter');
 const progress=document.getElementById('progress');
@@ -418,22 +427,36 @@ function show(index){
   slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));
   counter.textContent=`${current+1} / ${slides.length}`;
   progress.style.width=`${((current+1)/slides.length)*100}%`;
+  history.replaceState(null,'',`#slide${current+1}`);
 }
 function setTheme(theme){
   document.documentElement.dataset.theme=theme;
   localStorage.setItem('pail-slide-theme',theme);
   themeToggle.setAttribute('aria-label',theme==='light'?'Use dark mode':'Use light mode');
 }
+function slideFromHash(){
+  const match=location.hash.match(/^#slide(\d+)$/);
+  if(!match)return null;
+  const index=parseInt(match[1],10)-1;
+  return index>=0&&index<slides.length?index:null;
+}
+function goHash(){
+  const index=slideFromHash();
+  if(index!==null)show(index);
+}
 document.getElementById('prev').addEventListener('click',()=>show(current-1));
 document.getElementById('next').addEventListener('click',()=>show(current+1));
 themeToggle.addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='light'?'dark':'light'));
 document.addEventListener('keydown',(event)=>{
-  if(event.key==='ArrowRight'||event.key==='PageDown'||event.key===' ')show(current+1);
-  if(event.key==='ArrowLeft'||event.key==='PageUp')show(current-1);
+  if(event.key==='ArrowRight'||event.key==='PageDown'||event.key===' '){event.preventDefault();show(current+1)}
+  if(event.key==='ArrowLeft'||event.key==='PageUp'){event.preventDefault();show(current-1)}
+  if(event.key==='Home'){event.preventDefault();show(0)}
+  if(event.key==='End'){event.preventDefault();show(slides.length-1)}
   if(event.key.toLowerCase()==='t')setTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
 });
+window.addEventListener('hashchange',goHash);
 setTheme(localStorage.getItem('pail-slide-theme')||'dark');
-show(0);
+show(slideFromHash()??0);
 </script>
 </body>
 </html>
