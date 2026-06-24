@@ -9,7 +9,7 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 
 ## 2:00-4:00 - Slide 2: About Brad
 
-- Introduce Brad Groux, Digital Meld, and OpenClaw maintainer context.
+- Introduce Brad Groux as CEO of Digital Meld and an OpenClaw maintainer/contributor.
 - Point out the follow-up links and say the deck and repo are meant to be reused.
 
 ## 4:00-7:00 - Slide 3: Why One-Off Prompts Fail
@@ -25,15 +25,15 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 
 ## 10:00-13:00 - Slide 5: E Corp Scenario
 
-- Frame E Corp as fictional training context inspired by Mr. Robot.
+- Frame E Corp as a Mr. Robot-inspired agentic delivery experience: planning, PRD, issues, /goal, implementation, and app delivery.
 - Name the product output: E Corp Cyber Escalation Command Center.
 - Stress that the app organizes business risk and evidence. It does not connect to live systems or automate response.
 
 ## 13:00-16:00 - Slide 6: Corpus And Safety
 
-- Show the source corpus folder.
-- Point out briefs, transcript, emails, memos, chats, people, systems, and signals.
-- Safety line: no private records, no credentials, no production accounts, no external sends, no operational cyber instructions.
+- Define source corpus as the context packet OpenClaw reads before it asks questions or drafts the PRD.
+- Point out briefs, stakeholder notes, escalation themes, evidence snippets, ownership gaps, and boundaries.
+- Safety line: draft-only outputs, human review, no private records, no production accounts, no external sends, no operational cyber instructions.
 
 ## 16:00-20:00 - Slide 7: Grill-With-Docs Loop
 
@@ -50,26 +50,26 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 ## 23:00-26:00 - Slide 9: Issue Artifacts
 
 - Show the issue artifacts and live GitHub issue set.
-- Explain dependencies: data first, shell second, workflow views next, presentation after app direction is stable, final smoke checks last.
+- Explain dependencies: escalation data first, command workflow second, local proof and Build Trace last.
 - Keep the message practical: good issues make the build reviewable.
 
 ## 26:00-29:00 - Slide 10: /goal Starts Implementation
 
 - Open the saved /goal prompt.
-- Explain that /goal carries source files, acceptance checks, safety boundaries, and allowed actions into the durable work loop.
+- Explain that /goal carries source files, acceptance checks, source corpus context, safety boundaries, and allowed actions into the durable work loop.
 - Do not spend time on model theory.
 
 ## 29:00-35:00 - Slide 11: App Output
 
 - Open the local app.
 - Demo path: filter critical escalations, change owner/status, mark evidence reviewed, export JSON, reset local state.
-- State clearly that the fabricated repo view and Build Trace are local teaching artifacts.
+- State clearly that the repo backlog view and Build Trace are local teaching artifacts.
 
 ## 35:00-38:00 - Slide 12: Build Trace Proof
 
 - Show the Build Trace tab.
 - Walk the chain: corpus, grill loop, PRD, issues, /goal, implementation plan, app, export.
-- Close the proof point: the artifact trail is what makes the workflow teachable and reusable.
+- Close the proof point: every jump in the chain has a checked-in artifact, a human review point, and a verification step.
 
 ## 38:00-40:00 - Slide 13: Recreate It
 
@@ -84,7 +84,7 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 
 ## 43:00-45:00 - Slide 15: Links
 
-- Point to OpenClaw, docs, the OpenClaw Dev Days repo, where.bradgroux.com, and Discord.
+- Point to OpenClaw, docs, the OpenClaw Dev Days repo, www.bradgroux.com, and the SSTB.ai Discord.
 - Hard stop line: do not automate external actions until context, boundary, review path, and rollback are clear.
 - Leave time for one direct question or follow-up.
 
