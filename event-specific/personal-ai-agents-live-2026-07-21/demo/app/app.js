@@ -1,5 +1,55 @@
 const STORAGE_KEY = 'ecorp-command-center-state-v1';
 
+const ICONS = {
+  alert: '<path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>',
+  brief: '<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  code: '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
+  command: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/>',
+  evidence: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>',
+  export: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
+  repo: '<path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/>',
+  scope: '<path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>',
+  shield: '<path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.5a1.3 1.3 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+  signal: '<path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h7"/><path d="M15 3h6v6"/><path d="m21 3-7 7"/>',
+  trace: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>',
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/>',
+  workflow: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>'
+};
+
+const VIEW_ICONS = {
+  command: ['command', 'amber'],
+  evidence: ['evidence', 'blue'],
+  brief: ['brief', 'red'],
+  repo: ['repo', 'green'],
+  trace: ['trace', 'pink']
+};
+
+const METRIC_ICONS = {
+  'At risk': ['alert', 'amber'],
+  Blocked: ['alert', 'red'],
+  Critical: ['alert', 'red'],
+  Decisions: ['brief', 'blue'],
+  Issues: ['repo', 'green'],
+  Milestones: ['trace', 'blue'],
+  Open: ['repo', 'green'],
+  Reviewed: ['check', 'green'],
+  'Reviewed evidence': ['check', 'green'],
+  Shown: ['workflow', 'blue'],
+  'Simulated activity': ['code', 'pink'],
+  Types: ['evidence', 'blue']
+};
+
+const TRACE_ICONS = [
+  ['trace', ''],
+  ['signal', 'blue'],
+  ['evidence', ''],
+  ['repo', 'green'],
+  ['code', 'pink'],
+  ['command', 'amber'],
+  ['export', 'green']
+];
+
 const state = {
   data: null,
   activeTab: 'command',
@@ -23,10 +73,28 @@ const state = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  decorateStaticIcons();
   state.local = loadLocalState();
   wireTabs();
   loadSeedData();
 });
+
+function decorateStaticIcons() {
+  document.querySelectorAll('.tab').forEach((button) => {
+    const [name, tone] = VIEW_ICONS[button.dataset.tab] || VIEW_ICONS.command;
+    if (!button.querySelector('.icon-badge')) {
+      button.insertAdjacentHTML('afterbegin', iconBadge(name, tone));
+    }
+  });
+
+  document.querySelectorAll('.view').forEach((view) => {
+    const [name, tone] = VIEW_ICONS[view.id] || VIEW_ICONS.command;
+    const heading = view.querySelector('.view-header h2');
+    if (heading && !heading.querySelector('.icon-badge')) {
+      heading.insertAdjacentHTML('afterbegin', iconBadge(name, tone));
+    }
+  });
+}
 
 function wireTabs() {
   document.querySelectorAll('.tab').forEach((button) => {
@@ -174,7 +242,8 @@ function renderEvidenceFeed(evidence, escalations) {
 function renderEvidenceCard(item) {
   return `
     <article class="evidence-card">
-      <div>
+      <div class="card-kicker">
+        ${iconBadge('evidence', 'blue')}
         <span class="tag">${escapeHtml(item.type)}</span>
         <span class="tag muted">${escapeHtml(item.status)}</span>
       </div>
@@ -205,23 +274,23 @@ function renderBriefShell(escalations) {
     </div>
     <div class="brief-layout">
       <section class="brief-card wide">
-        <h3>Top executive risks</h3>
+        ${sectionHeading('Top executive risks', 'brief', 'red')}
         <div class="stack">${top.map(renderTopRisk).join('')}</div>
       </section>
       <section class="brief-card">
-        <h3>Severity heatmap</h3>
+        ${sectionHeading('Severity heatmap', 'scope', 'amber')}
         ${renderHeatmap(escalations)}
       </section>
       <section class="brief-card">
-        <h3>Blockers</h3>
+        ${sectionHeading('Blockers', 'alert', 'red')}
         <ul>${blockers.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
       </section>
       <section class="brief-card">
-        <h3>Unresolved decisions</h3>
+        ${sectionHeading('Unresolved decisions', 'signal', 'blue')}
         <ul>${state.data.briefDefaults.unresolvedDecisions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
       </section>
       <section class="brief-card">
-        <h3>Recommended next actions</h3>
+        ${sectionHeading('Recommended next actions', 'check', 'green')}
         <ul>${state.data.briefDefaults.recommendedActions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
       </section>
     </div>
@@ -232,8 +301,11 @@ function renderRepoShell() {
   const artifacts = state.data.issueArtifacts;
   document.getElementById('repo-content').innerHTML = `
     <div class="notice">
-      <strong>Fabricated local repo:</strong>
-      <span>This view teaches issue breakdown. It does not call GitHub or create live issues, commits, or pull requests.</span>
+      ${iconBadge('repo', 'green')}
+      <div>
+        <strong>Fabricated local repo:</strong>
+        <span>This view teaches issue breakdown. It does not call GitHub or create live issues, commits, or pull requests.</span>
+      </div>
     </div>
     <div class="metric-row">
       ${metric('Issues', artifacts.length)}
@@ -249,14 +321,18 @@ function renderRepoShell() {
 function renderTraceShell() {
   document.getElementById('trace-content').innerHTML = `
     <ol class="trace-list">
-      ${state.data.buildTrace.map((item) => `
+      ${state.data.buildTrace.map((item, index) => {
+        const [iconName, tone] = TRACE_ICONS[index % TRACE_ICONS.length];
+        return `
         <li>
+          ${iconBadge(iconName, tone)}
           <span>${escapeHtml(item.id)}</span>
           <h3>${escapeHtml(item.step)}</h3>
           <p>${escapeHtml(item.summary)}</p>
           <code>${escapeHtml(item.source)}</code>
         </li>
-      `).join('')}
+      `;
+      }).join('')}
     </ol>
   `;
 }
@@ -305,8 +381,11 @@ function renderIssueArtifact(item) {
   return `
     <article class="issue-card">
       <header>
-        <span>${escapeHtml(item.id)}</span>
-        <strong>${escapeHtml(item.title)}</strong>
+        ${iconBadge('repo', 'green')}
+        <div>
+          <span>${escapeHtml(item.id)}</span>
+          <strong>${escapeHtml(item.title)}</strong>
+        </div>
       </header>
       <p>${escapeHtml(item.implementationNotes)}</p>
       <div class="tag-row">${item.labels.map((label) => `<span class="tag">${escapeHtml(label)}</span>`).join('')}</div>
@@ -486,7 +565,17 @@ function statusSelect(id, status) {
 }
 
 function metric(label, value) {
-  return `<div class="metric"><span>${escapeHtml(label)}</span><b>${escapeHtml(value)}</b></div>`;
+  const [name, tone] = METRIC_ICONS[label] || ['workflow', ''];
+  return `<div class="metric">${iconBadge(name, tone)}<span>${escapeHtml(label)}</span><b>${escapeHtml(value)}</b></div>`;
+}
+
+function sectionHeading(text, iconName, tone = '') {
+  return `<h3 class="section-title">${iconBadge(iconName, tone)}${escapeHtml(text)}</h3>`;
+}
+
+function iconBadge(name, tone = '') {
+  const toneClass = tone ? ` ${tone}` : '';
+  return `<span class="icon-badge${toneClass}" aria-hidden="true"><svg viewBox="0 0 24 24">${ICONS[name] || ICONS.workflow}</svg></span>`;
 }
 
 function reviewedEvidenceCount() {

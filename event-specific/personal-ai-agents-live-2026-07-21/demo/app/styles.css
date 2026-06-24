@@ -150,6 +150,9 @@ h2 {
 }
 
 .tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   min-height: 2.75rem;
   padding: 0.65rem 0.9rem;
   border: 1px solid var(--line);
@@ -171,6 +174,64 @@ h2 {
   color: #061018;
   border-color: var(--cyan);
   background: var(--cyan);
+}
+
+.tab.is-active .icon-badge {
+  color: var(--cyan);
+  background: #061018;
+}
+
+.icon-badge {
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #071016;
+  background: var(--cyan);
+  flex: 0 0 auto;
+}
+
+.icon-badge.blue {
+  background: var(--blue);
+}
+
+.icon-badge.pink {
+  background: var(--pink);
+}
+
+.icon-badge.amber {
+  background: var(--amber);
+}
+
+.icon-badge.green {
+  background: var(--green);
+}
+
+.icon-badge.red {
+  background: var(--red);
+}
+
+.icon-badge svg {
+  width: 1.18rem;
+  height: 1.18rem;
+  stroke: currentColor;
+  stroke-width: 2.35;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tab .icon-badge {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 7px;
+}
+
+.tab .icon-badge svg {
+  width: 0.95rem;
+  height: 0.95rem;
 }
 
 .view {
@@ -195,6 +256,18 @@ h2 {
   margin-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 1rem;
+}
+
+.view-header h2,
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.view-header h2 .icon-badge {
+  width: 2.35rem;
+  height: 2.35rem;
 }
 
 .placeholder {
@@ -232,6 +305,10 @@ h2 {
 }
 
 .metric {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 0.7rem;
   min-width: 9rem;
   padding: 0.8rem;
   border: 1px solid var(--line);
@@ -239,8 +316,16 @@ h2 {
   background: var(--panel);
 }
 
-.metric span {
+.metric .icon-badge {
+  grid-row: 1 / span 2;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 8px;
+}
+
+.metric span:not(.icon-badge) {
   display: block;
+  grid-column: 2;
   color: var(--faint);
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -249,6 +334,7 @@ h2 {
 
 .metric b {
   display: block;
+  grid-column: 2;
   margin-top: 0.25rem;
   color: var(--text);
   font-size: 1.6rem;
@@ -456,6 +542,19 @@ td em {
   white-space: nowrap;
 }
 
+.card-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.card-kicker .icon-badge {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 7px;
+}
+
 .brief-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
@@ -562,6 +661,7 @@ td em {
 
 .notice {
   display: flex;
+  align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.9rem 1rem;
@@ -569,7 +669,18 @@ td em {
 }
 
 .notice strong {
+  display: block;
   color: var(--cyan);
+}
+
+.notice .icon-badge {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 7px;
+}
+
+.notice span {
+  display: block;
 }
 
 .repo-grid {
@@ -586,10 +697,23 @@ td em {
 
 .issue-card header {
   display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
+}
+
+.issue-card header .icon-badge {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 8px;
+}
+
+.issue-card header div {
+  display: grid;
   gap: 0.25rem;
 }
 
-.issue-card header span {
+.issue-card header div span {
   color: var(--cyan);
   font-size: 0.78rem;
   font-weight: 900;
@@ -645,7 +769,6 @@ td em {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: trace;
 }
 
 .trace-list li {
@@ -656,21 +779,13 @@ td em {
   padding: 1rem;
 }
 
-.trace-list li::before {
-  counter-increment: trace;
-  content: counter(trace);
-  display: grid;
-  place-items: center;
-  grid-row: span 3;
+.trace-list .icon-badge {
+  grid-row: span 4;
   width: 2.4rem;
   height: 2.4rem;
-  border-radius: 999px;
-  color: #061018;
-  background: var(--cyan);
-  font-weight: 900;
 }
 
-.trace-list span {
+.trace-list li > span:not(.icon-badge) {
   color: var(--faint);
   font-size: 0.76rem;
   font-weight: 900;
