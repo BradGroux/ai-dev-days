@@ -1,0 +1,258 @@
+:root {
+  color-scheme: dark;
+  --bg: #071016;
+  --panel: #0c1822;
+  --panel-2: #102332;
+  --line: #244455;
+  --line-strong: #386477;
+  --text: #edf6fb;
+  --muted: #9bb3c3;
+  --faint: #6d8798;
+  --cyan: #5eead4;
+  --blue: #60a5fa;
+  --pink: #f472b6;
+  --amber: #fbbf24;
+  --red: #fb7185;
+  --green: #34d399;
+  --shadow: rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(94, 234, 212, 0.12), transparent 28rem),
+    linear-gradient(135deg, #071016 0%, #0a1621 52%, #10162a 100%);
+  font-family: Inter, Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem clamp(1rem, 4vw, 3.5rem) 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.eyebrow {
+  margin: 0 0 0.45rem;
+  color: var(--cyan);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 52rem;
+  margin-bottom: 0.45rem;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.lede {
+  max-width: 52rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.status-panel {
+  align-self: end;
+  min-width: 13rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 42px var(--shadow);
+}
+
+.status-panel strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.status-panel span {
+  color: var(--muted);
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.status-dot::before {
+  content: "";
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--amber);
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.5);
+}
+
+.status-dot.is-ready::before {
+  background: var(--green);
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.55);
+}
+
+.status-dot.is-error::before {
+  background: var(--red);
+  box-shadow: 0 0 18px rgba(251, 113, 133, 0.55);
+}
+
+.app-shell {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 4vw, 3.5rem) 3rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.tab {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab:hover,
+.tab:focus-visible {
+  color: var(--text);
+  border-color: var(--line-strong);
+  outline: none;
+}
+
+.tab.is-active {
+  color: #061018;
+  border-color: var(--cyan);
+  background: var(--cyan);
+}
+
+.view {
+  display: none;
+  min-height: 28rem;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.022));
+  box-shadow: 0 18px 52px var(--shadow);
+}
+
+.view.is-active {
+  display: block;
+}
+
+.view-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+}
+
+.placeholder {
+  min-height: 18rem;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.placeholder strong {
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.metric-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.metric {
+  min-width: 9rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--faint);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.metric b {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--text);
+  font-size: 1.6rem;
+}
+
+@media (max-width: 760px) {
+  .app-header {
+    display: block;
+  }
+
+  .status-panel {
+    margin-top: 1rem;
+  }
+
+  .view-header {
+    display: block;
+  }
+}
