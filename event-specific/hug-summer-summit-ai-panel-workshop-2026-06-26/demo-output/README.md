@@ -14,6 +14,7 @@ This folder contains output generated during the isolated `hug-demo` OpenClaw de
 
 - [`agent-workflow-channel-boundary.md`](agent-workflow-channel-boundary.md) — generated internal-channel boundary document for the reading-support agent workflow, including prompt history.
 - [`volunteer-reading-support-agent-memory.md`](volunteer-reading-support-agent-memory.md) — generated memory note for a volunteer-focused reading-support research agent.
+- [`hug-demo-openclaw-config-sanitized.md`](hug-demo-openclaw-config-sanitized.md) — sanitized OpenClaw profile/config snapshot for the isolated demo environment. Secrets are redacted.
 
 ## Safety status
 
