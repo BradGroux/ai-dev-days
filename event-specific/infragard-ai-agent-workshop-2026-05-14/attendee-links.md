@@ -8,7 +8,7 @@ Start here for the InfraGard Houston AI Agent Workshop.
 - Workshop repo: https://github.com/BradGroux/openclaw-dev-days
 - Event overview: [`README.md`](README.md)
 - Requirements: [`requirements.md`](requirements.md)
-- Slide deck: [`slides.html`](slides.html)
+- Slide deck: [`slides.html`](slides.html) / [`slides.pdf`](slides.pdf)
 - Agenda: [`agenda.md`](agenda.md)
 - Optional prep: [`attendee-prep.md`](attendee-prep.md)
 - Community Discord: https://discord.gg/Gmfkm7QVSF
