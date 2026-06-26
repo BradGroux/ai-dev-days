@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E Corp Cyber Escalation Command Center</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Fictional workshop prototype</p>
+      <h1>E Corp Cyber Escalation Command Center</h1>
+      <p class="lede">Local-only triage for fabricated cyber risks, issues, and threat signals.</p>
+    </div>
+    <div class="status-panel" aria-live="polite">
+      <span id="data-status" class="status-dot">Loading data</span>
+      <strong id="escalation-count">0</strong>
+      <span>escalations</span>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <nav class="tabs" aria-label="Command center views">
+      <button class="tab is-active" type="button" data-tab="command">Command Center</button>
+      <button class="tab" type="button" data-tab="evidence">Evidence Feed</button>
+      <button class="tab" type="button" data-tab="brief">Executive Brief</button>
+      <button class="tab" type="button" data-tab="repo">Fabricated Repo</button>
+      <button class="tab" type="button" data-tab="trace">Build Trace</button>
+    </nav>
+
+    <section id="command" class="view is-active" tabindex="-1">
+      <div class="view-header">
+        <p class="eyebrow">Triage queue</p>
+        <h2>Command Center</h2>
+      </div>
+      <div id="command-content" class="placeholder"></div>
+    </section>
+
+    <section id="evidence" class="view" tabindex="-1">
+      <div class="view-header">
+        <p class="eyebrow">Linked source material</p>
+        <h2>Evidence Feed</h2>
+      </div>
+      <div id="evidence-content" class="placeholder"></div>
+    </section>
+
+    <section id="brief" class="view" tabindex="-1">
+      <div class="view-header">
+        <p class="eyebrow">Leadership summary</p>
+        <h2>Executive Brief</h2>
+      </div>
+      <div id="brief-content" class="placeholder"></div>
+    </section>
+
+    <section id="repo" class="view" tabindex="-1">
+      <div class="view-header">
+        <p class="eyebrow">Local simulation</p>
+        <h2>Fabricated Repo</h2>
+      </div>
+      <div id="repo-content" class="placeholder"></div>
+    </section>
+
+    <section id="trace" class="view" tabindex="-1">
+      <div class="view-header">
+        <p class="eyebrow">Artifact chain</p>
+        <h2>Build Trace</h2>
+      </div>
+      <div id="trace-content" class="placeholder"></div>
+    </section>
+  </main>
+
+  <script src="data/app-seed.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

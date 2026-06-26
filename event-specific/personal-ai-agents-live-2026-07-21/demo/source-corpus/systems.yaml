@@ -1,0 +1,41 @@
+systems:
+  - id: identity-recovery
+    name: Identity Recovery Portal
+    division: Technology Operations
+    data_domain: identity and access
+  - id: bank-of-e-core
+    name: Bank of E Core Recovery
+    division: Bank of E
+    data_domain: banking operations
+  - id: ecoin-ledger
+    name: E Coin Ledger Monitoring
+    division: E Coin
+    data_domain: digital payments
+  - id: ephone-support
+    name: E Phone Support Console
+    division: E Phone
+    data_domain: customer support
+  - id: healthcare-portal
+    name: E Healthcare Patient Portal
+    division: E Healthcare
+    data_domain: healthcare access
+  - id: shipping-routing
+    name: E Shipping Routing Dashboard
+    division: E Shipping
+    data_domain: logistics
+  - id: recovery-hq-access
+    name: Recovery Site Access
+    division: E Corp Recovery Program
+    data_domain: physical access
+  - id: executive-briefing
+    name: Executive Briefing Workflow
+    division: Executive Operations
+    data_domain: governance
+  - id: employee-comms
+    name: Employee Communications Queue
+    division: HR
+    data_domain: employee communications
+  - id: legal-evidence
+    name: Legal Evidence Register
+    division: Legal and Risk
+    data_domain: legal evidence

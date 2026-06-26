@@ -1,0 +1,134 @@
+people:
+  - name: Phillip Price
+    role: CEO
+    affiliation: E Corp
+    demo_role: executive sponsor
+  - name: Tyrell Wellick
+    role: technology executive
+    affiliation: E Corp
+    demo_role: technology escalation owner
+  - name: Terry Colby
+    role: former CTO
+    affiliation: E Corp
+    demo_role: legacy systems stakeholder
+  - name: Scott Knowles
+    role: recovery operations executive
+    affiliation: E Corp
+    demo_role: recovery owner
+  - name: Susan Jacobs
+    role: general counsel
+    affiliation: E Corp
+    demo_role: legal reviewer
+  - name: Angela Moss
+    role: risk management
+    affiliation: E Corp
+    demo_role: primary operator
+  - name: Janet Robinson
+    role: executive operations manager
+    affiliation: E Corp
+    demo_role: executive brief owner
+  - name: Bobbi
+    role: HR manager
+    affiliation: E Corp
+    demo_role: employee impact owner
+  - name: Samar Swailem
+    role: engineer
+    affiliation: E Corp
+    demo_role: technical signal reviewer
+  - name: Sunil Markesh
+    alias: Mobley
+    role: Bank of E employee
+    affiliation: Bank of E
+    demo_role: banking operations signal
+  - name: Elizabeth
+    role: executive assistant
+    affiliation: E Corp
+    demo_role: scheduling and coordination
+  - name: Gideon Goddard
+    role: CEO
+    affiliation: Allsafe
+    demo_role: third-party security assurance
+  - name: Elliot Alderson
+    role: cybersecurity engineer
+    affiliation: Allsafe
+    demo_role: technical context source
+  - name: Lloyd Chong
+    role: engineer
+    affiliation: Allsafe
+    demo_role: support signal source
+  - name: Ollie Parker
+    role: account manager
+    affiliation: Allsafe
+    demo_role: customer coordination source
+  - name: Darlene Alderson
+    role: external actor
+    affiliation: fsociety
+    demo_role: threat-context reference
+  - name: Mr. Robot
+    role: external actor
+    affiliation: fsociety
+    demo_role: threat-context reference
+  - name: Leslie Romero
+    role: external actor
+    affiliation: fsociety
+    demo_role: threat-context reference
+  - name: Shama Biswas
+    alias: Trenton
+    role: external actor
+    affiliation: fsociety
+    demo_role: threat-context reference
+  - name: Francis Shaw
+    alias: Cisco
+    role: external actor
+    affiliation: Dark Army liaison
+    demo_role: threat-context reference
+  - name: Zhi Zhang
+    alias: Whiterose
+    role: external actor
+    affiliation: Dark Army
+    demo_role: adversarial pressure reference
+  - name: Grant
+    role: external actor
+    affiliation: Dark Army
+    demo_role: adversarial pressure reference
+  - name: Irving
+    role: external actor
+    affiliation: Dark Army
+    demo_role: adversarial pressure reference
+  - name: Dominique DiPierro
+    alias: Dom
+    role: FBI agent
+    affiliation: FBI
+    demo_role: external agency liaison
+  - name: Ernesto Santiago
+    role: FBI supervisor
+    affiliation: FBI
+    demo_role: external agency pressure
+  - name: Norm Gill
+    role: FBI agent
+    affiliation: FBI
+    demo_role: external agency pressure
+  - name: Olivia Cortez
+    role: bank employee
+    affiliation: Cyprus National Bank
+    demo_role: external finance context
+  - name: Freddy Lomax
+    role: attorney
+    affiliation: external counsel
+    demo_role: legal-risk reference
+  - name: Antara Nayar
+    role: attorney
+    affiliation: external counsel
+    demo_role: legal-risk reference
+  - name: Donald Moss
+    role: family stakeholder
+    affiliation: civilian
+    demo_role: public impact reference
+  - name: Sharon Knowles
+    role: executive spouse
+    affiliation: civilian
+    demo_role: reputational impact reference
+  - name: Joanna Wellick
+    role: executive spouse
+    affiliation: civilian
+    demo_role: reputational impact reference
