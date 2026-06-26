@@ -185,4 +185,4 @@ Read my workflow context file. Explain which parts of the OpenClaw architecture 
 - [OpenClaw Gateway architecture](https://docs.openclaw.ai/concepts/architecture)
 - [OpenClaw Agent Loop](https://docs.openclaw.ai/concepts/agent-loop)
 - [OpenClaw Context](https://docs.openclaw.ai/concepts/context)
-- [ClawDocs Architecture Overview](https://clawdocs.org/architecture/overview/)
+- [OpenClaw Architecture](https://docs.openclaw.ai/architecture)
