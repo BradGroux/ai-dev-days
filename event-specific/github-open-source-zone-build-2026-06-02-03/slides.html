@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>OpenClaw at Microsoft Build Open Source Zone</title>
+<style>
+:root{
+  --bg:#071016;
+  --panel:#0d1821;
+  --panel2:#122431;
+  --ink:#edf6fb;
+  --muted:#9db6c8;
+  --line:#244657;
+  --cyan:#5eead4;
+  --blue:#60a5fa;
+  --green:#34d399;
+  --amber:#fbbf24;
+  --pink:#f472b6;
+  --red:#fb7185;
+  --shadow:rgba(0,0,0,.34);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Inter,Roboto,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{background:linear-gradient(135deg,#071016 0%,#0b1821 46%,#15172b 100%)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.stage{width:100vw;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:66px 78px 70px;overflow:hidden}
+.slide.active{display:flex}
+.slide:before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(180deg,var(--cyan),var(--blue),var(--pink));opacity:.95}
+.slide:after{content:"";position:absolute;right:-120px;top:-160px;width:380px;height:380px;border:1px solid rgba(94,234,212,.12);border-radius:50%;box-shadow:0 0 0 88px rgba(96,165,250,.035),0 0 0 170px rgba(244,114,182,.024);pointer-events:none}
+.center{justify-content:center}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;flex:1}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kicker{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:14px}
+h1{font-size:68px;line-height:1.02;letter-spacing:0;font-weight:860;max-width:1060px}
+h2{font-size:52px;line-height:1.08;letter-spacing:0;font-weight:830;max-width:1060px}
+h3{font-size:25px;line-height:1.18;font-weight:760}
+.sub{font-size:24px;line-height:1.42;color:var(--muted);max-width:920px;margin-top:18px}
+.gradient{background:linear-gradient(100deg,var(--cyan),var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:999px;padding:9px 14px;color:var(--muted);font-size:16px;font-weight:650}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));border:1px solid var(--line);border-radius:8px;padding:22px 23px;box-shadow:0 16px 42px var(--shadow)}
+.card.accent{border-color:rgba(94,234,212,.55)}
+.card.warn{border-color:rgba(251,191,36,.48);background:linear-gradient(180deg,rgba(251,191,36,.12),rgba(255,255,255,.02))}
+.card.good{border-color:rgba(52,211,153,.48);background:linear-gradient(180deg,rgba(52,211,153,.12),rgba(255,255,255,.02))}
+.card.hot{border-color:rgba(244,114,182,.5);background:linear-gradient(180deg,rgba(244,114,182,.12),rgba(255,255,255,.02))}
+.label{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:20px;font-weight:780;margin-bottom:10px}
+.mark{width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:#071016;background:var(--cyan);font-size:14px;flex:0 0 auto}
+.mark.blue{background:var(--blue)}
+.mark.pink{background:var(--pink)}
+.mark.amber{background:var(--amber)}
+.mark.green{background:var(--green)}
+.mark.red{background:var(--red)}
+.card p,.card li{font-size:18px;line-height:1.42;color:var(--muted)}
+ul{list-style:none;display:grid;gap:11px}
+li{position:relative;padding-left:22px}
+li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+.intro-grid{display:grid;grid-template-columns:1fr 250px;gap:42px;align-items:end}
+.contact-box{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:22px}
+.qr{width:164px;height:164px;background:#fff;border-radius:8px;padding:7px;border:1px solid rgba(255,255,255,.28)}
+.diagram{display:grid;gap:14px}
+.node{display:flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:17px 19px}
+.node-title{font-size:21px;font-weight:780;color:var(--ink)}
+.node-desc{font-size:17px;color:var(--muted);line-height:1.35;margin-top:2px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+.step{min-height:150px;padding:19px 17px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.step-num{font-size:14px;font-weight:900;color:#071016;background:var(--cyan);display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:8px;margin-bottom:12px}
+.step h3{font-size:21px;margin-bottom:8px}
+.step p{font-size:16px;color:var(--muted);line-height:1.35}
+.code{background:#050b11;border:1px solid #244455;border-radius:8px;padding:18px 20px;color:#dffcff;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:16px;line-height:1.45;white-space:pre-wrap;box-shadow:0 16px 42px var(--shadow)}
+.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.route{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+.route-time{border-radius:8px;background:linear-gradient(145deg,var(--cyan),var(--blue));color:#071016;font-weight:900;display:flex;align-items:center;justify-content:center;min-height:62px;font-size:22px}
+.route h3{font-size:20px;margin-bottom:4px}
+.route p{font-size:16px;color:var(--muted);line-height:1.35}
+.schedule{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.event{display:grid;grid-template-columns:84px 1fr;gap:15px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+.date{border-radius:8px;background:linear-gradient(145deg,var(--cyan),var(--blue));color:#071016;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:72px}
+.date span:first-child{font-size:15px;letter-spacing:.08em}
+.date span:last-child{font-size:27px;line-height:1}
+.event h3{font-size:21px;margin-bottom:4px}
+.event p{font-size:16px;color:var(--muted);line-height:1.35}
+.where-cta{margin-top:22px;text-align:center;font-size:24px;font-weight:840;color:var(--cyan)}
+.where-cta a{color:var(--cyan)}
+.follow-card{display:grid;grid-template-columns:132px 1fr;gap:22px;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;padding:20px}
+.headshot{width:132px;height:132px;border-radius:50%;object-fit:cover;border:2px solid rgba(94,234,212,.55);box-shadow:0 18px 48px var(--shadow)}
+.link-list{display:grid;gap:8px;margin-top:12px}
+.link-list a{font-size:17px;color:var(--ink)}
+.footer{position:absolute;left:78px;right:78px;bottom:22px;display:flex;justify-content:space-between;color:#7894a7;font-size:15px;z-index:5}
+.nav{position:absolute;top:22px;right:24px;display:flex;gap:8px;z-index:20}
+.nav button{width:42px;height:42px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font-size:19px;cursor:pointer}
+.nav button:hover{border-color:var(--cyan)}
+.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:7}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));transition:width .2s ease}
+@media(max-width:900px){
+  .slide{padding:58px 32px 66px}
+  .split,.two,.three,.intro-grid,.flow,.route-grid,.schedule,.follow-card{grid-template-columns:1fr}
+  h1{font-size:44px}
+  h2{font-size:35px}
+  .sub{font-size:19px}
+  .footer{left:32px;right:32px;font-size:12px}
+  .nav{top:14px;right:14px}
+}
+@media print{
+  @page{size:13.333in 7.5in;margin:0}
+  html,body{overflow:visible;background:#071016}
+  .stage{width:13.333in;height:auto;overflow:visible}
+  .slide{position:relative;display:flex !important;width:13.333in;height:7.5in;max-height:none;overflow:hidden;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .nav,.progress,.footer{display:none}
+  .slide{padding:66px 78px 70px}
+  .split,.two,.intro-grid,.route-grid,.schedule{grid-template-columns:1fr 1fr}
+  .three{grid-template-columns:repeat(3,1fr)}
+  .flow{grid-template-columns:repeat(5,1fr)}
+  .follow-card{grid-template-columns:132px 1fr}
+  h1{font-size:68px}
+  h2{font-size:52px}
+  .sub{font-size:24px}
+  .gradient{background:none;-webkit-background-clip:initial;-webkit-text-fill-color:var(--blue);color:var(--blue)}
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <section class="slide active" data-title="OpenClaw At Open Source Zone">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Microsoft Build Open Source Zone · June 2-3, 2026</div>
+      <div class="intro-grid">
+        <div>
+          <h1>OpenClaw for <span class="gradient">real agent workflows</span></h1>
+          <p class="sub">A personal AI assistant and local-first Gateway for durable context, bounded tools, channels, nodes, sessions, and visible work.</p>
+          <div class="meta">
+            <span class="pill">@BradGroux</span>
+            <span class="pill">OpenClaw.ai</span>
+            <span class="pill">Open Source Zone</span>
+            <span class="pill">OpenClaw Maintainer</span>
+            <span class="pill">Fort Mason Center, San Francisco</span>
+          </div>
+        </div>
+        <div class="contact-box">
+          <a href="https://discord.com/invite/clawd"><img class="qr" src="assets/openclaw-discord-qr.png" alt="QR code for the official OpenClaw Discord server"/></a>
+          <strong>OpenClaw Discord</strong>
+          <span style="color:var(--muted);font-size:16px">discord.com/invite/clawd</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Fast Hook">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The 30-Second Version</div>
+      <h2>OpenClaw is what comes after the one-off prompt.</h2>
+      <p class="sub">Real work needs project context, tools, sessions, channels, device capabilities, memory, and human review. OpenClaw gives those pieces a local control plane.</p>
+      <div class="three" style="margin-top:30px">
+        <div class="card accent"><div class="label"><span class="mark">C</span>Context</div><p>Workspace files, instructions, sessions, memory, and source notes.</p></div>
+        <div class="card hot"><div class="label"><span class="mark pink">A</span>Access</div><p>Bounded tools, channels, nodes, clients, and automations.</p></div>
+        <div class="card good"><div class="label"><span class="mark green">V</span>Visibility</div><p>Streaming output, checkpoints, logs, drafts, and review artifacts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Business Use Cases">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Why Business Users Should Care</div>
+      <h2>AI value shows up in operating loops.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark">1</span>Intake</div><p>Turn messy notes, chats, issues, and docs into structured work context.</p></div>
+        <div class="card"><div class="label"><span class="mark blue">2</span>Decision</div><p>Surface assumptions, missing facts, risks, and approval points before action.</p></div>
+        <div class="card"><div class="label"><span class="mark green">3</span>Execution</div><p>Create task maps, runbooks, drafts, checklists, and reviewable artifacts.</p></div>
+      </div>
+      <div class="card warn" style="margin-top:28px">
+        <div class="label"><span class="mark amber">!</span>The safe first win</div>
+        <p>Draft-only workflows with synthetic or sanitized data. No live sends, no private accounts, no production actions, and no credentials on the floor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Architecture">
+    <div class="split">
+      <div>
+        <div class="kicker">Mental Model</div>
+        <h2>Gateway, runtime, tools, memory.</h2>
+        <p class="sub">OpenClaw routes work into agent runs that assemble context, call models, execute tools, stream progress, and persist useful state.</p>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark">1</span><div><div class="node-title">Clients and channels</div><div class="node-desc">Dashboard, CLI, WebChat, automations, Microsoft Teams, Discord, and messaging surfaces.</div></div></div>
+        <div class="node"><span class="mark blue">2</span><div><div class="node-title">OpenClaw Gateway</div><div class="node-desc">The local switchboard for routing, sessions, and events.</div></div></div>
+        <div class="node"><span class="mark pink">3</span><div><div class="node-title">Agent runtime</div><div class="node-desc">Assembles context, talks to models, calls tools, and streams output.</div></div></div>
+        <div class="node"><span class="mark green">4</span><div><div class="node-title">Files, memory, skills, nodes</div><div class="node-desc">The working surface that turns answers into repeatable workflows.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Install Quickstart">
+    <div class="split">
+      <div>
+        <div class="kicker">Install Quickstart</div>
+        <h2>Send people to OpenClaw.ai.</h2>
+        <p class="sub">Start with the official site, pick your operating system, install locally, then connect only the channels and tools you actually need.</p>
+        <div class="card warn" style="margin-top:24px">
+          <div class="label"><span class="mark amber">!</span>Floor boundary</div>
+          <p>Use the conference demo for concepts. Do not paste secrets, connect live work accounts, or grant production access on the floor.</p>
+        </div>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark">WIN</span><div><div class="node-title">Windows first</div><div class="node-desc">Go to OpenClaw.ai, choose Windows, run the installer, launch OpenClaw Gateway.</div></div></div>
+        <div class="node"><span class="mark blue">MAC</span><div><div class="node-title">macOS</div><div class="node-desc">Go to OpenClaw.ai, choose macOS, install locally, approve expected local permissions, launch Gateway.</div></div></div>
+        <div class="node"><span class="mark green">LIN</span><div><div class="node-title">Linux</div><div class="node-desc">Go to OpenClaw.ai, choose Linux, follow the package or CLI path, start Gateway.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Channels">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Channels</div>
+      <h2>Meet users where work already happens.</h2>
+      <p class="sub">Microsoft Teams is the priority business channel. The same Gateway pattern can route other user-facing surfaces into bounded, reviewable agent runs.</p>
+      <div class="three" style="margin-top:30px">
+        <div class="card accent"><div class="label"><span class="mark">1</span>Microsoft Teams</div><p>Priority enterprise surface for chats, channels, approvals, meeting follow-up, and maintainer workflows.</p></div>
+        <div class="card hot"><div class="label"><span class="mark pink">2</span>Community channels</div><p>Telegram, WhatsApp, Discord, and similar surfaces for lightweight community, support, and follow-up loops.</p></div>
+        <div class="card good"><div class="label"><span class="mark green">3</span>Local and personal</div><p>iMessage, WebChat, CLI, desktop clients, and custom nodes when the workflow belongs closer to the user.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Workflow Pattern">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The Repeatable Pattern</div>
+      <h2>Context, role, boundary, artifact, verification.</h2>
+      <div class="flow">
+        <div class="step"><div class="step-num">1</div><h3>Context</h3><p>Write the source memory before asking for output.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Role</h3><p>Choose the right agent lens for this pass.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Boundary</h3><p>Name unsafe data and forbidden actions.</p></div>
+        <div class="step"><div class="step-num">4</div><h3>Artifact</h3><p>Ask for one useful output at a time.</p></div>
+        <div class="step"><div class="step-num">5</div><h3>Verify</h3><p>Challenge assumptions before using it.</p></div>
+      </div>
+      <p class="sub" style="margin-top:32px">This is the business story: agent output becomes reviewable work, not uncontrolled action.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Business Demo">
+    <div class="split">
+      <div>
+        <div class="kicker">Demo 1</div>
+        <h2>Business intake to execution plan.</h2>
+        <p class="sub">Turn synthetic notes into a draft operating packet, decision list, risks, approval gates, and reviewable task map.</p>
+      </div>
+      <div>
+        <div class="code">Run order:
+1. Read memory, PRD, SOP, and notes.
+2. Ask clarifying questions.
+3. Build the operating packet.
+4. Map it into task cards.
+5. Review safety and approvals.</div>
+        <div class="card good" style="margin-top:18px">
+          <div class="label"><span class="mark green">OK</span>Expected attendee takeaway</div>
+          <p>OpenClaw can help transform messy business context into a bounded, draft-only workflow that a human can review and execute.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Maintainer Demo">
+    <div class="split">
+      <div>
+        <div class="kicker">Demo 2</div>
+        <h2>Open source maintainer triage.</h2>
+        <p class="sub">Classify synthetic issues, find missing reproduction details, propose labels, identify risk, and draft next maintainer actions without posting anything live.</p>
+      </div>
+      <div class="two">
+        <div class="card accent"><div class="label"><span class="mark">T</span>Triage</div><p>Group issues by type, severity, missing info, and likely owner.</p></div>
+        <div class="card hot"><div class="label"><span class="mark pink">R</span>Review</div><p>Name what a maintainer must verify before labels, comments, closes, or PR work.</p></div>
+        <div class="card warn" style="grid-column:1 / -1"><div class="label"><span class="mark amber">!</span>Floor boundary</div><p>No private repo data, no tokens, no comments, no labels, no merges, no external changes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Execution Follow-Through">
+    <div class="split">
+      <div>
+        <div class="kicker">After The Plan</div>
+        <h2>Turn agent output into reviewable work.</h2>
+        <p class="sub">OpenClaw is strongest when assistants produce artifacts humans can inspect, approve, route, and improve.</p>
+      </div>
+      <div class="three" style="grid-template-columns:1fr;gap:14px">
+        <div class="card accent"><div class="label"><span class="mark">1</span>Tasks</div><p>Agent output becomes owners, acceptance criteria, dependencies, and evidence.</p></div>
+        <div class="card good"><div class="label"><span class="mark green">2</span>Workflow</div><p>Work moves through review, approval, follow-up, and delivery instead of disappearing into chat history.</p></div>
+        <div class="card hot"><div class="label"><span class="mark pink">3</span>Orchestration</div><p>Add agents, tools, channels, nodes, and governance only after the safe first workflow works.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Safety">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Safety And Trust</div>
+      <h2>The first serious use case is controlled assistance.</h2>
+      <div class="two" style="margin-top:28px">
+        <div class="card good"><div class="label"><span class="mark green">Do</span>Safe defaults</div><ul><li>Use sanitized context.</li><li>Keep outputs draft-only.</li><li>Require approval for external actions.</li><li>Use allowlists and least privilege.</li><li>Verify facts before use.</li></ul></div>
+        <div class="card warn"><div class="label"><span class="mark amber">Stop</span>Risky moves</div><ul><li>Pasting secrets or customer records.</li><li>Connecting live accounts on the floor.</li><li>Letting agents post automatically.</li><li>Granting broad production access.</li><li>Skipping human review.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Conversation Routes">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">How To Route A Walk-Up Conversation</div>
+      <h2>Ask one useful question.</h2>
+      <p class="sub">What workflow would you want an agent to help with if it had the right context and channel?</p>
+      <div class="route-grid">
+        <div class="route"><div class="route-time">30s</div><div><h3>Walking by</h3><p>Use the hook and point to links.</p></div></div>
+        <div class="route"><div class="route-time">2m</div><div><h3>Curious</h3><p>Explain Gateway, runtime, context, tools, memory, and channels.</p></div></div>
+        <div class="route"><div class="route-time">5m</div><div><h3>Business or OSS</h3><p>Run business intake or maintainer triage.</p></div></div>
+        <div class="route"><div class="route-time">10m</div><div><h3>Serious adopter</h3><p>Go deeper on OpenClaw.ai, Microsoft Teams, safety, workflow execution, and follow-up.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Build Week Schedule">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">OpenClaw During Build Week</div>
+      <h2>20 OpenClaw maintainers on the ground.</h2>
+      <div class="schedule">
+        <div class="event"><div class="date"><span>TUE</span><span>Jun 2</span></div><div><h3>Open Source Zone</h3><p>9:00 AM-5:00 PM · Microsoft Build floor</p></div></div>
+        <div class="event"><div class="date"><span>WED</span><span>Jun 3</span></div><div><h3>Open Source Zone</h3><p>12:00-5:00 PM · Microsoft Build floor</p></div></div>
+        <div class="event"><div class="date"><span>WED</span><span>Jun 3</span></div><div><h3>OpenClaw: After Hours @ GitHub</h3><p>Evening gathering at GitHub HQ · check current registration page</p></div></div>
+        <div class="event"><div class="date"><span>ANY</span><span>Next</span></div><div><h3>Follow-up Path</h3><p>Docs, repo, Dev Days packet, Discord, and maintainer conversations</p></div></div>
+      </div>
+      <div class="where-cta"><a href="https://where.bradgroux.com">where.bradgroux.com</a></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Links">
+    <div class="split">
+      <div>
+        <div class="kicker">Keep Building</div>
+        <h2>Start with a safe draft-only workflow.</h2>
+        <p class="sub">Start at OpenClaw.ai. Connect channels intentionally. Keep secrets out. Verify before external action.</p>
+        <div class="link-list" style="margin-top:24px">
+          <a href="https://openclaw.ai">OpenClaw.ai</a>
+          <a href="https://github.com/openclaw/openclaw">github.com/openclaw/openclaw</a>
+          <a href="https://docs.openclaw.ai">docs.openclaw.ai</a>
+          <a href="https://github.com/BradGroux/openclaw-dev-days">github.com/BradGroux/openclaw-dev-days</a>
+          <a href="https://discord.com/invite/clawd">discord.com/invite/clawd</a>
+        </div>
+      </div>
+      <div>
+        <div class="follow-card">
+          <img class="headshot" src="assets/brad-groux-headshot.png" alt="Brad Groux headshot"/>
+          <div>
+            <div style="font-size:23px;font-weight:820;color:var(--cyan)">Brad Groux</div>
+            <div style="color:var(--muted);font-size:17px;margin-top:4px">OpenClaw maintainer · Builder and operator</div>
+            <div class="link-list">
+              <a href="https://github.com/BradGroux">github.com/BradGroux</a>
+              <a href="https://twitter.com/BradGroux">twitter.com/BradGroux</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-box" style="margin-top:18px">
+          <a href="https://discord.com/invite/clawd"><img class="qr" src="assets/openclaw-discord-qr.png" alt="QR code for the official OpenClaw Discord server"/></a>
+          <strong>OpenClaw Discord</strong>
+          <span style="color:var(--muted);font-size:16px">discord.com/invite/clawd</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="nav">
+  <button type="button" onclick="prev()" aria-label="Previous slide">‹</button>
+  <button type="button" onclick="next()" aria-label="Next slide">›</button>
+</div>
+<div class="footer"><span id="slideTitle"></span><span id="pageNo"></span></div>
+<div class="progress"><div id="progressBar"></div></div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+slides.forEach((slide,index)=>slide.id='slide'+(index+1));
+let idx=0;
+function show(){
+  slides.forEach((slide,index)=>slide.classList.toggle('active',index===idx));
+  document.getElementById('slideTitle').textContent=slides[idx].dataset.title||'';
+  document.getElementById('pageNo').textContent=(idx+1)+' / '+slides.length;
+  document.getElementById('progressBar').style.width=((idx+1)/slides.length*100)+'%';
+  history.replaceState(null,'','#slide'+(idx+1));
+}
+function next(){idx=Math.min(slides.length-1,idx+1);show()}
+function prev(){idx=Math.max(0,idx-1);show()}
+function goHash(){
+  const match=location.hash.match(/^#slide(\d+)$/);
+  if(!match)return;
+  const nextIndex=parseInt(match[1],10)-1;
+  if(nextIndex>=0&&nextIndex<slides.length){idx=nextIndex;show()}
+}
+document.addEventListener('keydown',event=>{
+  if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();next()}
+  if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();prev()}
+  if(event.key==='Home'){idx=0;show()}
+  if(event.key==='End'){idx=slides.length-1;show()}
+  if(event.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.();
+});
+window.addEventListener('hashchange',goHash);
+goHash();
+show();
+</script>
+</body>
+</html>

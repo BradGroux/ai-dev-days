@@ -2,6 +2,41 @@
 
 Use this page to choose the shortest useful path through the repo.
 
+## I am preparing for the H.U.G. Summer Summit AI panel and workshop
+
+Start with the June 26, 2026 H.U.G. Summer Summit packet:
+
+1. [Presenter packet](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/README.md)
+2. [PRD](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/PRD.md)
+3. [Agenda](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/agenda.md)
+4. [Slide deck](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/slides.html)
+5. [Speaker notes](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/speaker-notes-20-minute.md)
+6. [Talking points](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/talking-points.md)
+7. [Demo script](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/demo-script.md)
+8. [Prompt pack](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/prompt-pack.md)
+9. [Scenario cards](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/scenario-cards.md)
+
+## I am preparing for the Microsoft Build Open Source Zone
+
+Start with the June 2-3, 2026 OpenClaw Open Source Zone floor packet:
+
+1. [Presenter packet](event-specific/github-open-source-zone-build-2026-06-02-03/README.md)
+2. [PRD](event-specific/github-open-source-zone-build-2026-06-02-03/PRD.md)
+3. [Slide deck](event-specific/github-open-source-zone-build-2026-06-02-03/slides.html)
+4. [Talking points](event-specific/github-open-source-zone-build-2026-06-02-03/talking-points.md)
+5. [Demo script](event-specific/github-open-source-zone-build-2026-06-02-03/demo-script.md)
+6. [Prompt pack](event-specific/github-open-source-zone-build-2026-06-02-03/prompt-pack.md)
+
+## I am preparing for the GitHub Build creator demo
+
+Start with the June 1, 2026 GitHub Build creator demo packet:
+
+1. [Presenter packet](event-specific/github-build-creators-2026-06-01/README.md)
+2. [Slide deck](event-specific/github-build-creators-2026-06-01/slides.html)
+3. [Speaker notes](event-specific/github-build-creators-2026-06-01/speaker-notes-15-minute.md)
+4. [Demo script](event-specific/github-build-creators-2026-06-01/demo-script.md)
+5. [Prompt pack](event-specific/github-build-creators-2026-06-01/prompt-pack.md)
+
 ## I am attending the TAMU workshop
 
 Start with the TAMU event links:

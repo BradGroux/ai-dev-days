@@ -14,7 +14,7 @@
 
 - Attendees: [`attendee-links.md`](attendee-links.md)
 - Requirements: [`requirements.md`](requirements.md)
-- Slide deck: [`slides.html`](slides.html)
+- Slide deck: [`slides.html`](slides.html) / [`slides.pdf`](slides.pdf)
 - Optional prep: [`attendee-prep.md`](attendee-prep.md)
 - Session agenda: [`agenda.md`](agenda.md)
 - Practical prompt pack: [`prompt-pack.md`](prompt-pack.md)
