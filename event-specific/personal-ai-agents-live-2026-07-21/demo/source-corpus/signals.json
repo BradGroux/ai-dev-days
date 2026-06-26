@@ -1,0 +1,136 @@
+{
+  "signals": [
+    {
+      "id": "SIG-001",
+      "category": "issue",
+      "title": "Identity recovery backlog blocks Bank of E account restoration",
+      "division": "Bank of E",
+      "system": "identity-recovery",
+      "severity": "critical",
+      "confidence": "high",
+      "businessImpact": "Customer access restoration is delayed and support volume remains elevated.",
+      "nextAction": "Separate lockout volume from suspected abuse and assign decision owner."
+    },
+    {
+      "id": "SIG-002",
+      "category": "risk",
+      "title": "E Coin fraud signal quality is inconsistent",
+      "division": "E Coin",
+      "system": "ecoin-ledger",
+      "severity": "high",
+      "confidence": "medium",
+      "businessImpact": "False positives may slow customer recovery while true fraud remains difficult to prioritize.",
+      "nextAction": "Add evidence confidence and finance review before executive escalation."
+    },
+    {
+      "id": "SIG-003",
+      "category": "threat",
+      "title": "External agency asks for decision timeline",
+      "division": "Legal and Risk",
+      "system": "legal-evidence",
+      "severity": "high",
+      "confidence": "high",
+      "businessImpact": "Leadership needs a defensible timeline of evidence and decisions.",
+      "nextAction": "Link every executive recommendation to reviewed source evidence."
+    },
+    {
+      "id": "SIG-004",
+      "category": "issue",
+      "title": "Healthcare portal readiness is blocked by access review",
+      "division": "E Healthcare",
+      "system": "healthcare-portal",
+      "severity": "critical",
+      "confidence": "medium",
+      "businessImpact": "Patient-facing operations may be delayed unless access review is resolved.",
+      "nextAction": "Escalate owner and identify decision needed for residual risk acceptance."
+    },
+    {
+      "id": "SIG-005",
+      "category": "risk",
+      "title": "Employee payroll phishing confusion",
+      "division": "HR",
+      "system": "employee-comms",
+      "severity": "medium",
+      "confidence": "medium",
+      "businessImpact": "Employees may trust incorrect payroll or benefits messages during recovery.",
+      "nextAction": "Draft HR/legal reviewed employee guidance outside the prototype."
+    },
+    {
+      "id": "SIG-006",
+      "category": "issue",
+      "title": "Recovery site building access queue delays operations",
+      "division": "E Corp Recovery Program",
+      "system": "recovery-hq-access",
+      "severity": "high",
+      "confidence": "high",
+      "businessImpact": "Recovery teams cannot rotate staff efficiently across sites.",
+      "nextAction": "Assign operations owner and track whether the issue affects patient or banking operations."
+    },
+    {
+      "id": "SIG-007",
+      "category": "risk",
+      "title": "Shipping delays are being over-classified as cyber incidents",
+      "division": "E Shipping",
+      "system": "shipping-routing",
+      "severity": "medium",
+      "confidence": "high",
+      "businessImpact": "Incident queues are noisy and executives may misread operational delays as active threats.",
+      "nextAction": "Separate recovery issue category from threat category."
+    },
+    {
+      "id": "SIG-008",
+      "category": "threat",
+      "title": "Unverified adversarial chatter references recovery systems",
+      "division": "Technology Operations",
+      "system": "executive-briefing",
+      "severity": "high",
+      "confidence": "low",
+      "businessImpact": "Leadership needs awareness without treating unverified chatter as confirmed activity.",
+      "nextAction": "Keep as low-confidence threat signal pending corroboration."
+    },
+    {
+      "id": "SIG-009",
+      "category": "issue",
+      "title": "Third-party assurance note is incomplete",
+      "division": "Technology Operations",
+      "system": "legal-evidence",
+      "severity": "medium",
+      "confidence": "high",
+      "businessImpact": "Executive brief cannot claim reviewed readiness for systems not inspected.",
+      "nextAction": "Mark evidence pending and avoid overstatement."
+    },
+    {
+      "id": "SIG-010",
+      "category": "risk",
+      "title": "Executive summaries lack owner and decision owner separation",
+      "division": "Executive Operations",
+      "system": "executive-briefing",
+      "severity": "high",
+      "confidence": "high",
+      "businessImpact": "Escalations stall because action ownership and decision authority are blended.",
+      "nextAction": "Add separate owner fields in the command center."
+    },
+    {
+      "id": "SIG-011",
+      "category": "issue",
+      "title": "Support console recovery creates inconsistent customer guidance",
+      "division": "E Phone",
+      "system": "ephone-support",
+      "severity": "medium",
+      "confidence": "medium",
+      "businessImpact": "Support representatives may give inconsistent recovery instructions.",
+      "nextAction": "Flag as communications and support enablement issue."
+    },
+    {
+      "id": "SIG-012",
+      "category": "risk",
+      "title": "Evidence review status is not visible in triage meetings",
+      "division": "Legal and Risk",
+      "system": "legal-evidence",
+      "severity": "high",
+      "confidence": "high",
+      "businessImpact": "Unreviewed evidence may be presented as settled fact.",
+      "nextAction": "Show reviewed, unreviewed, disputed, and pending evidence states in the app."
+    }
+  ]
+}
