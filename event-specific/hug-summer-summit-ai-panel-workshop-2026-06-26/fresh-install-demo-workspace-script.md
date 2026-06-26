@@ -107,21 +107,25 @@ Speaker line:
 
 ### Mac / Linux
 
+Run the installer directly so attendees see the actual install path:
+
 ```bash
-if ! command -v openclaw >/dev/null 2>&1; then
-  curl -fsSL https://openclaw.ai/install.sh | bash
-fi
+curl -fsSL https://openclaw.ai/install.sh | bash
 openclaw --version
 ```
 
 ### Windows PowerShell
 
+Run the installer directly:
+
 ```powershell
-if (-not (Get-Command openclaw -ErrorAction SilentlyContinue)) {
-  iwr -useb https://openclaw.ai/install.ps1 | iex
-}
+iwr -useb https://openclaw.ai/install.ps1 | iex
 openclaw --version
 ```
+
+### If OpenClaw is already installed
+
+That is fine. The installer may update or confirm the existing CLI. The clean-demo behavior comes from using `--profile hug-demo` and `--workspace "$DEMO_ROOT"`, not from pretending the CLI has never been installed.
 
 Speaker line:
 
