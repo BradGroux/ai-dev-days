@@ -22,6 +22,18 @@ Turn public-safe Microsoft Build week notes into a small creator content pack:
 
 If live generation is slow, use [`expected-output.md`](expected-output.md) as the fallback artifact.
 
+## Optional business follow-up variant
+
+Use this variant when the audience is more founder/operator than
+creator-content focused:
+
+1. [`sample-public-business-followup-notes.md`](sample-public-business-followup-notes.md)
+2. [`business-followup-memory.md`](business-followup-memory.md)
+3. [`business-followup-prd.md`](business-followup-prd.md)
+4. [`business-followup-sop.md`](business-followup-sop.md)
+5. [`business-followup-expected-output.md`](business-followup-expected-output.md)
+6. [`../business-use-case-quick-demo.md`](../business-use-case-quick-demo.md)
+
 ## Safety boundary
 
 Do not paste secrets, API keys, tokens, credentials, private DMs, sponsor terms, attendee contact data, customer records, unreleased announcements, or private operational details into the demo.

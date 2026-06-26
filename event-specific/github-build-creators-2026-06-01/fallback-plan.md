@@ -32,6 +32,8 @@ Then walk through [`prompt-pack.md`](prompt-pack.md) as a prompt-read demo:
 
 - Use the local HTML deck or PDF.
 - Use [`demo/expected-output.md`](demo/expected-output.md) as the staged text output.
+- Use [`demo/business-followup-expected-output.md`](demo/business-followup-expected-output.md)
+  if you chose the business follow-up variant.
 - Point to the repo and Discord verbally.
 
 ## If Time Is Cut To 5 Minutes
