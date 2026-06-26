@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>H.U.G. Summer Summit 2026 AI Panel and Workshop</title>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#071016;
+  --panel:#0d1821;
+  --panel2:#122431;
+  --ink:#edf6fb;
+  --muted:#9db6c8;
+  --line:#244657;
+  --cyan:#5eead4;
+  --blue:#60a5fa;
+  --green:#34d399;
+  --amber:#fbbf24;
+  --pink:#f472b6;
+  --red:#fb7185;
+  --shadow:rgba(0,0,0,.34);
+  --wash:rgba(255,255,255,.045);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f5f8fb;
+  --panel:#ffffff;
+  --panel2:#e9f1f7;
+  --ink:#0b1720;
+  --muted:#4d6577;
+  --line:#c4d4df;
+  --cyan:#0f9488;
+  --blue:#2563eb;
+  --green:#15803d;
+  --amber:#b45309;
+  --pink:#be185d;
+  --red:#dc2626;
+  --shadow:rgba(15,34,48,.13);
+  --wash:rgba(12,34,52,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Inter,Roboto,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{background:linear-gradient(135deg,#071016 0%,#0b1821 46%,#15172b 100%)}
+:root[data-theme="light"] body{background:linear-gradient(135deg,#f8fbff 0%,#eef6fb 46%,#e7eef9 100%)}
+a{color:var(--cyan);text-decoration:none}
+.stage{width:100vw;height:100vh;position:relative;overflow:hidden}
+.dm-logo{position:fixed;top:22px;left:28px;width:142px;height:auto;z-index:18;opacity:.88;pointer-events:none}
+:root[data-theme="light"] .dm-logo{background:rgba(6,16,24,.86);border-radius:10px;padding:8px 10px;width:162px}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:66px 78px 70px;overflow:hidden}
+.slide.active{display:flex}
+.slide:before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:linear-gradient(180deg,var(--cyan),var(--blue),var(--pink));opacity:.95}
+.slide:after{content:"";position:absolute;right:-120px;top:-160px;width:380px;height:380px;border:1px solid color-mix(in srgb,var(--cyan) 22%,transparent);border-radius:50%;box-shadow:0 0 0 88px color-mix(in srgb,var(--blue) 7%,transparent),0 0 0 170px color-mix(in srgb,var(--pink) 5%,transparent);pointer-events:none}
+.center{justify-content:center}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;flex:1}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kicker{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:14px}
+h1{font-size:64px;line-height:1.02;letter-spacing:0;font-weight:860;max-width:1100px}
+h2{font-size:50px;line-height:1.08;letter-spacing:0;font-weight:830;max-width:1080px}
+h3{font-size:24px;line-height:1.18;font-weight:760}
+.sub{font-size:24px;line-height:1.42;color:var(--muted);max-width:940px;margin-top:18px}
+.gradient{background:linear-gradient(100deg,var(--cyan),var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pill{border:1px solid var(--line);background:var(--wash);border-radius:999px;padding:9px 14px;color:var(--muted);font-size:16px;font-weight:650}
+.card,.node,.follow-card,.contact-box,.cta-panel{background:linear-gradient(180deg,var(--wash),color-mix(in srgb,var(--panel) 88%,transparent));border:1px solid var(--line);border-radius:8px;box-shadow:0 16px 42px var(--shadow)}
+.card{padding:22px 23px}
+.card.accent{border-color:color-mix(in srgb,var(--cyan) 58%,var(--line))}
+.card.warn{border-color:color-mix(in srgb,var(--amber) 52%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--amber) 16%,transparent),var(--wash))}
+.card.good{border-color:color-mix(in srgb,var(--green) 52%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--green) 13%,transparent),var(--wash))}
+.card.hot{border-color:color-mix(in srgb,var(--pink) 52%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--pink) 13%,transparent),var(--wash))}
+.label{display:flex;align-items:center;gap:11px;color:var(--ink);font-size:20px;font-weight:780;margin-bottom:10px}
+.mark{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;color:#071016;background:var(--cyan);font-size:14px;font-weight:900;flex:0 0 auto}
+.mark.blue{background:var(--blue)}
+.mark.pink{background:var(--pink)}
+.mark.amber{background:var(--amber)}
+.mark.green{background:var(--green)}
+.mark.red{background:var(--red)}
+.mark svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.25;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.card p,.card li{font-size:18px;line-height:1.42;color:var(--muted)}
+ul{list-style:none;display:grid;gap:11px}
+li{position:relative;padding-left:22px;color:var(--muted);font-size:21px;line-height:1.38}
+li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+.intro{display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center}
+.headshot{width:170px;height:170px;border-radius:50%;object-fit:cover;border:2px solid color-mix(in srgb,var(--cyan) 60%,var(--line));box-shadow:0 18px 48px var(--shadow)}
+.presenter-card{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;min-height:250px}
+.presenter-photo{width:150px;height:190px;border-radius:8px;object-fit:cover;object-position:center top;border:1px solid color-mix(in srgb,var(--cyan) 58%,var(--line));box-shadow:0 18px 44px var(--shadow)}
+.presenter-photo.brad{object-position:center center}
+.link-list{display:grid;gap:8px;margin-top:12px}
+.link-list a{display:flex;align-items:center;gap:9px;font-size:18px;color:var(--ink)}
+.diagram{display:grid;gap:14px}
+.node{display:flex;align-items:center;gap:16px;padding:18px 20px}
+.node-title{font-size:22px;font-weight:780;color:var(--ink)}
+.node-desc{font-size:18px;color:var(--muted);line-height:1.35;margin-top:2px}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:28px}
+.step{min-height:142px;padding:16px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.step h3{font-size:18px;margin:9px 0 7px}
+.step p{font-size:14px;color:var(--muted);line-height:1.32}
+.code{background:#050b11;border:1px solid #244455;border-radius:8px;padding:18px 20px;color:#dffcff;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:16px;line-height:1.45;white-space:pre-wrap;box-shadow:0 16px 42px var(--shadow)}
+:root[data-theme="light"] .code{background:#0e1c27;color:#effbff}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.row{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:16px}
+.row strong{color:var(--cyan);font-size:20px}
+.row p{color:var(--muted);font-size:17px;line-height:1.38}
+.contact-box{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:22px}
+.qr{width:174px;height:174px;background:#fff;border-radius:8px;padding:7px;border:1px solid rgba(255,255,255,.28)}
+.cta-panel{padding:26px;display:grid;gap:18px}
+.footer{position:absolute;left:78px;right:78px;bottom:22px;display:flex;justify-content:space-between;color:#7894a7;font-size:15px;z-index:5}
+.nav{position:absolute;top:22px;right:24px;display:flex;gap:8px;z-index:20}
+.nav button{width:42px;height:42px;border-radius:8px;border:1px solid var(--line);background:var(--wash);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:18px}
+.nav button:hover{border-color:var(--cyan)}
+.nav button svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:7}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--pink));transition:width .2s ease}
+@media(max-width:900px){
+  .dm-logo{width:112px;top:16px;left:20px}
+  .slide{padding:58px 32px 66px}
+  .split,.two,.three,.matrix,.row,.flow,.intro,.presenter-card{grid-template-columns:1fr}
+  h1{font-size:42px}
+  h2{font-size:34px}
+  .sub{font-size:19px}
+  .footer{left:32px;right:32px;font-size:12px}
+  .nav{top:14px;right:14px}
+}
+@media print{
+  @page{size:13.333in 7.5in;margin:0}
+  html,body{overflow:visible;background:#071016}
+  .stage{width:13.333in;height:auto;overflow:visible}
+  .slide{position:relative;display:flex !important;width:13.333in;height:7.5in;max-height:none;overflow:hidden;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .nav,.progress,.footer{display:none}
+  .dm-logo{width:142px;top:22px;left:28px}
+  .slide{padding:66px 78px 70px}
+  .split,.two,.matrix{grid-template-columns:1fr 1fr}
+  .three{grid-template-columns:repeat(3,1fr)}
+  .flow{grid-template-columns:repeat(6,1fr)}
+  .intro{grid-template-columns:170px 1fr}
+  .presenter-card{grid-template-columns:150px 1fr}
+  h1{font-size:64px}
+  h2{font-size:50px}
+  .sub{font-size:24px}
+  .gradient{background:none;-webkit-background-clip:initial;-webkit-text-fill-color:var(--blue);color:var(--blue)}
+}
+</style>
+</head>
+<body>
+<img class="dm-logo" src="assets/digital-meld-logo.png" alt="Digital Meld logo">
+<main class="stage">
+  <section class="slide active" data-title="Title">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">H.U.G. Summer Summit 2026 - June 26, 2026</div>
+      <h1>AI, Agentic AI, and <span class="gradient">OpenClaw for Real Work</span></h1>
+      <p class="sub">A practical frame for educators, students, nonprofit leaders, and community partners.</p>
+      <div class="meta">
+        <span class="pill">Arnold Castro</span>
+        <span class="pill">Texas A&amp;M Professor</span>
+        <span class="pill">Brad Groux</span>
+        <span class="pill">Digital Meld</span>
+        <span class="pill">OpenClaw Maintainer</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Co-Presenters">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Co-presenters</div>
+      <h2>Education, workforce readiness, and practical agent workflows.</h2>
+      <div class="two" style="margin-top:30px">
+        <div class="card accent presenter-card">
+          <img class="presenter-photo" src="assets/arnold-castro-headshot.jpg" alt="Arnold Castro headshot">
+          <div>
+            <div class="label"><span class="mark" data-icon="graduation"></span>Arnold Castro</div>
+            <p>Professor of Practice in Artificial Intelligence, Texas A&amp;M University Mays Business School. Workshop lead for the hands-on AI block.</p>
+            <div class="link-list">
+              <a href="https://mays.tamu.edu/directory/arnold-castro/">mays.tamu.edu/directory/arnold-castro</a>
+              <a href="https://www.linkedin.com/in/castroarnold/?skipRedirect=true">linkedin.com/in/castroarnold</a>
+              <a href="https://drivenintelligence.ai/">drivenintelligence.ai</a>
+            </div>
+          </div>
+        </div>
+        <div class="card good presenter-card">
+          <img class="presenter-photo brad" src="assets/brad-groux-headshot.png" alt="Brad Groux headshot">
+          <div>
+            <div class="label"><span class="mark green" data-icon="bot"></span>Brad Groux</div>
+            <p>CEO of Digital Meld, OpenClaw contributor and maintainer, and builder of practical agent workflows that end in inspectable artifacts.</p>
+            <div class="link-list">
+              <a href="https://github.com/BradGroux">github.com/BradGroux</a>
+              <a href="https://www.linkedin.com/in/BradGroux/">linkedin.com/in/BradGroux</a>
+              <a href="https://digitalmeld.io">digitalmeld.io</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Core Idea">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The core idea</div>
+      <h2>AI gets useful when it has context, boundaries, and review.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card accent"><div class="label"><span class="mark" data-icon="target"></span>Context</div><p>What are we trying to do? What sources matter? What does good look like?</p></div>
+        <div class="card warn"><div class="label"><span class="mark amber" data-icon="shield"></span>Boundaries</div><p>What data is allowed? What tools are allowed? What must stay human-owned?</p></div>
+        <div class="card good"><div class="label"><span class="mark green" data-icon="check"></span>Review</div><p>What evidence is checked before anyone trusts, shares, or acts on the output?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="What Is AI">
+    <div class="split">
+      <div>
+        <div class="kicker">Plain English</div>
+        <h2>AI is software that uses data to make predictions or generate useful output.</h2>
+        <p class="sub">It can classify, summarize, draft, translate, plan, recognize patterns, and help people work through messy information.</p>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark" data-icon="brain"></span><div><div class="node-title">Machine learning</div><div class="node-desc">Learns patterns from examples instead of only following hand-coded rules.</div></div></div>
+        <div class="node"><span class="mark blue" data-icon="sparkles"></span><div><div class="node-title">Generative AI</div><div class="node-desc">Creates text, images, audio, code, plans, summaries, and drafts.</div></div></div>
+        <div class="node"><span class="mark pink" data-icon="alert"></span><div><div class="node-title">The catch</div><div class="node-desc">Fluent output is not the same thing as verified truth.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="What Changed">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">What changed</div>
+      <h2>The interface became language.</h2>
+      <p class="sub">That is why AI suddenly matters to educators, students, nonprofits, and local organizations. It can work with the documents, notes, emails, policies, and questions people already have.</p>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark" data-icon="globe"></span>Access</div><p>You do not need to build a model to use one.</p></div>
+        <div class="card"><div class="label"><span class="mark blue" data-icon="clock"></span>Speed</div><p>Drafts and summaries happen in minutes instead of days.</p></div>
+        <div class="card warn"><div class="label"><span class="mark amber" data-icon="scale"></span>Judgment</div><p>The human job moves toward context, review, and decisions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Agentic AI">
+    <div class="split">
+      <div>
+        <div class="kicker">Agentic AI</div>
+        <h2>A chatbot answers. An agent works a process.</h2>
+        <p class="sub">Agentic AI combines a goal, context, memory, tools, steps, and review so the system can do multi-step work and report back.</p>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark" data-icon="target"></span><div><div class="node-title">Goal</div><div class="node-desc">What outcome should this run produce?</div></div></div>
+        <div class="node"><span class="mark blue" data-icon="database"></span><div><div class="node-title">Context and memory</div><div class="node-desc">What should it know before starting?</div></div></div>
+        <div class="node"><span class="mark pink" data-icon="wrench"></span><div><div class="node-title">Tools</div><div class="node-desc">What files, browser, APIs, or commands can it use?</div></div></div>
+        <div class="node"><span class="mark green" data-icon="check"></span><div><div class="node-title">Review</div><div class="node-desc">What checks happen before the result is used?</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Education And Workforce">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Why this matters here</div>
+      <h2>AI literacy is workflow literacy.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark" data-icon="book"></span>Education</div><p>Summarize public research, prepare tutoring materials, adapt drafts, and support accessibility.</p></div>
+        <div class="card"><div class="label"><span class="mark blue" data-icon="briefcase"></span>Workforce</div><p>Learn how to give context, check sources, protect data, and verify outputs.</p></div>
+        <div class="card"><div class="label"><span class="mark green" data-icon="heart"></span>Nonprofits</div><p>Reduce administrative friction without handing over sensitive decisions.</p></div>
+      </div>
+      <p class="sub">The durable skill is not "write prompts." It is designing safe, repeatable work.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="What Is OpenClaw">
+    <div class="split">
+      <div>
+        <div class="kicker">OpenClaw</div>
+        <h2>A local-first control plane for agent workflows.</h2>
+        <p class="sub">OpenClaw connects model providers, memory, instructions, tools, channels, sessions, and automations so agent work is visible and repeatable.</p>
+        <div class="card warn" style="margin-top:24px">
+          <div class="label"><span class="mark amber" data-icon="route"></span>Process beats model choice</div>
+          <p>The model matters. The harness matters. Your process matters more: source material, boundaries, review, and the decision about what should happen next.</p>
+        </div>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark" data-icon="target"></span><div><div class="node-title">Process</div><div class="node-desc">The repeatable way work moves from source material to reviewed output.</div></div></div>
+        <div class="node"><span class="mark blue" data-icon="shield"></span><div><div class="node-title">Harness</div><div class="node-desc">The wrapper around the agent: memory, instructions, tools, channels, checks, and approvals.</div></div></div>
+        <div class="node"><span class="mark green" data-icon="check"></span><div><div class="node-title">Outcome</div><div class="node-desc">A draft, brief, task, summary, or action that a human can inspect before use.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="OpenClaw Pieces">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Mental model</div>
+      <h2>OpenClaw gives the agent a place to work.</h2>
+      <div class="flow">
+        <div class="step"><span class="mark" data-icon="plug"></span><h3>Provider</h3><p>OpenAI, Anthropic, Microsoft Foundry, or another supported model source.</p></div>
+        <div class="step"><span class="mark blue" data-icon="route"></span><h3>Gateway</h3><p>The local switchboard for sessions, tools, routing, and events.</p></div>
+        <div class="step"><span class="mark pink" data-icon="database"></span><h3>Memory</h3><p>Durable context the agent can reuse across work.</p></div>
+        <div class="step"><span class="mark green" data-icon="file"></span><h3>AGENTS.md</h3><p>Plain-text instructions, boundaries, and output expectations.</p></div>
+        <div class="step"><span class="mark amber" data-icon="wrench"></span><h3>Tools</h3><p>Files, browser, shell, APIs, connectors, and local workspace access.</p></div>
+        <div class="step"><span class="mark red" data-icon="repeat"></span><h3>Loops</h3><p>Recurring checks, research passes, drafts, reviews, and follow-ups.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Memory">
+    <div class="split">
+      <div>
+        <div class="kicker">Memory</div>
+        <h2>Memory keeps the useful context from disappearing between prompts.</h2>
+        <p class="sub">Use memory for stable facts: purpose, audience, data boundary, preferred output, terms, and review expectations.</p>
+      </div>
+      <div class="code"># H.U.G. Reading Research Memory
+
+## Purpose
+Help educators and nonprofit leaders turn public reading-support sources into practical briefs.
+
+## Data Boundary
+Use public or sanitized material only.
+Never use private student, donor, staff, credential, or confidential data.
+
+## Preferred Output
+- summary
+- evidence table
+- practical ideas
+- risks and limits
+- human review checklist</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Agents">
+    <div class="split">
+      <div>
+        <div class="kicker">Agents</div>
+        <h2>Agents need a role, allowed tools, boundaries, and a review habit.</h2>
+        <p class="sub">AGENTS.md is the contract: what job the agent has, what it can touch, what it must avoid, and how it should report back.</p>
+      </div>
+      <div class="code"># AGENTS.md
+
+You are a reading-support research agent.
+
+Rules:
+- use public or sanitized sources only
+- separate facts from recommendations
+- flag assumptions and missing evidence
+- treat output as a draft
+- require human review before use</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Channels">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Channels</div>
+      <h2>Agents should meet people where work already happens.</h2>
+      <p class="sub">Channels are entry points into the same bounded workflow. They are useful only when the process, data boundary, and approval rule are clear.</p>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark" data-icon="message"></span>Discord</div><p>Community Q&amp;A, workshop follow-up, lightweight support, and public-safe prompts.</p></div>
+        <div class="card"><div class="label"><span class="mark blue" data-icon="users"></span>Microsoft Teams</div><p>Business collaboration, internal triage, meeting prep, and reviewed drafts.</p></div>
+        <div class="card"><div class="label"><span class="mark green" data-icon="smartphone"></span>WhatsApp</div><p>Mobile-first coordination where simple prompts and review gates matter.</p></div>
+        <div class="card"><div class="label"><span class="mark pink" data-icon="send"></span>Telegram</div><p>Fast group workflows, notifications, and lightweight bot interactions.</p></div>
+        <div class="card"><div class="label"><span class="mark amber" data-icon="shield"></span>Signal</div><p>Privacy-aware coordination that still needs clear source and approval boundaries.</p></div>
+        <div class="card warn"><div class="label"><span class="mark red" data-icon="alert"></span>Rule</div><p>Channels do not make risky actions safe. Humans approve external sends and sensitive work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Agent Harness">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">The harness</div>
+      <h2>The agent is only one part of the system.</h2>
+      <div class="matrix">
+        <div class="row"><span class="mark" data-icon="search"></span><p><strong>Sources</strong><br>Public documents, sanitized notes, examples, policies, and approved links.</p></div>
+        <div class="row"><span class="mark blue" data-icon="database"></span><p><strong>Memory</strong><br>Purpose, data boundary, audience, terms, and preferred outputs.</p></div>
+        <div class="row"><span class="mark pink" data-icon="user-check"></span><p><strong>Instructions</strong><br>What role the agent plays, what it can do, and what it must avoid.</p></div>
+        <div class="row"><span class="mark green" data-icon="check"></span><p><strong>Verification</strong><br>Review prompts, evidence checks, source checks, and human approval.</p></div>
+      </div>
+      <p class="sub">This is how you move from clever prompts to repeatable work.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Getting More From Agents">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">How to get more from agents</div>
+      <h2>Build loops, not one-off asks.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark" data-icon="clipboard"></span>Plan loop</div><p>Ask clarifying questions, define the output, and record decisions.</p></div>
+        <div class="card"><div class="label"><span class="mark blue" data-icon="wrench"></span>Work loop</div><p>Let the agent draft, organize, compare, summarize, or build inside a workspace.</p></div>
+        <div class="card good"><div class="label"><span class="mark green" data-icon="check"></span>Review loop</div><p>Run skeptical review before trusting, sharing, or acting on the result.</p></div>
+      </div>
+      <p class="sub">The loop matters more than the first answer.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Automations">
+    <div class="split">
+      <div>
+        <div class="kicker">Automations</div>
+        <h2>Use recurring loops for reminders, monitoring, and review packets.</h2>
+        <p class="sub">Good automations have a trigger, bounded inputs, visible output, a stop condition, and human review.</p>
+      </div>
+      <div class="diagram">
+        <div class="node"><span class="mark" data-icon="calendar"></span><div><div class="node-title">Trigger</div><div class="node-desc">Daily, weekly, after file changes, before a meeting, or after a deadline.</div></div></div>
+        <div class="node"><span class="mark blue" data-icon="file"></span><div><div class="node-title">Output</div><div class="node-desc">Brief, checklist, issue draft, lesson prep packet, or research summary.</div></div></div>
+        <div class="node"><span class="mark green" data-icon="user-check"></span><div><div class="node-title">Review</div><div class="node-desc">Humans approve before sending, publishing, or changing records.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Install Path">
+    <div class="split">
+      <div>
+        <div class="kicker">Simple install path</div>
+        <h2>Install, onboard, choose a provider, verify the dashboard.</h2>
+        <p class="sub">Do not turn the first workshop into a tool marathon. Get to one working response fast.</p>
+      </div>
+      <div class="code"># Mac
+curl -fsSL https://openclaw.ai/install.sh | bash
+openclaw onboard --install-daemon
+openclaw doctor
+openclaw gateway status
+openclaw dashboard
+
+# Windows PowerShell
+iwr -useb https://openclaw.ai/install.ps1 | iex
+openclaw onboard --install-daemon</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Research Agent">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Workshop idea</div>
+      <h2>Create a reading-support research agent.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark" data-icon="database"></span>Memory</div><p>Purpose, audience, data boundary, and preferred output.</p></div>
+        <div class="card"><div class="label"><span class="mark blue" data-icon="book"></span>Sources</div><p>Public reading research, sanitized notes, approved links, and workshop examples.</p></div>
+        <div class="card good"><div class="label"><span class="mark green" data-icon="file"></span>Output</div><p>A short brief, evidence table, activity ideas, risks, and review checklist.</p></div>
+      </div>
+      <div class="card warn" style="margin-top:28px">
+        <div class="label"><span class="mark amber" data-icon="shield"></span>Boundary</div>
+        <p>No private student data, donor records, staff records, credentials, or confidential notes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Safe First Wins">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Safe first wins</div>
+      <h2>Start with draft-only work that helps people think.</h2>
+      <div class="three" style="margin-top:30px">
+        <div class="card"><div class="label"><span class="mark" data-icon="search"></span>Research brief</div><p>Summarize public sources and list evidence limits.</p></div>
+        <div class="card"><div class="label"><span class="mark blue" data-icon="users"></span>Volunteer guide</div><p>Turn approved program notes into a checklist or orientation draft.</p></div>
+        <div class="card"><div class="label"><span class="mark green" data-icon="book"></span>Lesson support</div><p>Draft reading activities for human review and adaptation.</p></div>
+      </div>
+      <p class="sub">Avoid live sends, private records, production actions, and sensitive decisions until the workflow is proven.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Questions And Help">
+    <div class="split">
+      <div>
+        <div class="kicker">Call to action</div>
+        <h2>Join the SSTB Discord for questions and help.</h2>
+        <p class="sub">Bring one safe workflow idea. We can help turn it into memory, an AGENTS.md file, a prompt pack, and a review loop.</p>
+        <div class="meta">
+          <span class="pill">Start Small, Think Big</span>
+          <span class="pill">OpenClaw follow-up</span>
+          <span class="pill">Agent harness help</span>
+        </div>
+      </div>
+      <div class="contact-box">
+        <a href="https://discord.gg/Gmfkm7QVSF"><img class="qr" src="assets/sstb-discord-qr.png" alt="QR code for the SSTB Discord server"></a>
+        <strong>SSTB Discord</strong>
+        <span style="color:var(--muted);font-size:16px">discord.gg/Gmfkm7QVSF</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Close">
+    <div class="center" style="display:flex;flex-direction:column;flex:1">
+      <div class="kicker">Close</div>
+      <h2>AI should make people more capable, not less responsible.</h2>
+      <p class="sub">Use OpenClaw to give agents context, memory, tools, visible loops, and review. Start small, keep the data safe, and make the human decision point explicit.</p>
+      <div class="meta">
+        <span class="pill">Context first</span>
+        <span class="pill">Boundaries always</span>
+        <span class="pill">Review before action</span>
+        <span class="pill">OpenClaw.ai</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="nav" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous slide">&#8592;</button>
+  <button type="button" id="next" aria-label="Next slide">&#8594;</button>
+  <button type="button" id="theme" aria-label="Switch to light theme"></button>
+</div>
+<div class="footer"><span id="slide-title">Title</span><span id="slide-count">1 / 20</span></div>
+<div class="progress" aria-hidden="true"><div id="bar"></div></div>
+
+<script>
+// Inline SVG icons are from the open source Lucide icon set, ISC licensed.
+const iconMap={
+  alert:'<svg viewBox="0 0 24 24"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>',
+  book:'<svg viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3Z"/></svg>',
+  bot:'<svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>',
+  brain:'<svg viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.6 1.5 3 3 0 0 0-1.4 5 3 3 0 0 0 1 5.5 3 3 0 0 0 6 0Z"/><path d="M12 5a3 3 0 1 1 5.6 1.5 3 3 0 0 1 1.4 5 3 3 0 0 1-1 5.5 3 3 0 0 1-6 0Z"/><path d="M8 13h8"/><path d="M8 9h8"/></svg>',
+  briefcase:'<svg viewBox="0 0 24 24"><path d="M10 6V5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1"/><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 12h18"/><path d="M12 12v2"/></svg>',
+  calendar:'<svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>',
+  check:'<svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>',
+  clipboard:'<svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>',
+  clock:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+  database:'<svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>',
+  file:'<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>',
+  globe:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg>',
+  graduation:'<svg viewBox="0 0 24 24"><path d="m22 10-10-5-10 5 10 5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg>',
+  heart:'<svg viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5a5.5 5.5 0 0 0-10 3.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>',
+  message:'<svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg>',
+  moon:'<svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>',
+  plug:'<svg viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v3a6 6 0 0 1-12 0V8Z"/></svg>',
+  repeat:'<svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>',
+  route:'<svg viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M12 19h4.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H12"/></svg>',
+  scale:'<svg viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.9.7-1.9 1-3 1s-2.1-.3-3-1Z"/><path d="m2 16 3-8 3 8c-.9.7-1.9 1-3 1s-2.1-.3-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>',
+  search:'<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
+  send:'<svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>',
+  shield:'<svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.5a1.3 1.3 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1Z"/></svg>',
+  smartphone:'<svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>',
+  sparkles:'<svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8L4 11l6.1 2.2L12 19l1.9-5.8L20 11l-6.1-2.2Z"/><path d="M5 3v4"/><path d="M3 5h4"/><path d="M19 17v4"/><path d="M17 19h4"/></svg>',
+  sun:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>',
+  target:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+  userCheck:'<svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>',
+  users:'<svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>',
+  wrench:'<svg viewBox="0 0 24 24"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L2 19l3 3 6.3-6.3a5 5 0 0 0 6.4-6.4l-3.1 3.1-3-3Z"/></svg>'
+}
+for(const element of document.querySelectorAll('[data-icon]')){
+  const key=element.dataset.icon.replace(/-([a-z])/g,(_,letter)=>letter.toUpperCase())
+  element.innerHTML=iconMap[key]||iconMap.check
+}
+const themeButton=document.getElementById('theme')
+function updateThemeIcon(){
+  const isLight=document.documentElement.dataset.theme==='light'
+  themeButton.innerHTML=isLight?iconMap.moon:iconMap.sun
+  themeButton.setAttribute('aria-label',isLight?'Switch to dark theme':'Switch to light theme')
+}
+updateThemeIcon()
+const slides=[...document.querySelectorAll('.slide')]
+slides.forEach((slide,slideIndex)=>{slide.id=`slide${slideIndex+1}`})
+let index=0
+function show(nextIndex){
+  index=(nextIndex+slides.length)%slides.length
+  slides.forEach((slide,slideIndex)=>slide.classList.toggle('active',slideIndex===index))
+  document.getElementById('slide-title').textContent=slides[index].dataset.title
+  document.getElementById('slide-count').textContent=`${index+1} / ${slides.length}`
+  document.getElementById('bar').style.width=`${((index+1)/slides.length)*100}%`
+  history.replaceState(null,'',`#slide${index+1}`)
+}
+function slideFromHash(){
+  const match=location.hash.match(/^#slide(\d+)$/)
+  if(!match)return null
+  const slideIndex=Number.parseInt(match[1],10)-1
+  return slideIndex>=0&&slideIndex<slides.length?slideIndex:null
+}
+function goHash(){
+  const slideIndex=slideFromHash()
+  if(slideIndex!==null)show(slideIndex)
+}
+document.getElementById('prev').addEventListener('click',()=>show(index-1))
+document.getElementById('next').addEventListener('click',()=>show(index+1))
+themeButton.addEventListener('click',()=>{
+  const root=document.documentElement
+  root.dataset.theme=root.dataset.theme==='light'?'dark':'light'
+  updateThemeIcon()
+})
+document.addEventListener('keydown',(event)=>{
+  if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();show(index+1)}
+  if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();show(index-1)}
+  if(event.key==='Home')show(0)
+  if(event.key==='End')show(slides.length-1)
+})
+window.addEventListener('hashchange',goHash)
+show(slideFromHash()??0)
+</script>
+</body>
+</html>
