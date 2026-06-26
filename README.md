@@ -47,6 +47,22 @@ For the June 1, 2026 OpenClaw creator pre-day demo at GitHub HQ, use these files
 4. Demo script: [`event-specific/github-build-creators-2026-06-01/demo-script.md`](event-specific/github-build-creators-2026-06-01/demo-script.md)
 5. Prompt pack: [`event-specific/github-build-creators-2026-06-01/prompt-pack.md`](event-specific/github-build-creators-2026-06-01/prompt-pack.md)
 
+## H.U.G. Summer Summit attendees: start here
+
+For the June 26, 2026 H.U.G. Summer Summit AI panel and workshop, use these files first:
+
+1. Presenter packet: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/README.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/README.md)
+2. PRD: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/PRD.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/PRD.md)
+3. Agenda: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/agenda.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/agenda.md)
+4. Slide deck:
+   [`slides.html`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/slides.html) /
+   [`slides.pdf`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/slides.pdf)
+5. Speaker notes: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/speaker-notes-20-minute.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/speaker-notes-20-minute.md)
+6. Talking points: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/talking-points.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/talking-points.md)
+7. Demo script: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/demo-script.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/demo-script.md)
+8. Prompt pack: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/prompt-pack.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/prompt-pack.md)
+9. Scenario cards: [`event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/scenario-cards.md`](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/scenario-cards.md)
+
 ## TAMU attendees: start here
 
 For the May 2 TAMU workshop, use these files first:

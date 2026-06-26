@@ -2,6 +2,20 @@
 
 Use this page to choose the shortest useful path through the repo.
 
+## I am preparing for the H.U.G. Summer Summit AI panel and workshop
+
+Start with the June 26, 2026 H.U.G. Summer Summit packet:
+
+1. [Presenter packet](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/README.md)
+2. [PRD](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/PRD.md)
+3. [Agenda](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/agenda.md)
+4. [Slide deck](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/slides.html)
+5. [Speaker notes](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/speaker-notes-20-minute.md)
+6. [Talking points](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/talking-points.md)
+7. [Demo script](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/demo-script.md)
+8. [Prompt pack](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/prompt-pack.md)
+9. [Scenario cards](event-specific/hug-summer-summit-ai-panel-workshop-2026-06-26/scenario-cards.md)
+
 ## I am preparing for the Microsoft Build Open Source Zone
 
 Start with the June 2-3, 2026 OpenClaw Open Source Zone floor packet:
