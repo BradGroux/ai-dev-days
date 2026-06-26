@@ -45,6 +45,9 @@ Use [`demo-script.md`](demo-script.md).
 
 If the live demo slows down, switch immediately to [`fallback-plan.md`](fallback-plan.md).
 
+If the room is asking business-ops questions, switch to the optional
+[`business-use-case-quick-demo.md`](business-use-case-quick-demo.md) path.
+
 ## Public safety
 
 Do not paste secrets, API keys, tokens, credentials, private DMs, sponsor terms, attendee contact data, customer records, unreleased announcements, or private operational details into the demo.

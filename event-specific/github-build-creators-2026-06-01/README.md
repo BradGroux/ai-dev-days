@@ -17,6 +17,7 @@ This is a short creator-facing OpenClaw overview and live demo. It is not a full
 - Demo script: [`demo-script.md`](demo-script.md)
 - Prompt pack: [`prompt-pack.md`](prompt-pack.md)
 - Demo files: [`demo/README.md`](demo/README.md)
+- Optional business demo: [`business-use-case-quick-demo.md`](business-use-case-quick-demo.md)
 - Day-before checklist: [`day-before-checklist.md`](day-before-checklist.md)
 - Fallback plan: [`fallback-plan.md`](fallback-plan.md)
 
@@ -40,6 +41,10 @@ Show creators what OpenClaw makes visible:
 | 8:30-10:00 | Close | Join Discord, where to find the OpenClaw team during Build week. |
 
 If the slot expands to 15 minutes, spend the extra time on creator-specific audience questions or the "what I would not automate" safety close.
+
+If the room leans founder/operator instead of creator-content, use
+[`business-use-case-quick-demo.md`](business-use-case-quick-demo.md) as the
+same OpenClaw pattern applied to a public-safe business follow-up packet.
 
 ## Core line
 

@@ -8,6 +8,10 @@ Creator conference recap to reusable content pack.
 
 The scenario is safe for a technical creator audience because it is concrete, easy to understand, and does not require private data.
 
+Optional variant: use [`business-use-case-quick-demo.md`](business-use-case-quick-demo.md)
+if the room is more interested in founder/operator follow-up than creator
+content.
+
 ## Universal Demo Pattern
 
 Use the same pattern from the prior InfraGard deck, shortened for the 10-minute slot:

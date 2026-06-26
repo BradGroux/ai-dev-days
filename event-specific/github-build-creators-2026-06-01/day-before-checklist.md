@@ -19,6 +19,7 @@ Use this on Sunday, May 31, 2026.
 - [ ] Open [`demo/creator-content-pack-prd.md`](demo/creator-content-pack-prd.md).
 - [ ] Open [`demo/creator-content-pack-sop.md`](demo/creator-content-pack-sop.md).
 - [ ] Open [`demo/expected-output.md`](demo/expected-output.md) as the fallback artifact.
+- [ ] Open [`business-use-case-quick-demo.md`](business-use-case-quick-demo.md) if the room may want a business follow-up example.
 - [ ] Confirm OpenClaw starts and the dashboard responds.
 - [ ] Confirm the model provider works.
 - [ ] Close unrelated apps, browser tabs, email, chat, and notifications.
