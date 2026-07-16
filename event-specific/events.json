@@ -1,6 +1,35 @@
 {
   "events": [
     {
+      "slug": "rubber-duck-thursday-2026-07-16",
+      "title": "Rubber Duck Thursday: AI That Runs the Business",
+      "date": "2026-07-16",
+      "status": "planned",
+      "audience": "business leaders, operators, developers, and teams moving AI from demos into real business workflows",
+      "listedInRoot": false,
+      "entrypoint": "event-specific/rubber-duck-thursday-2026-07-16/README.md",
+      "agenda": "event-specific/rubber-duck-thursday-2026-07-16/agenda.md",
+      "setupPath": "event-specific/rubber-duck-thursday-2026-07-16/day-before-checklist.md",
+      "facilitatorRunbook": "event-specific/rubber-duck-thursday-2026-07-16/facilitator-runbook.md",
+      "requiredFiles": [
+        "event-specific/rubber-duck-thursday-2026-07-16/README.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/agenda.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/attendee-links.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/requirements.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/facilitator-runbook.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/fallback-plan.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/day-before-checklist.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/reference-links.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/slides.html",
+        "event-specific/rubber-duck-thursday-2026-07-16/slides.pdf",
+        "event-specific/rubber-duck-thursday-2026-07-16/speaker-notes-30-minute.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/demo/index.html",
+        "event-specific/rubber-duck-thursday-2026-07-16/demo/README.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/demo/grill-with-docs-prompt.md",
+        "event-specific/rubber-duck-thursday-2026-07-16/demo-script.md"
+      ]
+    },
+    {
       "slug": "personal-ai-agents-live-2026-07-21",
       "title": "Personal AI Agents LIVE OpenClaw Workshop",
       "date": "2026-07-21",

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>OpenClaw Business Agent Demo Lab</title>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#071016;--panel:#0d1821;--panel2:#122431;--ink:#edf6fb;--muted:#9db6c8;
+  --line:#244657;--cyan:#5eead4;--blue:#60a5fa;--green:#34d399;--amber:#fbbf24;
+  --pink:#f472b6;--red:#fb7185;--shadow:rgba(0,0,0,.34);--wash:rgba(255,255,255,.045)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:linear-gradient(135deg,#071016 0%,#0b1821 52%,#15172b 100%);color:var(--ink);font-family:Roboto,Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit}
+a{color:var(--cyan)}
+.shell{max-width:1500px;margin:0 auto;padding:28px}
+.top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:22px}
+.kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:900;margin-bottom:9px}
+h1{font-size:clamp(32px,4vw,54px);line-height:1.02;max-width:900px}
+.sub{font-size:18px;line-height:1.45;color:var(--muted);max-width:880px;margin-top:12px}
+.safe{max-width:380px;border:1px solid color-mix(in srgb,var(--amber) 55%,var(--line));background:color-mix(in srgb,var(--amber) 11%,var(--panel));border-radius:12px;padding:14px 16px;color:#f7df9a;font-size:14px;line-height:1.4}
+.scenarios{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}
+.scenario-btn{border:1px solid var(--line);background:var(--wash);color:var(--muted);padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:800}
+.scenario-btn:hover,.scenario-btn:focus-visible{border-color:var(--cyan);color:var(--ink);outline:none}
+.scenario-btn.active{background:color-mix(in srgb,var(--cyan) 16%,var(--panel));border-color:var(--cyan);color:var(--cyan)}
+.grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+.panel{background:linear-gradient(180deg,var(--wash),color-mix(in srgb,var(--panel) 90%,transparent));border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 42px var(--shadow);overflow:hidden}
+.panel-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:center;background:var(--panel2)}
+.panel-head h2{font-size:23px}
+.badge{border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:var(--muted);font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+.panel-body{padding:20px}
+.purpose{font-size:19px;line-height:1.45;margin-bottom:18px}
+.facts{display:grid;gap:10px}
+.fact{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--wash)}
+.fact strong{color:var(--cyan)}
+.fact span{color:var(--muted);line-height:1.38}
+.steps{display:grid;gap:10px;counter-reset:step}
+.step{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;border-left:3px solid var(--blue);padding:9px 11px;background:color-mix(in srgb,var(--blue) 8%,transparent)}
+.step:before{counter-increment:step;content:counter(step);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#071016;font-weight:950}
+.step strong{display:block;font-size:16px}
+.step span{display:block;color:var(--muted);font-size:14px;line-height:1.35;margin-top:2px}
+.controls{display:flex;gap:10px;margin-top:18px}
+.primary,.secondary{border-radius:8px;padding:11px 15px;font-weight:900;cursor:pointer}
+.primary{border:1px solid var(--cyan);background:var(--cyan);color:#071016}
+.secondary{border:1px solid var(--line);background:var(--wash);color:var(--ink)}
+.primary:focus-visible,.secondary:focus-visible{outline:3px solid color-mix(in srgb,var(--cyan) 45%,transparent);outline-offset:2px}
+.output-wrap{margin-top:18px}
+.output-wrap[hidden]{display:none}
+.draft{border:1px solid color-mix(in srgb,var(--green) 45%,var(--line));border-radius:10px;overflow:hidden}
+.draft-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:color-mix(in srgb,var(--green) 10%,var(--panel));padding:13px 15px;border-bottom:1px solid var(--line)}
+.draft-head strong{color:var(--green)}
+.draft-body{padding:14px 15px;display:grid;gap:10px}
+.result{padding:11px;border:1px solid var(--line);border-radius:8px;background:var(--wash)}
+.result-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.result h3{font-size:17px}
+.status{font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:950;padding:5px 8px;border-radius:999px;border:1px solid currentColor}
+.status.hold{color:var(--red)}.status.review{color:var(--green)}.status.watch{color:var(--amber)}
+.result p{font-size:14px;line-height:1.4;color:var(--muted);margin-top:7px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.check{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:9px 10px}
+.check:before{content:"✓";color:var(--green);font-weight:950;margin-right:7px}
+.approval{margin-top:12px;border:1px solid color-mix(in srgb,var(--amber) 50%,var(--line));border-radius:8px;background:color-mix(in srgb,var(--amber) 9%,transparent);padding:12px;color:#f7df9a;line-height:1.4;font-size:14px}
+.artifact-links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.artifact-links a{border:1px solid var(--line);border-radius:8px;padding:9px 10px;text-decoration:none;background:var(--wash);font-size:13px;font-weight:800}
+.footer{display:flex;justify-content:space-between;gap:20px;color:#7894a7;font-size:13px;margin-top:18px;padding:0 4px}
+@media(max-width:980px){.top{display:block}.safe{margin-top:16px;max-width:none}.grid{grid-template-columns:1fr}.shell{padding:18px}.checks,.artifact-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="top">
+    <div>
+      <div class="kicker">OpenClaw Dev Day · Rubber Duck Thursday</div>
+      <h1>Business Agent Demo Lab</h1>
+      <p class="sub">Five fictional workflows. One repeatable pattern: context, SOP, PRD, agent draft, deterministic checks, and a human-owned decision.</p>
+    </div>
+    <div class="safe"><strong>Public-safe demo.</strong> No live systems, real records, external sends, approvals, payments, releases, bookings, or schedule changes.</div>
+  </header>
+
+  <nav class="scenarios" aria-label="Demo scenarios" id="scenarioNav"></nav>
+
+  <div class="grid">
+    <section class="panel" aria-labelledby="sourceTitle">
+      <div class="panel-head">
+        <h2 id="sourceTitle">Source packet</h2>
+        <span class="badge" id="ownerBadge"></span>
+      </div>
+      <div class="panel-body">
+        <p class="purpose" id="purpose"></p>
+        <div class="facts" id="facts"></div>
+        <div class="artifact-links" id="artifactLinks"></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="workflowTitle">
+      <div class="panel-head">
+        <h2 id="workflowTitle">Harness and output</h2>
+        <span class="badge">Draft only</span>
+      </div>
+      <div class="panel-body">
+        <div class="steps" id="steps"></div>
+        <div class="controls">
+          <button class="primary" type="button" id="runButton">Run draft</button>
+          <button class="secondary" type="button" id="resetButton">Reset</button>
+        </div>
+        <div class="output-wrap" id="output" hidden aria-live="polite">
+          <div class="draft">
+            <div class="draft-head"><strong id="draftTitle"></strong><span class="badge">Human review required</span></div>
+            <div class="draft-body" id="results"></div>
+          </div>
+          <div class="checks" id="checks"></div>
+          <div class="approval" id="approval"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer"><span>The model proposes. The workflow verifies. A person owns the decision.</span><span>Fictional data · local-only</span></footer>
+</main>
+
+<script>
+const scenarios={
+  "accounts-payable":{
+    name:"Accounts Payable",owner:"Finance",
+    purpose:"Assemble an invoice exception packet before an authorized reviewer decides what is ready, held, or missing evidence.",
+    facts:[
+      ["INV-8841","$4,800 · PO and receipt match"],
+      ["INV-7749","$12,250 · bills 5 pumps, receipt shows 4"],
+      ["INV-3304","$2,100 · probable duplicate of queued invoice"]
+    ],
+    steps:[["Read","Invoice, PO, receipt, prior queue"],["Apply SOP","Three-way match and duplicate check"],["Use PRD","Draft-only packet with explicit holds"],["Verify","Arithmetic, references, evidence, no external action"]],
+    results:[
+      ["INV-8841","review","Ready for review","PO total and receipt match. AP still confirms tax and authority."],
+      ["INV-7749","hold","Hold","Invoice quantity exceeds received quantity. Purchasing must confirm backorder or correction."],
+      ["INV-3304","hold","Likely duplicate","Same vendor, amount, and service date as an invoice already queued."]
+    ],
+    checks:["Invoice arithmetic passed","PO references present","One quantity exception surfaced","Duplicate scan found one signal"],
+    approval:"Approval gate: an authorized AP reviewer clears holds and approves any payment outside the demo. Bank details are never read or displayed."
+  },
+  marketing:{
+    name:"Marketing",owner:"Growth",
+    purpose:"Turn approved facts and reusable assets into a source-backed campaign packet without inventing proof or publishing content.",
+    facts:[["Event","Preventive Maintenance Webinar · Aug 6"],["Audience","Operations directors at industrial service firms"],["Boundary","No CRM export, invented metrics, publishing, or scheduling"]],
+    steps:[["Read","Approved facts and asset inventory"],["Apply SOP","Draft email, social post, and page outline"],["Use PRD","Attach claim ledger and open decisions"],["Verify","Dates, names, CTA consistency, claim support"]],
+    results:[["Campaign brief","review","Ready for review","Core message ties planning, field evidence, and ownership together."],["Claim ledger","hold","One claim removed","No approved evidence supported a percentage downtime claim."],["Asset packet","watch","Needs owner input","Registration URL and final speaker copy remain open."]],
+    checks:["Dates match brief","No unsupported metric kept","CTA is consistent","No publish or send attempted"],
+    approval:"Approval gate: marketing confirms the URL and copy. Legal reviews any new performance claim before publication."
+  },
+  "field-operations":{
+    name:"Field Operations",owner:"Dispatch",
+    purpose:"Draft the morning dispatch handoff by reconciling priority, skill, safety, access, crew, and equipment constraints.",
+    facts:[["WO-1820","Critical pump job · lockout permit required"],["WO-1824","High priority electrical job · access ends at 2 PM"],["WO-1827","Normal job · parts arrive after noon"]],
+    steps:[["Read","Work orders, crews, equipment, safety rules"],["Apply SOP","Safety constraints outrank schedule speed"],["Use PRD","Propose a sequence, never assign crews"],["Verify","Skill, permit, equipment, and access coverage"]],
+    results:[["WO-1820","hold","Permit hold","Crew Alpha matches the skill, but work cannot start until lockout permit is confirmed."],["WO-1824","review","Ready for review","Crew Bravo matches the skill and access window. Verify lift inspection date."],["WO-1827","watch","Delayed start","Crew Charlie can start after parts arrive and truck 9 returns."]],
+    checks:["Skill coverage passed","One permit hold surfaced","Equipment delay surfaced","No crew notification attempted"],
+    approval:"Approval gate: the dispatcher and safety owner approve assignments. The demo never changes the schedule or contacts a crew."
+  },
+  "lab-management":{
+    name:"Lab Management",owner:"Quality",
+    purpose:"Assemble a sample-release review packet that makes QC and chain-of-custody exceptions impossible to miss.",
+    facts:[["S-0716-01","In specification · QC passed · custody complete"],["S-0716-02","Duplicate variance exceeds method limit"],["S-0716-03","Pending · receiver signature missing"]],
+    steps:[["Read","Samples, methods, controls, duplicates, custody"],["Apply SOP","Hold failed, incomplete, or conflicting records"],["Use PRD","Draft review packet, never release results"],["Verify","Method, QC, custody, calculation evidence"]],
+    results:[["S-0716-01","review","Ready for review","Evidence is complete. A qualified analyst still verifies calculations."],["S-0716-02","hold","QC hold","Duplicate variance exceeds method acceptance limit."],["S-0716-03","hold","Custody hold","Receiver signature is missing and the result remains pending."]],
+    checks:["Method mapping passed","One QC failure surfaced","One custody gap surfaced","No result release attempted"],
+    approval:"Approval gate: a qualified analyst reviews calculations and the lab manager owns final release outside the demo."
+  },
+  "supply-chain-logistics":{
+    name:"Supply Chain Logistics",owner:"Logistics",
+    purpose:"Rank shipment exceptions by business risk, assemble evidence, and give the owner a bounded next decision.",
+    facts:[["SH-5204","Temperature excursion: 26.2 C for 18 minutes"],["SH-5207","Job-critical shipment projected 8.5 hours late"],["SH-5201","Delivered within plan · no action"]],
+    steps:[["Read","Shipment events, ETA, requirements, dependencies"],["Apply SOP","Classify impact, owner, and next question"],["Use PRD","Offer bounded options, never rebook"],["Verify","Milestones, handling rules, job impact, no action"]],
+    results:[["SH-5204","hold","Critical exception","Quality determines disposition; logistics may request the complete sensor trace after approval."],["SH-5207","watch","High exception","Operations confirms job impact before logistics evaluates approved expedite options."],["SH-5201","review","Closed","Delivered within plan. Clean shipment suppressed from the active queue."]],
+    checks:["Milestones compared","Handling exception surfaced","Job dependency surfaced","No carrier contact attempted"],
+    approval:"Approval gate: quality owns product disposition and logistics owns any carrier action. The demo does neither."
+  }
+};
+
+const nav=document.getElementById("scenarioNav");
+const output=document.getElementById("output");
+let currentKey="accounts-payable";
+
+function scenarioPath(file){return `scenarios/${currentKey}/${file}`}
+
+function renderScenario(key){
+  currentKey=key;
+  const data=scenarios[key];
+  [...nav.children].forEach(button=>button.classList.toggle("active",button.dataset.key===key));
+  document.getElementById("ownerBadge").textContent=data.owner;
+  document.getElementById("purpose").textContent=data.purpose;
+  document.getElementById("facts").innerHTML=data.facts.map(([label,value])=>`<div class="fact"><strong>${label}</strong><span>${value}</span></div>`).join("");
+  document.getElementById("steps").innerHTML=data.steps.map(([label,value])=>`<div class="step"><div><strong>${label}</strong><span>${value}</span></div></div>`).join("");
+  const artifactLinks=document.getElementById("artifactLinks");
+  artifactLinks.replaceChildren();
+  ["source-notes.md","SOP.md","PRD.md","expected-output.md"].forEach(file=>{
+    const link=document.createElement("a");
+    link.href=scenarioPath(file);
+    link.textContent=file;
+    artifactLinks.appendChild(link);
+  });
+  document.getElementById("draftTitle").textContent=`${data.name} draft packet`;
+  output.hidden=true;
+}
+
+function runDraft(){
+  const data=scenarios[currentKey];
+  document.getElementById("results").innerHTML=data.results.map(([title,status,label,detail])=>`<article class="result"><div class="result-top"><h3>${title}</h3><span class="status ${status}">${label}</span></div><p>${detail}</p></article>`).join("");
+  document.getElementById("checks").innerHTML=data.checks.map(check=>`<div class="check">${check}</div>`).join("");
+  document.getElementById("approval").textContent=data.approval;
+  output.hidden=false;
+  output.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+Object.entries(scenarios).forEach(([key,data])=>{
+  const button=document.createElement("button");
+  button.type="button";button.className="scenario-btn";button.dataset.key=key;button.textContent=data.name;
+  button.addEventListener("click",()=>renderScenario(key));
+  nav.appendChild(button);
+});
+
+document.getElementById("runButton").addEventListener("click",runDraft);
+document.getElementById("resetButton").addEventListener("click",()=>renderScenario(currentKey));
+renderScenario(currentKey);
+</script>
+</body>
+</html>
