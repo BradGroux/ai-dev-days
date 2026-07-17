@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added the August 19, 2026 Houston Business Analysts first-pass event packet,
+  attendee workbook, prompts, runbooks, and verified fictional vendor-onboarding
+  demo workspace; presentation slides remain deferred.
 - Added the June 1, 2026 GitHub Build creator demo packet with deck, prompt pack, speaker notes, fallback plan, and Discord QR asset.
 - Added repository audit, external link checking, and a GitHub Actions quality workflow.
 - Added Dependabot coverage for Beaver Badges app dependencies and GitHub Actions.

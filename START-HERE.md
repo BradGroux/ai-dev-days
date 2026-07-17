@@ -2,6 +2,20 @@
 
 Use this page to choose the shortest useful path through the repo.
 
+## I am preparing for or attending the Houston Business Analysts session
+
+Start with the August 19, 2026 event packet:
+
+1. [Event packet](event-specific/houston-business-analysts-codex-2026-08-19/README.md)
+2. [Session plan](event-specific/houston-business-analysts-codex-2026-08-19/session-plan.md)
+3. [Attendee workbook](event-specific/houston-business-analysts-codex-2026-08-19/attendee-workbook.md)
+4. [Prompt pack](event-specific/houston-business-analysts-codex-2026-08-19/prompt-pack.md)
+5. [Fictional vendor-onboarding demo](event-specific/houston-business-analysts-codex-2026-08-19/demo/README.md)
+6. [Facilitator runbook](event-specific/houston-business-analysts-codex-2026-08-19/facilitator-runbook.md)
+7. [Reference links](event-specific/houston-business-analysts-codex-2026-08-19/reference-links.md)
+
+Slides are intentionally deferred to a future update.
+
 ## I am preparing for the H.U.G. Summer Summit AI panel and workshop
 
 Start with the June 26, 2026 H.U.G. Summer Summit packet:
