@@ -24,6 +24,20 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 
 ## Current And Upcoming Events
 
+### Houston Business Analysts - August 19, 2026
+
+Interactive session for business analysis practitioners and business-technology
+partners on turning requirements, process knowledge, and data definitions into
+durable, reviewable AI context.
+
+- Packet: [`event-specific/houston-business-analysts-codex-2026-08-19/README.md`](event-specific/houston-business-analysts-codex-2026-08-19/README.md)
+- Session plan: [`session-plan.md`](event-specific/houston-business-analysts-codex-2026-08-19/session-plan.md)
+- Attendee workbook: [`attendee-workbook.md`](event-specific/houston-business-analysts-codex-2026-08-19/attendee-workbook.md)
+- Prompt pack: [`prompt-pack.md`](event-specific/houston-business-analysts-codex-2026-08-19/prompt-pack.md)
+- Fictional demo: [`demo/README.md`](event-specific/houston-business-analysts-codex-2026-08-19/demo/README.md)
+
+Slides are intentionally deferred to a future update.
+
 ### Personal AI Agents LIVE - July 21, 2026
 
 Workshop packet for developers, builders, security practitioners, product
