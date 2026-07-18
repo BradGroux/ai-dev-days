@@ -48,6 +48,23 @@ The app includes a command center, evidence feed, executive brief, fabricated re
 
 The final packet also includes a local HTML slide deck, PDF export, and 45-minute speaker notes.
 
+## Seed Data
+
+[`demo/app/data/app-seed.json`](demo/app/data/app-seed.json) is the canonical app seed.
+After editing it, regenerate the direct-file fallback from the repository root:
+
+```bash
+node scripts/sync-personal-ai-agents-seed.mjs
+```
+
+Verify parity without writing files:
+
+```bash
+node scripts/sync-personal-ai-agents-seed.mjs --check
+```
+
+The repository audit runs the same parity and 12-escalation check.
+
 ## Safety Boundary
 
 Do not paste secrets, API keys, tokens, credentials, real personal data, real customer records, live incident details, or non-public work material into the demo.

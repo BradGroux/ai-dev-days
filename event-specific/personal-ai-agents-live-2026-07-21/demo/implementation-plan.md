@@ -6,7 +6,7 @@ Build a static, local-only E Corp Cyber Escalation Command Center app for the wo
 
 ## Steps
 
-1. Convert source corpus and issue artifacts into `demo/app/data/app-seed.json`.
+1. Convert source corpus and issue artifacts into `demo/app/data/app-seed.json`, then run `node scripts/sync-personal-ai-agents-seed.mjs` from the repository root to regenerate the direct-file fallback.
 2. Create static app shell with semantic tabs.
 3. Add command center queue with filters and local workflow controls.
 4. Add evidence feed linked to escalation IDs.
