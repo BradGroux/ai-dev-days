@@ -2,6 +2,12 @@
 
 Use these links after the workshop to recreate the workflow.
 
+## Event
+
+- Session: **Using Personal AI in 2026: OpenClaw and the New Developer Workflow**
+- Date and time: **July 21, 2026, 3:20-4:05 PM EST**, as published by the organizer
+- Public event page and schedule: https://summit.ai/#schedule
+
 ## Event Packet
 
 - Workshop README: [README.md](README.md)

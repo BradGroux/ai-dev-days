@@ -14,8 +14,8 @@ Codex owns the issue-artifact prompt, `/goal` prompt, implementation plan, and s
 
 - Personal AI Agents LIVE is a July 21, 2026 live online ODSC AI event about personal AI systems, assistants, agent workflows, context, trust, and work interfaces.
 - The confirmed workshop format is a 45-minute hands-on OpenClaw session for a developer and builder audience.
-- The working title is "Using Personal AI in 2026: OpenClaw and the New Developer Workflow."
-- The public schedule still needs to reflect Brad's exact slot and session details.
+- The public title is "Using Personal AI in 2026: OpenClaw and the New Developer Workflow."
+- The public schedule lists Brad's workshop for 3:20-4:05 PM EST on July 21, 2026.
 - The demo universe is E Corp from Mr. Robot, using canonical people and divisions as fictional training context.
 - The canonical reference describes E Corp as a large conglomerate with technology, finance, healthcare, shipping, and consumer divisions.
 - The workshop uses post-5/9 recovery pressure as the scenario backdrop, with realistic but non-operational cyber risk content.
@@ -234,11 +234,11 @@ Use local files only:
 | Live corpus generation takes too long | Generate only a small slice, then use the full checked-in corpus. |
 | Audience fixates on Mr. Robot canon | Keep canon as flavor; keep product decisions grounded in workshop goals. |
 | Security content becomes too operational | Use risk and governance language, not attack instructions. |
-| Codex build exceeds session time | Use the app-output spec and fallback implementation plan as the teaching artifact. |
+| Codex build exceeds session time | Open the completed local app, then use the app-output spec and implementation plan to explain the build decisions. |
 | Presentation work drifts into marketing | Keep slides focused on workflow proof, not product hype. |
 | Static app feels too small | Include interactive local workflow controls and export state. |
 | Simulated repo confuses attendees | Label it clearly as local/fabricated and avoid live GitHub actions. |
-| Public schedule mismatch remains | Keep exact slot and public listing as organizer follow-up. |
+| Organizer changes the public slot after packet freeze | Recheck https://summit.ai/#schedule during the day-before review and update the event entry points together. |
 
 ## Acceptance Criteria
 
@@ -251,10 +251,10 @@ Use local files only:
 - The presentation follows prior event guidance: HTML source first, PDF export second, dark local deck, explicit safety slide, and separate speaker notes.
 - The repo audit and publication scan pass or any remaining failures are documented.
 
-## Open Questions
+## Resolved Delivery Decisions
 
-- Confirm final public schedule slot and title.
-- Confirm whether the static app should be built before the event packet is published or generated live only.
-- Confirm whether slides should be created before the first app build or after the app output exists.
-- Confirm whether simulated commits/PRs should be on by default or hidden behind a toggle.
-- Confirm whether root README and START-HERE should list this packet after the schedule is public.
+- The public title and 3:20-4:05 PM EST slot are confirmed on the organizer's schedule.
+- The static app is checked in as the reliable workshop artifact; a small slice may still be generated live when conditions allow.
+- The HTML deck, PDF export, and speaker notes are checked in after the app output was finalized.
+- Simulated commits and pull requests are enabled by default behind a visible toggle.
+- The root README and `event-specific/events.json` list this public packet.
