@@ -18,6 +18,8 @@ No framework, backend, database, auth, or external services.
 
 ## Navigation
 
+The five primary views use an accessible automatic-activation tab pattern. Left and Right Arrow move between adjacent tabs, Home and End move to the first and last tabs, and inactive panels remain hidden from assistive technology.
+
 ### Command Center
 
 Purpose: triage cyber risks, issues, and threats.

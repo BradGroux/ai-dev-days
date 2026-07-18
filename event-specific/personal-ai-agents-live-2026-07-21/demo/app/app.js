@@ -97,20 +97,48 @@ function decorateStaticIcons() {
 }
 
 function wireTabs() {
-  document.querySelectorAll('.tab').forEach((button) => {
+  const tabList = document.querySelector('[role="tablist"]');
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+
+  tabs.forEach((button) => {
     button.addEventListener('click', () => setActiveTab(button.dataset.tab));
+  });
+
+  tabList?.addEventListener('keydown', (event) => {
+    const currentTab = event.target.closest?.('[role="tab"]');
+    if (!currentTab) return;
+
+    const currentIndex = tabs.indexOf(currentTab);
+    let nextIndex = null;
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = tabs.length - 1;
+    if (nextIndex === null) return;
+
+    event.preventDefault();
+    const nextTab = tabs[nextIndex];
+    setActiveTab(nextTab.dataset.tab);
+    nextTab.focus({ preventScroll: true });
   });
 }
 
 function setActiveTab(tabName) {
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  if (!tabs.some((button) => button.dataset.tab === tabName)) return;
+
   state.activeTab = tabName;
-  document.querySelectorAll('.tab').forEach((button) => {
-    button.classList.toggle('is-active', button.dataset.tab === tabName);
+  tabs.forEach((button) => {
+    const isActive = button.dataset.tab === tabName;
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-selected', String(isActive));
+    button.tabIndex = isActive ? 0 : -1;
   });
   document.querySelectorAll('.view').forEach((view) => {
-    view.classList.toggle('is-active', view.id === tabName);
+    const isActive = view.id === tabName;
+    view.classList.toggle('is-active', isActive);
+    view.hidden = !isActive;
   });
-  document.getElementById(tabName)?.focus({ preventScroll: true });
 }
 
 async function loadSeedData() {

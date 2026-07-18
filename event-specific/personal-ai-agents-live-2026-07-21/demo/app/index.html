@@ -21,15 +21,15 @@
   </header>
 
   <main class="app-shell">
-    <nav class="tabs" aria-label="Command center views">
-      <button class="tab is-active" type="button" data-tab="command">Command Center</button>
-      <button class="tab" type="button" data-tab="evidence">Evidence Feed</button>
-      <button class="tab" type="button" data-tab="brief">Executive Brief</button>
-      <button class="tab" type="button" data-tab="repo">Fabricated Repo</button>
-      <button class="tab" type="button" data-tab="trace">Build Trace</button>
+    <nav class="tabs" role="tablist" aria-label="Command center views" aria-orientation="horizontal">
+      <button id="tab-command" class="tab is-active" type="button" role="tab" aria-controls="command" aria-selected="true" data-tab="command">Command Center</button>
+      <button id="tab-evidence" class="tab" type="button" role="tab" aria-controls="evidence" aria-selected="false" tabindex="-1" data-tab="evidence">Evidence Feed</button>
+      <button id="tab-brief" class="tab" type="button" role="tab" aria-controls="brief" aria-selected="false" tabindex="-1" data-tab="brief">Executive Brief</button>
+      <button id="tab-repo" class="tab" type="button" role="tab" aria-controls="repo" aria-selected="false" tabindex="-1" data-tab="repo">Fabricated Repo</button>
+      <button id="tab-trace" class="tab" type="button" role="tab" aria-controls="trace" aria-selected="false" tabindex="-1" data-tab="trace">Build Trace</button>
     </nav>
 
-    <section id="command" class="view is-active" tabindex="-1">
+    <section id="command" class="view is-active" role="tabpanel" aria-labelledby="tab-command" tabindex="0">
       <div class="view-header">
         <p class="eyebrow">Triage queue</p>
         <h2>Command Center</h2>
@@ -37,7 +37,7 @@
       <div id="command-content" class="placeholder"></div>
     </section>
 
-    <section id="evidence" class="view" tabindex="-1">
+    <section id="evidence" class="view" role="tabpanel" aria-labelledby="tab-evidence" tabindex="0" hidden>
       <div class="view-header">
         <p class="eyebrow">Linked source material</p>
         <h2>Evidence Feed</h2>
@@ -45,7 +45,7 @@
       <div id="evidence-content" class="placeholder"></div>
     </section>
 
-    <section id="brief" class="view" tabindex="-1">
+    <section id="brief" class="view" role="tabpanel" aria-labelledby="tab-brief" tabindex="0" hidden>
       <div class="view-header">
         <p class="eyebrow">Leadership summary</p>
         <h2>Executive Brief</h2>
@@ -53,7 +53,7 @@
       <div id="brief-content" class="placeholder"></div>
     </section>
 
-    <section id="repo" class="view" tabindex="-1">
+    <section id="repo" class="view" role="tabpanel" aria-labelledby="tab-repo" tabindex="0" hidden>
       <div class="view-header">
         <p class="eyebrow">Local simulation</p>
         <h2>Fabricated Repo</h2>
@@ -61,7 +61,7 @@
       <div id="repo-content" class="placeholder"></div>
     </section>
 
-    <section id="trace" class="view" tabindex="-1">
+    <section id="trace" class="view" role="tabpanel" aria-labelledby="tab-trace" tabindex="0" hidden>
       <div class="view-header">
         <p class="eyebrow">Artifact chain</p>
         <h2>Build Trace</h2>
