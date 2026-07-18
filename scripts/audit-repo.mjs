@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
 import path from 'node:path'
+import { verifyEmbeddedSeed } from './sync-personal-ai-agents-seed.mjs'
 
 const root = process.cwd()
 const skipDirectories = new Set(['.git', 'node_modules', 'dist', '.vite'])
@@ -332,11 +333,20 @@ function validateAppScripts() {
   }
 }
 
+function validatePersonalAiAgentsSeed() {
+  try {
+    verifyEmbeddedSeed(root)
+  } catch (error) {
+    failures.push(`Personal AI Agents seed fallback check failed: ${error.message}`)
+  }
+}
+
 walk(root)
 validateRequiredFiles()
 validateAppScripts()
 validateBeaverBadgesData()
 validateEventMetadata()
+validatePersonalAiAgentsSeed()
 
 const linkFiles = files.filter((file) => file.endsWith('.md') || file.endsWith('.html'))
 for (const file of linkFiles) {

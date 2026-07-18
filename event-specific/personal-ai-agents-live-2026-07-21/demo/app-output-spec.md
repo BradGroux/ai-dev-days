@@ -12,6 +12,7 @@ Static local app:
 - `styles.css`
 - `app.js`
 - `data/app-seed.json`
+- `data/app-seed.js`, generated from the canonical JSON for direct `file://` launch
 
 No framework, backend, database, auth, or external services.
 
