@@ -1,7 +1,10 @@
 # Personal AI Agents LIVE OpenClaw Workshop
 
 Date: July 21, 2026
+Time: 3:20-4:05 PM EST, as published by the organizer
+Session: Using Personal AI in 2026: OpenClaw and the New Developer Workflow
 Format: live online workshop
+Event page and schedule: https://summit.ai/#schedule
 Audience: developers, technical builders, security practitioners, product leaders, and AI workflow adopters
 
 This packet supports a 45-minute workshop showing the full path from messy stakeholder discovery to a working app.
@@ -32,6 +35,10 @@ This packet supports a 45-minute workshop showing the full path from messy stake
 - Slides: [slides.html](slides.html)
 - PDF deck: [slides.pdf](slides.pdf)
 - Speaker notes: [speaker-notes-45-minute.md](speaker-notes-45-minute.md)
+- Facilitator runbook: [facilitator-runbook.md](facilitator-runbook.md)
+- Day-before checklist: [day-before-checklist.md](day-before-checklist.md)
+- Fallback plan: [fallback-plan.md](fallback-plan.md)
+- Attendee links: [attendee-links.md](attendee-links.md)
 
 ## Demo Outcome
 

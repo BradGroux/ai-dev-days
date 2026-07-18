@@ -18,12 +18,14 @@ Use checked-in issue artifacts, goal prompt, and implementation plan.
 
 ### Level 4: App Fallback
 
-If live app build is slow, use [demo/app-output-spec.md](demo/app-output-spec.md) and walk through the expected static app behavior.
+If the live app build is slow, open the completed [demo/app/index.html](demo/app/index.html) and demonstrate the checked-in static app.
+Use [demo/app-output-spec.md](demo/app-output-spec.md) and [demo/implementation-plan.md](demo/implementation-plan.md) to explain the build decisions or narrate the behavior if browser presentation fails.
 
 ### Level 5: Presentation Fallback
 
-If slides are not ready, use [PRD.md](PRD.md), [demo/openclaw-prd-workflow.md](demo/openclaw-prd-workflow.md), and [demo/app-output-spec.md](demo/app-output-spec.md) as the talk track.
-Prior events use `slides.html` and `slides.pdf`, but the workflow docs can carry the session if deck generation is behind.
+Use [slides.html](slides.html) as the primary deck and [slides.pdf](slides.pdf) if the HTML presentation cannot run.
+If neither deck surface is available, use [speaker-notes-45-minute.md](speaker-notes-45-minute.md), [PRD.md](PRD.md),
+[demo/openclaw-prd-workflow.md](demo/openclaw-prd-workflow.md), and [demo/app-output-spec.md](demo/app-output-spec.md) as the offline talk track.
 
 ## Preserve
 

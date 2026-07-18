@@ -49,7 +49,7 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 
 ## 23:00-26:00 - Slide 9: Issue Artifacts
 
-- Show the issue artifacts and live GitHub issue set.
+- Show `demo/issue-artifacts.md` and the app's Fabricated Repo view. If the historical implementation issues are useful, show them read-only and make clear that the workshop does not create or modify live GitHub issues.
 - Explain dependencies: escalation data first, command workflow second, local proof and Build Trace last.
 - Keep the message practical: good issues make the build reviewable.
 
