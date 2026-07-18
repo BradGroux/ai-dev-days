@@ -248,6 +248,11 @@ h2 {
   display: block;
 }
 
+.view:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
 .view-header {
   display: flex;
   align-items: end;
