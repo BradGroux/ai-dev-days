@@ -48,7 +48,10 @@ The app includes a command center, evidence feed, executive brief, fabricated re
 
 The final packet also includes a local HTML slide deck, PDF export, and 45-minute speaker notes.
 
-The HTML deck is the visual source of truth. Regenerate the PDF from one dark-theme 1920x1080 screenshot per `#slideN`, assembled in slide order with the HTTPS link annotations preserved. Do not use browser print-to-PDF because print rendering can change the screen colors.
+The HTML deck is the visual source of truth. Regenerate the PDF from one dark-theme
+1920x1080 screenshot per `#slideN`, assembled in slide order with the HTTPS link
+annotations preserved. Do not use browser print-to-PDF because print rendering can
+change the screen colors.
 
 ## Seed Data
 
