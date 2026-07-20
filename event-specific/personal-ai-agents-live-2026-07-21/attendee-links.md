@@ -11,7 +11,7 @@ Use these links after the workshop to recreate the workflow.
 ## Event Packet
 
 - Workshop README: [README.md](README.md)
-- Product requirements: [PRD.md](PRD.md)
+- Product Requirements Document (PRD): [PRD.md](PRD.md)
 - Prompt pack: [prompt-pack.md](prompt-pack.md)
 - Source corpus: [demo/source-corpus/](demo/source-corpus/)
 - App output spec: [demo/app-output-spec.md](demo/app-output-spec.md)

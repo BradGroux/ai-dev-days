@@ -44,7 +44,7 @@ Workshop packet for developers, builders, security practitioners, product
 leaders, and AI workflow adopters.
 
 - Packet: [`event-specific/personal-ai-agents-live-2026-07-21/README.md`](event-specific/personal-ai-agents-live-2026-07-21/README.md)
-- PRD: [`event-specific/personal-ai-agents-live-2026-07-21/PRD.md`](event-specific/personal-ai-agents-live-2026-07-21/PRD.md)
+- Product Requirements Document (PRD): [`event-specific/personal-ai-agents-live-2026-07-21/PRD.md`](event-specific/personal-ai-agents-live-2026-07-21/PRD.md)
 - Slides: [`slides.html`](event-specific/personal-ai-agents-live-2026-07-21/slides.html) / [`slides.pdf`](event-specific/personal-ai-agents-live-2026-07-21/slides.pdf)
 - Speaker notes: [`speaker-notes-45-minute.md`](event-specific/personal-ai-agents-live-2026-07-21/speaker-notes-45-minute.md)
 - Demo workflow: [`demo/openclaw-prd-workflow.md`](event-specific/personal-ai-agents-live-2026-07-21/demo/openclaw-prd-workflow.md)
