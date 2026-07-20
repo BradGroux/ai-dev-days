@@ -8,7 +8,7 @@ Show the complete workflow:
 
 1. context
 2. `$grill-with-docs`
-3. PRD
+3. Product Requirements Document (PRD)
 4. issue artifacts
 5. `/goal`
 6. implementation plan

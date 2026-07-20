@@ -9,7 +9,7 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 
 ## 2:00-4:00 - Slide 2: About Brad
 
-- Introduce Brad Groux as CEO of Digital Meld and an OpenClaw maintainer/contributor.
+- Introduce Brad Groux as CEO of Digital Meld, an OpenClaw contributor for Microsoft integrations, and an open source evangelist.
 - Point out the follow-up links and say the deck and repo are meant to be reused.
 
 ## 4:00-7:00 - Slide 3: Why One-Off Prompts Fail
@@ -21,6 +21,7 @@ These notes support [slides.html](slides.html). Keep the live workflow ahead of 
 
 - OpenClaw handles discovery, durable context, grill-with-docs, and PRD generation.
 - Codex turns the approved PRD into issue artifacts, /goal prompts, implementation, verification, PRs, and merges.
+- Define PRD as Product Requirements Document: the problem, users, scope, requirements, constraints, and proof of success before implementation begins.
 - Emphasize human review at every handoff.
 
 ## 10:00-13:00 - Slide 5: E Corp Scenario

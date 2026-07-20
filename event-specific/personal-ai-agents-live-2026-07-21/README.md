@@ -13,14 +13,14 @@ This packet supports a 45-minute workshop showing the full path from messy stake
 
 1. OpenClaw generates or loads fictional E Corp business context.
 2. OpenClaw runs `$grill-with-docs` to sharpen the product direction.
-3. OpenClaw creates the PRD.
+3. OpenClaw creates the Product Requirements Document (PRD).
 4. Codex creates full-context issue artifacts for a fabricated repo page.
 5. Codex writes the `/goal` prompt in Markdown.
 6. Codex builds a local static app from the goal.
 
 ## Materials
 
-- Product requirements: [PRD.md](PRD.md)
+- Product Requirements Document (PRD): [PRD.md](PRD.md)
 - Prompt pack: [prompt-pack.md](prompt-pack.md)
 - OpenClaw workflow: [demo/openclaw-prd-workflow.md](demo/openclaw-prd-workflow.md)
 - Corpus generation prompt: [demo/corpus-generation-prompt.md](demo/corpus-generation-prompt.md)

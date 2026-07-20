@@ -80,7 +80,7 @@
       "date": "2026-07-21",
       "status": "planned",
       "audience": "Personal AI Agents LIVE developers, technical builders, security practitioners, product leaders, and AI workflow adopters",
-      "listedInRoot": false,
+      "listedInRoot": true,
       "entrypoint": "event-specific/personal-ai-agents-live-2026-07-21/README.md",
       "agenda": "event-specific/personal-ai-agents-live-2026-07-21/demo/openclaw-prd-workflow.md",
       "setupPath": "event-specific/personal-ai-agents-live-2026-07-21/day-before-checklist.md",
