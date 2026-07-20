@@ -30,7 +30,8 @@ Deck guidance:
 - 10 to 14 slides.
 - Dark, local, offline-friendly HTML deck.
 - HTML is the edit target.
-- PDF export must be regenerated from the HTML deck.
+- PDF export must be regenerated from one dark-theme 1920x1080 screenshot per `#slideN`, assembled in slide order.
+- Do not use browser print-to-PDF; preserve the screen-rendered colors and add the external HTTPS link annotations to the screenshot-based PDF.
 - No external assets unless already checked into the event folder.
 - Use dense, professional workshop slides, not a marketing hero deck.
 - Preserve accessibility basics and readable print layout.
@@ -60,7 +61,8 @@ Speaker notes guidance:
 
 Verification:
 - Open `slides.html` locally.
-- Export or regenerate `slides.pdf`.
+- Capture every slide at exactly 1920x1080 and regenerate `slides.pdf` from those screenshots.
+- Confirm the PDF has one 16:9 page per slide and preserves all expected HTTPS link annotations.
 - Confirm `speaker-notes-45-minute.md` references the slide sequence.
 - Run `./scripts/publication-scan.sh`.
 - Run `node scripts/audit-repo.mjs`.
