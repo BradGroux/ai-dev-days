@@ -1,42 +1,102 @@
 # Research Notes
 
-This folder contains source notes, video ingests, curriculum improvement ideas, and planning context used to build the workshop.
+This folder contains source-grounded research that may inform AI Dev Days
+curriculum, events, facilitator guidance, tool tracks, and program decisions.
 
-These files are not attendee instructions. They may include older assumptions, discarded paths, raw transcripts, or provider comparisons that should not override the current setup guides.
+Research follows the
+[AI Dev Days research and education method](../docs/research-and-education-method.md).
+It preserves the question, sources, facts, analysis, limitations, and
+recommended disposition so contributors do not have to rediscover the same
+context.
 
-## Use research for
+## Authority
 
-- understanding why workshop choices were made
-- finding future curriculum ideas
-- tracing source material behind modules
-- improving facilitator notes
-- updating AI literacy alignment as public workforce guidance evolves
+Research notes are evidence and planning records. They are not attendee
+instructions, approved curriculum, program decisions, professional advice, or
+AI-Native Operating Framework requirements.
 
-## Do not use research for
+Apply this order:
 
-- current install instructions
-- attendee handouts
-- secret or credential handling
-- final event logistics
+1. The canonical
+   [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
+   governs framework meaning.
+2. [`CHARTER.md`](../CHARTER.md), accepted
+   [decisions](../decisions/README.md), and
+   [`GOVERNANCE.md`](../GOVERNANCE.md) govern AI Dev Days.
+3. Approved curriculum, setup guides, and event packets govern current use.
+4. Research supplies bounded evidence and proposals.
 
-## Current canonical setup docs
+When a note conflicts with a higher-authority or newer source, mark it
+superseded or record the conflict. Do not silently rewrite history.
 
-- [Mac OpenClaw setup](../setup-guides/openclaw-mac.md)
-- [Windows OpenClaw setup](../setup-guides/openclaw-windows.md)
-- [Microsoft Foundry key setup](../setup-guides/microsoft-foundry.md)
-- [First success lab](../labs/first-success.md)
+## Required Note Content
 
-## Current source-backed framework docs
+Use [`source-note-template.md`](source-note-template.md). A substantive note
+records:
 
-- [AI Literacy Framework alignment](../docs/ai-literacy-framework-alignment.md)
-- [DOL AI Literacy Framework source note](dol-ai-literacy-framework.md)
+- date, researcher, status, and question;
+- primary sources inspected and capture dates;
+- freshness and drift risk;
+- source facts separated from analysis;
+- relevance to the framework and AI Dev Days;
+- what should and should not be reused;
+- rights, attribution, consent, and publication limits;
+- uncertainty, conflicts, remaining gaps, and required review; and
+- an accountable or proposed disposition.
 
-## New research notes
+## Source Standard
 
-Start with the [source note template](source-note-template.md). Mark source freshness, publication safety, intended audience, and follow-up actions before turning research into attendee-facing material.
+Prefer the source that owns the claim:
 
-Before publishing or quoting research content, run:
+- canonical framework documents for framework meaning;
+- official documentation and source code for tools;
+- original laws, regulations, standards, government publications, or research;
+- accountable practitioner records for operating experience; and
+- recorded event evidence for what occurred at an AI Dev Days event.
+
+Secondary sources may identify questions or explain context. They should not
+replace an available primary source.
+
+Keep direct quotations short. Prefer accurate paraphrase with a nearby link.
+
+## Research Dispositions
+
+A reviewed note receives one of these dispositions:
+
+- **Accepted as evidence:** usable for the stated question and limits.
+- **Advance to proposal:** warrants a specific curriculum, program, event, or
+  framework contribution.
+- **Defer:** a named source, review, event, or decision is missing.
+- **Supersede:** a newer or higher-authority note replaces it.
+- **Reject:** evidence, rights, relevance, or safety does not support reuse.
+
+Publication or repeated citation is not a disposition.
+
+## Current Source-Backed Notes
+
+- [Digital Meld operating practice and AI Dev Days](digital-meld-operating-research.md)
+- [U.S. Department of Labor AI Literacy Framework](dol-ai-literacy-framework.md)
+
+## Tool and Curriculum Research
+
+Historical notes may contain point-in-time product assumptions, transcripts,
+discarded paths, or proposed curriculum. Check current official sources and
+current approved material before reuse.
+
+- [Curriculum improvement brief](curriculum-improvement-brief.md)
+- [GitHub Markdown video ingest](github-markdown-video-ingest.md)
+- [OpenClaw beginner guide ingest](metics-ultimate-beginners-guide-openclaw-ingest.md)
+
+## Public Safety and Verification
+
+Use public, licensed, approved, anonymized, or fictional sources. Do not publish
+secrets, private paths, client or attendee records, confidential material,
+credentials, or sensitive operational details.
+
+Before submitting research:
 
 ```bash
-./scripts/publication-scan.sh
+./scripts/validate-release.sh
 ```
+
+If a check cannot run, record the missing check, reason, and consequence.

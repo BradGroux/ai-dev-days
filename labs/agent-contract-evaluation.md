@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Lab - Agent Contract Evaluation
+# AI Dev Days Lab - Agent Contract Evaluation
 
 ## Purpose
 

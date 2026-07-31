@@ -4,7 +4,9 @@ Date: 2026-05-16
 
 ## Scope
 
-This audit covered the OpenClaw Dev Days repository as a workshop kit, publication artifact, and sample application codebase.
+This historical audit covered the repository under its former OpenClaw Dev
+Days name as a workshop kit, publication artifact, and sample application
+codebase.
 
 - 96 Markdown files
 - reusable setup guides, labs, curriculum modules, facilitator runbooks, event packets, research notes, and public safety guidance

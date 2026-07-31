@@ -23,7 +23,7 @@ That makes the work:
 This section supports the Department of Labor AI Literacy Framework by helping attendees explore direct AI use, direct AI effectively through role instructions, and use AI responsibly with boundaries and human review.
 
 ## Recommended Workshop Flow
-If you're running through the OpenClaw Dev Days startup exercise, use the roles in roughly this order:
+If you're running through the AI Dev Days startup exercise, use the roles in roughly this order:
 
 1. **Market Researcher**
    - identify adjacent products and patterns

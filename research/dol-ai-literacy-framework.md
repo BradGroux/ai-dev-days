@@ -37,7 +37,7 @@ industries, roles, educational settings, and workforce contexts.
 6. Prepare Enabling Roles
 7. Design for Agility
 
-## OpenClaw Dev Days Curriculum Implications
+## AI Dev Days Curriculum Implications
 
 - Preserve the first working loop because experiential learning is the strongest delivery anchor.
 - Keep exercises tied to attendee goals and Beaver Badges so AI use is embedded in context.

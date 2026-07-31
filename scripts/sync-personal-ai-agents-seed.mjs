@@ -4,8 +4,8 @@ import path from 'node:path'
 import vm from 'node:vm'
 import { fileURLToPath } from 'node:url'
 
-export const seedJsonPath = 'event-specific/personal-ai-agents-live-2026-07-21/demo/app/data/app-seed.json'
-export const embeddedSeedPath = 'event-specific/personal-ai-agents-live-2026-07-21/demo/app/data/app-seed.js'
+export const seedJsonPath = 'event-specific/2026-07-21-personal-ai-agents-live/demo/app/data/app-seed.json'
+export const embeddedSeedPath = 'event-specific/2026-07-21-personal-ai-agents-live/demo/app/data/app-seed.js'
 
 const header = '// Generated from app-seed.json so the demo can run directly from file://.\n'
 

@@ -1,6 +1,6 @@
 # AI Literacy Framework Alignment
 
-OpenClaw Dev Days is aligned to the U.S. Department of Labor's AI Literacy
+AI Dev Days is aligned to the U.S. Department of Labor's AI Literacy
 Framework so facilitators can explain the workshop as workforce AI literacy,
 not just tool training.
 
@@ -15,7 +15,7 @@ The graphic version shared by DOL is here:
 
 ## Foundational Content Areas
 
-| DOL content area | OpenClaw Dev Days treatment |
+| DOL content area | AI Dev Days treatment |
 | --- | --- |
 | Understand AI Principles | Orientation explains agents, models, context, memory, limits, and why AI output needs human review. |
 | Explore AI Uses Directly | Attendees use OpenClaw on their own goal and the Beaver Badges product scenario instead of only watching demos. |
@@ -25,7 +25,7 @@ The graphic version shared by DOL is here:
 
 ## Effective Delivery Principles
 
-| DOL delivery principle | OpenClaw Dev Days treatment |
+| DOL delivery principle | AI Dev Days treatment |
 | --- | --- |
 | Enable Experiential Learning | Every major block ends with an artifact: first response, memory note, agent role, contract, review, repair plan, or 30-day goal. |
 | Embed Learning in Context | Exercises use attendee projects, local workspace files, event scenarios, and the Beaver Badges sample product. |

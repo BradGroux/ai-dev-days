@@ -90,11 +90,37 @@ function addSkippedUrl(normalized, sourceFile, reason) {
   skippedUrls.get(key).sourceFiles.add(relative(sourceFile))
 }
 
+function validateSameRepositoryUrl(parsed, normalized, sourceFile) {
+  if (parsed.hostname !== 'github.com') return false
+
+  const match = /^\/bradgroux\/ai-dev-days\/(?:blob|tree)\/(?:master|main)\/(.+)$/i.exec(
+    parsed.pathname,
+  )
+  if (!match) return false
+
+  const repositoryPath = decodeURIComponent(match[1])
+  const target = path.resolve(root, repositoryPath)
+  const relativeTarget = path.relative(root, target)
+  if (relativeTarget.startsWith('..') || path.isAbsolute(relativeTarget)) {
+    failures.push(`${normalized} resolves outside the repository (${relative(sourceFile)})`)
+    return true
+  }
+
+  if (!fs.existsSync(target)) {
+    failures.push(`${normalized} references missing repository path: ${repositoryPath} (${relative(sourceFile)})`)
+    return true
+  }
+
+  addSkippedUrl(normalized, sourceFile, 'same-repository path validated locally')
+  return true
+}
+
 function addUrl(rawUrl, sourceFile) {
   const normalized = normalizeUrl(rawUrl)
   if (!normalized) return
 
   const parsed = new URL(normalized)
+  if (validateSameRepositoryUrl(parsed, normalized, sourceFile)) return
   if (isPrivateOrLocalHost(parsed.hostname)) {
     addSkippedUrl(normalized, sourceFile, 'local/private host')
     return
@@ -138,7 +164,7 @@ async function fetchWithTimeout(url, method) {
       redirect: 'follow',
       signal: controller.signal,
       headers: {
-        'user-agent': 'openclaw-dev-days-link-checker/1.0',
+        'user-agent': 'ai-dev-days-link-checker/1.0',
       },
     })
   } finally {
@@ -191,7 +217,7 @@ for (const file of files) {
 
 await runChecks()
 
-console.log('OpenClaw Dev Days external link check')
+console.log('AI Dev Days external link check')
 console.log(`- Files scanned: ${files.length}`)
 console.log(`- Unique external URLs found: ${discoveredUrls.size + skippedUrls.size}`)
 console.log(`- URLs checked: ${discoveredUrls.size}`)

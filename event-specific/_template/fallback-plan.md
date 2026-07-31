@@ -32,8 +32,15 @@ If a blocker takes more than 10 minutes, move the attendee to observe, pair, or 
 
 Even if setup fails, attendees should leave with:
 
-- a clear understanding of agents and orchestration
-- a Markdown memory file
-- an agent instruction
-- a task list
-- a next step for continuing after the event
+- a clear purpose and expected outcome for one people-and-AI activity
+- durable, public-safe context
+- one reviewable artifact, worked example, or observation
+- an understanding of the human owner and decision boundary
+- a recorded next action or handoff
+
+## Stop and recovery
+
+Stop the affected activity when work becomes unsafe, unauthorized, materially
+incorrect, or impossible to verify. Move to the approved demo or observation
+path, preserve only public-safe evidence, identify the escalation owner, and
+record the recovery or follow-up action in the post-event review.

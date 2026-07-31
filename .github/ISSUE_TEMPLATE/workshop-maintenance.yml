@@ -8,7 +8,7 @@ body:
     id: scope
     attributes:
       label: Scope
-      description: What content, event packet, setup guide, or repo workflow needs work?
+      description: What curriculum, event packet, tool track, setup guide, framework application, or repo workflow needs work?
       placeholder: Describe the specific repo area and why it needs attention.
     validations:
       required: true
@@ -31,4 +31,6 @@ body:
         - label: Local links and event metadata should be updated if navigation changes.
           required: false
         - label: Changelog should be updated if this changes public material or maintainer workflow.
+          required: false
+        - label: Framework claims and event operating guidance should be checked against the canonical AI-Native Operating Framework.
           required: false

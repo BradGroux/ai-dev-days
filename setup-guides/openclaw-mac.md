@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Setup Guide - Mac
+# AI Dev Days OpenClaw Track Setup Guide - Mac
 
 Audience: attendees using macOS. The workshop baseline is the direct OpenClaw installer, followed by OpenClaw onboarding and model provider selection.
 
@@ -80,7 +80,7 @@ openclaw dashboard
 In the dashboard, send:
 
 ```text
-I am at OpenClaw Dev Days. Confirm this setup works and give me one useful next step.
+I am in the AI Dev Days OpenClaw track. Confirm this setup works and give me one useful next step.
 ```
 
 ## 5. If `openclaw` is not found

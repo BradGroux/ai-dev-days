@@ -88,8 +88,8 @@ Sign in with Claude when prompted.
 Create a workshop folder first:
 
 ```bash
-mkdir -p ~/openclaw-dev-days
-cd ~/openclaw-dev-days
+mkdir -p ~/ai-dev-days
+cd ~/ai-dev-days
 ```
 
 Then run:
@@ -101,7 +101,7 @@ codex
 Use this prompt:
 
 ```text
-I am attending an OpenClaw Dev Days workshop.
+I am attending an AI Dev Days OpenClaw track workshop.
 
 Help me install and verify OpenClaw on this computer.
 
@@ -121,15 +121,15 @@ Before running commands, explain what each command does. Do not ask for or store
 Create a workshop folder first:
 
 ```bash
-mkdir -p ~/openclaw-dev-days
-cd ~/openclaw-dev-days
+mkdir -p ~/ai-dev-days
+cd ~/ai-dev-days
 ```
 
 On Windows PowerShell:
 
 ```powershell
-mkdir $HOME\openclaw-dev-days
-cd $HOME\openclaw-dev-days
+mkdir $HOME\ai-dev-days
+cd $HOME\ai-dev-days
 ```
 
 Then run:
@@ -141,7 +141,7 @@ claude
 Use this prompt:
 
 ```text
-I am attending an OpenClaw Dev Days workshop.
+I am attending an AI Dev Days OpenClaw track workshop.
 
 Help me install and verify OpenClaw on this computer.
 
