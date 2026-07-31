@@ -78,10 +78,10 @@ What is the first thing I want this team to produce?
 
 Use one of these if you do not want to start from a blank page. Each adventure
 maps to the full event
-[scenario cards](../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md),
-[prompt pack](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md),
+[scenario cards](../../event-specific/2026-05-14-infragard-ai-agent-workshop/scenario-cards.md),
+[prompt pack](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md),
 and
-[demo script](../../event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md).
+[demo script](../../event-specific/2026-05-14-infragard-ai-agent-workshop/demo-script.md).
 
 ### 1. Field Report To Customer Summary
 
@@ -91,7 +91,7 @@ and
 
 **Use when:** you want an operations example that works across energy, water, healthcare operations, infrastructure services, and field teams.
 
-**Prompt path:** [Field report prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-1---field-report-to-customer-summary)
+**Prompt path:** [Field report prompts](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md#scenario-1---field-report-to-customer-summary)
 
 ### 2. Heavy Haul Load Status
 
@@ -101,7 +101,7 @@ and
 
 **Use when:** you want a logistics, construction, data-center supply chain, transportation, or field-operations example.
 
-**Prompt path:** [Heavy haul prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-2---heavy-haul-load-status)
+**Prompt path:** [Heavy haul prompts](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md#scenario-2---heavy-haul-load-status)
 
 ### 3. Low-Severity Alert Triage
 
@@ -111,7 +111,7 @@ and
 
 **Use when:** you want a SOC, IT, MSP, OT security, or compliance example.
 
-**Prompt path:** [Alert triage prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-3---low-severity-alert-triage)
+**Prompt path:** [Alert triage prompts](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md#scenario-3---low-severity-alert-triage)
 
 ### 4. Compliance Evidence Packet
 
@@ -121,7 +121,7 @@ and
 
 **Use when:** you want a governance, audit, healthcare, energy, finance, legal, or leadership example.
 
-**Prompt path:** [Compliance prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-4---compliance-evidence-packet)
+**Prompt path:** [Compliance prompts](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md#scenario-4---compliance-evidence-packet)
 
 ### 5. OT/IT Change Coordination
 
@@ -131,7 +131,7 @@ and
 
 **Use when:** you want a manufacturing, utilities, maritime, healthcare facilities, energy, water, or critical-operations example.
 
-**Prompt path:** [OT/IT prompts](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md#scenario-5---otit-change-coordination)
+**Prompt path:** [OT/IT prompts](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md#scenario-5---otit-change-coordination)
 
 ## Success Criteria
 
@@ -195,14 +195,14 @@ An agent team helped them:
 
 ## Resources
 
-- OpenClaw Dev Days main repo: https://github.com/BradGroux/openclaw-dev-days
+- AI Dev Days main repository: https://github.com/BradGroux/ai-dev-days
 - OpenClaw Mac install: [`../../setup-guides/openclaw-mac.md`](../../setup-guides/openclaw-mac.md)
 - OpenClaw Windows install: [`../../setup-guides/openclaw-windows.md`](../../setup-guides/openclaw-windows.md)
 - AI-assisted OpenClaw install: [`../../setup-guides/ai-assisted-openclaw-install.md`](../../setup-guides/ai-assisted-openclaw-install.md)
-- Workshop agenda and materials: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/)
-- Attendee links: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/attendee-links.md)
-- Prompt pack: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md)
-- Scenario cards: [`../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md)
+- Workshop agenda and materials: [`../../event-specific/2026-05-14-infragard-ai-agent-workshop/`](../../event-specific/2026-05-14-infragard-ai-agent-workshop/)
+- Attendee links: [`../../event-specific/2026-05-14-infragard-ai-agent-workshop/attendee-links.md`](../../event-specific/2026-05-14-infragard-ai-agent-workshop/attendee-links.md)
+- Prompt pack: [`../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md`](../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md)
+- Scenario cards: [`../../event-specific/2026-05-14-infragard-ai-agent-workshop/scenario-cards.md`](../../event-specific/2026-05-14-infragard-ai-agent-workshop/scenario-cards.md)
 - Community Discord: https://discord.gg/Gmfkm7QVSF
 
 ## Questions?

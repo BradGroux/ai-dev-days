@@ -24,15 +24,6 @@ jobs:
           cache: npm
           cache-dependency-path: projects/beaver-badges/app/package-lock.json
 
-      - name: Run publication scan
-        run: ./scripts/publication-scan.sh
-
-      - name: Run repo audit
-        run: node scripts/audit-repo.mjs
-
-      - name: Check external links
-        run: node scripts/check-external-links.mjs
-
       - name: Install Beaver Badges dependencies
         working-directory: projects/beaver-badges/app
         run: npm ci
@@ -41,15 +32,10 @@ jobs:
         working-directory: projects/beaver-badges/app
         run: npx playwright install --with-deps chromium
 
-      - name: Check Beaver Badges app
-        working-directory: projects/beaver-badges/app
-        run: npm run check
-
-      - name: Run visual smoke tests
-        working-directory: projects/beaver-badges/app
+      - name: Validate release candidate
         env:
           VISUAL_SMOKE_ARTIFACT_DIR: ${{ runner.temp }}/visual-smoke
-        run: npm run smoke:visual
+        run: ./scripts/validate-release.sh
 
       - name: Upload visual smoke screenshots
         if: always()

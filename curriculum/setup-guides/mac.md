@@ -64,8 +64,8 @@ Then confirm you can log into GitHub in your browser.
 In Terminal:
 
 ```bash
-mkdir -p ~/openclaw-dev-days
-cd ~/openclaw-dev-days
+mkdir -p ~/ai-dev-days
+cd ~/ai-dev-days
 ```
 
 ## Prepare a Memory File

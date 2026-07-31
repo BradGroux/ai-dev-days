@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Lab — First Success
+# AI Dev Days OpenClaw Track Lab — First Success
 
 ## Purpose
 
@@ -64,7 +64,7 @@ openclaw dashboard
 Use this exact prompt:
 
 ```text
-I am at OpenClaw Dev Days. Confirm my setup works, summarize what is working in three bullets, and give me one next step.
+I am in the AI Dev Days OpenClaw track. Confirm my setup works, summarize what is working in three bullets, and give me one next step.
 ```
 
 ## Checkpoint card

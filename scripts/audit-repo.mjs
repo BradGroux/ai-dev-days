@@ -7,11 +7,32 @@ const root = process.cwd()
 const skipDirectories = new Set(['.git', 'node_modules', 'dist', '.vite'])
 const requiredFiles = [
   'README.md',
+  'CHARTER.md',
+  'GOVERNANCE.md',
+  'CONTRIBUTING.md',
+  'CODE_OF_CONDUCT.md',
+  'SECURITY.md',
+  'LICENSE.md',
+  'CITATION.cff',
+  '.github/CODEOWNERS',
+  'MIGRATION.md',
   'START-HERE.md',
   'RUNBOOK.md',
   'PUBLICATION-SAFETY.md',
+  'decisions/README.md',
+  'decisions/TEMPLATE.md',
+  'decisions/0001-framework-companion-for-research-and-education.md',
+  'docs/ai-native-operating-framework-alignment.md',
+  'docs/research-and-education-method.md',
+  'docs/release-process.md',
+  'docs/releases/v1.0.0.md',
+  'research/README.md',
+  'research/source-note-template.md',
+  'research/digital-meld-operating-research.md',
   'scripts/publication-scan.sh',
+  'scripts/validate-release.sh',
   'event-specific/events.json',
+  'event-specific/_template/post-event-review.md',
   'projects/beaver-badges/app/package.json',
   'projects/beaver-badges/data/locations.json',
   'projects/beaver-badges/data/badges.json',
@@ -23,12 +44,12 @@ let suppressedWarnings = 0
 const files = []
 const maxWarningsToPrint = 60
 const intentionalRepeatedLocalLinks = new Set([
-  'event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md::prompt-pack.md',
-  'event-specific/infragard-ai-agent-workshop-2026-05-14/demo-script.md::scenario-cards.md',
-  'event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md::demo-script.md',
-  'event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md::demo-script.md',
-  'event-specific/infragard-ai-agent-workshop-2026-05-14/scenario-cards.md::prompt-pack.md',
-  'projects/infragard-agent-team/README.md::../../event-specific/infragard-ai-agent-workshop-2026-05-14/prompt-pack.md',
+  'event-specific/2026-05-14-infragard-ai-agent-workshop/demo-script.md::prompt-pack.md',
+  'event-specific/2026-05-14-infragard-ai-agent-workshop/demo-script.md::scenario-cards.md',
+  'event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md::demo-script.md',
+  'event-specific/2026-05-14-infragard-ai-agent-workshop/scenario-cards.md::demo-script.md',
+  'event-specific/2026-05-14-infragard-ai-agent-workshop/scenario-cards.md::prompt-pack.md',
+  'projects/infragard-agent-team/README.md::../../event-specific/2026-05-14-infragard-ai-agent-workshop/prompt-pack.md',
 ])
 
 function walk(directory) {
@@ -175,6 +196,10 @@ function validateEventMetadata() {
   const metadataBySlug = new Map(metadata.events.map((event) => [event.slug, event]))
 
   for (const directory of eventDirectories) {
+    if (!/^\d{4}-\d{2}-\d{2}-[a-z0-9][a-z0-9-]*$/.test(directory)) {
+      failures.push(`event-specific/${directory} must use YYYY-MM-DD-<event-slug>`)
+    }
+
     if (!metadataBySlug.has(directory)) {
       failures.push(`event-specific/${directory} is missing from event-specific/events.json`)
     }
@@ -195,6 +220,10 @@ function validateEventMetadata() {
     if (missingFields.length > 0) {
       failures.push(`event metadata entry is missing ${missingFields.join(', ')}: ${event.slug ?? '(unknown slug)'}`)
       continue
+    }
+
+    if (event.slug && !event.slug.startsWith(`${event.date}-`)) {
+      failures.push(`event metadata slug must start with its date for ${event.slug}: ${event.date}-`)
     }
 
     const eventDirectory = path.join(root, 'event-specific', event.slug)
@@ -322,6 +351,50 @@ function validateRequiredFiles() {
   }
 }
 
+function validateProgramMethod() {
+  const requiredResearchHeadings = [
+    '## Question',
+    '## Primary Sources Inspected',
+    '## Freshness and Provenance',
+    '## Rights and Publishability',
+    '## Source Facts',
+    '## Analysis',
+    '## Relevance to the AI-Native Operating Framework',
+    '## Relevance to AI Dev Days',
+    '## What Should Be Reused',
+    '## What Should Not Be Copied',
+    '## Remaining Gaps',
+    '## Recommendation',
+  ]
+  const templatePath = path.join(root, 'research/source-note-template.md')
+  if (fs.existsSync(templatePath)) {
+    const template = fs.readFileSync(templatePath, 'utf8')
+    for (const heading of requiredResearchHeadings) {
+      if (!template.includes(heading)) {
+        failures.push(`research/source-note-template.md is missing ${heading}`)
+      }
+    }
+  }
+
+  const charterPath = path.join(root, 'CHARTER.md')
+  if (fs.existsSync(charterPath)) {
+    const charter = fs.readFileSync(charterPath, 'utf8')
+    for (const requiredSection of [
+      '## Mission',
+      '## Scope',
+      '## Founding Commitments',
+      '## Relationship to the AI-Native Operating Framework',
+      '## Non-Goals',
+      '## Stewardship',
+      '## Amendment',
+    ]) {
+      if (!charter.includes(requiredSection)) {
+        failures.push(`CHARTER.md is missing ${requiredSection}`)
+      }
+    }
+  }
+}
+
 function validateAppScripts() {
   const packageJson = readJson('projects/beaver-badges/app/package.json')
   if (!packageJson?.scripts) return
@@ -343,6 +416,7 @@ function validatePersonalAiAgentsSeed() {
 
 walk(root)
 validateRequiredFiles()
+validateProgramMethod()
 validateAppScripts()
 validateBeaverBadgesData()
 validateEventMetadata()
@@ -358,7 +432,7 @@ for (const file of markdownFiles) {
   checkMarkdownQuality(file, fs.readFileSync(file, 'utf8'))
 }
 
-console.log('OpenClaw Dev Days repo audit')
+console.log('AI Dev Days repo audit')
 console.log(`- Files scanned: ${files.length}`)
 console.log(`- Markdown/HTML files checked for local links: ${linkFiles.length}`)
 console.log(`- Markdown files checked for quality: ${markdownFiles.length}`)

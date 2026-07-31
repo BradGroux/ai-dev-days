@@ -1,8 +1,9 @@
-# OpenClaw Dev Days Curriculum Improvement Brief
+# AI Dev Days OpenClaw Track Curriculum Improvement Brief
 
 ## Purpose
 
-This brief captures public-safe curriculum improvements for OpenClaw Dev Days.
+This historical brief captures public-safe curriculum improvements for the AI
+Dev Days OpenClaw track.
 
 It is intentionally scoped to reusable workshop design, attendee experience, setup flow, Markdown memory, agent roles, and follow-up learning.
 

@@ -69,8 +69,8 @@ Then confirm you can log into GitHub in your browser.
 In PowerShell:
 
 ```powershell
-mkdir $HOME\openclaw-dev-days
-cd $HOME\openclaw-dev-days
+mkdir $HOME\ai-dev-days
+cd $HOME\ai-dev-days
 ```
 
 ## Prepare a Memory File

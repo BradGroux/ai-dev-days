@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Lab - Orchestrated Repair Loop
+# AI Dev Days Lab - Orchestrated Repair Loop
 
 ## Purpose
 

@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Setup Guide - Microsoft Foundry API Key
+# AI Dev Days OpenClaw Track Setup Guide - Microsoft Foundry API Key
 
 Audience: TAMU workshop attendees configuring OpenClaw to use the workshop-provided Microsoft Foundry / Azure OpenAI Chat GPT 5.5 API key during OpenClaw onboarding.
 

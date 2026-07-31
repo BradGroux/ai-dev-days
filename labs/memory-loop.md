@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Lab — Markdown Memory Loop
+# AI Dev Days Lab — Markdown Memory Loop
 
 ## Purpose
 
@@ -11,15 +11,15 @@ AI literacy focus: practice directing AI effectively with clear context, useful 
 Mac/Linux:
 
 ```bash
-mkdir -p ~/openclaw-dev-days
-cd ~/openclaw-dev-days
+mkdir -p ~/ai-dev-days
+cd ~/ai-dev-days
 ```
 
 Windows PowerShell:
 
 ```powershell
-mkdir $HOME\openclaw-dev-days
-cd $HOME\openclaw-dev-days
+mkdir $HOME\ai-dev-days
+cd $HOME\ai-dev-days
 ```
 
 ## Step 2 — Understand why Markdown matters

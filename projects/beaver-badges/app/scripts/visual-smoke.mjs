@@ -9,7 +9,7 @@ import { createServer } from 'vite'
 const appRoot = process.cwd()
 const repoRoot = path.resolve(appRoot, '../../..')
 const appUrl = 'http://127.0.0.1:5173/'
-const screenshotDir = process.env.VISUAL_SMOKE_ARTIFACT_DIR || path.join(os.tmpdir(), 'openclaw-dev-days-visual-smoke')
+const screenshotDir = process.env.VISUAL_SMOKE_ARTIFACT_DIR || path.join(os.tmpdir(), 'ai-dev-days-visual-smoke')
 
 async function assertNoHorizontalOverflow(page, label) {
   const metrics = await page.evaluate(() => ({

@@ -1,12 +1,13 @@
 ## Summary
 
 - Describe the change.
+- Contribution class: research, curriculum, event, tool track, material
+  program, example/app, or editorial.
+- Link the issue, source note, or decision record when applicable.
 
 ## Verification
 
-- [ ] `./scripts/publication-scan.sh`
-- [ ] `node scripts/audit-repo.mjs`
-- [ ] `node scripts/check-external-links.mjs`
+- [ ] `./scripts/validate-release.sh`
 - [ ] `npm run check` in `projects/beaver-badges/app` if app code or data changed
 - [ ] `npm run smoke:visual` in `projects/beaver-badges/app` if app UI changed
 
@@ -16,6 +17,30 @@
       or sensitive operational details were added.
 - [ ] Event-specific assumptions live under `event-specific/`.
 - [ ] Changelog updated when public material or maintainer workflow changed.
+
+## Framework Alignment
+
+- [ ] Framework claims link to the canonical
+      `BradGroux/ai-native-operating-framework` repository.
+- [ ] Tool-specific guidance is presented as implementation context, not a
+      framework requirement.
+- [ ] Event changes make intent, responsibility, work, control, assurance, and
+      learning clear in proportion to the event.
+- [ ] Event folders and metadata slugs use `YYYY-MM-DD-<event-slug>`.
+- [ ] Sources, decisions, evidence, handoffs, and lessons have appropriate
+      public-safe durable locations.
+
+## Research And Education
+
+- [ ] Material claims are traceable to primary or authoritative sources.
+- [ ] Source facts, analysis, assumptions, decisions, and limitations are
+      distinguishable.
+- [ ] Learning changes state the learner, prerequisite, outcome, exercise, and
+      reviewable evidence.
+- [ ] Event findings have an accountable disposition path and do not become
+      reusable curriculum automatically.
+- [ ] Accessibility, mixed-skill participation, and required domain review were
+      considered proportionately.
 
 ## Notes
 

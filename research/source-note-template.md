@@ -1,37 +1,89 @@
-# Source Note Template
+# Research Note: Topic
 
-## Source
+- **Date:** YYYY-MM-DD
+- **Researcher:**
+- **Status:** draft
+- **Public-safety status:** raw research
 
-- Title:
-- URL:
-- Publisher / creator:
-- Captured on:
-- Source type: article, video, transcript, docs, repository, report, other
+## Question
 
-## Freshness
+State the question and the program, learner, facilitator, event, or maintainer
+decision it may inform.
 
-- Freshness risk: low, medium, high
-- Review again by:
-- Drift-sensitive claims:
+## Primary Sources Inspected
 
-## Publishability
+For each source record:
 
-- Public-safety status: attendee-ready, facilitator-only, raw research, do not publish
-- Sensitive material present:
-- License or reuse notes:
-- Citation needed before reuse: yes/no
+- title;
+- owner, publisher, or creator;
+- stable URL, repository tag, version, or identifier;
+- publication or effective date;
+- date inspected;
+- source type; and
+- whether it is primary, authoritative, or contextual.
 
-## Summary
+## Freshness and Provenance
 
-Write the useful facts in your own words. Keep direct quotes short and clearly attributed.
+- **Freshness risk:** low, medium, or high
+- **Review again by:**
+- **Drift-sensitive claims:**
+- **Conflicting or superseding sources:**
+- **Capture or verification method:**
 
-## Workshop Implications
+## Rights and Publishability
 
-- What should change in setup docs, curriculum, labs, facilitator notes, or event packets?
-- What should not be carried into attendee-facing material?
+- **Public-safety status:** attendee-ready, facilitator-only, raw research, or
+  do not publish
+- **Sensitive material present:**
+- **License, permission, consent, or reuse notes:**
+- **Attribution required:**
+- **Professional or domain review present or missing:**
+- **Material human or AI assistance:**
+
+## Source Facts
+
+Record what the sources state or demonstrate. Keep facts separate from
+interpretation. Link each material claim to the source that owns it.
+
+## Analysis
+
+Explain patterns, conflicts, implications, and bounded inferences. Label
+inference and uncertainty.
+
+## Relevance to the AI-Native Operating Framework
+
+Explain which canonical framework concerns or methods are relevant. Research
+does not amend the framework.
+
+## Relevance to AI Dev Days
+
+Explain the learner, curriculum, event, facilitator, tool-track, or maintenance
+effect.
+
+## What Should Be Reused
+
+## What Should Not Be Copied
+
+## Remaining Gaps
+
+Name missing sources, rights, domain review, learner evidence, practical
+validation, accessibility review, or decisions.
+
+## Recommendation
+
+Recommend one disposition:
+
+- accept as evidence;
+- advance to proposal;
+- defer;
+- supersede; or
+- reject.
+
+Name the accountable owner and affected material.
 
 ## Follow-Up
 
-- [ ] Verify links still work.
-- [ ] Run `./scripts/publication-scan.sh`.
-- [ ] Run `node scripts/audit-repo.mjs`.
+- [ ] Verify every material source.
+- [ ] Record the disposition and decision authority.
+- [ ] Update affected research, decisions, curriculum, events, or tool tracks.
+- [ ] Run `./scripts/validate-release.sh`.
