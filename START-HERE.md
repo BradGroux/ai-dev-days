@@ -6,13 +6,14 @@ Use this page to choose the shortest useful path through the repo.
 
 Start with:
 
-1. [AI Dev Days Charter](CHARTER.md)
-2. [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
-3. [Governance](GOVERNANCE.md)
-4. [Research and education method](docs/research-and-education-method.md)
-5. [Curriculum overview](curriculum/README.md)
-6. [Facilitator runbook](RUNBOOK.md)
-7. [Event template](event-specific/_template/README.md)
+1. [Visual program map](docs/program-map.md)
+2. [AI Dev Days Charter](CHARTER.md)
+3. [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+4. [Governance](GOVERNANCE.md)
+5. [Research and education method](docs/research-and-education-method.md)
+6. [Curriculum overview](curriculum/README.md)
+7. [Facilitator runbook](RUNBOOK.md)
+8. [Event template](event-specific/_template/README.md)
 
 For an event or lesson that selects the AI-Native Operating Framework, use the
 [product-local teaching guide](docs/ai-native-operating-framework-alignment.md).

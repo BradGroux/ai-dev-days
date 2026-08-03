@@ -5,6 +5,7 @@ visual reference material for AI Dev Days.
 
 ## Shared foundation
 
+- [Visual program map](program-map.md)
 - [AI Dev Days Charter](../CHARTER.md)
 - [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
 

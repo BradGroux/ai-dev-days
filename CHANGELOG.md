@@ -18,12 +18,17 @@
   metadata for the version 1.0.0 baseline.
 - Added a canonical research and education method that carries source-grounded
   findings through Understand, Document, Validate, Approve, Use, and Improve.
+- Added a visual program map for the research-to-learning loop and the boundary
+  between Commons, AI Dev Days-owned work, and selected teaching contexts.
 - Added a public-source Digital Meld operating-research synthesis with explicit
   reuse boundaries and program implications.
 - Added an explicit release process and prepared version 1.0.0 release notes
   with an owner approval gate.
 - Updated the Beaver Badges PostCSS development dependency to a patched release
   and added a high-severity dependency audit to the release validation gate.
+- Refreshed the Beaver Badges React, React DOM, React types, Tailwind CSS,
+  TypeScript, and Vite dependencies and moved the quality workflow to
+  `actions/setup-node@v7`.
 - Renamed all dated event folders to the `YYYY-MM-DD-<event-slug>` convention
   and updated repository navigation, metadata, embedded seed data, and links.
 - Added repository and event-path migration guidance.
