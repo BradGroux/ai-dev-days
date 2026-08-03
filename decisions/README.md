@@ -9,6 +9,8 @@ practice.
 1. [ADR-001: Framework companion for research and education](0001-framework-companion-for-research-and-education.md)
    — superseded by ADR-002
 2. [ADR-002: Adopt Open Framework Commons v1.0.0 and preserve product independence](0002-adopt-open-framework-commons-v1.0.0.md)
+   — accepted; exact commit pin refreshed by ADR-003
+3. [ADR-003: Refresh the Open Framework Commons v1.0.0 commit pin](0003-refresh-open-framework-commons-v1.0.0-pin.md)
    — accepted
 
 Program decisions take effect independently of whether an AI Dev Days release

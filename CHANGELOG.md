@@ -4,10 +4,12 @@
 
 ## 1.0.0 - 2026-08-03
 
-- Adopted Open Framework Commons v1.0.0 at release commit
-  `27870fb1d57d951b9ef5a3a86f33ef068ee557da` while preserving AI Dev Days as
-  an independent learning community that owns its curriculum, events,
-  community practices, examples, research, governance, roadmap, and releases.
+- Adopted Open Framework Commons v1.0.0, initially at
+  `27870fb1d57d951b9ef5a3a86f33ef068ee557da`, and refreshed the exact pin to
+  `a0f0d384e9010a65d1a21a324b4c912433d5e031` after Commons republished the
+  tag. AI Dev Days remains an independent learning community that owns its
+  curriculum, events, community practices, examples, research, governance,
+  roadmap, and releases.
 - Renamed the repository and program from OpenClaw Dev Days to AI Dev Days
   while preserving OpenClaw as a tool-specific track.
 - Added an AI-Native Operating Framework teaching guide for events or lessons
