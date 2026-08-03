@@ -18,12 +18,14 @@
 - [ ] Event-specific assumptions live under `event-specific/`.
 - [ ] Changelog updated when public material or maintainer workflow changed.
 
-## Framework Alignment
+## Commons And Product Boundaries
 
-- [ ] Framework claims link to the canonical
-      `BradGroux/ai-native-operating-framework` repository.
-- [ ] Tool-specific guidance is presented as implementation context, not a
-      framework requirement.
+- [ ] Shared-principle claims link to the adopted Open Framework Commons
+      release rather than duplicating its canonical prose.
+- [ ] Claims about a selected framework link to that product's canonical
+      repository.
+- [ ] Tool and selected-framework guidance is presented as learning context,
+      not an AI Dev Days program requirement.
 - [ ] Event changes make intent, responsibility, work, control, assurance, and
       learning clear in proportion to the event.
 - [ ] Event folders and metadata slugs use `YYYY-MM-DD-<event-slug>`.

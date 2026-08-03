@@ -1,7 +1,8 @@
 # ADR-001: Framework Companion for Research and Education
 
-- **Status:** accepted for the version 1.0.0 release candidate; pending founding
-  steward release approval
+- **Status:** superseded by
+  [ADR-002](0002-adopt-open-framework-commons-v1.0.0.md) on 2026-08-03;
+  retained as historical context
 - **Date:** 2026-07-30
 - **Owner:** Brad Groux
 

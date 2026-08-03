@@ -1,9 +1,9 @@
 # AI Dev Days Charter
 
-**Status:** Version 1.0.0 release candidate; pending founding steward approval  
-**Founding steward:** Brad Groux  
-**Prepared:** 2026-07-30  
-**Effective date:** Upon approval of version 1.0.0
+**Status:** AI Dev Days version 1.0.0<br>
+**Founding steward:** Brad Groux<br>
+**Prepared:** 2026-07-30<br>
+**Effective date:** 2026-08-03
 
 ## Preamble
 
@@ -17,10 +17,9 @@ contributors a place to investigate how people and AI can work together, test
 that understanding in realistic exercises, and preserve what was learned for
 future events.
 
-The
-[AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-is the program's operating foundation. AI Dev Days teaches and applies the
-framework. It does not redefine it.
+AI Dev Days is an independent learning community. It adopts shared ecosystem
+principles without surrendering ownership of its purpose, methods, community,
+or releases.
 
 ## Mission
 
@@ -61,115 +60,60 @@ The program may address:
 
 ## Founding Commitments
 
-### The framework governs operating meaning
+AI Dev Days adopts the shared principles in Open Framework Commons by reference
+and does not restate them as a second canonical list. Its product-local
+commitments are:
 
-AI Dev Days uses the current approved AI-Native Operating Framework as its
-foundation. Framework requirements are linked to their canonical source.
-Educational material, event experience, examples, and tool behavior cannot
-amend the framework implicitly.
+- each event or lesson identifies its learner, purpose, accountable owner,
+  expected outcome, safety boundary, and reviewable evidence;
+- AI may assist with learning and repository work, but humans retain program,
+  event, professional, and acceptance authority;
+- research and event experience remain bounded evidence until an accountable
+  AI Dev Days decision changes curriculum or community practice;
+- public materials use public, licensed, approved, anonymized, or fictional
+  sources and follow the repository's publication-safety rules;
+- events support mixed-skill participation, clear prerequisites, recovery
+  paths, and continued learning; and
+- tools and external frameworks are selected learning contexts, not owners of
+  AI Dev Days' identity or method.
 
-### Start with the people who know the work
+## Open Framework Commons Adoption
 
-Useful AI education begins with the practitioners, recipients, owners, and
-control authorities who understand the real workflow and its exceptions.
-Learners are participants in discovery, not passive recipients of a tool
-demonstration.
+AI Dev Days adopts Open Framework Commons v1.0.0 as its shared philosophical
+foundation:
 
-### Research precedes durable claims
+- **Repository:** [BradGroux/open-framework-commons](https://github.com/BradGroux/open-framework-commons)
+- **Adopted tag:** [`v1.0.0`](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+- **Release commit:** [`27870fb1d57d951b9ef5a3a86f33ef068ee557da`](https://github.com/BradGroux/open-framework-commons/commit/27870fb1d57d951b9ef5a3a86f33ef068ee557da)
 
-Material claims identify their sources, freshness, provenance, limitations,
-and review status. Source facts are separated from analysis and
-recommendations. Raw research has no authority merely because it is stored in
-the repository.
-
-### Business purpose comes before technology
-
-Every exercise or event connects technology to a purpose, accountable owner,
-expected outcome, and boundary. A prompt, model, agent, or platform is not a
-substitute for a business process.
-
-### Human accountability remains explicit
-
-AI may assist with research, drafting, practice, comparison, and verification.
-It does not hold program governance authority, approve its own work, grant
-rights, or replace accountable professional or domain judgment.
-
-### Tools are tracks, not the identity
-
-AI Dev Days remains vendor-neutral at the program level. Tool tracks may use
-OpenClaw, Codex, or other technologies to make the learning concrete. No tool
-defines the program or the framework.
-
-### Evidence matters more than spectacle
-
-The preferred learning outcome is one reviewable artifact, verified result,
-clear decision, or useful handoff. A polished demonstration without evidence,
-ownership, or a continuation path is not sufficient.
-
-### One clear body of material serves people and AI
-
-Documentation should be understandable to every authorized participant. The
-program does not require a parallel curriculum or hidden operating model for
-AI.
-
-### Public learning must be safe to publish
-
-Research and event materials respect privacy, confidentiality, security,
-rights, consent, and professional boundaries. Public examples use public,
-licensed, approved, anonymized, or fictional sources as appropriate.
-
-### Learning must survive the event
-
-Material sources, decisions, current state, evidence, handoffs, feedback, and
-lessons are preserved proportionately so future contributors can verify and
-improve the program. Conversation history alone is not program memory.
-
-### The program must learn
-
-Curriculum and event standards improve through outcomes, evidence, exceptions,
-incidents, facilitator experience, learner feedback, changed sources, and
-changed requirements. Feedback is recorded and dispositioned rather than
-silently folded into current guidance.
-
-### Participation should be practical and inclusive
-
-Materials should support mixed-skill audiences, accessible participation,
-clear prerequisites, recovery paths, and continued learning. Complexity should
-be proportionate to the audience and outcome.
+Commons owns shared principles and boundaries only. AI Dev Days independently
+owns its curriculum, events, community practices, examples, research,
+governance, roadmap, and releases. Adoption does not make AI Dev Days a module,
+child product, framework, or implementation of Commons.
 
 ## Relationship to the AI-Native Operating Framework
 
-The framework defines the business operating framework and method. AI Dev Days
-is a companion research and education initiative that:
-
-- teaches the framework;
-- applies it to educational events and examples;
-- gathers public-safe evidence about how people understand and use it; and
-- may propose improvements through the framework's own contribution process.
-
-AI Dev Days cannot accept or publish a framework change on the framework's
-behalf.
-
-Version 1.0.0 of AI Dev Days is designed against
-[version 1.0.0 of the framework](https://github.com/BradGroux/ai-native-operating-framework/releases/tag/v1.0.0).
-Current framework documents remain authoritative when compatible editorial
-updates are published later.
+AI Dev Days may teach, explore, or apply the AI-Native Operating Framework and
+other ecosystem products. Each selected product remains canonical for its own
+meaning. That teaching relationship does not give another product authority
+over AI Dev Days' local method or decisions.
 
 ## Relationship to Digital Meld
 
-AI Dev Days and the framework are developed within
+AI Dev Days and the AI-Native Operating Framework are independently developed
+within
 [Digital Meld](https://digitalmeld.io)'s research arm. Public Digital Meld
 operating research may inform educational questions, examples, and methods.
 Commercial work, marketing claims, client records, and private operating
-material do not gain educational or framework authority through that
-relationship.
+material do not gain authority over AI Dev Days, Commons, or another ecosystem
+product through that relationship.
 
 AI Dev Days must distinguish:
 
 - public research from private practice;
 - education from consulting or commercial delivery;
 - illustrative examples from validated domain guidance; and
-- program decisions from framework decisions.
+- AI Dev Days decisions from Commons and other ecosystem-product decisions.
 
 ## Non-Goals
 
@@ -192,7 +136,8 @@ Brad Groux is the creator and founding steward of AI Dev Days. Until governance
 expands, the founding steward:
 
 - approves charter and material program changes;
-- protects the boundary with the framework;
+- protects AI Dev Days' independence and its boundary with Commons and other
+  ecosystem products;
 - approves release baselines;
 - appoints or confirms maintainers;
 - records material decisions, dissent, limitations, and unresolved risks; and
@@ -221,7 +166,7 @@ A material charter amendment requires:
 
 1. a written proposal describing the need, evidence, alternatives, and
    consequences;
-2. review against the current framework and this charter's commitments;
+2. review against the adopted Commons release and this charter's commitments;
 3. a documented decision by the founding steward or future governing body;
 4. publication of material dissent, limitations, and unresolved risk;
 5. updates to affected governance, methods, curriculum, and event guidance; and

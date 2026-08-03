@@ -1,10 +1,10 @@
 # SOP: Contributing to AI Dev Days
 
-**Status:** Version 1.0.0 release candidate<br>
+**Status:** Version 1.0.0<br>
 **Accountable owner:** Founding steward or future governing body<br>
 **Process manager:** Program maintainer<br>
 **Prepared:** 2026-07-30<br>
-**Review triggers:** Program release, framework compatibility change,
+**Review triggers:** Program release, Commons adoption change,
 governance change, repeated contribution problem, disputed decision,
 publication-safety incident, accessibility finding, or recurring tool drift
 
@@ -46,7 +46,8 @@ The expected outcome is a contribution that:
 
 - addresses a clear learner, facilitator, researcher, or maintainer need;
 - is classified according to its effect;
-- respects the AI-Native Operating Framework boundary;
+- respects the adopted Open Framework Commons boundary and AI Dev Days'
+  independence;
 - states sources, evidence, rights, assistance, limitations, and uncertainty
   honestly;
 - is reviewed proportionately;
@@ -145,23 +146,25 @@ Prefer primary and authoritative sources. A substantive note records:
 - sources and capture dates;
 - source facts separated from analysis;
 - provenance, freshness, drift risk, conflicts, and uncertainty;
-- relevance to the framework and program;
+- relevance to Commons, any selected ecosystem product, and AI Dev Days;
 - what should and should not be reused;
 - rights, attribution, consent, and publication limits;
 - remaining gaps and review needs; and
 - a recommended disposition.
 
-Framework claims cite the canonical
-[AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework).
-Research may inform a proposal but cannot amend the framework or program
-silently.
+Claims about shared ecosystem principles cite the adopted
+[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+Claims about a specific framework cite that framework's canonical source.
+Research may inform a proposal but cannot amend Commons, another product, or
+AI Dev Days silently.
 
 ## 6. Draft the Smallest Complete Change
 
 The draft:
 
 - follows [`CHARTER.md`](CHARTER.md), accepted
-  [decisions](decisions/README.md), and current framework language;
+  [decisions](decisions/README.md), the adopted Commons release, and current
+  product-local guidance;
 - keeps program-level learning vendor-neutral;
 - treats OpenClaw, Codex, and other technologies as tool tracks;
 - states learner, purpose, owner, outcome, boundary, and evidence;
@@ -184,7 +187,8 @@ and status must be honest.
 
 Check:
 
-- charter, governance, framework, and accepted-decision alignment;
+- charter, governance, Commons, product independence, and accepted-decision
+  alignment;
 - research provenance and claim-to-source traceability;
 - the intended learner, prerequisite, outcome, exercise, and evidence;
 - normal, exception, and credible failure or recovery paths;
@@ -250,7 +254,7 @@ The pull request states:
 
 - the problem and contribution class;
 - what changed;
-- sources and framework effect;
+- sources and Commons or product-boundary effect;
 - how learning or event behavior changes;
 - verification performed;
 - public, accessibility, domain, or tool-drift risks;
@@ -290,7 +294,8 @@ After use:
 Stop integration, event use, or release when:
 
 - the responsible authority has not approved a material change;
-- the contribution conflicts with the charter or framework boundary;
+- the contribution conflicts with the charter, adopted Commons boundary, or
+  an explicitly selected framework's own meaning;
 - sources, rights, attribution, consent, or licensing remain unresolved;
 - private, personal, confidential, unsafe, or security-sensitive material may
   remain;

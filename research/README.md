@@ -12,19 +12,21 @@ context.
 ## Authority
 
 Research notes are evidence and planning records. They are not attendee
-instructions, approved curriculum, program decisions, professional advice, or
-AI-Native Operating Framework requirements.
+instructions, approved curriculum, program decisions, professional advice,
+Commons principles, or requirements of another ecosystem product.
 
 Apply this order:
 
-1. The canonical
-   [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-   governs framework meaning.
-2. [`CHARTER.md`](../CHARTER.md), accepted
+1. [`CHARTER.md`](../CHARTER.md), accepted
    [decisions](../decisions/README.md), and
    [`GOVERNANCE.md`](../GOVERNANCE.md) govern AI Dev Days.
-3. Approved curriculum, setup guides, and event packets govern current use.
-4. Research supplies bounded evidence and proposals.
+2. The adopted
+   [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+   governs shared ecosystem principles and boundaries.
+3. A selected framework's canonical repository governs representations of its
+   own meaning.
+4. Approved curriculum, setup guides, and event packets govern current use.
+5. Research supplies bounded evidence and proposals.
 
 When a note conflicts with a higher-authority or newer source, mark it
 superseded or record the conflict. Do not silently rewrite history.
@@ -38,7 +40,7 @@ records:
 - primary sources inspected and capture dates;
 - freshness and drift risk;
 - source facts separated from analysis;
-- relevance to the framework and AI Dev Days;
+- relevance to Commons, a named ecosystem product, or AI Dev Days;
 - what should and should not be reused;
 - rights, attribution, consent, and publication limits;
 - uncertainty, conflicts, remaining gaps, and required review; and
@@ -48,7 +50,8 @@ records:
 
 Prefer the source that owns the claim:
 
-- canonical framework documents for framework meaning;
+- the adopted Commons release for shared principles and boundaries;
+- canonical framework documents for claims about a named framework;
 - official documentation and source code for tools;
 - original laws, regulations, standards, government publications, or research;
 - accountable practitioner records for operating experience; and

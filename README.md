@@ -6,15 +6,24 @@
 > `git remote set-url origin https://github.com/BradGroux/ai-dev-days.git`.
 > See [`MIGRATION.md`](MIGRATION.md) for the event-folder path changes.
 
-AI Dev Days is the public research and education companion to the AI-Native
-Operating Framework. It helps people investigate, define, perform, verify, and
-improve useful work with AI.
+AI Dev Days is an independent learning community and event repository. It helps
+people investigate, define, perform, verify, and improve useful work with AI.
+
+AI Dev Days adopts
+[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+as its shared philosophical foundation. The adopted release is pinned to:
+
+- repository: [BradGroux/open-framework-commons](https://github.com/BradGroux/open-framework-commons)
+- tag: [`v1.0.0`](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+- release commit: [`27870fb1d57d951b9ef5a3a86f33ef068ee557da`](https://github.com/BradGroux/open-framework-commons/commit/27870fb1d57d951b9ef5a3a86f33ef068ee557da)
+
+Commons supplies shared principles and boundaries; it is not a parent product
+or operating method. AI Dev Days independently owns its curriculum, events,
+community practices, examples, research, governance, roadmap, and releases.
 
 The [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-is the program's operating foundation. It keeps business purpose, human
-accountability, controls, evidence, shared operating memory, and learning ahead
-of any particular technology. AI Dev Days teaches and applies the framework; it
-does not redefine it.
+is one ecosystem product AI Dev Days may teach or apply. Its methods govern
+representations of that framework, not AI Dev Days as a whole.
 
 OpenClaw is the deepest existing tool-specific track in this repository.
 Codex and other tools also appear in event material. Tools provide the
@@ -36,8 +45,11 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Facilitators: use [`RUNBOOK.md`](RUNBOOK.md).
 - Organizers: copy [`event-specific/_template/`](event-specific/_template/) for a new event.
 - Curriculum: use [`curriculum/README.md`](curriculum/README.md) and [`curriculum/course-map.md`](curriculum/course-map.md).
-- Operating foundation: use
-  [`docs/ai-native-operating-framework-alignment.md`](docs/ai-native-operating-framework-alignment.md).
+- Shared foundation and independence: use [`CHARTER.md`](CHARTER.md) and the
+  adopted [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+- AI-Native Operating Framework teaching guide: use
+  [`docs/ai-native-operating-framework-alignment.md`](docs/ai-native-operating-framework-alignment.md)
+  when an event or lesson selects that framework.
 - Program charter and authority: use [`CHARTER.md`](CHARTER.md) and
   [`GOVERNANCE.md`](GOVERNANCE.md).
 - Research and education method: use
@@ -141,7 +153,8 @@ the source citation and workshop mapping.
 ## Core stance
 
 - **First success beats feature coverage.** If people don’t get a working loop early, the rest doesn’t matter.
-- **Business purpose comes before technology.** The tool is part of the operating environment, not the framework.
+- **Business purpose comes before technology.** A tool is learning context, not
+  the program identity or method.
 - **One standard serves people and AI.** Clear operating documentation should work for every authorized participant.
 - **Scenario-first beats blank slate.** Give people a concrete use case instead of a vague platform tour.
 - **Evidence beats activity.** A completed exercise should leave a reviewable result, not only a demo.
@@ -158,13 +171,13 @@ the source citation and workshop mapping.
 - `labs/` — attendee exercises with binary success checkpoints, including the Markdown thinking-layer lab
 - `helper-runbook/` — facilitator triage and rescue-lane guidance
 - `troubleshooting/` — tool, model, provider, and workshop recovery guidance
-- `docs/` — framework alignment, reusable explainers, and visual reference material
+- `docs/` — product-local methods, optional framework teaching guides, reusable explainers, and visual reference material
 - `CHARTER.md` and `GOVERNANCE.md` — program purpose, authority, decisions, and release rules
 - `decisions/` — material program decisions and their rationale
 - `docs/research-and-education-method.md` — canonical program method
 - `docs/ai-native-operating-framework-alignment.md` — authoritative relationship and event-application guidance
 - `docs/ai-literacy-framework-alignment.md` — mapping to the U.S. Department of Labor AI Literacy Framework
-- `event-specific/` — date-first event packets plus a framework-aligned reusable template
+- `event-specific/` — date-first event packets plus an AI Dev Days-owned reusable template
 - `research/` — source-grounded notes and dispositions; not attendee instructions
 - `scripts/` — lightweight repo maintenance and publication safety checks
 - `CONTRIBUTING.md` — contributor workflow, verification, and review checklist
@@ -173,7 +186,8 @@ the source citation and workshop mapping.
 ## Current refinement priorities
 
 1. Keep current and upcoming event packets ready to run from the README.
-2. Apply the AI-Native Operating Framework proportionately to each event.
+2. Keep AI Dev Days guidance product-local and use external frameworks only
+   when an event or lesson selects them explicitly.
 3. Keep first-success paths short and specific to the selected tool track.
 4. Keep each event packet public-safe, source-backed, and easy to audit.
 5. Preserve useful evidence, decisions, handoffs, and lessons after each event.

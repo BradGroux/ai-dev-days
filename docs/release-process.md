@@ -10,11 +10,13 @@ approve an official release after reviewing the final candidate and audit.
 
 ## Prepare
 
-1. Confirm the intended version and framework compatibility baseline.
+1. Confirm the intended version, adopted Commons tag and commit, and any
+   product-specific teaching compatibility baseline.
 2. Update [`CHANGELOG.md`](../CHANGELOG.md).
 3. Prepare the release notes under [`docs/releases/`](releases/).
-4. Confirm charter, governance, decisions, research, curriculum, events, tool
-   tracks, citation metadata, and migration guidance are consistent.
+4. Confirm charter, governance, Commons adoption, decisions, research,
+   curriculum, events, tool tracks, citation metadata, and migration guidance
+   are consistent.
 5. Confirm known limitations and unavailable reviews are visible.
 
 ## Validate

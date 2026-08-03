@@ -1,11 +1,16 @@
 # Docs
 
-Operating alignment, reusable explainers, and visual reference material for AI
-Dev Days.
+Product-local methods, optional teaching alignments, reusable explainers, and
+visual reference material for AI Dev Days.
 
-## Operating foundation
+## Shared foundation
 
-- [AI-Native Operating Framework alignment](ai-native-operating-framework-alignment.md)
+- [AI Dev Days Charter](../CHARTER.md)
+- [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+
+## Product-local methods and teaching alignments
+
+- [AI-Native Operating Framework teaching alignment](ai-native-operating-framework-alignment.md)
 - [AI Dev Days research and education method](research-and-education-method.md)
 - [AI Literacy Framework alignment](ai-literacy-framework-alignment.md)
 
@@ -25,8 +30,8 @@ The [program charter](../CHARTER.md), [governance](../GOVERNANCE.md), and
 
 Use the Markdown explainer for facilitator notes, attendee reading, and repo documentation. Use the HTML page when you want a visual walk-through in a browser or presentation.
 
-Use the operating-framework alignment when designing, approving, running, or
-improving an event. Use the AI literacy alignment when describing how the
+Use the AI-Native teaching alignment only when an event or lesson selects that
+framework. Use the AI literacy alignment when describing how the
 curriculum maps to the U.S. Department of Labor's AI Literacy Framework.
 Use the research and education method when investigating sources, turning
 findings into curriculum, validating learning, and dispositioning event

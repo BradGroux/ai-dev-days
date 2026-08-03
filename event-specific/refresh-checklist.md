@@ -12,15 +12,17 @@ Use this before publishing a new event packet or reusing an older one.
 - [ ] `README.md` and `START-HERE.md` point to the correct attendee path if the event should be visible from the repo root.
 - [ ] Past-event language is clearly historical, not written as if the event is still upcoming.
 
-## Framework Application
+## Program And Selected-Framework Application
 
 - [ ] The
-      [AI-Native Operating Framework alignment](../docs/ai-native-operating-framework-alignment.md)
+      [AI Dev Days Charter and Commons adoption](../CHARTER.md) was reviewed.
+- [ ] If the event selects the AI-Native Operating Framework, its
+      [teaching alignment](../docs/ai-native-operating-framework-alignment.md)
       was reviewed.
 - [ ] Intent, responsibility, work, control, assurance, and learning are clear
       in the packet without forcing a particular layout.
-- [ ] The tool track follows the event need and is not presented as a framework
-      requirement.
+- [ ] The tool track and any selected framework follow the event need and are
+      not presented as requirements for AI Dev Days as a whole.
 - [ ] Normal, meaningful exception, and credible failure/recovery scenarios
       were walked through.
 - [ ] Sources, decisions, current state, evidence, handoffs, and approved
