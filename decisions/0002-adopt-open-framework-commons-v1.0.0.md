@@ -101,5 +101,5 @@ refreshed.
 
 - [Open Framework Commons repository](https://github.com/BradGroux/open-framework-commons)
 - [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
-- [Open Framework Commons v1.0.0 boundaries](https://github.com/BradGroux/open-framework-commons/blob/v1.0.0/BOUNDARIES.md)
-- [Open Framework Commons v1.0.0 governance](https://github.com/BradGroux/open-framework-commons/blob/v1.0.0/GOVERNANCE.md)
+- [Original Open Framework Commons boundaries](https://github.com/BradGroux/open-framework-commons/blob/27870fb1d57d951b9ef5a3a86f33ef068ee557da/BOUNDARIES.md)
+- [Original Open Framework Commons governance](https://github.com/BradGroux/open-framework-commons/blob/27870fb1d57d951b9ef5a3a86f33ef068ee557da/GOVERNANCE.md)

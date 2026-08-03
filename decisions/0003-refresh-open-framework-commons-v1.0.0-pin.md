@@ -116,5 +116,5 @@ boundaries is recorded.
 - [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
 - [Replacement Commons commit](https://github.com/BradGroux/open-framework-commons/commit/a0f0d384e9010a65d1a21a324b4c912433d5e031)
 - [Original Commons commit](https://github.com/BradGroux/open-framework-commons/commit/27870fb1d57d951b9ef5a3a86f33ef068ee557da)
-- [Commons shared boundaries](https://github.com/BradGroux/open-framework-commons/blob/v1.0.0/BOUNDARIES.md)
-- [Commons governance](https://github.com/BradGroux/open-framework-commons/blob/v1.0.0/GOVERNANCE.md)
+- [Replacement Commons shared boundaries](https://github.com/BradGroux/open-framework-commons/blob/a0f0d384e9010a65d1a21a324b4c912433d5e031/BOUNDARIES.md)
+- [Replacement Commons governance](https://github.com/BradGroux/open-framework-commons/blob/a0f0d384e9010a65d1a21a324b4c912433d5e031/GOVERNANCE.md)
