@@ -23,6 +23,7 @@ const requiredFiles = [
   'decisions/TEMPLATE.md',
   'decisions/0001-framework-companion-for-research-and-education.md',
   'docs/ai-native-operating-framework-alignment.md',
+  'docs/program-map.md',
   'docs/research-and-education-method.md',
   'docs/release-process.md',
   'docs/releases/v1.0.0.md',

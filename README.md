@@ -37,6 +37,9 @@ has no authority on its own, event experience does not become reusable
 curriculum automatically, and every material lesson receives an accountable
 disposition.
 
+For a visual orientation to that learning loop and the Commons ownership
+boundary, use the [`AI Dev Days Program Map`](docs/program-map.md).
+
 ## Choose your path
 
 Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you need.
@@ -47,6 +50,8 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Curriculum: use [`curriculum/README.md`](curriculum/README.md) and [`curriculum/course-map.md`](curriculum/course-map.md).
 - Shared foundation and independence: use [`CHARTER.md`](CHARTER.md) and the
   adopted [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+- Visual program orientation: use
+  [`docs/program-map.md`](docs/program-map.md).
 - AI-Native Operating Framework teaching guide: use
   [`docs/ai-native-operating-framework-alignment.md`](docs/ai-native-operating-framework-alignment.md)
   when an event or lesson selects that framework.
