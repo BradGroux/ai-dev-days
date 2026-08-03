@@ -1,9 +1,9 @@
 # AI Dev Days Research and Education Method
 
-**Status:** Version 1.0.0 release candidate  
-**Owner:** AI Dev Days founding steward or delegated program maintainer  
-**Prepared:** 2026-07-30  
-**Framework baseline:** [AI-Native Operating Framework 1.0.0](https://github.com/BradGroux/ai-native-operating-framework/releases/tag/v1.0.0)
+**Status:** Version 1.0.0<br>
+**Owner:** AI Dev Days founding steward or delegated program maintainer<br>
+**Prepared:** 2026-07-30<br>
+**Commons adoption:** [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0) at `27870fb1d57d951b9ef5a3a86f33ef068ee557da`
 
 ## Purpose
 
@@ -11,9 +11,7 @@ This method explains how AI Dev Days investigates a question, turns supported
 findings into education, uses that education with learners, and improves it
 from evidence.
 
-It adapts the framework's
-[standards maintenance method](https://github.com/BradGroux/ai-native-operating-framework/blob/v1.0.0/framework/standards-maintenance-method.md)
-to a research and education program:
+This is an AI Dev Days-owned, product-local method. Its maintenance sequence is:
 
 1. Understand
 2. Document
@@ -22,8 +20,11 @@ to a research and education program:
 5. Use
 6. Improve
 
-These are program-maintenance activities. They are not a mandatory lifecycle
-for every learner, event, business process, or research question.
+These are program-maintenance activities. They are not a Commons requirement
+or a mandatory lifecycle for every learner, event, business process, or
+research question. When a lesson selects another ecosystem product, a separate
+teaching guide may map this method to that product without transferring
+authority over AI Dev Days.
 
 ## Method at a Glance
 
@@ -60,7 +61,8 @@ for the consequence of the material.
 
 Prefer the source that owns the claim:
 
-- canonical framework documents for framework meaning;
+- the adopted Commons release for shared ecosystem principles and boundaries;
+- canonical framework documents when making claims about a named framework;
 - official product documentation and source code for tool behavior;
 - laws, regulations, standards, and government publications for public
   requirements;
@@ -215,7 +217,7 @@ record:
 
 - source facts;
 - analysis;
-- relevance to the framework and program;
+- relevance to Commons, any selected ecosystem product, and AI Dev Days;
 - what should and should not be reused;
 - remaining gaps; and
 - a recommendation or disposition.
@@ -271,7 +273,8 @@ usable, safe, and capable of producing its intended evidence.
 - confirm the facilitator can support mixed-skill participation;
 - inspect accessibility, readability, timing, and fallback material
   proportionately;
-- confirm tool-specific material does not redefine the framework; and
+- confirm tool-specific material does not redefine Commons, AI Dev Days, or a
+  selected ecosystem product; and
 - record unresolved limitations for the approver.
 
 ### Ready to Continue When
@@ -390,12 +393,13 @@ Consider:
 | Supersede | A newer or higher-authority record replaces the note | Old note remains historical and clearly marked |
 | Reject | Evidence, rights, relevance, or safety does not support reuse | No material change; reason remains visible |
 
-No research disposition changes the AI-Native Operating Framework. A proposed
-framework change must use the framework repository's contribution process.
+No research disposition changes Commons or another ecosystem product. A
+proposed change must use the repository and decision process of the product
+that owns the affected meaning.
 
-## Applying the Six Framework Concerns
+## Product-Local Completeness Lenses
 
-| Concern | Research and education question |
+| Lens | Research and education question |
 | --- | --- |
 | Intent | Why does this research or learning exist, for whom, and with what outcome? |
 | Responsibility | Who researches, teaches, participates, decides, reviews, and maintains? |
@@ -404,7 +408,8 @@ framework change must use the framework repository's contribution process.
 | Assurance | What checks, evidence, provenance, and review demonstrate a trustworthy result? |
 | Learning | How are outcomes, feedback, source changes, and lessons dispositioned and maintained? |
 
-The concerns are completeness lenses, not mandatory agenda phases.
+These are AI Dev Days completeness lenses, not Commons requirements or
+mandatory agenda phases.
 
 ## Program Measures
 
@@ -427,7 +432,7 @@ Do not invent metrics or turn anecdotal feedback into a rate.
 Stop research reuse, curriculum approval, event delivery, or release when:
 
 - material claims cannot be traced to an appropriate source;
-- the framework boundary is contradicted or unclear;
+- the Commons or selected-product boundary is contradicted or unclear;
 - source rights, consent, attribution, or publication safety is unresolved;
 - private, personal, confidential, or security-sensitive material may remain;
 - professional claims exceed available review;
@@ -441,7 +446,7 @@ Stop research reuse, curriculum approval, event delivery, or release when:
 - [AI Dev Days Charter](../CHARTER.md)
 - [Governance](../GOVERNANCE.md)
 - [Contribution SOP](../CONTRIBUTING.md)
-- [Framework alignment](ai-native-operating-framework-alignment.md)
+- [AI-Native Operating Framework teaching alignment](ai-native-operating-framework-alignment.md)
 - [AI Literacy Framework alignment](ai-literacy-framework-alignment.md)
 - [Research notes](../research/README.md)
 - [Event template](../event-specific/_template/README.md)

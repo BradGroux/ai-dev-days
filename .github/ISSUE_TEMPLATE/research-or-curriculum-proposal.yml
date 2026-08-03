@@ -56,5 +56,5 @@ body:
       options:
         - label: I did not include secrets, private data, client or attendee records, or sensitive operational details.
           required: true
-        - label: I understand that research or event experience does not amend the AI-Native Operating Framework.
+        - label: I understand that research or event experience does not amend Commons, AI Dev Days governance, or another ecosystem product.
           required: true

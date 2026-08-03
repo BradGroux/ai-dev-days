@@ -50,10 +50,16 @@ interpretation. Link each material claim to the source that owns it.
 Explain patterns, conflicts, implications, and bounded inferences. Label
 inference and uncertainty.
 
+## Relevance to Commons or Another Ecosystem Product
+
+Explain which shared Commons boundary or named product concern is relevant.
+Research does not amend Commons or another ecosystem product.
+
 ## Relevance to the AI-Native Operating Framework
 
-Explain which canonical framework concerns or methods are relevant. Research
-does not amend the framework.
+When the research concerns this framework, explain which canonical concern or
+method is relevant. Otherwise mark this section not applicable. Research does
+not amend the framework.
 
 ## Relevance to AI Dev Days
 

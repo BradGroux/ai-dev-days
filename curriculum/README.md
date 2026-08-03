@@ -2,10 +2,12 @@
 
 This folder contains the reusable teaching path for AI Dev Days.
 
-The
-[AI-Native Operating Framework](../docs/ai-native-operating-framework-alignment.md)
-is the operating foundation. The curriculum applies it through practical
-events, tool tracks, reviewable work, and public learning.
+AI Dev Days adopts
+[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+as its shared philosophical foundation while owning this curriculum and its
+learning method independently. An event or lesson may select the
+[AI-Native Operating Framework teaching alignment](../docs/ai-native-operating-framework-alignment.md)
+without making that framework the program's parent or required method.
 
 The
 [AI Dev Days research and education method](../docs/research-and-education-method.md)
@@ -32,7 +34,7 @@ learning, enabling roles, and agility.
 
 - [Course map](course-map.md)
 - [One-day agenda](agenda/ai-dev-days-one-day.md)
-- [AI-Native Operating Framework alignment](../docs/ai-native-operating-framework-alignment.md)
+- [AI-Native Operating Framework teaching alignment](../docs/ai-native-operating-framework-alignment.md)
 - [Research and education method](../docs/research-and-education-method.md)
 - [AI Literacy Framework alignment](../docs/ai-literacy-framework-alignment.md)
 - [Markdown thinking layer](modules/markdown-thinking-layer.md)

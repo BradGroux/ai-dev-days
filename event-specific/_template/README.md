@@ -25,8 +25,8 @@ Also add the new event to [`../events.json`](../events.json) so the repo audit c
 - Post-event review owner: `<REVIEW_OWNER>`
 - Community/follow-up link: `<COMMUNITY_LINK>`
 
-Tool choices belong to the event's operating context. They do not change the
-AI-Native Operating Framework or define AI Dev Days as a whole.
+Tool and framework choices belong to the event's learning context. They do not
+change Commons, another ecosystem product, or AI Dev Days as a whole.
 
 ## Event files
 
@@ -41,7 +41,9 @@ AI-Native Operating Framework or define AI Dev Days as a whole.
 
 - [Root start page](../../START-HERE.md)
 - [Root facilitator runbook](../../RUNBOOK.md)
-- [AI-Native Operating Framework alignment](../../docs/ai-native-operating-framework-alignment.md)
+- [AI Dev Days Charter and Commons adoption](../../CHARTER.md)
+- [AI-Native Operating Framework teaching alignment](../../docs/ai-native-operating-framework-alignment.md),
+  when selected by the event
 - [Research and education method](../../docs/research-and-education-method.md)
 - [Research source note template](../../research/source-note-template.md)
 - [First success lab](../../labs/first-success.md)
@@ -50,7 +52,7 @@ AI-Native Operating Framework or define AI Dev Days as a whole.
 - [Publication safety](../../PUBLICATION-SAFETY.md)
 - [Event refresh checklist](../refresh-checklist.md)
 
-## Framework readiness
+## Event readiness
 
 Before approval, confirm the packet makes the following business meaning clear
 without forcing a particular document layout:

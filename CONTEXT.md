@@ -3,10 +3,14 @@
 This context defines event and curriculum terms that have specific meaning in
 AI Dev Days materials.
 
-The
-[AI-Native Operating Framework glossary](https://github.com/BradGroux/ai-native-operating-framework/blob/v1.0.0/framework/glossary.md)
-governs framework terminology. Local terms below describe educational or
-tool-specific implementation context and do not amend the framework.
+The adopted
+[Open Framework Commons v1.0.0 context](https://github.com/BradGroux/open-framework-commons/blob/v1.0.0/CONTEXT.md)
+defines shared ecosystem terms. Local terms below describe AI Dev Days
+educational or tool-specific context and do not amend Commons or another
+ecosystem product.
+
+When material teaches a named framework, that framework's glossary governs
+representations of its own terminology only.
 
 ## Language
 

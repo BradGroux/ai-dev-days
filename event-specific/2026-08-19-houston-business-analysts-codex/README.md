@@ -24,11 +24,12 @@ Business analysts already do much of the difficult work required to make AI usef
 
 Codex is the workbench for the session, but the durable method is the lesson. The method is to turn business knowledge into small, reviewable Markdown artifacts that people and agents can use together.
 
-## Operating foundation
+## Selected teaching alignment
 
-This event applies the
+This event explicitly selects the
 [AI-Native Operating Framework](../../docs/ai-native-operating-framework-alignment.md).
-The framework is canonical; this packet is an educational application.
+The framework is canonical for its own method; this packet and its learning
+design remain AI Dev Days-owned.
 
 - Intent: turn business-analysis practice into durable, reviewable AI context.
 - Responsibility: Brad owns the public packet and facilitation; attendees

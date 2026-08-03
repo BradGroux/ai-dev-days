@@ -3,8 +3,8 @@
 - **Date:** 2026-07-30
 - **Researcher:** Prepared for Brad Groux with AI-assisted source comparison
   and drafting
-- **Status:** Accepted as evidence for the AI Dev Days version 1.0.0 release
-  candidate; not a framework decision
+- **Status:** Accepted as bounded evidence for AI Dev Days version 1.0.0;
+  relationship wording superseded by ADR-002; not a framework decision
 - **Public-safety status:** Public sources and public-safe synthesis
 
 ## Question
@@ -12,6 +12,11 @@
 Which durable lessons from Digital Meld's public operating research should
 inform AI Dev Days as a research and education companion to the AI-Native
 Operating Framework?
+
+This question records the relationship in effect when the research was
+prepared. [ADR-002](../decisions/0002-adopt-open-framework-commons-v1.0.0.md)
+supersedes the companion hierarchy while retaining the bounded source evidence
+for AI Dev Days' product-local method.
 
 ## Primary Sources Inspected
 
