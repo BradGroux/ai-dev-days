@@ -23,7 +23,7 @@
     "autoprefixer": "^10.5.2",
     "postcss": "^8.5.25",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vite": "^8.1.5"
   }
 }
