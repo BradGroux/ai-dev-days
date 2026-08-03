@@ -240,14 +240,18 @@ Before release:
 
 - **Version:** 1.0.0
 - **Commons adoption:** Open Framework Commons v1.0.0 at
-  `27870fb1d57d951b9ef5a3a86f33ef068ee557da`
+  `a0f0d384e9010a65d1a21a324b4c912433d5e031`
+- **Commons pin history:** initially
+  `27870fb1d57d951b9ef5a3a86f33ef068ee557da`; refreshed on 2026-08-03 after
+  the Commons `v1.0.0` tag was republished
 - **Product-specific teaching baseline:** AI-Native Operating Framework 1.0.0
   where a lesson or event selects it
 - **Prepared date:** 2026-07-30
 - **Repository tag:** `v1.0.0`
-- **Release authorization:** approved by the founding steward on 2026-08-03,
-  conditional on the reviewed migration being merged and the merged tree being
-  verified
+- **Release authorization:** approved by the founding steward on 2026-08-03;
+  the same authority later approved retaining version 1.0.0 and refreshing its
+  Commons pin, conditional on the current reviewed update being merged and the
+  merged tree being verified
 - **Superseded public version:** none
 - **Responsible steward:** Brad Groux
 - **Known limitations:** event outcomes have not yet been measured under the

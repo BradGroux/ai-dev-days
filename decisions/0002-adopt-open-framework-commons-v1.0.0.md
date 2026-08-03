@@ -1,8 +1,13 @@
 # ADR-002: Adopt Open Framework Commons v1.0.0 and Preserve Product Independence
 
-- **Status:** accepted
+- **Status:** accepted; exact commit pin refreshed by ADR-003
 - **Date:** 2026-08-03
 - **Owner:** Brad Groux
+
+> This record preserves the original adoption decision at
+> `27870fb1d57d951b9ef5a3a86f33ef068ee557da`. The current Commons v1.0.0 pin
+> is `a0f0d384e9010a65d1a21a324b4c912433d5e031`; see
+> [ADR-003](0003-refresh-open-framework-commons-v1.0.0-pin.md).
 
 ## Question
 
@@ -76,6 +81,10 @@ No deviation from the Commons v1.0.0 shared principles is recorded.
 The founding steward authorized publishing AI Dev Days `v1.0.0` on 2026-08-03
 after the migration is merged and the merged tree is verified. The tag must be
 new and immutable; no published tag may be moved.
+
+ADR-003 records the later owner-approved exception that retained version 1.0.0
+after Commons republished its own tag and required the exact adoption pin to be
+refreshed.
 
 ## Affected Artifacts
 

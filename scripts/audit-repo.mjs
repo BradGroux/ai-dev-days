@@ -22,6 +22,8 @@ const requiredFiles = [
   'decisions/README.md',
   'decisions/TEMPLATE.md',
   'decisions/0001-framework-companion-for-research-and-education.md',
+  'decisions/0002-adopt-open-framework-commons-v1.0.0.md',
+  'decisions/0003-refresh-open-framework-commons-v1.0.0-pin.md',
   'docs/ai-native-operating-framework-alignment.md',
   'docs/program-map.md',
   'docs/research-and-education-method.md',

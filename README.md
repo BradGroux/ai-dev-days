@@ -15,7 +15,7 @@ as its shared philosophical foundation. The adopted release is pinned to:
 
 - repository: [BradGroux/open-framework-commons](https://github.com/BradGroux/open-framework-commons)
 - tag: [`v1.0.0`](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
-- release commit: [`27870fb1d57d951b9ef5a3a86f33ef068ee557da`](https://github.com/BradGroux/open-framework-commons/commit/27870fb1d57d951b9ef5a3a86f33ef068ee557da)
+- release commit: [`a0f0d384e9010a65d1a21a324b4c912433d5e031`](https://github.com/BradGroux/open-framework-commons/commit/a0f0d384e9010a65d1a21a324b4c912433d5e031)
 
 Commons supplies shared principles and boundaries; it is not a parent product
 or operating method. AI Dev Days independently owns its curriculum, events,
