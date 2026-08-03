@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use AI Dev Days research or curriculum, please cite it using this metadata."
+title: "AI Dev Days"
+authors:
+  - family-names: "Groux"
+    given-names: "Brad"
+    alias: "BradGroux"
+repository-code: "https://github.com/BradGroux/ai-dev-days"
+url: "https://github.com/BradGroux/ai-dev-days"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-03
+abstract: >-
+  An independent learning community and event repository that adopts Open
+  Framework Commons v1.0.0, with reusable curriculum, events, labs, tool
+  tracks, and evidence for learning how people and AI perform work together.
+keywords:
+  - artificial intelligence
+  - AI literacy
+  - education
+  - operating framework
+  - workshops
+  - human AI collaboration

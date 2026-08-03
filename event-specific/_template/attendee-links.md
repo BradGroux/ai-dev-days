@@ -4,7 +4,7 @@ Start here for `<EVENT_NAME>`.
 
 ## Essential links
 
-- Workshop repo: <https://github.com/BradGroux/openclaw-dev-days>
+- Workshop repo: <https://github.com/BradGroux/ai-dev-days>
 - Community/follow-up: `<COMMUNITY_LINK>`
 - Event registration/info: `<EVENT_LINK>`
 

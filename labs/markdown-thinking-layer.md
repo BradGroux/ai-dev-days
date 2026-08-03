@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Lab — Markdown Thinking Layer
+# AI Dev Days Lab — Markdown Thinking Layer
 
 ## Purpose
 

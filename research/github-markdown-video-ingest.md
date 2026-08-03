@@ -10,9 +10,12 @@ Duration: 357 seconds
 
 Optional prep/follow-up resource for attendees. Thank you to the GitHub team for making approachable Markdown learning material for new builders.
 
-## Why this matters for OpenClaw Dev Days
+## Why this matters for the AI Dev Days OpenClaw track
 
-This is a short, beginner-friendly Markdown primer from GitHub. It maps cleanly into the first hour of OpenClaw Dev Days because Markdown is the shared surface where humans, models, agents, GitHub, and Obsidian can all cooperate.
+This is a short, beginner-friendly Markdown primer from GitHub. It maps cleanly
+into the first hour of the AI Dev Days OpenClaw track because Markdown is the
+shared surface where humans, models, agents, GitHub, and Obsidian can all
+cooperate.
 
 The teaching angle should not be “Markdown as formatting trivia.” The stronger angle is:
 

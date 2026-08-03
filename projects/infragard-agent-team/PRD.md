@@ -199,5 +199,5 @@ The project is successful if:
 
 ## Related
 
-- Workshop event: [`event-specific/infragard-ai-agent-workshop-2026-05-14/`](../../event-specific/infragard-ai-agent-workshop-2026-05-14/)
-- Main repo: https://github.com/BradGroux/openclaw-dev-days
+- Workshop event: [`event-specific/2026-05-14-infragard-ai-agent-workshop/`](../../event-specific/2026-05-14-infragard-ai-agent-workshop/)
+- Main repo: https://github.com/BradGroux/ai-dev-days

@@ -1,18 +1,31 @@
-# OpenClaw Dev Days Course Map
+# AI Dev Days Course Map
 
 ## Purpose
 
-OpenClaw Dev Days teaches people how to move from one AI assistant response to a useful, reviewable agent workflow.
+AI Dev Days teaches people how to move from AI activity to useful, reviewable,
+and improvable work with explicit human accountability.
 
 The subject is not "prompting tricks." The subject is operator skill:
 
+- define the purpose, owner, outcome, and boundaries
 - define the work
 - give agents durable context
 - limit tools and scope
 - test outputs
 - repair failures
-- preserve useful memory
+- preserve evidence, handoffs, and useful operating memory
+- improve the work from outcomes and lessons
 - decide what ships
+
+AI Dev Days owns this course map. Its shared philosophical foundation is
+[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+The [AI-Native Operating Framework teaching alignment](../docs/ai-native-operating-framework-alignment.md)
+is available when a lesson selects that framework. OpenClaw is the current
+reference tool track, not a program or framework requirement.
+
+The
+[research and education method](../docs/research-and-education-method.md)
+governs source use, curriculum validation, event evidence, and improvement.
 
 The course is aligned to the U.S. Department of Labor's AI Literacy Framework. See [AI Literacy Framework alignment](../docs/ai-literacy-framework-alignment.md) for the source citation and mapping.
 
@@ -32,9 +45,10 @@ For technical rooms, lean harder into evaluation, orchestration, error correctio
 
 By the end, attendees should be able to:
 
-- install and verify OpenClaw
+- distinguish source material, AI output, inference, and an authoritative result
+- state the purpose, accountable owner, expected outcome, and boundaries for a
+  people-and-AI activity
 - explain core AI concepts, capabilities, limits, and why model output needs review
-- explain OpenClaw as a gateway, dashboard, workspace, and operator loop
 - identify practical AI uses for their own work or project context
 - create a Markdown memory note that improves future agent work
 - write a focused agent role with boundaries and expected output
@@ -43,8 +57,13 @@ By the end, attendees should be able to:
 - evaluate agent output against a simple contract
 - use a runner or reviewer loop to catch failures
 - apply public-safe, accountable, least-privilege AI use habits
+- preserve sources, decisions, evidence, work state, handoffs, and lessons
 - distinguish live workshop scope from roadmap scope
 - leave with one 30-day build goal
+
+OpenClaw track outcomes additionally include installing and verifying
+OpenClaw, explaining its gateway, dashboard, workspace, and operator loop, and
+completing one verified response.
 
 ## DOL AI Literacy Mapping
 
@@ -60,7 +79,8 @@ By the end, attendees should be able to:
 
 ### 1. First Success
 
-The first win is non-negotiable:
+The first useful, reviewable win is non-negotiable. In the OpenClaw track it
+includes:
 
 - OpenClaw installed
 - provider configured

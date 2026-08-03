@@ -14,7 +14,10 @@ Bring the items below so you can spend the workshop building instead of fighting
 
 - GitHub account: <https://github.com>
 - Access to the event community or communication channel
-- Access to the workshop-provided model provider information, if applicable
+- Access to event-approved AI tools and model provider information, if
+  applicable
+- Any permissions, data, or source material explicitly approved for the
+  workshop scenario
 
 ## Required software
 
@@ -22,16 +25,20 @@ Bring the items below so you can spend the workshop building instead of fighting
 - Git: <https://git-scm.com/>
 - Obsidian: <https://obsidian.md/>
 - Node.js LTS: <https://nodejs.org/>
-- OpenClaw: <https://docs.openclaw.ai/>
+- Event-selected tool(s): `<TOOLS_AND_VERSION_REQUIREMENTS>`
 
 ## Workshop baseline
 
-1. Create a local OpenClaw workspace folder.
-2. Install OpenClaw with the direct installer for your platform.
-3. Run OpenClaw onboarding and choose the event model provider.
-4. Open the OpenClaw dashboard.
-5. Get one successful response.
-6. Create Markdown memory and agent instruction files.
+1. Read the event purpose, expected outcome, and safety boundaries.
+2. Confirm the selected tool and required access work.
+3. Create the event workspace and durable context file.
+4. Complete one useful action with the selected tool.
+5. Verify one reviewable result against the event's completion criteria.
+6. Record the next action, owner, or handoff.
+
+For an OpenClaw track, replace the tool placeholders with the approved
+OpenClaw installation, onboarding, provider, gateway, dashboard, and
+first-response requirements.
 
 ## Safety
 

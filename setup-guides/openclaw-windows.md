@@ -1,4 +1,4 @@
-# OpenClaw Dev Days Setup Guide - Windows
+# AI Dev Days OpenClaw Track Setup Guide - Windows
 
 Audience: attendees using Windows PC. The workshop baseline is native PowerShell with the direct OpenClaw installer, followed by OpenClaw onboarding and model provider selection.
 
@@ -86,7 +86,7 @@ openclaw dashboard
 In the dashboard, send:
 
 ```text
-I am at OpenClaw Dev Days. Confirm this setup works and give me one useful next step.
+I am in the AI Dev Days OpenClaw track. Confirm this setup works and give me one useful next step.
 ```
 
 ## 5. WSL2 fallback path

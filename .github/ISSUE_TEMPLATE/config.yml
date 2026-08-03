@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Public safety guidance
-    url: https://github.com/BradGroux/openclaw-dev-days/blob/master/PUBLICATION-SAFETY.md
+    url: https://github.com/BradGroux/ai-dev-days/blob/master/PUBLICATION-SAFETY.md
     about: Review publication safety rules before sharing event materials.
+  - name: Report a security-sensitive issue privately
+    url: https://github.com/BradGroux/ai-dev-days/security/advisories/new
+    about: Do not put credentials, private data, or exploit details in a public issue.

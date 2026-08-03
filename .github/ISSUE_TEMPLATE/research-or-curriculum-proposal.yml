@@ -1,0 +1,60 @@
+name: Research or Curriculum Proposal
+description: Propose source research, a learning objective, a reusable lab, or a material program improvement.
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Contribution Class
+      options:
+        - Research record
+        - Curriculum change
+        - Material program decision
+        - Tool-track change
+        - Other or uncertain
+    validations:
+      required: true
+
+  - type: textarea
+    id: need
+    attributes:
+      label: Need and Intended Outcome
+      description: What question, learner need, or program problem should this resolve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary Sources and Evidence
+      description: Link the sources that own the material claims and name any operating or event evidence.
+    validations:
+      required: false
+
+  - type: textarea
+    id: effect
+    attributes:
+      label: Affected Material and Learners
+      description: Which research, curriculum, events, tool tracks, decisions, or audiences would change?
+    validations:
+      required: true
+
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limitations and Required Review
+      description: Name uncertainty, drift, rights, accessibility, domain, safety, or publication review that remains.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: I did not include secrets, private data, client or attendee records, or sensitive operational details.
+          required: true
+        - label: I understand that research or event experience does not amend Commons, AI Dev Days governance, or another ecosystem product.
+          required: true
