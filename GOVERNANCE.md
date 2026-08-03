@@ -1,15 +1,15 @@
 # AI Dev Days Governance
 
-**Status:** Version 1.0.0 release candidate; pending founding steward approval  
-**Founding steward:** Brad Groux  
+**Status:** AI Dev Days version 1.0.0<br>
+**Founding steward:** Brad Groux<br>
 **Prepared:** 2026-07-30
 
 ## Purpose
 
 This document governs how AI Dev Days turns research and event experience into
 maintained education without allowing a source note, tool track, event packet,
-commercial practice, or AI-generated draft to redefine the program or the
-AI-Native Operating Framework silently.
+commercial practice, or AI-generated draft to redefine the program, Commons,
+or another ecosystem product silently.
 
 ## Authority
 
@@ -19,18 +19,22 @@ Apply this order when program materials conflict:
    body.
 2. [`CHARTER.md`](CHARTER.md).
 3. Accepted records under [`decisions/`](decisions/README.md).
-4. The canonical
+4. The adopted
+   [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+   for shared ecosystem principles and boundaries.
+5. The canonical
    [research and education method](docs/research-and-education-method.md).
-5. This governance document and [`CONTRIBUTING.md`](CONTRIBUTING.md).
-6. Approved curriculum and reusable program standards.
-7. Event packets and examples.
-8. Tool-track instructions.
-9. Research notes, planning records, and history.
+6. This governance document and [`CONTRIBUTING.md`](CONTRIBUTING.md).
+7. Approved curriculum and reusable program standards.
+8. Event packets and examples.
+9. Tool-track instructions.
+10. Research notes, planning records, and history.
 
-The
-[AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-governs every framework term or claim regardless of this local order. AI Dev
-Days cannot approve a framework change.
+Commons does not own AI Dev Days' local decisions, and changes to Commons do
+not alter the adopted `v1.0.0` baseline automatically. If local guidance
+appears to conflict with Commons, stop and surface the conflict. A named
+framework remains canonical only for representations of its own method; AI Dev
+Days cannot approve a change on that product's behalf.
 
 ## Current Stewardship
 
@@ -38,7 +42,7 @@ Brad Groux is the creator and founding steward. Until governance expands, the
 founding steward:
 
 - approves charter amendments and material program decisions;
-- protects the program's framework-companion boundary;
+- protects the program's independence and adopted Commons boundary;
 - approves versioned release baselines;
 - delegates curriculum, research, event, tool-track, or repository
   maintenance;
@@ -48,7 +52,7 @@ founding steward:
 The program is developed within
 [Digital Meld](https://digitalmeld.io)'s research arm. That relationship does
 not grant Digital Meld commercial material, client work, or marketing content
-authority over the framework or this program.
+authority over Commons, another ecosystem product, or this program.
 
 ## Roles
 
@@ -106,7 +110,7 @@ substitute for accountable domain review.
 | Class | Typical effect | Required path |
 | --- | --- | --- |
 | Charter amendment | Mission, commitments, scope, stewardship, or amendment rules | Written proposal and founding steward or governing-body approval |
-| Material program decision | Framework relationship, research or education method, authority, release policy, or program identity | Decision record and accountable approval |
+| Material program decision | Commons adoption, ecosystem-product relationship, research or education method, authority, release policy, or program identity | Decision record and accountable approval |
 | Governance change | Roles, decision authority, appeals, contribution, or release approval | Written governance decision |
 | Research record | Source-grounded facts, analysis, gaps, or recommendation | Research review; no automatic program effect |
 | Curriculum change | Reusable learning objective, lab, facilitator standard, or assessment | Curriculum review and proportionate validation |
@@ -160,7 +164,7 @@ Every substantive research note states:
 - source facts separated from analysis and recommendations;
 - provenance, freshness, uncertainty, and conflicting evidence;
 - rights, reuse, privacy, and publication limits;
-- relevance to the framework and program;
+- relevance to Commons, any selected ecosystem product, and AI Dev Days;
 - what should and should not be reused;
 - remaining gaps and required review; and
 - a proposed disposition.
@@ -209,7 +213,8 @@ An approved release identifies:
 
 - version and exact repository tag;
 - effective date;
-- framework compatibility baseline;
+- adopted Commons version and exact release commit;
+- any product-specific teaching compatibility baseline;
 - material changes;
 - known limitations and review status;
 - superseded versions;
@@ -231,12 +236,18 @@ Before release:
 7. obtain explicit release approval; and
 8. create an annotated tag and GitHub release from the approved commit.
 
-### Prepared Version 1.0.0 Baseline
+### Approved AI Dev Days Version 1.0.0 Baseline
 
-- **Version:** 1.0.0 release candidate
-- **Framework compatibility:** AI-Native Operating Framework 1.0.0
+- **Version:** 1.0.0
+- **Commons adoption:** Open Framework Commons v1.0.0 at
+  `27870fb1d57d951b9ef5a3a86f33ef068ee557da`
+- **Product-specific teaching baseline:** AI-Native Operating Framework 1.0.0
+  where a lesson or event selects it
 - **Prepared date:** 2026-07-30
-- **Repository tag:** `v1.0.0`, not yet authorized
+- **Repository tag:** `v1.0.0`
+- **Release authorization:** approved by the founding steward on 2026-08-03,
+  conditional on the reviewed migration being merged and the merged tree being
+  verified
 - **Superseded public version:** none
 - **Responsible steward:** Brad Groux
 - **Known limitations:** event outcomes have not yet been measured under the
@@ -267,7 +278,7 @@ governance limitation must be stated.
 Review this document when:
 
 - participation or event scale changes materially;
-- the framework publishes a potentially incompatible release;
+- Commons publishes a potentially incompatible release;
 - decision or maintenance authority changes;
 - research repeatedly fails to reach a clear disposition;
 - learners or contributors cannot identify current guidance;

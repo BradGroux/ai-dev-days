@@ -3,9 +3,13 @@
 On July 30, 2026, `BradGroux/openclaw-dev-days` was renamed to
 `BradGroux/ai-dev-days`.
 
-The repository evolved beyond one tool. AI Dev Days now uses the
-[AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-as its operating foundation while retaining OpenClaw as a tool-specific track.
+The repository evolved beyond one tool while retaining OpenClaw as a
+tool-specific track. The original migration described AI Dev Days as a
+companion to the AI-Native Operating Framework. That relationship was
+superseded by
+[ADR-002](decisions/0002-adopt-open-framework-commons-v1.0.0.md), which adopts
+Open Framework Commons v1.0.0 and preserves AI Dev Days as an independent
+learning community.
 
 ## Repository URL
 
@@ -55,8 +59,11 @@ Historical event names remain unchanged where they describe an event that was
 actually presented under the OpenClaw Dev Days name. Current program,
 repository, and navigation references use AI Dev Days.
 
-The canonical relationship is:
+The current relationship is:
 
-- the AI-Native Operating Framework defines the framework;
-- AI Dev Days teaches and applies it; and
+- Open Framework Commons v1.0.0 supplies shared principles and boundaries;
+- AI Dev Days owns its learning community, methods, curriculum, events,
+  governance, and releases;
+- AI Dev Days may teach or apply the AI-Native Operating Framework without
+  inheriting its method or becoming its training module; and
 - OpenClaw, Codex, and other tools provide implementation contexts.

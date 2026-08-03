@@ -7,8 +7,8 @@ Help business analysis practitioners see how their existing people, process, dat
 ## Before the room opens
 
 - review the
-  [AI-Native Operating Framework alignment](../../docs/ai-native-operating-framework-alignment.md)
-  and the event's operating-foundation mapping
+  [AI-Native Operating Framework teaching alignment](../../docs/ai-native-operating-framework-alignment.md)
+  and the event-specific mapping
 - confirm the final title and organizer inserts are in the deck once the slide
   phase is complete
 - confirm the projector, aspect ratio, display adapter, and power

@@ -4,7 +4,9 @@
 
 **Length:** 6-8 hours  
 **Style:** hands-on workshop  
-**Operating foundation:** AI-Native Operating Framework
+**Shared foundation:** Open Framework Commons v1.0.0
+
+**Selected teaching alignment:** AI-Native Operating Framework 1.0.0
 
 **Reference tool track:** OpenClaw
 
@@ -23,7 +25,7 @@
 - Evidence, handoff, and learning are part of completion.
 - AI literacy means understanding, directing, evaluating, and responsibly using AI in context.
 
-Source alignment:
+Selected teaching alignment:
 [AI-Native Operating Framework](../../docs/ai-native-operating-framework-alignment.md)
 and
 [U.S. Department of Labor AI Literacy Framework](../../docs/ai-literacy-framework-alignment.md).

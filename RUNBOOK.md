@@ -10,8 +10,10 @@ Use this as the one-page control panel for running an AI Dev Days session.
 3. Start from [the event template](event-specific/_template/README.md) if this is a new workshop.
 4. Confirm attendee requirements, setup guides, agenda, verification evidence,
    handoffs, and helper lanes are linked from the event folder.
-5. Review the
-   [AI-Native Operating Framework alignment](docs/ai-native-operating-framework-alignment.md).
+5. Review the [AI Dev Days Charter](CHARTER.md), including the adopted Commons
+   release and product-independence boundary. If the event teaches or applies
+   the AI-Native Operating Framework, also review the
+   [product-local teaching guide](docs/ai-native-operating-framework-alignment.md).
 6. Review the
    [research and education method](docs/research-and-education-method.md);
    confirm material claims, the learner outcome, and the reviewable evidence.
@@ -33,7 +35,9 @@ Have these open before attendees arrive:
 
 - event attendee links
 - event agenda
-- [AI-Native Operating Framework alignment](docs/ai-native-operating-framework-alignment.md)
+- [AI Dev Days Charter and Commons adoption](CHARTER.md)
+- [AI-Native Operating Framework teaching guide](docs/ai-native-operating-framework-alignment.md),
+  when selected by the event
 - [Research and education method](docs/research-and-education-method.md)
 - [AI Literacy Framework alignment](docs/ai-literacy-framework-alignment.md)
 - [Event refresh checklist](event-specific/refresh-checklist.md)

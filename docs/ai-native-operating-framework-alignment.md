@@ -1,22 +1,26 @@
-# AI-Native Operating Framework Alignment
+# AI-Native Operating Framework Teaching Alignment
 
-AI Dev Days uses the
+AI Dev Days is an independent learning community that adopts
+[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+This product-local guide applies only when an event or lesson selects the
 [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-as its operating foundation.
+as subject matter or a practical method to explore.
 
-The framework is canonical. This repository contains educational material and
-event applications. Nothing in AI Dev Days amends, extends, or overrides the
-framework.
+The framework is canonical for its own meaning. AI Dev Days owns the learning
+design, event application, examples, and decisions around how or whether to
+teach it. Nothing in AI Dev Days amends, extends, or overrides the framework,
+and the framework does not govern AI Dev Days as a whole.
 
-AI Dev Days version 1.0.0 is designed against the
+This teaching guide is designed against the
 [AI-Native Operating Framework 1.0.0 release](https://github.com/BradGroux/ai-native-operating-framework/releases/tag/v1.0.0).
 Tagged links below provide a stable compatibility baseline. The current
-framework repository remains authoritative for later approved corrections and
-releases.
+framework repository may contain later releases, but they do not change this
+guide's pinned baseline automatically.
 
 ## Canonical Sources
 
-Use the current framework repository rather than copying its documents here:
+When teaching this framework, link to its canonical documents rather than
+copying them here:
 
 1. [Charter](https://github.com/BradGroux/ai-native-operating-framework/blob/v1.0.0/framework/charter.md)
 2. [Operating framework](https://github.com/BradGroux/ai-native-operating-framework/blob/v1.0.0/framework/operating-framework.md)
@@ -25,15 +29,17 @@ Use the current framework repository rather than copying its documents here:
 5. [Standards maintenance method](https://github.com/BradGroux/ai-native-operating-framework/blob/v1.0.0/framework/standards-maintenance-method.md)
 6. [Glossary](https://github.com/BradGroux/ai-native-operating-framework/blob/v1.0.0/framework/glossary.md)
 
-If this repository conflicts with a canonical framework document, the
-framework document governs.
+If AI Dev Days misstates the framework, the framework document governs the
+correction of that representation. AI Dev Days' charter and governance still
+govern the learning community and event repository.
 
 ## Relationship
 
 | Body | Responsibility | Authority |
 | --- | --- | --- |
-| AI-Native Operating Framework | Defines the open business operating framework and method | Canonical |
-| AI Dev Days | Researches, teaches, applies, and learns through public education | Companion program |
+| Open Framework Commons | Defines adopted shared ecosystem principles and boundaries | Shared foundation at the adopted tag |
+| AI Dev Days | Owns its learning community, curriculum, events, examples, governance, and releases | Independent product |
+| AI-Native Operating Framework | Defines its own open business operating framework and method | Canonical for its own meaning |
 | AI Dev Days research | Supplies bounded source facts, analysis, and proposals | Evidence only until dispositioned |
 | Reusable curriculum | Defines approved program learning material | Program-level educational guidance |
 | Event packets | Adapt the program to a specific audience, outcome, and operating context | Event-specific |
@@ -42,9 +48,10 @@ framework document governs.
 The framework is vendor-neutral. OpenClaw is the most developed tool track in
 this repository, but no tool defines AI Dev Days or the framework.
 
-## Event Application
+## Event Application When Selected
 
-Each event applies the framework's six business concerns proportionately:
+An event that explicitly selects this framework may apply its six business
+concerns proportionately:
 
 | Concern | Event material should make clear |
 | --- | --- |
@@ -55,12 +62,14 @@ Each event applies the framework's six business concerns proportionately:
 | Assurance | Completion criteria, checks, evidence, reviewers, and authoritative results |
 | Learning | Maintainer, feedback, outcomes, lessons, review triggers, and approved improvements |
 
-These concerns are not mandatory agenda phases or document headings. Event
-material may use any clear structure that communicates the required meaning.
+These concerns are not Commons requirements or mandatory AI Dev Days agenda
+phases. The event owner decides whether this mapping serves the audience and
+outcome.
 
 ## Event Maintenance
 
-Use the framework's standards maintenance method as a practical event loop:
+For an event that teaches this framework, its standards maintenance method can
+be mapped to the AI Dev Days event lifecycle:
 
 1. **Understand:** confirm the audience, business need, owners, sources,
    constraints, risks, and unresolved questions.
@@ -75,15 +84,15 @@ Use the framework's standards maintenance method as a practical event loop:
 6. **Improve:** review outcomes, exceptions, feedback, and evidence; record
    approved changes for future events.
 
-The complete research-to-education application, including source standards,
+The AI Dev Days-owned research-to-education method, including source standards,
 research disposition, curriculum validation, event evidence, and program
 measures, is maintained in the
 [AI Dev Days research and education method](research-and-education-method.md).
 
 ## Shared Operating Memory
 
-Event work should preserve only the durable context needed to continue,
-verify, and improve the program:
+When this teaching alignment is used, event work should preserve only the
+durable context needed to continue, verify, and improve the learning:
 
 - identifiable sources and provenance for material claims;
 - approved purpose, scope, audience, and decisions;
@@ -103,7 +112,7 @@ repository.
 
 ## Event Readiness Check
 
-Before an event is approved for use, confirm:
+Before an event using this teaching alignment is approved, confirm:
 
 - the outcome and accountable owner are explicit;
 - tool choices follow the event need rather than defining it;
