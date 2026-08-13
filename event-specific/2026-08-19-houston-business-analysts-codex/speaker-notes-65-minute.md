@@ -313,6 +313,12 @@ owner and a change history.
 
 Time: 3 minutes
 
+Define the labels before discussing the outcomes:
+
+> V means verification. The number is simply a test-case ID, like a requirement
+> or UAT scenario number. It lets everyone refer to the same input and expected
+> response without retelling the entire case.
+
 Read only the outcome words first:
 
 - PASS

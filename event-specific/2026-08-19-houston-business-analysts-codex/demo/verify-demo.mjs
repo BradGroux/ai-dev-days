@@ -249,6 +249,16 @@ if (
   throw new Error("Brad's presenter introduction must remain on slide 4.");
 }
 
+const verificationSlide = slideMarkup(19);
+if (
+  !verificationSlide.includes("V means verification") ||
+  !verificationSlide.includes("Complete → PASS") ||
+  !verificationSlide.includes("Incomplete → CLARIFY") ||
+  !verificationSlide.includes("Restricted → STOP")
+) {
+  throw new Error("Slide 19 must define the verification IDs and expected responses in plain language.");
+}
+
 console.log(
   "PASS: fictional demo fixtures, outcomes, traces, HTML deck, and PDF-deferred boundary verified."
 );

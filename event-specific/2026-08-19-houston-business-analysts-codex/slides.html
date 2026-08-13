@@ -225,6 +225,8 @@ li:before{
 .status:nth-child(1) .label{color:var(--green)}.status:nth-child(2) .label{color:var(--amber)}
 .status:nth-child(3) .label{color:var(--red)}
 .status h3{font-size:25px;margin-top:9px}.status p{font-size:17px;line-height:1.4;color:var(--muted);margin-top:9px}
+.scenario-key{margin-top:18px;color:var(--muted);font-size:18px;line-height:1.4}
+.scenario-key strong{color:var(--cyan)}
 .data-table{display:grid;gap:8px;margin-top:26px}
 .data-row{
   display:grid;grid-template-columns:1.05fr 1.1fr 1fr .8fr 1fr;gap:12px;
@@ -686,19 +688,20 @@ Prepare a review packet.
 
   <section class="slide" id="slide19" data-title="Acceptance scenarios">
     <div class="kicker">Verification before automation</div>
-    <h2>Test the decision boundaries, not just the happy path.</h2>
+    <h2>Give every test case a clear expected response.</h2>
+    <p class="scenario-key"><strong>V means verification.</strong> V-001, V-002, and V-003 are simple reference IDs so the team can discuss, rerun, and trace the same test cases.</p>
     <div class="status-columns">
       <div class="card good">
-        <h3 style="color:var(--green)">V-001 · PASS</h3>
-        <p>Complete, low-risk input. Return a review-ready draft with source citations and checklist evidence.</p>
+        <h3 style="color:var(--green)">V-001 · Complete → PASS</h3>
+        <p>All required information is present and no rule is triggered. Prepare a review-ready draft with evidence.</p>
       </div>
       <div class="card warn">
-        <h3 style="color:var(--amber)">V-002 · CLARIFY</h3>
-        <p>A required field is missing or ambiguous. Name what is missing and ask focused questions.</p>
+        <h3 style="color:var(--amber)">V-002 · Incomplete → CLARIFY</h3>
+        <p>Required information is missing or ambiguous. Name the gap and ask the responsible person a focused question.</p>
       </div>
       <div class="card stop">
-        <h3 style="color:var(--red)">V-003 · STOP / ESCALATE</h3>
-        <p>A policy flag or authority boundary is triggered. Cite the rule and route to the named owner.</p>
+        <h3 style="color:var(--red)">V-003 · Restricted → STOP</h3>
+        <p>A policy or authority boundary is triggered. Stop the workflow, cite the rule, and route it to the decision owner.</p>
       </div>
     </div>
     <div class="role-banner"><strong>Reliable does not mean “always completes.”</strong> Reliable means it passes when allowed, clarifies when incomplete, and stops when it lacks authority.</div>
