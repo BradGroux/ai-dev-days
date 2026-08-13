@@ -73,27 +73,42 @@ Ask the audience:
 
 Capture two answers on the whiteboard parking lot.
 
-## Demo two: operating packet to verified decisions (12 minutes)
+## Demo two: operating packet to verified decisions (14 minutes)
 
-### 0:00-0:04 — show the artifact stack
+### 0:00-0:03 — distinguish guidance from memory
 
-Walk the filenames, not every paragraph:
+Show:
 
 - `AGENTS.md`: standing workspace rules
 - `memory.md`: useful recall, explicitly not policy
+
+Repeat that a required rule belongs in reviewed guidance, policy, an SOP, or
+code, not only in memory.
+
+### 0:03-0:06 — show the operating packet
+
+Walk the filenames, not every paragraph:
+
 - `vendor-onboarding-sop.md`: repeatable procedure and stop conditions
 - `vendor-onboarding-assistant-prd.md`: problem, scope, and acceptance contract
 - `.agents/skills/vendor-review/SKILL.md`: reusable review workflow
+
+### 0:06-0:09 — preview the acceptance scenarios
+
+Open:
+
 - `acceptance-scenarios.md`: expected behavior before execution
 
-### 0:04-0:08 — run vendor V-002
+Ask which outcome may create the most value: PASS, CLARIFY, or STOP / ESCALATE.
+
+### 0:09-0:13 — run vendor V-002
 
 Use [prompt 4](prompt-pack.md#prompt-4-run-the-reusable-review-skill). The
 expected outcome is **CLARIFY** because security-relevant fields are unresolved.
 
 Ask: “Would a helpful-sounding approval be a success or a control failure?”
 
-### 0:08-0:11 — reveal all three outcomes
+### 0:13-0:14 — reveal the proof loop
 
 Open [`verification-report.md`](demo/workspace/verification-report.md):
 
@@ -103,11 +118,9 @@ Open [`verification-report.md`](demo/workspace/verification-report.md):
 
 Point to the exact policy source for the possible sanctions match in V-003.
 
-### 0:11-0:12 — close the proof loop
-
-Run `node ../verify-demo.mjs` from `demo/workspace/`, or show its prepared PASS
-output. Explain that the script proves internal fixture consistency; human
-review still determines whether the business rules themselves are correct.
+Show the prepared verifier PASS output. Explain that the script proves internal
+fixture consistency; human review still determines whether the business rules
+themselves are correct.
 
 ## Live-demo stop conditions
 

@@ -5,12 +5,16 @@ Start here for the August 19, 2026 Houston Business Analysts session.
 ## Session resources
 
 - Event packet: [README.md](README.md)
+- HTML slides: [slides.html](slides.html)
+- Curriculum map: [curriculum-map.md](curriculum-map.md)
 - AI-ready workflow workbook: [attendee-workbook.md](attendee-workbook.md)
 - Prompt pack: [prompt-pack.md](prompt-pack.md)
 - Fictional vendor-onboarding demo: [demo/README.md](demo/README.md)
 - Completed example workspace: [demo/workspace/README.md](demo/workspace/README.md)
 - Prepared verification report: [demo/workspace/verification-report.md](demo/workspace/verification-report.md)
 - Official and community references: [reference-links.md](reference-links.md)
+- Supporting resource:
+  [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
 - Houston Business Analysts private group: <https://www.linkedin.com/groups/17116055/>
 - Houston Business Analysts public page: <https://www.linkedin.com/company/houston-business-analysts/>
 - Houston Business Analysts session feedback: <https://forms.gle/cjb44RPJdCzuygEQ8>

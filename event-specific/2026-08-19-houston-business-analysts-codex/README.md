@@ -7,8 +7,8 @@
 - Facilitator: Brad Groux
 - Accountable packet owner: Brad Groux
 - Tool track: Codex
-- Status: first repository pass complete; venue details and public event link
-  are pending
+- Status: first curriculum and HTML deck pass complete; the PDF, venue details,
+  and public event link are pending
 
 ## Confirmed title
 
@@ -24,24 +24,12 @@ Business analysts already do much of the difficult work required to make AI usef
 
 Codex is the workbench for the session, but the durable method is the lesson. The method is to turn business knowledge into small, reviewable Markdown artifacts that people and agents can use together.
 
-## Selected teaching alignment
+## Related operating resource
 
-This event explicitly selects the
-[AI-Native Operating Framework](../../docs/ai-native-operating-framework-alignment.md).
-The framework is canonical for its own method; this packet and its learning
-design remain AI Dev Days-owned.
-
-- Intent: turn business-analysis practice into durable, reviewable AI context.
-- Responsibility: Brad owns the public packet and facilitation; attendees
-  retain accountability for any real process they later adapt.
-- Work: move from sources and requirements through SOP, PRD, skills, and
-  acceptance checks.
-- Control: use fictional data, public-safe materials, explicit boundaries,
-  stop/escalate cases, and prepared fallback outputs.
-- Assurance: verify the demo deterministically and ask what evidence proves
-  each audience scenario.
-- Learning: capture public-safe outcomes, exceptions, and approved improvements
-  in the [post-event review](post-event-review.md).
+The [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
+is the only named framework used as a supporting resource for this event. The
+presentation itself stays focused on the practical business-analysis workflow,
+artifact stack, and fictional vendor-onboarding demonstration.
 
 ## Format
 
@@ -57,6 +45,9 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 
 - Attending: [attendee links](attendee-links.md) and
   [AI-ready workflow workbook](attendee-workbook.md)
+- Presenting: [HTML slides](slides.html),
+  [65-minute speaker notes](speaker-notes-65-minute.md), and
+  [curriculum map](curriculum-map.md)
 - Facilitating: [session plan](session-plan.md),
   [facilitator runbook](facilitator-runbook.md), and
   [demo script](demo-script.md)
@@ -67,6 +58,9 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 ## Event packet
 
 - [Product requirements](PRD.md)
+- [HTML slides](slides.html)
+- [65-minute speaker notes](speaker-notes-65-minute.md)
+- [Curriculum map](curriculum-map.md)
 - [Session plan](session-plan.md)
 - [Material build plan](build-plan.md)
 - [Organizer inputs](organizer-inputs.md)
@@ -96,7 +90,7 @@ Attendees should leave with:
 
 ## Organizer inserts
 
-Terrence's source deck has been reviewed. A future deck pass will include:
+Terrence's source deck has been reviewed and the HTML deck includes:
 
 1. Improving host recognition as slide 2
 2. Houston Business Analysts community information with the private-group and public-page QR destinations
@@ -109,10 +103,20 @@ venue details and public event link are still needed; see
 
 ## First-pass boundary
 
-This pass intentionally contains no presentation deck, PDF, or speaker-note
-deck. The event requirements, complete demo, attendee workbook, prompts,
-references, and delivery runbooks are ready for review. Slide production is a
-separate future phase so visual decisions can be made against stable content.
+This pass includes the complete event documentation, curriculum map, editable
+HTML deck, speaker notes, fictional demonstration, attendee workbook, prompts,
+references, and delivery runbooks. It intentionally does not include
+`slides.pdf`; generate the PDF only after the slides are finalized.
+
+## Slide controls
+
+- Direct route: `slides.html#slideN`
+- Next: Right Arrow, Page Down, or Space
+- Previous: Left Arrow or Page Up
+- First / last: Home / End
+- Theme: `T` or the sun button; dark mode is the default
+- Full screen: `F` or the full-screen button
+- Help: `?` or the help button
 
 ## Publication boundary
 

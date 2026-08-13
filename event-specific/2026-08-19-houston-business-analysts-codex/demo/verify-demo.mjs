@@ -149,16 +149,87 @@ async function listFilesRecursively(directory) {
 }
 
 const eventFiles = await listFilesRecursively(eventDir);
-const slideArtifacts = eventFiles.filter((relativePath) => {
+const forbiddenPresentationArtifacts = eventFiles.filter((relativePath) => {
   const name = relativePath.split("/").at(-1);
-  return (
-    /\.(pdf|ppt|pptx|key)$/i.test(name) ||
-    /^(slides?|deck|presentation)([-_.].*)?\.(html|md)$/i.test(name) ||
-    /^speaker-notes([-_.].*)?\.md$/i.test(name)
-  );
+  return /\.(pdf|ppt|pptx|key)$/i.test(name);
 });
-if (slideArtifacts.length > 0) {
-  throw new Error(`Slide work is deferred, but found: ${slideArtifacts.join(", ")}`);
+if (forbiddenPresentationArtifacts.length > 0) {
+  throw new Error(
+    `Presentation binaries are deferred, but found: ${forbiddenPresentationArtifacts.join(", ")}`
+  );
 }
 
-console.log("PASS: fictional demo fixtures, outcomes, traces, and no-slide boundary verified.");
+const requiredEventFiles = [
+  "slides.html",
+  "speaker-notes-65-minute.md",
+  "curriculum-map.md",
+  "assets/digital-meld-logo.png",
+  "assets/brad-groux-headshot.png",
+  "assets/improving-logo.png",
+  "assets/houbas-logo.png",
+  "assets/houbas-group-qr.png",
+  "assets/houbas-page-qr.png",
+  "assets/houbas-feedback-qr.png",
+  "assets/event-resources-qr.png"
+];
+
+for (const relativePath of requiredEventFiles) {
+  await access(join(eventDir, relativePath));
+}
+
+const slides = await readFile(join(eventDir, "slides.html"), "utf8");
+const slideIds = [...slides.matchAll(/id="slide(\d+)"/g)].map((match) =>
+  Number(match[1])
+);
+const expectedSlideIds = Array.from({ length: 24 }, (_, index) => index + 1);
+
+if (JSON.stringify(slideIds) !== JSON.stringify(expectedSlideIds)) {
+  throw new Error("Expected exactly 24 sequential slide IDs.");
+}
+
+const requiredDeckSignals = [
+  "https://www.linkedin.com/groups/17116055/",
+  "https://www.linkedin.com/company/houston-business-analysts/",
+  "houbas-slide-theme",
+  '||"dark"',
+  "#slide"
+];
+
+for (const signal of requiredDeckSignals) {
+  if (!slides.includes(signal)) {
+    throw new Error(`HTML deck is missing required signal: ${signal}`);
+  }
+}
+
+function slideMarkup(number) {
+  const match = slides.match(
+    new RegExp(
+      `<section class="slide(?: active)?" id="slide${number}"[\\s\\S]*?<\\/section>`
+    )
+  );
+  if (!match) {
+    throw new Error(`Unable to find slide ${number}.`);
+  }
+  return match[0];
+}
+
+const improvingSlide = slideMarkup(2);
+if (
+  !improvingSlide.includes("Thanks to our hosts, Improving!") ||
+  !improvingSlide.includes("assets/improving-logo.png")
+) {
+  throw new Error("Improving recognition must remain on slide 2.");
+}
+
+const feedbackSlide = slideMarkup(24);
+if (
+  !feedbackSlide.includes("How’d We Do?") ||
+  !feedbackSlide.includes("https://forms.gle/cjb44RPJdCzuygEQ8") ||
+  !feedbackSlide.includes("assets/houbas-feedback-qr.png")
+) {
+  throw new Error("HOUBAs feedback must remain on final slide 24.");
+}
+
+console.log(
+  "PASS: fictional demo fixtures, outcomes, traces, HTML deck, and PDF-deferred boundary verified."
+);

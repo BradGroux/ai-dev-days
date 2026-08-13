@@ -14,13 +14,14 @@ The core contains about 55 minutes of planned material and 10 minutes of interac
 
 | Time | Segment | Format | Outcome |
 |---:|---|---|---|
-| 0:00-0:06 | Welcome, host recognition, and opening poll | Organizer insert plus show of hands | Establish the room as conversational and surface shared pain. |
-| 0:06-0:14 | The real AI problem is context | Short talk with one visual | Connect people, process, data, and business value before discussing tools. |
-| 0:14-0:25 | The AI-ready artifact stack | Slides plus file walkthrough | Explain Markdown, `AGENTS.md`, memory, SOP, PRD, skill, and acceptance checks by the business question each answers. |
-| 0:25-0:40 | Demo one: messy notes to current-state clarity | Live Codex demonstration | Expose assumptions, actors, data, exceptions, missing owners, and elicitation questions. |
-| 0:40-0:52 | Demo two: current state to operating packet | Live Codex demonstration with prepared fallback | Create the SOP, PRD, workspace guidance, reusable skill, and verification scenarios. |
-| 0:52-1:02 | Audience scenario: make a workflow AI-ready | Whiteboard exercise | Map people, process, data, guardrails, and proof for one audience-supplied process. |
-| 1:02-1:05 | Five moves for Monday | Closing slide and resource QR | Give attendees a concrete next step and release the room into the extension block. |
+| 0:00-0:05 | Welcome, host recognition, and community | Slides 1-3 | Recognize the host and organizers, establish the room as conversational, and expose the community links. |
+| 0:05-0:09 | Opening poll | Slide 4 plus show of hands | Surface shared AI and process friction. |
+| 0:09-0:19 | The context problem and BA opportunity | Slides 5-8 | Connect intent, people, process, data, durable context, and evidence before discussing execution. |
+| 0:19-0:26 | The AI-ready artifact stack | Slides 9-11 | Explain source notes, process brief, data contract, glossary, `AGENTS.md`, memory, SOP, PRD, skill, and acceptance checks by the business question each answers. |
+| 0:26-0:41 | Demo one: messy notes to current-state clarity | Slides 12-15 plus live Codex | Expose assumptions, exceptions, missing owners, elicitation questions, and data definitions. |
+| 0:41-0:55 | Demo two: current state to verified operation | Slides 16-19 plus live Codex or prepared fallback | Separate guidance, memory, SOP, PRD, and skill, then verify a CLARIFY case. |
+| 0:55-1:02 | Audience scenario: make a workflow AI-ready | Slide 20 plus whiteboard | Map people, process, data, guardrails, and proof for one audience-supplied process. |
+| 1:02-1:05 | Five moves and resources | Slides 21-22 | Give attendees a concrete next step and release the room into the extension block. |
 
 ## Core talk track
 
@@ -101,9 +102,8 @@ Ask the room for a generic workflow, then fill one item in each column before su
 
 | Time | Segment | Notes |
 |---:|---|---|
-| 1:05-1:15 | Scenario clinic | Take one additional audience process and identify the minimum AI-ready artifact set. |
-| 1:15-1:25 | Q&A by concern | Group questions under adoption, governance, data, team workflow, and technical implementation. |
-| 1:25-1:30 | Feedback and follow-up | Show the HOUBAs feedback QR and the attendee resource page. |
+| 1:05-1:28 | Scenario clinic and Q&A | Use slide 23. Take one additional audience process or group questions under adoption, governance, data, team workflow, and implementation. |
+| 1:28-1:30 | Feedback and follow-up | Show slide 24 with the HOUBAs feedback QR. |
 
 If the core has already absorbed substantial Q&A, use the extension for deeper discussion rather than repeating questions.
 

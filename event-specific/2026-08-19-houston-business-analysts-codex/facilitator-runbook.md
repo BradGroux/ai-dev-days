@@ -6,16 +6,14 @@ Help business analysis practitioners see how their existing people, process, dat
 
 ## Before the room opens
 
-- review the
-  [AI-Native Operating Framework teaching alignment](../../docs/ai-native-operating-framework-alignment.md)
-  and the event-specific mapping
-- confirm the final title and organizer inserts are in the deck once the slide
-  phase is complete
+- confirm the AI-Native Operating Framework appears only as a supporting
+  resource, not as the session structure
+- confirm the final title and organizer inserts are in the deck
 - confirm the projector, aspect ratio, display adapter, and power
 - confirm the whiteboard has working markers and an eraser
 - confirm with the HOUBAs organizer how the halfway and 15-minutes-remaining signals will be given
-- open the future deck, PDF, speaker notes, and this runbook when those files
-  are added
+- open the HTML deck, speaker notes, and this runbook; the PDF remains deferred
+  until the deck is finalized
 - open [`demo/workspace/`](demo/workspace/) in Codex
 - open [`demo/source/stakeholder-notes.md`](demo/source/stakeholder-notes.md)
   and [`demo/workspace/verification-report.md`](demo/workspace/verification-report.md)
