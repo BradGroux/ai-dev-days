@@ -244,9 +244,45 @@ if (slides.includes('id="helpButton"') || slides.includes('class="help"')) {
 const presenterSlide = slideMarkup(4);
 if (
   !presenterSlide.includes("Brad Groux") ||
-  !presenterSlide.includes("assets/brad-groux-headshot.png")
+  !presenterSlide.includes("assets/brad-groux-headshot.png") ||
+  !presenterSlide.includes("Advocate for evidence-backed delivery.") ||
+  !presenterSlide.includes("Own your operating model. Rent your tools.")
 ) {
   throw new Error("Brad's presenter introduction must remain on slide 4.");
+}
+
+const socialLinks = [
+  "https://twitter.com/BradGroux",
+  "https://www.linkedin.com/in/bradgroux/",
+  "https://youtube.com/BradGroux"
+];
+for (const markup of [presenterSlide, slideMarkup(23)]) {
+  const positions = socialLinks.map((link) => markup.indexOf(link));
+  if (
+    positions.some((position) => position < 0) ||
+    positions.some(
+      (position, index) => index > 0 && position <= positions[index - 1]
+    )
+  ) {
+    throw new Error("Twitter, LinkedIn, and YouTube links must appear in that order on slides 4 and 23.");
+  }
+}
+
+const resourceSlide = slideMarkup(23);
+for (const link of [
+  "https://www.bradgroux.com",
+  "https://digitalmeld.io",
+  "https://sstb.ai",
+  "https://github.com/BradGroux/ai-dev-days",
+  "https://github.com/BradGroux/ai-native-operating-framework"
+]) {
+  if (!resourceSlide.includes(link)) {
+    throw new Error(`Slide 23 is missing required link: ${link}`);
+  }
+}
+
+if (!slideMarkup(12).includes("flex:0 0 auto")) {
+  throw new Error("Slide 12 content must remain vertically centered rather than top-weighted.");
 }
 
 const verificationSlide = slideMarkup(19);
@@ -256,7 +292,9 @@ if (
   !verificationSlide.includes("Incomplete → CLARIFY") ||
   !verificationSlide.includes("Restricted → STOP")
 ) {
-  throw new Error("Slide 19 must define the verification IDs and expected responses in plain language.");
+  throw new Error(
+    "Slide 19 must define the verification IDs and expected responses in plain language."
+  );
 }
 
 console.log(
