@@ -72,8 +72,9 @@ Time: 2 minutes
   of the operating model.
 - Do not turn this into a biography. Establish why the room should trust the
   practitioner perspective, then move into their experience.
-- Mention that the social profiles use the same `@bradgroux` handle and that
-  the website links are available on the slide.
+- Mention that the social profiles use the same `@bradgroux` handle. The slide
+  separates places to follow from websites to visit so the audience can scan
+  both quickly.
 
 [Sources]
 
@@ -425,9 +426,9 @@ Time: 1 minute
 
 Give the room time to scan the event packet QR.
 
-Point out that every URL is written in full for attendees who prefer not to
-scan: Brad's social profiles and sites, AI Dev Days, and the AI-Native
-Operating Framework.
+Point out the three clear paths: follow Brad, visit the websites, or continue
+with the two named resources. Every resource URL is written in full for
+attendees who prefer not to scan.
 
 Mention the AI-Native Operating Framework only as an optional resource for
 teams that want a broader operating method after this session. Do not introduce

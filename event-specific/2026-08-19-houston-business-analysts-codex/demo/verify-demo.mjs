@@ -246,9 +246,10 @@ if (
   !presenterSlide.includes("Brad Groux") ||
   !presenterSlide.includes("assets/brad-groux-headshot.png") ||
   !presenterSlide.includes("Advocate for evidence-backed delivery.") ||
-  !presenterSlide.includes("Own your operating model. Rent your tools.")
+  !presenterSlide.includes("Own your operating model. Rent your tools.") ||
+  !presenterSlide.includes('class="link-pair"')
 ) {
-  throw new Error("Brad's presenter introduction must remain on slide 4.");
+  throw new Error("Brad's presenter introduction and two-column link layout must remain on slide 4.");
 }
 
 const socialLinks = [
@@ -269,6 +270,15 @@ for (const markup of [presenterSlide, slideMarkup(23)]) {
 }
 
 const resourceSlide = slideMarkup(23);
+if (
+  !resourceSlide.includes('class="link-hub"') ||
+  !resourceSlide.includes('class="resource-directory"') ||
+  !resourceSlide.includes("AI Dev Days") ||
+  !resourceSlide.includes("AI-Native Operating Framework")
+) {
+  throw new Error("Slide 23 must separate contact destinations from named event resources.");
+}
+
 for (const link of [
   "https://www.bradgroux.com",
   "https://digitalmeld.io",

@@ -9,6 +9,8 @@
 - Polished the HOUBAs presenter and resource slides with distinct positioning,
   complete social and project links, and vertically centered reuse-and-proof
   content.
+- Reorganized the HOUBAs presenter and resource links into aligned follow,
+  website, and named-resource groups for faster audience scanning.
 
 ## 1.0.0 - 2026-08-03
 
