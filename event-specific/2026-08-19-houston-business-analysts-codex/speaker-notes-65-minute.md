@@ -67,11 +67,19 @@ Time: 1 minute
 
 Time: 2 minutes
 
-- Introduce yourself as a builder and operator, not as an abstract AI expert.
-- Briefly connect Digital Meld, open-source maintenance, and community work to
-  the session's focus on practical, inspectable delivery.
+- Keep the introduction concise; the left side establishes experience and the
+  right side states the point of view: evidence-backed delivery and ownership
+  of the operating model.
 - Do not turn this into a biography. Establish why the room should trust the
   practitioner perspective, then move into their experience.
+- Mention that the social profiles use the same `@bradgroux` handle and that
+  the website links are available on the slide.
+
+[Sources]
+
+- Brad Groux profiles and sites: <https://twitter.com/BradGroux>,
+  <https://www.linkedin.com/in/bradgroux/>, <https://youtube.com/BradGroux>,
+  <https://www.bradgroux.com>, <https://digitalmeld.io>, and <https://sstb.ai>.
 
 ## 0:05-0:09 - Establish the room
 
@@ -417,6 +425,10 @@ Time: 1 minute
 
 Give the room time to scan the event packet QR.
 
+Point out that every URL is written in full for attendees who prefer not to
+scan: Brad's social profiles and sites, AI Dev Days, and the AI-Native
+Operating Framework.
+
 Mention the AI-Native Operating Framework only as an optional resource for
 teams that want a broader operating method after this session. Do not introduce
 additional named frameworks.
@@ -425,6 +437,11 @@ Close the core with:
 
 > Your first goal is not an autonomous business. It is one painful workflow,
 > one visible decision boundary, and one result your team can review.
+
+[Sources]
+
+- AI Dev Days: <https://github.com/BradGroux/ai-dev-days>.
+- AI-Native Operating Framework: <https://github.com/BradGroux/ai-native-operating-framework>.
 
 ## 1:05-1:28 - Scenario clinic and Q&A
 

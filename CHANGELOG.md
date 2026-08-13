@@ -6,6 +6,9 @@
   simplified community slide, corrected icon alignment, explicit SOP and PRD
   definitions, scenario starters, and a combined HOUBAs feedback and Start
   Small, Think Big community close.
+- Polished the HOUBAs presenter and resource slides with distinct positioning,
+  complete social and project links, and vertically centered reuse-and-proof
+  content.
 
 ## 1.0.0 - 2026-08-03
 
