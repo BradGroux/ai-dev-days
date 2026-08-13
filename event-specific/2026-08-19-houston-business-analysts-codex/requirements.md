@@ -11,24 +11,21 @@ Attendees do not need to install Codex or bring a laptop. This is a presenter-le
 - phone or secondary device for link and QR verification
 - optional portable hotspot
 
-## First-pass presenter software and files
+## Presenter software and files
 
 - current Codex desktop app with the fictional demo workspace open
-- local browser with the attendee page open
+- local browser with `slides.html#slide1` and the attendee page open
+- `speaker-notes-65-minute.md` stored locally
 - terminal and editor font sizes set for projection
 - complete demo inputs and expected outputs stored locally under `demo/`
 - facilitator runbook and fallback plan stored locally
 - no unrelated private tabs, notifications, recent files, or accounts visible
 - Node.js available to run `node demo/verify-demo.mjs`
 
-## Phase 3 additions
+## Deferred presentation artifact
 
-Deck, PDF, and speaker-note files are intentionally deferred. Add these
-requirements when the presentation phase begins:
-
-- local browser with the slide deck and attendee page open
-- HTML slide deck and PDF fallback stored locally
-- speaker notes stored locally
+`slides.pdf` is intentionally absent from the first deck pass. Generate and
+verify it only after the HTML slides are finalized.
 
 ## Room requirements
 

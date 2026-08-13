@@ -82,12 +82,16 @@ partners on turning requirements, process knowledge, and data definitions into
 durable, reviewable AI context.
 
 - Packet: [`event-specific/2026-08-19-houston-business-analysts-codex/README.md`](event-specific/2026-08-19-houston-business-analysts-codex/README.md)
+- Slides: [`slides.html`](event-specific/2026-08-19-houston-business-analysts-codex/slides.html)
+- Speaker notes: [`speaker-notes-65-minute.md`](event-specific/2026-08-19-houston-business-analysts-codex/speaker-notes-65-minute.md)
+- Curriculum map: [`curriculum-map.md`](event-specific/2026-08-19-houston-business-analysts-codex/curriculum-map.md)
 - Session plan: [`session-plan.md`](event-specific/2026-08-19-houston-business-analysts-codex/session-plan.md)
 - Attendee workbook: [`attendee-workbook.md`](event-specific/2026-08-19-houston-business-analysts-codex/attendee-workbook.md)
 - Prompt pack: [`prompt-pack.md`](event-specific/2026-08-19-houston-business-analysts-codex/prompt-pack.md)
 - Fictional demo: [`demo/README.md`](event-specific/2026-08-19-houston-business-analysts-codex/demo/README.md)
 
-Slides are intentionally deferred to a future update.
+The editable HTML deck is available. The PDF remains intentionally deferred
+until the slides are finalized.
 
 ### Historical packet: Personal AI Agents LIVE - July 21, 2026
 

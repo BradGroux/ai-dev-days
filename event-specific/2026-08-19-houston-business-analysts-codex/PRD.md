@@ -210,13 +210,18 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - attendee workbook, prompt pack, demo script, and official reference links
 - deterministic demo-fixture verification script
 
-### Presentation packet (future phase)
+### Presentation and curriculum packet (first pass complete)
 
-- dark, local-first `slides.html`
-- paired `slides.pdf`
-- `speaker-notes-65-minute.md`
-- final visual integration of the completed prompt pack and demo script
-- final facilitator and fallback runbooks
+- dark-by-default, local-first `slides.html` with a light-mode option
+- direct `#slideN` routes, keyboard controls, progress, full-screen mode, and
+  visible navigation
+- `speaker-notes-65-minute.md` for the 65-minute core and 25-minute extension
+- `curriculum-map.md` connecting BA practice, artifacts, interactions, and
+  observable learning checks
+- authentic organizer logos and QR destinations
+- final visual integration of the prompt pack and demo script
+- aligned facilitator, fallback, attendee, and requirements files
+- `slides.pdf` intentionally deferred until the slides are finalized
 
 ## Success measures
 
@@ -246,11 +251,11 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 | The room wants implementation detail | Use the final 25 minutes and checked-in references rather than derailing the core spine. |
 | Attendees mistake memory for policy | Repeat that required rules belong in checked-in guidance or documentation; memory is a recall layer. |
 | A real audience scenario exposes sensitive details | Ask for a generic process category and fictionalize names, data, and exceptions before using it. |
-| Organizer assets arrive late | Reserve three clearly labeled deck slots and keep neutral placeholders out of the final PDF. |
+| Organizer assets are rendered incorrectly | Use the authentic extracted logos and verify every QR destination from the HTML deck. |
 
 ## Acceptance criteria
 
-### First repository pass
+### First curriculum and deck pass
 
 - The event README, PRD, timed plan, workbook, prompts, demo script, runbooks,
   organizer requirements, and reference links are navigable from one entry
@@ -261,7 +266,12 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - V-001 passes to human review, V-002 requires clarification, and V-003 stops
   and escalates under the approved policy excerpt.
 - `node demo/verify-demo.mjs` passes without network access.
-- No slide deck, presentation PDF, or speaker-note deck is added in this pass.
+- The HTML deck has 24 direct-addressable slides, defaults to dark mode, offers
+  light mode, and includes keyboard, full-screen, and visible navigation.
+- The deck uses the organizer's exact insert content, puts Improving on slide 2,
+  and makes HOUBAs feedback the final slide.
+- The speaker notes preserve a 65-minute core and 25-minute extension.
+- No `slides.pdf` is added before the slides are finalized.
 
 ### Complete event package
 
@@ -273,8 +283,10 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - Every live source and output is fictional, public-safe, and checked into the packet.
 - The final deck includes the organizer's host, community, and feedback inserts.
 - The Improving host recognition is slide 2, source slide 1 is omitted, and the HOUBAs feedback slide is the final audience-facing slide.
-- The future HTML deck, PDF, speaker notes, demo, prompts, and fallback outputs
-  pass the repository audit and publication scan.
+- The HTML deck, speaker notes, demo, prompts, and fallback outputs pass the
+  repository audit and publication scan.
+- The final PDF is generated and visually checked only after the deck is
+  approved.
 
 ## Open inputs
 

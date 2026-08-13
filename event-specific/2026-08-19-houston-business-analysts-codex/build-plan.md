@@ -72,36 +72,57 @@ explains the artifact stack without requiring code.
 
 ## Phase 3: presentation packet
 
-Status: intentionally deferred at Brad's request
+Status: first HTML deck and curriculum pass complete; PDF intentionally deferred
 
-Planned deliverables:
+Deliverables:
 
-- `slides.html`
-- `slides.pdf`
-- `speaker-notes-65-minute.md`
-- final `facilitator-runbook.md`
-- final `fallback-plan.md`
-- final `attendee-links.md`
+- [x] `slides.html`
+- [x] `speaker-notes-65-minute.md`
+- [x] `curriculum-map.md`
+- [x] organizer logos and QR assets
+- [x] aligned `facilitator-runbook.md`
+- [x] aligned `fallback-plan.md`
+- [x] aligned `attendee-links.md`
+- [ ] `slides.pdf` after slide approval
 
 Deck outline:
 
 1. title
 2. host recognition
 3. HOUBAs community and QR codes
-4. the context problem
-5. people, process, and data before AI
-6. the business analyst as context architect
-7. the AI-ready artifact stack
+4. opening poll
+5. Seneca framing quote
+6. the context problem
+7. the business analyst as context architect
 8. Markdown as the shared work surface
-9. demo-one setup
-10. demo-one result
-11. demo-two operating packet
-12. memory is recall, not policy
-13. guardrails and verification
-14. audience scenario canvas
-15. five moves for Monday
-16. resources
-17. HOUBAs feedback
+9. evidence and definition artifacts
+10. guidance and execution artifacts
+11. reuse and proof artifacts
+12. vendor-onboarding demo setup
+13. raw-notes audience challenge
+14. current-state result
+15. data contract
+16. workspace guidance versus memory
+17. SOP, PRD, and skill
+18. pass, clarify, and stop scenarios
+19. live Codex case
+20. audience scenario canvas
+21. five moves for Monday
+22. resources and call to action
+23. scenario clinic and Q&A
+24. HOUBAs feedback
+
+### Verified framing quote
+
+> If one does not know to what port one is sailing, no wind is favorable.
+>
+> — Seneca
+
+Use this to connect defined intent and measurable outcomes to the session's
+context-architecture thesis: faster execution is not useful when the business
+has not agreed on the destination. The underlying passage is Seneca,
+*Moral Letters to Lucilius*, 71.3; the slide labels the wording as a common
+English rendering and links to the source.
 
 Organizer integration rules:
 
@@ -117,18 +138,24 @@ Build rules:
 - keep the deck dark, professional, high-contrast, and projection-safe
 - prefer diagrams, filenames, and short before/after excerpts over paragraphs
 - use Roboto when practical
-- make the HTML deck the editable source and regenerate the PDF after every material change
+- make the HTML deck the editable source and generate the PDF after final
+  content approval
 - keep presenter detail in speaker notes, not on slides
-- verify all slides locally in the browser and inspect the PDF
+- verify all slides locally in the browser
+- inspect the PDF only after it is intentionally generated
 
-Exit gate: the deck, PDF, notes, and fallback path work from a clean local checkout.
+Exit gate for first pass: met. The HTML deck, notes, controls, organizer
+inserts, local assets, and fallback path work locally. PDF parity remains open
+until slide approval.
 
 ## Phase 4: rehearsal and organizer review
 
 - run a 65-minute timed rehearsal with interruptions simulated
 - run the demo once online and once from the offline fallback
 - verify font sizes and contrast on a projector-sized viewport
-- send Terrence the public event packet link for title and content feedback
+- send Terrence the public event packet link for factual and logistical review:
+  names, links, timings, venue details, and organizer inserts; the title and
+  subject matter remain settled
 - integrate the three organizer inserts
 - confirm venue, display connection, parking, Wi-Fi, whiteboard, and final timing
 - freeze the demo inputs 72 hours before the event
@@ -151,6 +178,8 @@ Also verify:
 - every attendee link is public or explicitly marked pending
 - no transcript, private message, local path, secret, or real business record appears
 - the demo has a prepared output and a short verbal fallback
-- no slide, PDF, or speaker-note deck artifact is added in this first pass
+- the HTML deck and speaker notes are present
+- no `slides.pdf` is added before slide approval
 
-Deck-specific QR, rendering, PDF parity, and speaker-note checks move to Phase 3.
+Deck-specific QR, route, theme, keyboard, rendering, and speaker-note checks are
+part of Phase 3. PDF parity remains deferred.

@@ -15,7 +15,8 @@
 ## Deck and links
 
 - [ ] `slides.html` opens locally.
-- [ ] `slides.pdf` matches the latest HTML deck.
+- [ ] The HTML deck is content-final before PDF generation.
+- [ ] After approval, `slides.pdf` matches the final HTML deck.
 - [ ] Speaker notes match the 65-minute core.
 - [ ] Attendee page is public and readable on a phone.
 - [ ] Every QR code resolves from a phone not signed into Brad's accounts.
@@ -44,8 +45,9 @@
 
 ## Verification
 
-- [ ] Review the event mapping in [README.md](README.md) against the
-      [AI-Native Operating Framework alignment](../../docs/ai-native-operating-framework-alignment.md).
+- [ ] Confirm the
+      [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
+      supporting-resource link resolves.
 - [ ] Confirm intent, ownership, controls, verification evidence, handoff, and
       post-event review ownership are explicit.
 - [ ] Run `./scripts/publication-scan.sh`.

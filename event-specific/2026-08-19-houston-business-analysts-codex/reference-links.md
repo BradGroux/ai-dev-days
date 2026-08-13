@@ -23,8 +23,17 @@ official documentation before the August 19, 2026 session.
 - [Codex prompting](https://learn.chatgpt.com/docs/prompting)
   - official guidance for clear, scoped requests and verification
 
+## Framing source
+
+- [Seneca, *Moral Letters to Lucilius*, Letter 71](https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_71)
+  - source for the destination-port passage used as a common English rendering
+    in the presentation
+
 ## Workshop community
 
+- [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
+  - optional supporting resource for extending the session's artifact and
+    operating ideas beyond the fictional demonstration
 - [Houston Business Analysts private LinkedIn group](https://www.linkedin.com/groups/17116055/)
 - [Houston Business Analysts public LinkedIn page](https://www.linkedin.com/company/houston-business-analysts/)
 - [Houston Business Analysts session feedback](https://forms.gle/cjb44RPJdCzuygEQ8)
