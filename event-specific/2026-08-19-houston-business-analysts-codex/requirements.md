@@ -24,10 +24,12 @@ Attendees do not need to install Codex or bring a laptop. This is a presenter-le
 - Node.js available to prepare the live workspace, run the deterministic
   reviewer and tests, and execute `node demo/verify-demo.mjs`
 
-## Deferred presentation artifact
+## Published presentation artifact
 
-`slides.pdf` is intentionally absent from the first deck pass. Generate and
-verify it only after the HTML slides are finalized.
+`slides.pdf` is the portable backup for the finalized HTML deck. It contains
+one dark-theme 1920x1080 screenshot per slide, assembled in slide order with
+safe HTTPS link annotations. Regenerate it from screenshots rather than using
+browser print-to-PDF.
 
 ## Room requirements
 

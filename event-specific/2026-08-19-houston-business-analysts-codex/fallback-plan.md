@@ -83,7 +83,7 @@ node demo/verify-demo.mjs
 The check requires no network access. The expected output is:
 
 ```text
-PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and PDF-deferred boundary verified.
+PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and high-resolution PDF verified.
 ```
 
 ## Safety

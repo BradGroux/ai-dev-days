@@ -6,6 +6,7 @@ Start here for the August 19, 2026 Houston Business Analysts session.
 
 - Event packet: [README.md](README.md)
 - HTML slides: [slides.html](slides.html)
+- PDF slides: [slides.pdf](slides.pdf)
 - Curriculum map: [curriculum-map.md](curriculum-map.md)
 - AI-ready workflow workbook: [attendee-workbook.md](attendee-workbook.md)
 - Prompt pack: [prompt-pack.md](prompt-pack.md)
