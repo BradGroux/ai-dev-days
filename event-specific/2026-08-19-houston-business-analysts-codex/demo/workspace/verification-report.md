@@ -55,7 +55,7 @@ The focused tests prove stop precedence, unknown-data clarification, review
 lanes, draft-only authority language, and unresolved duplicate handling. The
 integrated verifier checks file presence, fixture structure, prompt contracts,
 expected classifications, public-safe markers, deck requirements, and the
-deferred-PDF boundary.
+published high-resolution PDF contract.
 
 The [AI-Native Operating Framework](../framework-guidance.md) organizes the
 business completeness questions. It is not a Northstar policy source and does

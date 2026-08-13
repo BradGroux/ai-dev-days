@@ -245,16 +245,18 @@ async function listFilesRecursively(directory) {
 const eventFiles = await listFilesRecursively(eventDir);
 const forbiddenPresentationArtifacts = eventFiles.filter((relativePath) => {
   const name = relativePath.split("/").at(-1);
-  return /\.(pdf|ppt|pptx|key)$/i.test(name);
+  return /\.(ppt|pptx|key)$/i.test(name) ||
+    (/\.pdf$/i.test(name) && relativePath !== "slides.pdf");
 });
 if (forbiddenPresentationArtifacts.length > 0) {
   throw new Error(
-    `Presentation binaries are deferred, but found: ${forbiddenPresentationArtifacts.join(", ")}`
+    `Only the published slides.pdf presentation binary is allowed, but found: ${forbiddenPresentationArtifacts.join(", ")}`
   );
 }
 
 const requiredEventFiles = [
   "slides.html",
+  "slides.pdf",
   "speaker-notes-65-minute.md",
   "curriculum-map.md",
   "assets/digital-meld-logo.png",
@@ -274,6 +276,49 @@ for (const relativePath of requiredEventFiles) {
 }
 
 const slides = await readFile(join(eventDir, "slides.html"), "utf8");
+const pdfBuffer = await readFile(join(eventDir, "slides.pdf"));
+const pdf = pdfBuffer.toString("latin1");
+if (!pdf.startsWith("%PDF-")) {
+  throw new Error("slides.pdf must be a valid PDF file.");
+}
+
+const countPdfSignal = (pattern) => [...pdf.matchAll(pattern)].length;
+const pdfPageCount = countPdfSignal(/\/Type\s*\/Page\b/g);
+const pdfImageCount = countPdfSignal(/\/Subtype\s*\/Image\b/g);
+const pdfWidthCount = countPdfSignal(/\/Width\s+1920\b/g);
+const pdfHeightCount = countPdfSignal(/\/Height\s+1080\b/g);
+const pdfMediaBoxCount = countPdfSignal(/\/MediaBox\s*\[\s*0\s+0\s+960\s+540\s*\]/g);
+const pdfLinks = [...pdf.matchAll(/\/URI\s*\(([^)]*)\)/g)].map(
+  (match) => match[1]
+);
+
+if (
+  pdfPageCount !== 25 ||
+  pdfImageCount !== 25 ||
+  pdfWidthCount !== 25 ||
+  pdfHeightCount !== 25 ||
+  pdfMediaBoxCount !== 25
+) {
+  throw new Error(
+    `PDF export mismatch: pages=${pdfPageCount}, images=${pdfImageCount}, widths=${pdfWidthCount}, heights=${pdfHeightCount}, mediaBoxes=${pdfMediaBoxCount}.`
+  );
+}
+
+if (pdfLinks.length !== 20 || pdfLinks.some((link) => !link.startsWith("https://"))) {
+  throw new Error("PDF export must preserve exactly 20 safe HTTPS link annotations.");
+}
+
+const normalizeLink = (link) => link.replace(/\/$/, "");
+const htmlLinks = [...slides.matchAll(/<a\b[^>]*\bhref="(https:\/\/[^"#]+)"/g)].map(
+  (match) => match[1]
+);
+if (
+  JSON.stringify(pdfLinks.map(normalizeLink)) !==
+  JSON.stringify(htmlLinks.map(normalizeLink))
+) {
+  throw new Error("PDF link annotations do not match the visible HTML slide links.");
+}
+
 const slideIds = [...slides.matchAll(/id="slide(\d+)"/g)].map((match) =>
   Number(match[1])
 );
@@ -402,5 +447,5 @@ if (
 }
 
 console.log(
-  "PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and PDF-deferred boundary verified."
+  "PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and high-resolution PDF verified."
 );

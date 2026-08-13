@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Published the Houston Business Analysts deck as a 25-page PDF assembled from
+  dark-theme 1920x1080 slide captures with safe HTTPS link annotations.
 - Refined the Houston Business Analysts deck with a presenter introduction,
   simplified community slide, corrected icon alignment, explicit SOP and PRD
   definitions, scenario starters, and a combined HOUBAs feedback and Start

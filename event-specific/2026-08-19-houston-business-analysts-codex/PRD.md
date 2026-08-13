@@ -227,7 +227,7 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - authentic organizer logos and QR destinations
 - final visual integration of the prompt pack and demo script
 - aligned facilitator, fallback, attendee, and requirements files
-- `slides.pdf` intentionally deferred until the slides are finalized
+- `slides.pdf` generated from one dark-theme 1920x1080 screenshot per slide
 
 ## Success measures
 
@@ -283,7 +283,8 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
   slides, and makes HOUBAs feedback plus the Start Small, Think Big community
   call to action the final 50:50 slide.
 - The speaker notes preserve a 65-minute core and 25-minute extension.
-- No `slides.pdf` is added before the slides are finalized.
+- The PDF has 25 16:9 pages, one embedded 1920x1080 image per page, and only
+  safe HTTPS link annotations.
 
 ### Complete event package
 
@@ -297,8 +298,8 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - The Improving host recognition is slide 2, source slide 1 is omitted, and the combined HOUBAs feedback and Start Small, Think Big call to action is the final audience-facing slide.
 - The HTML deck, speaker notes, demo, prompts, and fallback outputs pass the
   repository audit and publication scan.
-- The final PDF is generated and visually checked only after the deck is
-  approved.
+- The final PDF is generated after approval from dark-theme 1920x1080
+  screenshots and visually checked against the HTML deck.
 
 ## Open inputs
 

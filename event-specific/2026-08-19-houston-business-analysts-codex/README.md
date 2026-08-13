@@ -7,8 +7,8 @@
 - Facilitator: Brad Groux
 - Accountable packet owner: Brad Groux
 - Tool track: Codex
-- Status: first curriculum and HTML deck pass complete; the PDF, venue details,
-  and public event link are pending
+- Status: curriculum, HTML deck, and high-resolution PDF complete; venue details
+  and the public event link are pending
 
 ## Confirmed title
 
@@ -46,7 +46,7 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 
 - Attending: [attendee links](attendee-links.md) and
   [AI-ready workflow workbook](attendee-workbook.md)
-- Presenting: [HTML slides](slides.html),
+- Presenting: [HTML slides](slides.html), [PDF slides](slides.pdf),
   [65-minute speaker notes](speaker-notes-65-minute.md), and
   [curriculum map](curriculum-map.md)
 - Facilitating: [session plan](session-plan.md),
@@ -61,6 +61,7 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 
 - [Product requirements](PRD.md)
 - [HTML slides](slides.html)
+- [PDF slides](slides.pdf)
 - [65-minute speaker notes](speaker-notes-65-minute.md)
 - [Curriculum map](curriculum-map.md)
 - [Session plan](session-plan.md)
@@ -103,12 +104,13 @@ The required content, decoded QR destinations, and placement rules are recorded 
 venue details and public event link are still needed; see
 [organizer-inputs.md](organizer-inputs.md).
 
-## First-pass boundary
+## Published presentation boundary
 
-This pass includes the complete event documentation, curriculum map, editable
-HTML deck, speaker notes, fictional demonstration, attendee workbook, prompts,
-references, and delivery runbooks. It intentionally does not include
-`slides.pdf`; generate the PDF only after the slides are finalized.
+The packet includes the complete event documentation, curriculum map, editable
+HTML deck, high-resolution PDF, speaker notes, fictional demonstration,
+attendee workbook, prompts, references, and delivery runbooks. The HTML deck is
+the visual source of truth. The PDF is assembled from one dark-theme 1920x1080
+screenshot per `#slideN`; browser print-to-PDF is not used.
 
 ## Slide controls
 

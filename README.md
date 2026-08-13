@@ -82,7 +82,7 @@ partners on turning requirements, process knowledge, and data definitions into
 durable, reviewable AI context.
 
 - Packet: [`event-specific/2026-08-19-houston-business-analysts-codex/README.md`](event-specific/2026-08-19-houston-business-analysts-codex/README.md)
-- Slides: [`slides.html`](event-specific/2026-08-19-houston-business-analysts-codex/slides.html)
+- Slides: [`slides.html`](event-specific/2026-08-19-houston-business-analysts-codex/slides.html) / [`slides.pdf`](event-specific/2026-08-19-houston-business-analysts-codex/slides.pdf)
 - Speaker notes: [`speaker-notes-65-minute.md`](event-specific/2026-08-19-houston-business-analysts-codex/speaker-notes-65-minute.md)
 - Curriculum map: [`curriculum-map.md`](event-specific/2026-08-19-houston-business-analysts-codex/curriculum-map.md)
 - Session plan: [`session-plan.md`](event-specific/2026-08-19-houston-business-analysts-codex/session-plan.md)
@@ -90,8 +90,8 @@ durable, reviewable AI context.
 - Prompt pack: [`prompt-pack.md`](event-specific/2026-08-19-houston-business-analysts-codex/prompt-pack.md)
 - Fictional demo: [`demo/README.md`](event-specific/2026-08-19-houston-business-analysts-codex/demo/README.md)
 
-The editable HTML deck is available. The PDF remains intentionally deferred
-until the slides are finalized.
+The editable HTML deck is the visual source of truth. The PDF is published from
+one dark-theme 1920x1080 screenshot per `#slideN`, preserving HTTPS links.
 
 ### Historical packet: Personal AI Agents LIVE - July 21, 2026
 

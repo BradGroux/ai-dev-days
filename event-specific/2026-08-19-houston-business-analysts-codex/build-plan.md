@@ -79,7 +79,7 @@ code and tests. `node demo/verify-demo.mjs` validates the integrated packet.
 
 ## Phase 3: presentation packet
 
-Status: first HTML deck and curriculum pass complete; PDF intentionally deferred
+Status: HTML deck, curriculum, and high-resolution PDF complete
 
 Deliverables:
 
@@ -90,7 +90,7 @@ Deliverables:
 - [x] aligned `facilitator-runbook.md`
 - [x] aligned `fallback-plan.md`
 - [x] aligned `attendee-links.md`
-- [ ] `slides.pdf` after slide approval
+- [x] `slides.pdf` from dark-theme 1920x1080 screenshots
 
 Deck outline:
 
@@ -148,13 +148,15 @@ Build rules:
 - use Roboto when practical
 - make the HTML deck the editable source and generate the PDF after final
   content approval
+- capture one dark-theme 1920x1080 screenshot per `#slideN` and assemble the
+  images in slide order; do not use browser print-to-PDF
 - keep presenter detail concise on the dedicated introduction slide
 - verify all slides locally in the browser
-- inspect the PDF only after it is intentionally generated
+- inspect every source screenshot and the rendered PDF pages after generation
 
-Exit gate for first pass: met. The HTML deck, notes, controls, organizer
-inserts, local assets, and fallback path work locally. PDF parity remains open
-until slide approval.
+Exit gate: met. The HTML deck, notes, controls, organizer inserts, local assets,
+fallback path, and 25-page PDF work locally. The PDF contains one 1920x1080
+image per page and preserves safe HTTPS link annotations.
 
 ## Phase 4: rehearsal and organizer review
 
@@ -189,7 +191,8 @@ Also verify:
 - no transcript, private message, local path, secret, or real business record appears
 - the demo has a prepared output and a short verbal fallback
 - the HTML deck and speaker notes are present
-- no `slides.pdf` is added before slide approval
+- `slides.pdf` has 25 16:9 pages, each backed by one 1920x1080 slide image
+- PDF annotations are HTTPS-only and match visible links in the HTML deck
 
 Deck-specific QR, route, theme, keyboard, rendering, and speaker-note checks are
-part of Phase 3. PDF parity remains deferred.
+part of Phase 3. PDF parity is verified after screenshot-based export.
