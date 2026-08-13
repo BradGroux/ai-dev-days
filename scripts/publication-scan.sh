@@ -10,12 +10,10 @@ scan() {
   local pattern="$2"
   shift 2
 
-  if rg -n --hidden \
-    --glob '!.git' \
-    --glob '!.git/**' \
-    --glob '!projects/beaver-badges/app/package-lock.json' \
-    --glob '!scripts/publication-scan.sh' \
-    "$pattern" "$@"; then
+  if git grep -nE \
+    "$pattern" -- "$@" \
+    ':(exclude)projects/beaver-badges/app/package-lock.json' \
+    ':(exclude)scripts/publication-scan.sh'; then
     echo
     echo "Potential issue: ${label}"
     echo
