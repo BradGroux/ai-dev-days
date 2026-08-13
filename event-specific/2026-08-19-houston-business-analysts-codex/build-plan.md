@@ -90,27 +90,28 @@ Deck outline:
 1. title
 2. host recognition
 3. HOUBAs community and QR codes
-4. opening poll
-5. Seneca framing quote
-6. the context problem
-7. the business analyst as context architect
-8. Markdown as the shared work surface
-9. evidence and definition artifacts
-10. guidance and execution artifacts
-11. reuse and proof artifacts
-12. vendor-onboarding demo setup
-13. raw-notes audience challenge
-14. current-state result
-15. data contract
-16. workspace guidance versus memory
-17. SOP, PRD, and skill
-18. pass, clarify, and stop scenarios
-19. live Codex case
-20. audience scenario canvas
-21. five moves for Monday
-22. resources and call to action
-23. scenario clinic and Q&A
-24. HOUBAs feedback
+4. Brad introduction
+5. opening poll
+6. Seneca framing quote
+7. the context problem
+8. the business analyst as context architect
+9. Markdown as the shared work surface
+10. evidence and definition artifacts
+11. guidance and execution artifacts, including SOP and PRD definitions
+12. reuse and proof artifacts
+13. vendor-onboarding demo setup
+14. raw-notes audience challenge
+15. current-state result
+16. data contract
+17. workspace guidance versus memory
+18. SOP, PRD, and skill
+19. pass, clarify, and stop scenarios
+20. live Codex case with starter examples
+21. audience scenario canvas with starter examples
+22. five moves for Monday
+23. resources and call to action
+24. scenario clinic and Q&A
+25. HOUBAs feedback and Start Small, Think Big community call to action
 
 ### Verified framing quote
 
@@ -128,9 +129,9 @@ Organizer integration rules:
 
 - source slide 1 is presenter-only and must be omitted
 - Improving host recognition is final slide 2
-- exact wording, authentic logos, and decoded QR destinations must be preserved
+- authentic logos and decoded QR destinations must be preserved
 - the community slide follows the host recognition near the opening
-- the HOUBAs feedback slide is the final audience-facing slide
+- the combined HOUBAs feedback and Start Small, Think Big call to action is the final audience-facing slide
 - use [organizer-slide-requirements.md](organizer-slide-requirements.md) as the content contract
 
 Build rules:
@@ -140,7 +141,7 @@ Build rules:
 - use Roboto when practical
 - make the HTML deck the editable source and generate the PDF after final
   content approval
-- keep presenter detail in speaker notes, not on slides
+- keep presenter detail concise on the dedicated introduction slide
 - verify all slides locally in the browser
 - inspect the PDF only after it is intentionally generated
 

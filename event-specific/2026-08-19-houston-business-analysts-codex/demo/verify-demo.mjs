@@ -170,7 +170,9 @@ const requiredEventFiles = [
   "assets/houbas-group-qr.png",
   "assets/houbas-page-qr.png",
   "assets/houbas-feedback-qr.png",
-  "assets/event-resources-qr.png"
+  "assets/event-resources-qr.png",
+  "assets/sstb-logo.png",
+  "assets/sstb-qr.png"
 ];
 
 for (const relativePath of requiredEventFiles) {
@@ -181,10 +183,10 @@ const slides = await readFile(join(eventDir, "slides.html"), "utf8");
 const slideIds = [...slides.matchAll(/id="slide(\d+)"/g)].map((match) =>
   Number(match[1])
 );
-const expectedSlideIds = Array.from({ length: 24 }, (_, index) => index + 1);
+const expectedSlideIds = Array.from({ length: 25 }, (_, index) => index + 1);
 
 if (JSON.stringify(slideIds) !== JSON.stringify(expectedSlideIds)) {
-  throw new Error("Expected exactly 24 sequential slide IDs.");
+  throw new Error("Expected exactly 25 sequential slide IDs.");
 }
 
 const requiredDeckSignals = [
@@ -221,13 +223,40 @@ if (
   throw new Error("Improving recognition must remain on slide 2.");
 }
 
-const feedbackSlide = slideMarkup(24);
+const feedbackSlide = slideMarkup(25);
 if (
-  !feedbackSlide.includes("How’d We Do?") ||
+  !feedbackSlide.includes("How’d we do?") ||
   !feedbackSlide.includes("https://forms.gle/cjb44RPJdCzuygEQ8") ||
-  !feedbackSlide.includes("assets/houbas-feedback-qr.png")
+  !feedbackSlide.includes("assets/houbas-feedback-qr.png") ||
+  !feedbackSlide.includes("https://sstb.ai") ||
+  !feedbackSlide.includes("assets/sstb-logo.png") ||
+  !feedbackSlide.includes("assets/sstb-qr.png") ||
+  !feedbackSlide.includes("HOUBAS") ||
+  !feedbackSlide.includes("September 30, 2026")
 ) {
-  throw new Error("HOUBAs feedback must remain on final slide 24.");
+  throw new Error("HOUBAs feedback and SSTB call to action must remain on final slide 25.");
+}
+
+if (slides.includes('id="helpButton"') || slides.includes('class="help"')) {
+  throw new Error("The deck must not include the retired help control or help panel.");
+}
+
+const presenterSlide = slideMarkup(4);
+if (
+  !presenterSlide.includes("Brad Groux") ||
+  !presenterSlide.includes("assets/brad-groux-headshot.png")
+) {
+  throw new Error("Brad's presenter introduction must remain on slide 4.");
+}
+
+const verificationSlide = slideMarkup(19);
+if (
+  !verificationSlide.includes("V means verification") ||
+  !verificationSlide.includes("Complete → PASS") ||
+  !verificationSlide.includes("Incomplete → CLARIFY") ||
+  !verificationSlide.includes("Restricted → STOP")
+) {
+  throw new Error("Slide 19 must define the verification IDs and expected responses in plain language.");
 }
 
 console.log(

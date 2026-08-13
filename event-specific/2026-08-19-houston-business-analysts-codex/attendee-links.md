@@ -18,6 +18,8 @@ Start here for the August 19, 2026 Houston Business Analysts session.
 - Houston Business Analysts private group: <https://www.linkedin.com/groups/17116055/>
 - Houston Business Analysts public page: <https://www.linkedin.com/company/houston-business-analysts/>
 - Houston Business Analysts session feedback: <https://forms.gle/cjb44RPJdCzuygEQ8>
+- Start Small, Think Big community: <https://sstb.ai> — use code `HOUBAS` for
+  90% off through September 30, 2026
 - AI Dev Days repository: <https://github.com/BradGroux/ai-dev-days>
 - Public event or registration link: pending organizer publication
 

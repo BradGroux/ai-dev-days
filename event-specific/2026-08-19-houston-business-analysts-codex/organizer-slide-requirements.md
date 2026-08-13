@@ -82,15 +82,23 @@ Required asset:
 
 ## Integration decision
 
-Use the exact required wording, authentic logos, and QR destinations. The final
-event deck may reproduce the three source slides exactly or rebuild their
-content in the main deck's visual system, because the planning call explicitly
-allowed Brad to keep his own branding.
+Use the required host wording, authentic logos, and QR destinations. The final
+event deck may reproduce the three source slides or rebuild their content in
+the main deck's visual system, because the planning call explicitly allowed
+Brad to keep his own branding.
 
 Recommended default:
 
 - preserve the Improving slide as slide 2 with no substantive wording changes
-- rebuild the community and feedback slides in the main deck's projection-safe style while preserving all wording, logos, and QR destinations
+- rebuild the community and feedback slides in the main deck's projection-safe style while preserving the required logos and QR destinations
 - keep the original source deck available as the visual fallback
 
 Do not use source slide 1 in the public deck.
+
+## Presenter-approved adaptations
+
+- The redundant community subheading is omitted; the two QR labels retain the
+  local-group and public-page actions and destinations.
+- The final slide uses a 50:50 layout: HOUBAs feedback on the left and the Start
+  Small, Think Big community call to action on the right.
+- Both closing logos are circular and aligned on the same vertical plane.

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Refined the Houston Business Analysts deck with a presenter introduction,
+  simplified community slide, corrected icon alignment, explicit SOP and PRD
+  definitions, scenario starters, and a combined HOUBAs feedback and Start
+  Small, Think Big community close.
+
 ## 1.0.0 - 2026-08-03
 
 - Adopted Open Framework Commons v1.0.0, initially at

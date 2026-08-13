@@ -266,10 +266,11 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - V-001 passes to human review, V-002 requires clarification, and V-003 stops
   and escalates under the approved policy excerpt.
 - `node demo/verify-demo.mjs` passes without network access.
-- The HTML deck has 24 direct-addressable slides, defaults to dark mode, offers
+- The HTML deck has 25 direct-addressable slides, defaults to dark mode, offers
   light mode, and includes keyboard, full-screen, and visible navigation.
-- The deck uses the organizer's exact insert content, puts Improving on slide 2,
-  and makes HOUBAs feedback the final slide.
+- The deck puts Improving on slide 2, introduces Brad after the organizer
+  slides, and makes HOUBAs feedback plus the Start Small, Think Big community
+  call to action the final 50:50 slide.
 - The speaker notes preserve a 65-minute core and 25-minute extension.
 - No `slides.pdf` is added before the slides are finalized.
 
@@ -282,7 +283,7 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - The session includes at least one live Codex workflow and one audience-supplied scenario exercise.
 - Every live source and output is fictional, public-safe, and checked into the packet.
 - The final deck includes the organizer's host, community, and feedback inserts.
-- The Improving host recognition is slide 2, source slide 1 is omitted, and the HOUBAs feedback slide is the final audience-facing slide.
+- The Improving host recognition is slide 2, source slide 1 is omitted, and the combined HOUBAs feedback and Start Small, Think Big call to action is the final audience-facing slide.
 - The HTML deck, speaker notes, demo, prompts, and fallback outputs pass the
   repository audit and publication scan.
 - The final PDF is generated and visually checked only after the deck is
