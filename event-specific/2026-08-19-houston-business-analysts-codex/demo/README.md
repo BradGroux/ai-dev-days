@@ -8,24 +8,54 @@ a reviewable process packet and validates three prepared vendor cases.
 
 ```text
 demo/
-├── source/                 # raw evidence and fictional records
-├── workspace/              # completed, reviewable operating packet
+├── source/                  # raw evidence and fictional records
+├── prompts/                 # run-ready Codex prompts by demo stage
+├── starter/                 # inputs for a clean generated live workspace
+├── lib/                     # deterministic vendor-review rules and renderer
+├── test/                    # focused behavior tests
+├── framework-guidance.md    # event application of the operating framework
+├── prepare-live-workspace.mjs
+├── run-demo.mjs             # local review and framework-map CLI
+├── workspace/               # completed, reviewable fallback packet
 │   ├── AGENTS.md            # standing rules Codex loads automatically
 │   ├── memory.md            # example recall layer, not policy
 │   └── .agents/skills/      # repository-scoped reusable workflow
-└── verify-demo.mjs          # deterministic fixture checks
+└── verify-demo.mjs           # integrated packet checks
 ```
 
 ## Run it
 
-From the event folder:
+Prepare a clean live workspace from the event folder:
 
 ```bash
+node demo/prepare-live-workspace.mjs
+```
+
+Then open `demo/.live-workspace/` in Codex and start with
+[`prompts/01-audit-current-state.md`](prompts/01-audit-current-state.md).
+The generated workspace excludes the completed fallback artifacts so the live
+current-state analysis cannot borrow the answer.
+
+Run the deterministic reviewer and checks:
+
+```bash
+node demo/run-demo.mjs framework-map
+node demo/run-demo.mjs review V-002
+node --test demo/test/vendor-review.test.mjs
 node demo/verify-demo.mjs
 ```
 
-For the live exercise, open [`workspace/`](workspace/) as the Codex working
-folder and use the event [prompt pack](../prompt-pack.md).
+For demo two, open the completed [`workspace/`](workspace/) as the Codex working
+folder and use the event [prompt pack](../prompt-pack.md). The local reviewer is
+the deterministic proof and offline fallback; the repository-scoped skill is
+the live Codex workflow.
+
+## Framework boundary
+
+The [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
+guides which business questions the packet makes explicit. It does not supply
+Northstar policy or determine a vendor result. See the pinned, event-specific
+[framework guidance](framework-guidance.md).
 
 ## Expected outcomes
 

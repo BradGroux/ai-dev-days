@@ -26,7 +26,7 @@ thesis, vendor-onboarding scenario, and session spine.
 
 Build a fictional vendor-onboarding workspace with a visible before-and-after trail.
 
-Status: first pass complete
+Status: executable demo complete
 
 Source files:
 
@@ -52,6 +52,12 @@ Teaching artifacts:
 
 - `demo-script.md`
 - `prompt-pack.md`
+- `demo/prompts/` run-ready prompt files
+- `demo/framework-guidance.md` framework-to-demo application boundary
+- `demo/prepare-live-workspace.mjs` clean discovery-stage builder
+- `demo/run-demo.mjs` deterministic review and framework-map CLI
+- `demo/lib/vendor-review.mjs` source-grounded review behavior
+- `demo/test/vendor-review.test.mjs` focused regression coverage
 - `attendee-workbook.md`
 - checked-in `demo/workspace/` as the expected offline output
 - `reference-links.md`
@@ -66,9 +72,10 @@ Build rules:
 - include one case that passes, one that requires clarification, and one that must stop or escalate
 - verify the demo without live external systems
 
-Exit gate: met. `node demo/verify-demo.mjs` validates the complete local fixture
-set, the checked-in workspace is the prepared output, and the attendee workbook
-explains the artifact stack without requiring code.
+Exit gate: met. The presenter can generate a clean discovery workspace without
+the completed answers, run Codex from stage-specific prompts, switch to a
+completed fallback packet, and prove PASS / CLARIFY / STOP behavior with local
+code and tests. `node demo/verify-demo.mjs` validates the integrated packet.
 
 ## Phase 3: presentation packet
 
@@ -168,6 +175,8 @@ Exit gate: Brad can deliver the complete session from the checked-in packet with
 Run from the repository root:
 
 ```bash
+node event-specific/2026-08-19-houston-business-analysts-codex/demo/run-demo.mjs review-all --json
+node --test event-specific/2026-08-19-houston-business-analysts-codex/demo/test/vendor-review.test.mjs
 node event-specific/2026-08-19-houston-business-analysts-codex/demo/verify-demo.mjs
 ./scripts/publication-scan.sh
 node scripts/audit-repo.mjs

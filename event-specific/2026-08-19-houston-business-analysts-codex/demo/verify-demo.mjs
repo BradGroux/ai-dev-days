@@ -1,14 +1,36 @@
-import { access, readFile, readdir } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { access, mkdtemp, readFile, readdir, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
+import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
+import { REQUIRED_FIELDS, reviewVendor } from "./lib/vendor-review.mjs";
 
 const demoDir = dirname(fileURLToPath(import.meta.url));
 const eventDir = dirname(demoDir);
+const execFileAsync = promisify(execFile);
 
 const requiredFiles = [
   "source/stakeholder-notes.md",
   "source/policy-excerpts.md",
   "source/sample-vendors.json",
+  ".gitignore",
+  "framework-guidance.md",
+  "prepare-live-workspace.mjs",
+  "run-demo.mjs",
+  "lib/vendor-review.mjs",
+  "test/vendor-review.test.mjs",
+  "starter/AGENTS.md",
+  "starter/README.md",
+  "starter/audience-decisions.md",
+  "prompts/README.md",
+  "prompts/01-audit-current-state.md",
+  "prompts/02-draft-process-brief.md",
+  "prompts/03-build-operating-packet.md",
+  "prompts/04-challenge-operating-packet.md",
+  "prompts/05-review-v002.md",
+  "prompts/06-verify-prepared-cases.md",
+  "prompts/07-adapt-audience-workflow.md",
   "workspace/README.md",
   "workspace/AGENTS.md",
   "workspace/process-brief.md",
@@ -38,27 +60,6 @@ if (!Array.isArray(fixtures.records) || fixtures.records.length !== 3) {
   throw new Error("Expected exactly three prepared vendor records.");
 }
 
-const requiredFields = [
-  "requestId",
-  "vendorId",
-  "legalName",
-  "businessOwner",
-  "serviceDescription",
-  "expectedAnnualSpendUsd",
-  "vendorCategory",
-  "taxCountry",
-  "paymentCurrency",
-  "taxDocumentStatus",
-  "duplicateCheckResult",
-  "sanctionsScreeningResult",
-  "providesSoftware",
-  "accessesCompanyData",
-  "connectsToCompanySystem",
-  "receivesCredentials",
-  "contractDeviation",
-  "rushRequested"
-];
-
 const allowedTriState = new Set(["yes", "no", "unknown"]);
 const expectedResults = new Map([
   ["V-001", "PASS"],
@@ -66,24 +67,11 @@ const expectedResults = new Map([
   ["V-003", "STOP / ESCALATE"]
 ]);
 
-function classify(record) {
-  if (["possible_match", "confirmed_match"].includes(record.sanctionsScreeningResult)) {
-    return "STOP / ESCALATE";
-  }
-
-  const missing = requiredFields.some((field) => {
-    const value = record[field];
-    return value === undefined || value === null || value === "" || value === "unknown";
-  });
-
-  return missing ? "CLARIFY" : "PASS";
-}
-
 const seenVendors = new Set();
 const seenRequests = new Set();
 
 for (const record of fixtures.records) {
-  for (const field of requiredFields) {
+  for (const field of REQUIRED_FIELDS) {
     if (!(field in record)) {
       throw new Error(`${record.vendorId ?? "Unknown vendor"} is missing ${field}.`);
     }
@@ -108,10 +96,116 @@ for (const record of fixtures.records) {
   }
 
   const expected = expectedResults.get(record.vendorId);
-  const actual = classify(record);
+  const actual = reviewVendor(record).outcome;
   if (!expected || actual !== expected) {
     throw new Error(`${record.vendorId}: expected ${expected}, received ${actual}.`);
   }
+}
+
+const frameworkGuidance = await readFile(
+  join(demoDir, "framework-guidance.md"),
+  "utf8"
+);
+for (const signal of [
+  "AI-Native Operating Framework",
+  "Intent",
+  "Responsibility",
+  "Work",
+  "Control",
+  "Assurance",
+  "Learning",
+  "Understand → Document → Validate → Approve → Use →",
+  "not Northstar policy",
+  "b458ef2a6d0643a7ae96d52ceababbf2ef265f1c"
+]) {
+  if (!frameworkGuidance.includes(signal)) {
+    throw new Error(`Framework guidance is missing required signal: ${signal}`);
+  }
+}
+
+const promptFiles = [
+  "01-audit-current-state.md",
+  "02-draft-process-brief.md",
+  "03-build-operating-packet.md",
+  "04-challenge-operating-packet.md",
+  "05-review-v002.md",
+  "06-verify-prepared-cases.md",
+  "07-adapt-audience-workflow.md"
+];
+const maintenanceSignals = new Map([
+  ["01-audit-current-state.md", "This is Understand"],
+  ["02-draft-process-brief.md", "This is Document"],
+  ["03-build-operating-packet.md", "This is Document"],
+  ["04-challenge-operating-packet.md", "This is Validate"],
+  ["05-review-v002.md", "This is Validate"],
+  ["06-verify-prepared-cases.md", "This is Validate"],
+  ["07-adapt-audience-workflow.md", "Start with Understand"]
+]);
+
+for (const promptFile of promptFiles) {
+  const prompt = await readFile(join(demoDir, "prompts", promptFile), "utf8");
+  for (const signal of ["Goal:", "Constraints:", "Done when:"]) {
+    if (!prompt.includes(signal)) {
+      throw new Error(`${promptFile} is missing prompt contract signal: ${signal}`);
+    }
+  }
+  if (!prompt.toLowerCase().includes("framework")) {
+    throw new Error(`${promptFile} must state the framework boundary.`);
+  }
+  if (!prompt.includes(maintenanceSignals.get(promptFile))) {
+    throw new Error(`${promptFile} must identify its framework maintenance stage.`);
+  }
+}
+
+const starterInstructions = await readFile(join(demoDir, "starter/AGENTS.md"), "utf8");
+for (const signal of [
+  "stakeholder notes are discovery evidence, not approved policy",
+  "framework-guidance.md",
+  "must not create, approve, reject, activate, or modify a vendor"
+]) {
+  if (!starterInstructions.includes(signal)) {
+    throw new Error(`Live workspace instructions are missing required boundary: ${signal}`);
+  }
+}
+
+const verificationRoot = await mkdtemp(join(tmpdir(), "houbas-live-workspace-"));
+const generatedWorkspace = join(verificationRoot, "workspace");
+try {
+  await execFileAsync(process.execPath, [
+    join(demoDir, "prepare-live-workspace.mjs"),
+    "--output",
+    generatedWorkspace
+  ]);
+
+  for (const relativePath of [
+    ".houbas-generated-workspace",
+    "AGENTS.md",
+    "README.md",
+    "drafts/audience-decisions.md",
+    "framework-guidance.md",
+    "source/stakeholder-notes.md",
+    "source/policy-excerpts.md",
+    "source/sample-vendors.json",
+    ...promptFiles.map((name) => `prompts/${name}`)
+  ]) {
+    await access(join(generatedWorkspace, relativePath));
+  }
+
+  for (const forbiddenPath of [
+    "workspace",
+    "verification-report.md",
+    "process-brief.md",
+    "vendor-onboarding-sop.md"
+  ]) {
+    try {
+      await access(join(generatedWorkspace, forbiddenPath));
+      throw new Error(`Generated live workspace leaked completed artifact: ${forbiddenPath}`);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+  }
+} finally {
+  await rm(verificationRoot, { recursive: true, force: true });
 }
 
 const scenarios = await readFile(
@@ -308,5 +402,5 @@ if (
 }
 
 console.log(
-  "PASS: fictional demo fixtures, outcomes, traces, HTML deck, and PDF-deferred boundary verified."
+  "PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and PDF-deferred boundary verified."
 );

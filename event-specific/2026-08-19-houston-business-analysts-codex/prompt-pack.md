@@ -1,113 +1,78 @@
 # Prompt Pack
 
-These prompts support the live demonstration and the attendee workbook. Run
-them from [`demo/workspace/`](demo/workspace/) so Codex loads the local
-`AGENTS.md` and discovers the repository skill.
+These prompts support the live demonstration and attendee reconstruction. Each
+run-ready prompt is checked in separately under [`demo/prompts/`](demo/prompts/)
+so Brad can open one file, copy one request, and keep the stage boundary clear.
 
-The source corpus is fictional. The prompts intentionally ask for drafts and
-review evidence, never an approval or external action.
+The fictional Northstar policy determines vendor outcomes. The
+[AI-Native Operating Framework guidance](demo/framework-guidance.md) supplies
+the business lens: Intent, Responsibility, Work, Control, Assurance, and
+Learning, maintained through Understand, Document, Validate, Approve, Use, and
+Improve.
 
-## Prompt 1: audit the raw notes
+The live session demonstrates Understand, Document, and Validate. Approval and
+external business action remain human-controlled and out of scope.
 
-```text
-Goal:
-Turn the vendor-onboarding source material in ../source into a current-state
-analysis without inventing missing rules.
+## Prepare the live discovery workspace
 
-Context:
-Read AGENTS.md and every file in ../source. Identify the trigger, actors,
-inputs, outputs, systems, handoffs, decision points, exceptions, and data.
+From the event folder:
 
-Constraints:
-Separate confirmed facts, assumptions, conflicts, and open questions. Cite the
-source file and section for every confirmed rule. Do not resolve ambiguity with
-your own judgment.
-
-Done when:
-Return a concise current-state outline and the seven highest-value elicitation
-questions, ranked by execution risk.
+```bash
+node demo/prepare-live-workspace.mjs
 ```
 
-## Prompt 2: challenge the operating packet
+Open `demo/.live-workspace/` as the Codex working folder. It contains raw
+fictional evidence, the framework guide, the prompts, and an empty `drafts/`
+area. It does not contain the completed fallback packet.
 
-```text
-Review process-brief.md, data-contract.md, glossary.md, and
-vendor-onboarding-sop.md against ../source.
+The preparation command preserves an existing workspace. After saving any
+wanted live drafts, rebuild it explicitly with:
 
-Find:
-1. unsupported statements,
-2. missing owners,
-3. undefined terms,
-4. exception paths without an outcome,
-5. data fields without a source or validation rule, and
-6. steps that exceed the draft-only boundary in AGENTS.md.
-
-Return findings in priority order with exact file references. Do not edit the
-files yet.
+```bash
+node demo/prepare-live-workspace.mjs --reset
 ```
 
-## Prompt 3: trace requirements into verification
+## Core live sequence
 
-```text
-Build a traceability table connecting each in-scope requirement in
-vendor-onboarding-assistant-prd.md to:
-- the SOP step or decision rule that implements it,
-- the data fields it depends on,
-- the acceptance scenario that tests it, and
-- the evidence that proves the result.
+| Stage | Prompt | Working folder | Expected result |
+|---|---|---|---|
+| Understand | [01: audit current state](demo/prompts/01-audit-current-state.md) | generated `.live-workspace/` | facts, gaps, and seven elicitation questions |
+| Document | [02: draft process brief](demo/prompts/02-draft-process-brief.md) | generated `.live-workspace/` | source-grounded process brief with unresolved decisions visible |
+| Document | [03: build operating packet](demo/prompts/03-build-operating-packet.md) | generated `.live-workspace/` | complete reconstruction path for attendees; prepared fallback used live |
+| Validate | [04: challenge operating packet](demo/prompts/04-challenge-operating-packet.md) | generated `.live-workspace/` | severity-ranked gaps without silent edits |
+| Validate | [05: review V-002](demo/prompts/05-review-v002.md) | checked-in `demo/workspace/` | **CLARIFY** with two focused Security questions |
+| Assurance | [06: verify all cases](demo/prompts/06-verify-prepared-cases.md) | checked-in `demo/workspace/` | PASS / CLARIFY / STOP trace and test evidence |
+| Extension | [07: adapt an audience workflow](demo/prompts/07-adapt-audience-workflow.md) | any public-safe workspace | bounded readiness canvas and scenarios |
 
-Flag any requirement with no test and any test with no requirement.
+Run prompts 01 and 05 during the 65-minute core. Use prompt 02 only when the
+room is moving quickly. Prompts 03, 04, 06, and 07 support the fallback,
+extension, and attendee follow-through.
+
+## Deterministic commands
+
+These commands do not call an AI service or external system:
+
+```bash
+node demo/run-demo.mjs list
+node demo/run-demo.mjs framework-map
+node demo/run-demo.mjs review V-002
+node demo/run-demo.mjs review-all --json
+node --test demo/test/vendor-review.test.mjs
+node demo/verify-demo.mjs
 ```
 
-## Prompt 4: run the reusable review skill
-
-```text
-$vendor-review
-
-Review vendor V-002 from ../source/sample-vendors.json. Apply the checked-in
-policy and SOP. Return PASS, CLARIFY, or STOP / ESCALATE, followed by the facts,
-missing information, applicable rules, next human owner, and evidence trail.
-Do not change files or take external action.
-```
-
-## Prompt 5: verify all prepared cases
-
-```text
-Use the vendor-review skill to assess V-001, V-002, and V-003. Compare each
-result with acceptance-scenarios.md and verification-report.md.
-
-If your result differs from the expected outcome, stop and explain whether the
-source, workspace artifact, skill, or expected result is inconsistent. Do not
-rewrite the evidence to make the test pass.
-```
-
-## Prompt 6: adapt the pattern to an audience workflow
-
-```text
-Goal:
-Prepare an AI-readiness canvas for this generic workflow: [WORKFLOW].
-
-Known context:
-[PASTE ONLY PUBLIC-SAFE OR FICTIONAL DETAILS.]
-
-Produce:
-- confirmed facts, assumptions, and open questions,
-- people, process, data, guardrails, and proof,
-- the smallest useful SOP and PRD outline,
-- one pass, one clarify, and one stop scenario, and
-- the three decisions a human owner must make before implementation.
-
-Do not assume missing business rules or recommend connecting external systems.
-```
+The deterministic reviewer is proof and fallback, not a replacement for the
+live Codex reasoning. It shows that the approved fictional rules consistently
+produce the three expected outcomes.
 
 ## Prompt review checklist
 
-Before running a prompt, confirm it contains:
+Before running or adapting a prompt, confirm it contains:
 
-- a concrete goal
-- the files or facts that provide context
-- constraints and non-goals
-- a definition of done
-- explicit authority boundaries
-- a verification request
-- no secrets, private records, or sensitive attendee details
+- a concrete goal;
+- named sources and a clear authority order;
+- the framework lens separated from business policy;
+- constraints, non-goals, and external-action boundaries;
+- a definition of done and expected evidence;
+- a request to expose assumptions, conflicts, and missing ownership; and
+- no secrets, private records, or sensitive attendee details.

@@ -231,6 +231,14 @@ Introduce the fictional scenario:
 - no real vendor, company, or system
 - the agent prepares a review packet; it never approves a vendor
 
+Frame the guiding principle in one sentence:
+
+> The AI-Native Operating Framework gives us six questions about the business;
+> Northstar policy gives us the rules for this fictional decision.
+
+Use the concerns conversationally—Intent, Responsibility, Work, Control,
+Assurance, and Learning. Do not stop to teach a second framework curriculum.
+
 ### Slide 14 - Messy source notes
 
 Time: 6 minutes
@@ -246,10 +254,11 @@ Write answers on the whiteboard.
 If the room stalls, use:
 
 - exception: rush vendors start by email
-- undefined term: medium risk
+- undefined term: low risk
 - owner: who can approve threshold and screening rules
 
-Then switch to Codex and run Prompt 1 from [prompt-pack.md](prompt-pack.md).
+Then switch to the generated discovery workspace in Codex and run
+[Prompt 01](demo/prompts/01-audit-current-state.md).
 Keep the visible request structure:
 
 - Goal
@@ -343,7 +352,8 @@ is not necessarily PASS: a correct stop can be the most valuable result.
 
 Time: 5 minutes
 
-Switch to Codex and run Prompt 4:
+Switch to the checked-in completed workspace in Codex and run
+[Prompt 05](demo/prompts/05-review-v002.md):
 
 > `$vendor-review` - Review vendor V-002.
 
@@ -364,7 +374,14 @@ If it differs:
 
 If the live run fails, open
 [verification-report.md](demo/workspace/verification-report.md) and explain the
-same evidence chain.
+same evidence chain. You can also run the local deterministic fallback:
+
+```bash
+node demo/run-demo.mjs review V-002
+```
+
+Say explicitly that the framework organized the questions while approved
+Northstar policy determined the outcome.
 
 Use the two on-slide examples if the room needs help generalizing the pattern:
 
@@ -430,9 +447,11 @@ Point out the three clear paths: follow Brad, visit the websites, or continue
 with the two named resources. Every resource URL is written in full for
 attendees who prefer not to scan.
 
-Mention the AI-Native Operating Framework only as an optional resource for
-teams that want a broader operating method after this session. Do not introduce
-additional named frameworks.
+Point to the AI-Native Operating Framework as the guiding business resource
+behind the demo's completeness questions and maintenance boundary. It remains
+technology-independent and does not replace an organization's policies,
+lifecycle, or accountable owners. Do not introduce additional named
+frameworks.
 
 Close the core with:
 
@@ -513,13 +532,13 @@ Time: 2 minutes
 
 If 5 minutes behind:
 
-- show the prepared output for Prompt 1 instead of waiting for generation
+- show the prepared output for Prompt 01 instead of waiting for generation
 - teach only `screening_result` on slide 16
 
 If 10 minutes behind:
 
 - combine slides 17 and 18 into a two-minute authority explanation
-- show the prepared V-002 result rather than running Prompt 4 live
+- show the deterministic V-002 result rather than running Prompt 05 live
 
 If 15 minutes behind:
 
