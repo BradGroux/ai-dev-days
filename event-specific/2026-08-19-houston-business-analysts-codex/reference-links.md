@@ -37,6 +37,7 @@ official documentation before the August 19, 2026 session.
 - [Houston Business Analysts private LinkedIn group](https://www.linkedin.com/groups/17116055/)
 - [Houston Business Analysts public LinkedIn page](https://www.linkedin.com/company/houston-business-analysts/)
 - [Houston Business Analysts session feedback](https://forms.gle/cjb44RPJdCzuygEQ8)
+- [Start Small, Think Big community](https://sstb.ai)
 - [AI Dev Days repository](https://github.com/BradGroux/ai-dev-days)
 
 ## Source boundary

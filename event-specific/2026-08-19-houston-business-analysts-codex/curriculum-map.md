@@ -56,7 +56,7 @@ The session uses observable checks instead of a quiz.
 
 ### Check 1 - Identify ambiguity
 
-During slide 13, attendees identify:
+During slide 14, attendees identify:
 
 - one exception
 - one undefined term
@@ -74,13 +74,13 @@ acceptance checks into one prompt.
 
 ### Check 3 - Predict the safe outcome
 
-Before slide 19's live run, attendees predict V-002.
+Before slide 20's live run, attendees predict V-002.
 
 Success: the group expects CLARIFY rather than a completed approval.
 
 ### Check 4 - Map a workflow
 
-During slide 20, the room supplies at least one item for people, process, data,
+During slide 21, the room supplies at least one item for people, process, data,
 guardrails, and proof.
 
 Success: the scenario has an owner, exception, data source, stop boundary, and

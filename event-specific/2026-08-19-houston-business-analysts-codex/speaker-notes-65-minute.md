@@ -9,7 +9,7 @@
 - Exact prompts: [prompt-pack.md](prompt-pack.md)
 - Prepared result: [demo/workspace/verification-report.md](demo/workspace/verification-report.md)
 - Interaction: welcome relevant questions throughout; park deep implementation
-  questions for slide 23
+  questions for slide 24
 - Safety: use only the fictional source packet and generic audience scenarios
 
 The core is intentionally a 55-minute teaching spine with 10 minutes of
@@ -28,7 +28,7 @@ lecture.
 6. Put the five-column whiteboard headings up before the room fills:
    `People | Process | Data | Guardrails | Proof`.
 
-## 0:00-0:05 - Welcome, host, and community
+## 0:00-0:05 - Welcome, host, community, and presenter
 
 ### Slide 1 - From Requirements to Reliable AI
 
@@ -55,7 +55,7 @@ claims beyond the slide.
 
 ### Slide 3 - Welcome to HOUBAs
 
-Time: 3 minutes
+Time: 1 minute
 
 - Recognize Terrence and the Houston Business Analysts organizers.
 - Mention the third-Wednesday schedule.
@@ -63,9 +63,19 @@ Time: 3 minutes
 - Transition: "This room already has the methods AI projects usually discover
   they needed too late."
 
+### Slide 4 - About Brad
+
+Time: 2 minutes
+
+- Introduce yourself as a builder and operator, not as an abstract AI expert.
+- Briefly connect Digital Meld, open-source maintenance, and community work to
+  the session's focus on practical, inspectable delivery.
+- Do not turn this into a biography. Establish why the room should trust the
+  practitioner perspective, then move into their experience.
+
 ## 0:05-0:09 - Establish the room
 
-### Slide 4 - Opening poll
+### Slide 5 - Opening poll
 
 Time: 4 minutes
 
@@ -89,7 +99,7 @@ Transition:
 
 ## 0:09-0:14 - Define the problem
 
-### Slide 5 - Know the destination
+### Slide 6 - Know the destination
 
 Time: 2 minutes
 
@@ -102,7 +112,7 @@ Say:
 > our work, the port is the outcome, the decision boundary, and the evidence
 > that proves the outcome.
 
-### Slide 6 - The context problem
+### Slide 7 - The context problem
 
 Time: 3 minutes
 
@@ -121,7 +131,7 @@ Make the distinction explicit:
 
 ## 0:14-0:19 - Reframe the BA role
 
-### Slide 7 - The context architect
+### Slide 8 - The context architect
 
 Time: 3 minutes
 
@@ -140,7 +150,7 @@ Ask:
 
 Take two quick answers.
 
-### Slide 8 - Markdown
+### Slide 9 - Markdown
 
 Time: 2 minutes
 
@@ -156,7 +166,7 @@ that the artifact is an operating contract, not a clever prompt.
 
 ## 0:19-0:26 - Teach the artifact stack
 
-### Slide 9 - Evidence and definition
+### Slide 10 - Evidence and definition
 
 Time: 2 minutes
 
@@ -167,7 +177,7 @@ Teach the business question before the filename:
 - What does the data mean? Data contract.
 - Do we mean the same thing? Glossary.
 
-### Slide 10 - Guidance and execution
+### Slide 11 - Guidance and execution
 
 Time: 3 minutes
 
@@ -176,11 +186,16 @@ Time: 3 minutes
 - How is the work performed? SOP.
 - Why are we changing it, and what is success? PRD.
 
+Define the acronyms before using the shorthand:
+
+- SOP: Standard Operating Procedure.
+- PRD: Product Requirements Document.
+
 Repeat:
 
 > Memory is helpful recall, not policy.
 
-### Slide 11 - Reuse and proof
+### Slide 12 - Reuse and proof
 
 Time: 2 minutes
 
@@ -196,7 +211,7 @@ Checkpoint question:
 
 ## 0:26-0:34 - Demo one: expose ambiguity
 
-### Slide 12 - Vendor onboarding
+### Slide 13 - Vendor onboarding
 
 Time: 2 minutes
 
@@ -207,7 +222,7 @@ Introduce the fictional scenario:
 - no real vendor, company, or system
 - the agent prepares a review packet; it never approves a vendor
 
-### Slide 13 - Messy source notes
+### Slide 14 - Messy source notes
 
 Time: 6 minutes
 
@@ -237,7 +252,7 @@ If generation exceeds 90 seconds, show the prepared process brief and continue.
 
 ## 0:34-0:41 - Make ambiguity reviewable
 
-### Slide 14 - The useful output
+### Slide 15 - The useful output
 
 Time: 4 minutes
 
@@ -253,7 +268,7 @@ Say:
 > The first reliable output is often not an answer. It is a smaller, better
 > decision set.
 
-### Slide 15 - Data contract
+### Slide 16 - Data contract
 
 Time: 3 minutes
 
@@ -271,7 +286,7 @@ Ask:
 
 ## 0:41-0:50 - Turn context into operation
 
-### Slide 16 - Guidance versus memory
+### Slide 17 - Guidance versus memory
 
 Time: 3 minutes
 
@@ -281,7 +296,7 @@ Contrast authority:
 - memory helps orientation and recall
 - a required rule must survive a forgotten or unavailable memory
 
-### Slide 17 - Operating packet
+### Slide 18 - Operating packet
 
 Time: 3 minutes
 
@@ -294,7 +309,7 @@ Use one business rule to show separation:
 Do not collapse them into a giant prompt. Separation gives each artifact an
 owner and a change history.
 
-### Slide 18 - Acceptance scenarios
+### Slide 19 - Acceptance scenarios
 
 Time: 3 minutes
 
@@ -309,7 +324,7 @@ is not necessarily PASS: a correct stop can be the most valuable result.
 
 ## 0:50-0:55 - Demo two: run a bounded case
 
-### Slide 19 - Live Codex run
+### Slide 20 - Live Codex run
 
 Time: 5 minutes
 
@@ -336,9 +351,16 @@ If the live run fails, open
 [verification-report.md](demo/workspace/verification-report.md) and explain the
 same evidence chain.
 
+Use the two on-slide examples if the room needs help generalizing the pattern:
+
+- requirements intake without a decision owner or acceptance criteria should
+  clarify
+- a policy-exception request without approval authority should stop and route
+  to the policy owner
+
 ## 0:55-1:02 - Audience scenario canvas
 
-### Slide 20 - Make one workflow AI-ready
+### Slide 21 - Make one workflow AI-ready
 
 Time: 7 minutes
 
@@ -350,6 +372,9 @@ Good candidates:
 - contract completeness review
 - access-request review
 - meeting follow-up preparation
+
+If the room is quiet, start with either on-slide seed: change-request impact
+analysis or stakeholder intake prioritization.
 
 Fill one item in each whiteboard column:
 
@@ -370,7 +395,7 @@ proof. Drop extra process detail.
 
 ## 1:02-1:05 - Core close
 
-### Slide 21 - Five moves for Monday
+### Slide 22 - Five moves for Monday
 
 Time: 2 minutes
 
@@ -380,7 +405,7 @@ Move quickly. Emphasize:
 - one exception currently carried in people's heads
 - one pass, one clarify, and one stop case before external connections
 
-### Slide 22 - Resources and call to action
+### Slide 23 - Resources and call to action
 
 Time: 1 minute
 
@@ -397,7 +422,7 @@ Close the core with:
 
 ## 1:05-1:28 - Scenario clinic and Q&A
 
-### Slide 23 - Bring a workflow, concern, or boundary
+### Slide 24 - Bring a workflow, concern, or boundary
 
 Time: 23 minutes
 
@@ -444,30 +469,38 @@ public packet rather than using real organizational data in the room.
 
 ## 1:28-1:30 - Feedback and release
 
-### Slide 24 - HOUBAs feedback
+### Slide 25 - HOUBAs feedback and SSTB community
 
 Time: 2 minutes
 
 - Thank the attendees, Terrence, HOUBAs, and Improving.
 - Ask attendees to scan the feedback QR before leaving.
+- Invite them to join Start Small, Think Big at `sstb.ai` if they want to keep
+  practicing with the community.
+- Mention the 90% discount code `HOUBAS` and its September 30, 2026 expiration.
 - Leave this slide displayed during informal follow-up.
+
+[Sources]
+
+- Start Small, Think Big logo: user-provided `sstb-logo.png`.
+- Community destination: <https://sstb.ai>.
 
 ## Drop-if-behind rules
 
 If 5 minutes behind:
 
 - show the prepared output for Prompt 1 instead of waiting for generation
-- teach only `screening_result` on slide 15
+- teach only `screening_result` on slide 16
 
 If 10 minutes behind:
 
-- combine slides 16 and 17 into a two-minute authority explanation
+- combine slides 17 and 18 into a two-minute authority explanation
 - show the prepared V-002 result rather than running Prompt 4 live
 
 If 15 minutes behind:
 
 - move the whiteboard exercise into the extension
-- protect slides 18, 21, and 22
+- protect slides 19, 22, and 23
 - still finish the core at 65 minutes
 
 Never drop:

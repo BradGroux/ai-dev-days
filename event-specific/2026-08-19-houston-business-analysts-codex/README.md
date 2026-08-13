@@ -94,9 +94,9 @@ Terrence's source deck has been reviewed and the HTML deck includes:
 
 1. Improving host recognition as slide 2
 2. Houston Business Analysts community information with the private-group and public-page QR destinations
-3. Houston Business Analysts feedback slide linked to the provided Google Form
+3. Houston Business Analysts feedback linked to the provided Google Form on the final 50:50 slide
 
-The exact wording, decoded QR destinations, and placement rules are recorded in
+The required content, decoded QR destinations, and placement rules are recorded in
 [organizer-slide-requirements.md](organizer-slide-requirements.md). The final
 venue details and public event link are still needed; see
 [organizer-inputs.md](organizer-inputs.md).
@@ -116,7 +116,6 @@ references, and delivery runbooks. It intentionally does not include
 - First / last: Home / End
 - Theme: `T` or the sun button; dark mode is the default
 - Full screen: `F` or the full-screen button
-- Help: `?` or the help button
 
 ## Publication boundary
 

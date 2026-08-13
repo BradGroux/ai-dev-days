@@ -10,6 +10,7 @@
 - [ ] Improving host recognition is present as slide 2.
 - [ ] HOUBAs community slide uses the provided logo and decoded QR destinations.
 - [ ] HOUBAs feedback slide uses the provided logo and Google Form destination.
+- [ ] Start Small, Think Big logo, `sstb.ai` QR, `HOUBAS` coupon, and September 30, 2026 expiration are correct.
 - [ ] Organizer timing signals at halfway and 15 minutes remaining are confirmed.
 
 ## Deck and links
