@@ -291,18 +291,25 @@ li:before{
 .about-profile{display:grid;grid-template-columns:190px 1fr;gap:26px;align-items:center}
 .about-role{font-size:26px;font-weight:850;color:var(--cyan)}
 .about-copy{font-size:19px;line-height:1.42;color:var(--ink);font-weight:780;margin-top:7px}
-.social-stack{display:grid;gap:7px;margin-top:16px}
-.social-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.link-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:16px}
+.link-label{
+  color:var(--muted);font-size:12px;font-weight:850;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px
+}
+.social-stack{display:grid;gap:7px}
 .social-link{
   display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-size:16px;font-weight:760
 }
 .social-link svg{width:22px;height:22px;fill:currentColor;flex:0 0 auto}
 .social-link:hover,.social-link:focus-visible{color:var(--cyan);outline:none}
-.web-links{display:grid;gap:7px;margin-top:14px}
+.web-links{display:grid;gap:9px}
 .web-links a{font-size:16px;color:var(--ink)}
-.resource-links{display:grid;grid-template-columns:1fr 1fr;gap:7px 18px;margin-top:14px}
-.resource-links a{font-size:15px;line-height:1.35;color:var(--ink)}
-.resource-links .wide{grid-column:1 / -1}
+.link-hub{margin-top:16px}
+.link-hub .link-pair{margin-top:0}
+.resource-directory{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.resource-entry{display:grid;grid-template-columns:230px minmax(0,1fr);gap:12px;align-items:baseline;margin-top:6px}
+.resource-entry strong{font-size:14px;color:var(--ink)}
+.resource-entry span{font-size:13px;line-height:1.3;color:var(--muted)}
+.resource-entry:hover strong,.resource-entry:focus-visible strong{color:var(--cyan)}
 .cta-list{display:grid;gap:13px;margin-top:20px}
 .cta{display:grid;grid-template-columns:40px 1fr;gap:13px;align-items:center}
 .cta strong{display:block;font-size:20px}
@@ -440,15 +447,23 @@ li:before{
         <div>
           <div class="about-role">Advocate for evidence-backed delivery.</div>
           <div class="about-copy">Own your operating model. Rent your tools.</div>
-          <div class="social-stack" aria-label="Brad Groux social profiles">
+          <div class="link-pair">
+            <div>
+              <div class="link-label">Follow</div>
+              <div class="social-stack" aria-label="Brad Groux social profiles">
             <a class="social-link" href="https://twitter.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg><span>@bradgroux</span></a>
             <a class="social-link" href="https://www.linkedin.com/in/bradgroux/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0Z"/></svg><span>@bradgroux</span></a>
             <a class="social-link" href="https://youtube.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg><span>@bradgroux</span></a>
-          </div>
-          <div class="web-links">
-            <a href="https://www.bradgroux.com">bradgroux.com</a>
-            <a href="https://digitalmeld.io">digitalmeld.io</a>
-            <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
+            <div>
+              <div class="link-label">Visit</div>
+              <div class="web-links">
+                <a href="https://www.bradgroux.com">bradgroux.com</a>
+                <a href="https://digitalmeld.io">digitalmeld.io</a>
+                <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -783,17 +798,30 @@ Prepare a review packet.
           <div class="cta"><span class="icon-badge blue" data-icon="layers"></span><div><strong>Copy the artifact pattern</strong><span>Start with sources and acceptance scenarios, then build only what the workflow needs.</span></div></div>
           <div class="cta"><span class="icon-badge green" data-icon="check"></span><div><strong>Bring back evidence</strong><span>What passed, what clarified, what stopped, and what the team learned.</span></div></div>
         </div>
-        <div class="social-row" aria-label="Brad Groux social profiles">
+        <div class="link-hub">
+          <div class="link-pair">
+            <div>
+              <div class="link-label">Follow</div>
+              <div class="social-stack" aria-label="Brad Groux social profiles">
           <a class="social-link" href="https://twitter.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg><span>@bradgroux</span></a>
           <a class="social-link" href="https://www.linkedin.com/in/bradgroux/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0Z"/></svg><span>@bradgroux</span></a>
           <a class="social-link" href="https://youtube.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg><span>@bradgroux</span></a>
-        </div>
-        <div class="resource-links">
-          <a href="https://www.bradgroux.com">bradgroux.com</a>
-          <a href="https://digitalmeld.io">digitalmeld.io</a>
-          <a href="https://sstb.ai">sstb.ai</a>
-          <a href="https://github.com/BradGroux/ai-dev-days">github.com/BradGroux/ai-dev-days</a>
-          <a class="wide" href="https://github.com/BradGroux/ai-native-operating-framework">github.com/BradGroux/ai-native-operating-framework</a>
+              </div>
+            </div>
+            <div>
+              <div class="link-label">Visit</div>
+              <div class="web-links">
+                <a href="https://www.bradgroux.com">bradgroux.com</a>
+                <a href="https://digitalmeld.io">digitalmeld.io</a>
+                <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
+          </div>
+          <div class="resource-directory">
+            <div class="link-label">Resources</div>
+            <a class="resource-entry" href="https://github.com/BradGroux/ai-dev-days"><strong>AI Dev Days</strong><span>github.com/BradGroux/ai-dev-days</span></a>
+            <a class="resource-entry" href="https://github.com/BradGroux/ai-native-operating-framework"><strong>AI-Native Operating Framework</strong><span>github.com/BradGroux/ai-native-operating-framework</span></a>
+          </div>
         </div>
       </div>
       <div class="resource-qr">
