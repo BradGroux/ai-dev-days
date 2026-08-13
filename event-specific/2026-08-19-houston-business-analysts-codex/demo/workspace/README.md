@@ -18,6 +18,7 @@ into reviewable responsibilities.
 | [`.agents/skills/vendor-review/SKILL.md`](.agents/skills/vendor-review/SKILL.md) | How is the focused review workflow reused? |
 | [`acceptance-scenarios.md`](acceptance-scenarios.md) | What behavior should pass, clarify, or stop? |
 | [`verification-report.md`](verification-report.md) | What happened when the fixtures were checked? |
+| [`../framework-guidance.md`](../framework-guidance.md) | Which framework questions help test business completeness without becoming policy? |
 
 ## Source precedence
 
@@ -40,3 +41,11 @@ node ../verify-demo.mjs
 
 The checked-in workspace is also the offline expected output. No live system or
 network access is required.
+
+For executable proof, run:
+
+```bash
+node ../run-demo.mjs review V-002
+node --test ../test/vendor-review.test.mjs
+node ../verify-demo.mjs
+```

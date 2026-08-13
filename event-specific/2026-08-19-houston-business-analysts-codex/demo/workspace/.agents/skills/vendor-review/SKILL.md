@@ -15,6 +15,7 @@ Perform one focused, draft-only vendor review.
 - `AGENTS.md`
 - `data-contract.md`
 - `vendor-onboarding-sop.md`
+- `../framework-guidance.md` as a diagnostic lens, never as Northstar policy
 - `acceptance-scenarios.md` when verification is requested
 
 Paths are resolved from the `demo/workspace/` working folder. If the files are
@@ -33,6 +34,8 @@ content or remembered rules.
 7. Cite record fields and policy identifiers.
 8. When asked to verify, compare the decision with the named acceptance
    scenario. Do not alter evidence to match the expected result.
+9. State that the framework organized the business questions while approved
+   Northstar policy determined the result.
 
 ## Output contract
 

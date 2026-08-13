@@ -7,6 +7,7 @@ Protect the audience exercise, the artifact map, and the closing action plan. Th
 ## If Wi-Fi is unreliable
 
 - keep the local HTML deck and the checked-in demo workspace open
+- keep the generated discovery workspace and standalone prompt files open
 - use [`demo/source/`](demo/source/) and the completed
   [`demo/workspace/`](demo/workspace/)
 - do not troubleshoot network access in front of the room for more than two minutes
@@ -22,6 +23,8 @@ Protect the audience exercise, the artifact map, and the closing action plan. Th
 - use the prepared
   [`verification-report.md`](demo/workspace/verification-report.md) as the final
   proof artifact
+- run `node demo/run-demo.mjs review V-002` to show the same governed result
+  without an AI service
 
 ## If the demo output drifts
 
@@ -72,13 +75,15 @@ Even if every live tool fails, attendees should leave able to:
 From the event folder, run:
 
 ```bash
+node demo/run-demo.mjs review-all --json
+node --test demo/test/vendor-review.test.mjs
 node demo/verify-demo.mjs
 ```
 
 The check requires no network access. The expected output is:
 
 ```text
-PASS: fictional demo fixtures, outcomes, traces, HTML deck, and PDF-deferred boundary verified.
+PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and PDF-deferred boundary verified.
 ```
 
 ## Safety

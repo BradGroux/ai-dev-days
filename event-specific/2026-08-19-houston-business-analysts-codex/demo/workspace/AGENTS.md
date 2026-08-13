@@ -21,6 +21,10 @@ Before reviewing a vendor, read:
 Use `../source/stakeholder-notes.md` as discovery evidence. Use `memory.md` only
 as helpful background. It is not policy.
 
+Use `../framework-guidance.md` to check Intent, Responsibility, Work, Control,
+Assurance, and Learning. The framework organizes business questions; it does
+not establish Northstar facts, rules, approvals, or vendor outcomes.
+
 ## Source precedence
 
 When material conflicts, use this order:
@@ -87,5 +91,7 @@ A vendor review is complete only when it includes:
 Validate the fixture set from this folder with:
 
 ```bash
+node ../run-demo.mjs review V-002
+node --test ../test/vendor-review.test.mjs
 node ../verify-demo.mjs
 ```

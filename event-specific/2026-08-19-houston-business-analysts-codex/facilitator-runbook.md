@@ -6,21 +6,26 @@ Help business analysis practitioners see how their existing people, process, dat
 
 ## Before the room opens
 
-- confirm the AI-Native Operating Framework appears only as a supporting
-  resource, not as the session structure
+- confirm the AI-Native Operating Framework is the named guiding business
+  lens, not Northstar policy or a second curriculum
 - confirm the final title and organizer inserts are in the deck
 - confirm the projector, aspect ratio, display adapter, and power
 - confirm the whiteboard has working markers and an eraser
 - confirm with the HOUBAs organizer how the halfway and 15-minutes-remaining signals will be given
 - open the HTML deck, speaker notes, and this runbook; the PDF remains deferred
   until the deck is finalized
-- open [`demo/workspace/`](demo/workspace/) in Codex
-- open [`demo/source/stakeholder-notes.md`](demo/source/stakeholder-notes.md)
-  and [`demo/workspace/verification-report.md`](demo/workspace/verification-report.md)
+- run `node demo/prepare-live-workspace.mjs --reset` and open the generated
+  `demo/.live-workspace/` in the primary Codex window
+- open [`demo/workspace/`](demo/workspace/) in a second Codex window for demo
+  two and the prepared fallback
+- open [`demo/framework-guidance.md`](demo/framework-guidance.md) and
+  [`demo/workspace/verification-report.md`](demo/workspace/verification-report.md)
   beside the live workspace
 - disable unrelated notifications and close private windows or tabs
 - verify every QR code from a phone
 - run the publication scan and repository audit
+- run `node demo/run-demo.mjs review V-002`
+- run `node --test demo/test/vendor-review.test.mjs`
 - run `node demo/verify-demo.mjs`
 - confirm the authoritative demo output, evidence, and closeout handoff
 - disconnect from Wi-Fi once to confirm the offline path works
@@ -81,8 +86,12 @@ Keep the board visible during Q&A so new questions can attach to the same model.
 ## Demo controls
 
 - Use [demo-script.md](demo-script.md) for the timed walkthrough.
-- Use [prompt-pack.md](prompt-pack.md) for the exact live requests.
+- Use [prompt-pack.md](prompt-pack.md) to choose the stage and the standalone
+  files under `demo/prompts/` for the exact live requests.
+- Use the generated workspace for demo one and the checked-in completed
+  workspace for demo two.
 - Treat the checked-in workspace as the expected offline output.
+- Use `node demo/run-demo.mjs review V-002` as the deterministic fallback.
 - Switch to the prepared report after 90 seconds of generation delay or two
   minutes of tool troubleshooting.
 - Do not fix a drifting result in front of the room by changing the evidence.

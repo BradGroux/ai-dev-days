@@ -13,14 +13,16 @@ Attendees do not need to install Codex or bring a laptop. This is a presenter-le
 
 ## Presenter software and files
 
-- current Codex desktop app with the fictional demo workspace open
+- current Codex desktop app with the generated discovery workspace and the
+  checked-in completed workspace open separately
 - local browser with `slides.html#slide1` and the attendee page open
 - `speaker-notes-65-minute.md` stored locally
 - terminal and editor font sizes set for projection
 - complete demo inputs and expected outputs stored locally under `demo/`
 - facilitator runbook and fallback plan stored locally
 - no unrelated private tabs, notifications, recent files, or accounts visible
-- Node.js available to run `node demo/verify-demo.mjs`
+- Node.js available to prepare the live workspace, run the deterministic
+  reviewer and tests, and execute `node demo/verify-demo.mjs`
 
 ## Deferred presentation artifact
 

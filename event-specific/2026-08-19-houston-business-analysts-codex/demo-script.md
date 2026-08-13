@@ -15,21 +15,32 @@ data.
 From the event folder:
 
 ```bash
+node demo/prepare-live-workspace.mjs --reset
+node demo/run-demo.mjs review V-002
+node --test demo/test/vendor-review.test.mjs
 node demo/verify-demo.mjs
 ```
 
 Then open:
 
-1. [`demo/source/stakeholder-notes.md`](demo/source/stakeholder-notes.md)
-2. [`demo/source/policy-excerpts.md`](demo/source/policy-excerpts.md)
-3. [`demo/workspace/AGENTS.md`](demo/workspace/AGENTS.md)
+1. generated `demo/.live-workspace/` in the primary Codex window
+2. [`demo/prompts/01-audit-current-state.md`](demo/prompts/01-audit-current-state.md)
+3. [`demo/framework-guidance.md`](demo/framework-guidance.md)
 4. [`demo/workspace/process-brief.md`](demo/workspace/process-brief.md)
-5. [`demo/workspace/vendor-onboarding-sop.md`](demo/workspace/vendor-onboarding-sop.md)
-6. [`demo/workspace/.agents/skills/vendor-review/SKILL.md`](demo/workspace/.agents/skills/vendor-review/SKILL.md)
-7. [`demo/workspace/verification-report.md`](demo/workspace/verification-report.md)
+5. [`demo/workspace/AGENTS.md`](demo/workspace/AGENTS.md)
+6. [`demo/workspace/vendor-onboarding-sop.md`](demo/workspace/vendor-onboarding-sop.md)
+7. [`demo/workspace/.agents/skills/vendor-review/SKILL.md`](demo/workspace/.agents/skills/vendor-review/SKILL.md)
+8. [`demo/workspace/verification-report.md`](demo/workspace/verification-report.md)
 
-Launch Codex with `demo/workspace/` as the working folder. Keep the prepared
-files open in a second window for the offline path.
+Keep the checked-in `demo/workspace/` open in a second Codex window for demo
+two and the offline path. The live discovery workspace deliberately excludes
+those completed artifacts.
+
+Say once before the demo:
+
+> The AI-Native Operating Framework gives us the questions: intent,
+> responsibility, work, control, assurance, and learning. Northstar's approved
+> policy gives us the answers for this fictional process.
 
 ## Demo one: messy notes to current-state clarity (15 minutes)
 
@@ -44,9 +55,9 @@ Say:
 Show the stakeholder notes and ask the room to spot one ambiguous term and one
 missing owner.
 
-### 0:02-0:08 — run prompt 1
+### 0:02-0:08 — run prompt 01
 
-Use [prompt 1](prompt-pack.md#prompt-1-audit-the-raw-notes). Watch for:
+Use [prompt 01](demo/prompts/01-audit-current-state.md). Watch for:
 
 - facts separated from assumptions
 - actors and handoffs
@@ -63,6 +74,10 @@ Open [`process-brief.md`](demo/workspace/process-brief.md). Show the difference
 between evidence, reviewed interpretation, and unresolved questions. Point out
 that a clean Markdown file is useful because people can review, diff, approve,
 and version it.
+
+If the response finishes early, compare its six-concern coverage table with
+[`framework-guidance.md`](demo/framework-guidance.md). Do not teach the
+framework as a separate model or treat it as Northstar policy.
 
 ### 0:13-0:15 — decision checkpoint
 
@@ -103,7 +118,7 @@ Ask which outcome may create the most value: PASS, CLARIFY, or STOP / ESCALATE.
 
 ### 0:09-0:13 — run vendor V-002
 
-Use [prompt 4](prompt-pack.md#prompt-4-run-the-reusable-review-skill). The
+Use [prompt 05](demo/prompts/05-review-v002.md). The
 expected outcome is **CLARIFY** because security-relevant fields are unresolved.
 
 Ask: “Would a helpful-sounding approval be a success or a control failure?”
@@ -118,9 +133,15 @@ Open [`verification-report.md`](demo/workspace/verification-report.md):
 
 Point to the exact policy source for the possible sanctions match in V-003.
 
-Show the prepared verifier PASS output. Explain that the script proves internal
-fixture consistency; human review still determines whether the business rules
-themselves are correct.
+Run or show:
+
+```bash
+node demo/run-demo.mjs review V-002
+```
+
+Explain that Codex and deterministic code reached the same governed result.
+The code proves rule consistency; human review still determines whether the
+business rules themselves are correct.
 
 ## Live-demo stop conditions
 
@@ -139,8 +160,9 @@ Switch to the prepared output when:
 2. Show the fact/assumption split in `process-brief.md`.
 3. Show one rule in `AGENTS.md` and one decision in the SOP.
 4. Show the review skill's output contract.
-5. Reveal the three rows in `verification-report.md`.
-6. Ask the room which artifact must change if the business changes the rule.
+5. Run `node demo/run-demo.mjs review V-002` locally.
+6. Reveal the three rows in `verification-report.md`.
+7. Ask the room which artifact must change if the business changes the rule.
 
 ## Success evidence
 
@@ -151,3 +173,4 @@ The demo succeeded if the audience can explain:
 - why memory cannot be the only copy of policy
 - how a skill differs from an SOP
 - why an acceptance scenario is written before external automation
+- why the framework can guide completeness without becoming process policy

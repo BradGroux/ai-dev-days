@@ -26,8 +26,11 @@
 ## Demo
 
 - [ ] Fictional source notes are final.
-- [ ] Live Codex prompts are in `prompt-pack.md`.
+- [ ] Run-ready Codex prompts under `demo/prompts/` match `prompt-pack.md`.
+- [ ] `node demo/prepare-live-workspace.mjs --reset` creates a clean discovery workspace.
 - [ ] Expected outputs are checked in.
+- [ ] `node demo/run-demo.mjs review V-002` returns `CLARIFY`.
+- [ ] `node --test demo/test/vendor-review.test.mjs` passes.
 - [ ] `node demo/verify-demo.mjs` passes.
 - [ ] Pass, clarify, and stop/escalate cases all work.
 - [ ] Demo completes once with Wi-Fi and once offline from prepared outputs.
@@ -49,6 +52,8 @@
 - [ ] Confirm the
       [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
       supporting-resource link resolves.
+- [ ] Confirm `demo/framework-guidance.md` points to the reviewed framework
+      baseline and does not treat the framework as Northstar policy.
 - [ ] Confirm intent, ownership, controls, verification evidence, handoff, and
       post-event review ownership are explicit.
 - [ ] Run `./scripts/publication-scan.sh`.

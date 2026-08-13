@@ -27,9 +27,10 @@ Codex is the workbench for the session, but the durable method is the lesson. Th
 ## Related operating resource
 
 The [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-is the only named framework used as a supporting resource for this event. The
-presentation itself stays focused on the practical business-analysis workflow,
-artifact stack, and fictional vendor-onboarding demonstration.
+is the only named framework used as a guiding resource for this event. Its six
+business concerns and maintenance method organize the questions asked in the
+demo; fictional Northstar policy determines the actual vendor results. See the
+[event-specific application guide](demo/framework-guidance.md).
 
 ## Format
 
@@ -52,7 +53,8 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
   [facilitator runbook](facilitator-runbook.md), and
   [demo script](demo-script.md)
 - Exploring the example: [fictional vendor-onboarding demo](demo/README.md),
-  [prompt pack](prompt-pack.md), and [prepared verification report](demo/workspace/verification-report.md)
+  [prompt pack](prompt-pack.md), [run-ready prompts](demo/prompts/README.md),
+  and [prepared verification report](demo/workspace/verification-report.md)
 - Checking sources: [official and community reference links](reference-links.md)
 
 ## Event packet

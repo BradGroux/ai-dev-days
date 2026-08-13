@@ -195,7 +195,7 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - organizer slide requirements and decoded QR destinations
 - facilitator, fallback, requirements, attendee, and day-before files
 
-### Demonstration and attendee workbook (first pass complete)
+### Demonstration and attendee workbook (executable demo complete)
 
 - fictional vendor-onboarding source notes
 - process brief template
@@ -207,8 +207,14 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - repo-scoped skill example
 - acceptance scenarios and verification checklist
 - expected output and offline fallback in the checked-in `demo/workspace/`
+- generated clean discovery workspace that excludes the completed answers
+- standalone prompts for Understand, Document, Validate, verification, and
+  audience adaptation
+- event-specific AI-Native Operating Framework application guide with a pinned
+  reviewed baseline and an explicit policy boundary
 - attendee workbook, prompt pack, demo script, and official reference links
-- deterministic demo-fixture verification script
+- deterministic vendor-review engine, CLI, focused tests, and integrated
+  demo-fixture verification script
 
 ### Presentation and curriculum packet (first pass complete)
 
@@ -263,8 +269,13 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - The complete fictional demo contains raw evidence, checked-in workspace
   guidance, memory warning, process and data definitions, SOP, PRD, repo-scoped
   skill, acceptance scenarios, and prepared verification evidence.
+- The live discovery workspace can be prepared without the completed packet,
+  and its instructions prevent framework guidance or raw notes from silently
+  becoming policy.
 - V-001 passes to human review, V-002 requires clarification, and V-003 stops
   and escalates under the approved policy excerpt.
+- The deterministic reviewer and focused tests prove the same three outcomes,
+  including sanctions-stop precedence and unknown-data clarification.
 - `node demo/verify-demo.mjs` passes without network access.
 - The HTML deck has 25 direct-addressable slides, defaults to dark mode, offers
   light mode, and includes keyboard, full-screen, and visible navigation.

@@ -11,6 +11,9 @@
   content.
 - Reorganized the HOUBAs presenter and resource links into aligned follow,
   website, and named-resource groups for faster audience scanning.
+- Completed the HOUBAs executable demonstration with staged Codex workspaces,
+  run-ready prompts, framework guidance, a deterministic vendor-review CLI,
+  and focused behavior tests.
 
 ## 1.0.0 - 2026-08-03
 

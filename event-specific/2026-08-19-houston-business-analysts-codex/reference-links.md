@@ -32,8 +32,10 @@ official documentation before the August 19, 2026 session.
 ## Workshop community
 
 - [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
-  - optional supporting resource for extending the session's artifact and
-    operating ideas beyond the fictional demonstration
+  - guiding business resource for the demo's six-concern completeness lens,
+    standards-maintenance boundary, and explicit human accountability
+  - does not replace Northstar policy or determine a fictional vendor result
+  - reviewed event application: [demo/framework-guidance.md](demo/framework-guidance.md)
 - [Houston Business Analysts private LinkedIn group](https://www.linkedin.com/groups/17116055/)
 - [Houston Business Analysts public LinkedIn page](https://www.linkedin.com/company/houston-business-analysts/)
 - [Houston Business Analysts session feedback](https://forms.gle/cjb44RPJdCzuygEQ8)
