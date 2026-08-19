@@ -42,6 +42,21 @@ demo; fictional Northstar policy determines the actual vendor results. See the
 
 See the [timed session plan](session-plan.md) for the full run of show and drop-if-behind rules.
 
+## How the packet fits together
+
+```mermaid
+flowchart LR
+    S["Session thesis and curriculum"] --> W["Attendee workbook"]
+    S --> D["Live and prepared demo"]
+    W --> A["Audience workflow map"]
+    D --> A
+    D --> E["Evidence and acceptance scenarios"]
+    A --> N["One reviewable next step"]
+    E --> N
+    F["Facilitator notes and fallback plan"] --> S
+    F --> D
+```
+
 ## Start here
 
 - Attending: [attendee links](attendee-links.md) and

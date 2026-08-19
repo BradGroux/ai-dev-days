@@ -17,6 +17,15 @@ Then complete the five columns.
 See the [completed vendor-onboarding example](ai-ready-workflow-worked-example.md)
 before filling in your own canvas.
 
+```mermaid
+flowchart LR
+    P["People<br/>owners and decision rights"] --> W["Process<br/>trigger, flow, exceptions"]
+    W --> D["Data<br/>meaning, source, quality"]
+    D --> G["Guardrails<br/>limits, stops, approvals"]
+    G --> E["Proof<br/>expected outcomes and evidence"]
+    E -. "Learning changes the next version" .-> P
+```
+
 | People | Process | Data | Guardrails | Proof |
 |---|---|---|---|---|
 | Who owns the process? | What starts the work? | What data is required? | What must never happen? | What output is expected? |
@@ -112,6 +121,20 @@ Also record:
 ## Step 5: define the artifact stack
 
 Each artifact has a different job. Do not collapse them into one giant prompt.
+
+```mermaid
+flowchart LR
+    S["Source notes"] --> P["Process brief"]
+    S --> D["Data contract and glossary"]
+    P --> G["Standing guidance"]
+    D --> G
+    G --> O["SOP"]
+    P --> R["PRD"]
+    O --> K["Reusable skill"]
+    R --> K
+    K --> A["Acceptance checks"]
+    A --> E["Reviewable evidence"]
+```
 
 | Artifact | Write this down | Keep it authoritative when... |
 |---|---|---|

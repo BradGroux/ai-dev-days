@@ -27,6 +27,23 @@ A review packet containing:
 
 ## Procedure
 
+```mermaid
+flowchart TD
+    A["Confirm draft-only authority"] --> R["Select exactly one vendor record"]
+    R --> S{"Sanctions stop?"}
+    S -- Yes --> X["STOP / ESCALATE to Compliance"]
+    S -- No --> V["Validate required fields"]
+    V --> L["Identify required review lanes"]
+    L --> D{"Duplicate unresolved?"}
+    D -- Yes --> C["CLARIFY to Procurement"]
+    D -- No --> M{"Required information complete?"}
+    M -- No --> C
+    M -- Yes --> P["PASS to human review"]
+    X --> E["Produce cited evidence packet"]
+    C --> E
+    P --> E
+```
+
 ### 1. Establish the authority boundary
 
 Read P-01 and confirm the work is draft-only. If asked to create, approve,

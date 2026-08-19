@@ -17,6 +17,17 @@ Each corpus includes:
 - a run-ready analysis prompt; and
 - a facilitator key with expected findings and acceptance checks.
 
+```mermaid
+flowchart LR
+    N["Raw stakeholder notes"] --> A["Analyze claims and conflicts"]
+    P["Approved policy excerpts"] --> A
+    R["Three structured records"] --> A
+    A --> O["READY, CLARIFY, or ESCALATE result"]
+    O --> E["Acceptance scenarios and evidence"]
+    E --> F["Compare with facilitator key"]
+    F --> Q["Record disagreements for the named owner"]
+```
+
 ## How to use one
 
 1. Copy one corpus into a separate working folder.

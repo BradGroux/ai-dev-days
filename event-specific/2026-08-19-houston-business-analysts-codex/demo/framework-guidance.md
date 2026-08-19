@@ -42,6 +42,16 @@ improve the work.
 The framework method is **Understand → Document → Validate → Approve → Use →
 Improve**.
 
+```mermaid
+flowchart LR
+    U["Understand<br/>sources, people, current state"] --> D["Document<br/>meaning, rules, procedure"]
+    D --> V["Validate<br/>normal, exception, stop"]
+    V --> A["Approve<br/>accountable human authority"]
+    A --> O["Use<br/>perform and retain evidence"]
+    O --> I["Improve<br/>review outcomes and exceptions"]
+    I -. "approved change" .-> U
+```
+
 - The live session demonstrates Understand, Document, and Validate.
 - The fictional assistant never performs Approve.
 - Use would require the organization's normal governance and systems.

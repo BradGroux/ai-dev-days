@@ -22,6 +22,20 @@ Generate a draft vendor-review packet from fictional source files, then let a
 human verify its classification, evidence, missing information, and next owner.
 No approval, notification, or system update occurs.
 
+```mermaid
+flowchart LR
+    R["Requester submits vendor record"] --> V["Assistant validates and cites"]
+    V --> S{"Policy stop?"}
+    S -- Yes --> X["STOP / ESCALATE<br/>to Compliance"]
+    S -- No --> M{"Missing or unknown data?"}
+    M -- Yes --> C["CLARIFY<br/>through Procurement"]
+    M -- No --> P["PASS<br/>to required human reviews"]
+    X --> H["Named human owner decides"]
+    C --> H
+    P --> H
+    H --> A["Authorized employee may create record"]
+```
+
 ## What the example exposes
 
 - A complete record can pass to human review without being approved.

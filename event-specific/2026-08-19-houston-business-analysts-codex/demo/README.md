@@ -6,6 +6,20 @@ a reviewable process packet and validates three prepared vendor cases.
 
 ## Folder map
 
+```mermaid
+flowchart LR
+    S["source/<br/>notes, policy, records"] --> P["prompts/<br/>guided analysis"]
+    F["framework-guidance.md<br/>business completeness lens"] --> P
+    P --> L["starter/<br/>clean live workspace"]
+    P --> W["workspace/<br/>completed fallback packet"]
+    W --> R["run-demo.mjs<br/>deterministic reviewer"]
+    R --> T["test/<br/>behavior checks"]
+    L --> V["verify-demo.mjs<br/>integrated packet check"]
+    W --> V
+    T --> V
+    C["corpora/<br/>additional BA practice"] -. "same source-to-decision pattern" .-> P
+```
+
 ```text
 demo/
 ├── source/                  # raw evidence and fictional records
