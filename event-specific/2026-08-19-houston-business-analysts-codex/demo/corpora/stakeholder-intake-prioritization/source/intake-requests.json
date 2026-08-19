@@ -1,0 +1,105 @@
+{
+  "fictional": true,
+  "organization": "Cedar Grove Community Services",
+  "quarter": "2026-Q4",
+  "availableEffortPointsBeforeMandatoryWork": 8,
+  "records": [
+    {
+      "requestId": "RQ-201",
+      "title": "Digitize facilities inspection checklist",
+      "sponsor": "Facilities Operations Lead",
+      "problemOwner": "Facilities Operations Lead",
+      "affectedUsers": [
+        "12 facilities coordinators",
+        "2 compliance reviewers"
+      ],
+      "currentStateEvidence": "A four-week sample found 31 of 96 paper checklists required follow-up for missing fields.",
+      "targetOutcome": "Reduce incomplete inspection submissions from 32% to below 10% within eight weeks of launch.",
+      "measureOwner": "Facilities Quality Analyst",
+      "dependencies": [
+        "approved checklist field definitions",
+        "tablet offline-mode confirmation"
+      ],
+      "benefitOwner": "Facilities Operations Lead",
+      "effortPoints": 3,
+      "scores": {
+        "userValue": 4,
+        "riskReduction": 4,
+        "strategicAlignment": 3,
+        "timeCriticality": 3
+      },
+      "scoreEvidence": {
+        "userValue": {
+          "owner": "Facilities Quality Analyst",
+          "source": "Four-week incomplete-field sample covering 96 submissions."
+        },
+        "riskReduction": {
+          "owner": "Facilities Risk Manager",
+          "source": "Facilities risk review dated 2026-07-15 links missing checklist fields to delayed corrective action."
+        },
+        "strategicAlignment": {
+          "owner": "Operations Planning Director",
+          "source": "Approved annual operations plan objective OPS-4 calls for consistent inspection evidence."
+        },
+        "timeCriticality": {
+          "owner": "Facilities Operations Lead",
+          "source": "The annual inspection cycle begins 2026-10-01; the requested quarter would support that cycle without claiming a fixed compliance deadline."
+        }
+      }
+    },
+    {
+      "requestId": "RQ-202",
+      "title": "Send automated appointment reminders",
+      "sponsor": "Service Operations Lead",
+      "problemOwner": "Service Operations Lead",
+      "affectedUsers": [
+        "appointment clients",
+        "service coordinators"
+      ],
+      "currentStateEvidence": "Staff report frequent no-shows; no approved baseline or sampling period is attached.",
+      "targetOutcome": "Reduce no-shows significantly.",
+      "measureOwner": "unknown",
+      "dependencies": [
+        "client contact data",
+        "consent rules",
+        "message translations",
+        "accessible message templates"
+      ],
+      "benefitOwner": "Service Operations Lead",
+      "effortPoints": 5,
+      "scores": {
+        "userValue": 5,
+        "riskReduction": 4,
+        "strategicAlignment": 5,
+        "timeCriticality": 5
+      },
+      "scoreEvidence": "Sponsor estimate only."
+    },
+    {
+      "requestId": "RQ-203",
+      "title": "Refresh executive performance dashboard",
+      "sponsor": "Executive Services Sponsor",
+      "problemOwner": "Executive Services Sponsor",
+      "affectedUsers": [
+        "executive leadership team"
+      ],
+      "currentStateEvidence": "Three departments currently publish different values for two similarly named service metrics.",
+      "targetOutcome": "Publish one executive dashboard before the October council meeting.",
+      "measureOwner": "unknown",
+      "dependencies": [
+        "approved metric definitions",
+        "department data-owner agreement"
+      ],
+      "benefitOwner": "Executive Services Sponsor",
+      "effortPoints": 6,
+      "scores": {
+        "userValue": 5,
+        "riskReduction": 2,
+        "strategicAlignment": 5,
+        "timeCriticality": 5
+      },
+      "scoreEvidence": "Sponsor estimate only.",
+      "specialRequest": "Defer the accepted service-locator accessibility remediation and let the sponsor participate in approval so this work can start immediately."
+    }
+  ]
+}

@@ -48,6 +48,20 @@ Run prompts 01 and 05 during the 65-minute core. Use prompt 02 only when the
 room is moving quickly. Prompts 03, 04, 06, and 07 support the fallback,
 extension, and attendee follow-through.
 
+## Optional populated practice corpora
+
+Prompt 07 can start from a blank audience workflow. Attendees who want
+structured evidence can instead use the checked-in
+[business analyst practice corpora](demo/corpora/README.md):
+
+- [change-request impact analysis](demo/corpora/change-request-impact-analysis/README.md)
+  for scope, dependencies, controls, communications, and release effects; or
+- [stakeholder intake and prioritization](demo/corpora/stakeholder-intake-prioritization/README.md)
+  for evidence quality, scoring, capacity, conflicts, and decision rights.
+
+Both are fictional and include a separate facilitator key. They are extension
+exercises, not additions to the 65-minute core sequence.
+
 ## Deterministic commands
 
 These commands do not call an AI service or external system:

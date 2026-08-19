@@ -9,6 +9,7 @@ a reviewable process packet and validates three prepared vendor cases.
 ```text
 demo/
 ├── source/                  # raw evidence and fictional records
+├── corpora/                 # two optional BA practice cases
 ├── prompts/                 # run-ready Codex prompts by demo stage
 ├── starter/                 # inputs for a clean generated live workspace
 ├── lib/                     # deterministic vendor-review rules and renderer
@@ -67,6 +68,19 @@ Northstar policy or determine a vendor result. See the pinned, event-specific
 
 PASS means ready for the next named human review. It never means the fictional
 assistant approved or activated a vendor.
+
+## Additional business analyst practice
+
+The optional [practice corpora](corpora/README.md) apply the same
+source-to-decision pattern to two other common BA responsibilities:
+
+- [change-request impact analysis](corpora/change-request-impact-analysis/README.md);
+  and
+- [stakeholder intake and prioritization](corpora/stakeholder-intake-prioritization/README.md).
+
+Each contains raw notes, approved constraints, three structured cases, a
+run-ready prompt, and a facilitator key. They extend the attendee follow-through
+without changing the live vendor-onboarding demo or the 65-minute core timing.
 
 ## Public-safety boundary
 

@@ -54,7 +54,8 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
   [demo script](demo-script.md)
 - Exploring the example: [fictional vendor-onboarding demo](demo/README.md),
   [prompt pack](prompt-pack.md), [run-ready prompts](demo/prompts/README.md),
-  and [prepared verification report](demo/workspace/verification-report.md)
+  [prepared verification report](demo/workspace/verification-report.md), and
+  [additional BA practice corpora](demo/corpora/README.md)
 - Checking sources: [official and community reference links](reference-links.md)
 
 ## Event packet
@@ -73,6 +74,7 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 - [Prompt pack](prompt-pack.md)
 - [Demo script](demo-script.md)
 - [Fictional demo workspace](demo/README.md)
+- [Business analyst practice corpora](demo/corpora/README.md)
 - [Reference links](reference-links.md)
 - [Presenter requirements](requirements.md)
 - [Facilitator runbook](facilitator-runbook.md)

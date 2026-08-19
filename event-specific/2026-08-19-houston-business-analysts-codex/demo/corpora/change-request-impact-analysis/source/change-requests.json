@@ -1,0 +1,78 @@
+{
+  "fictional": true,
+  "company": "Pine Harbor Utilities",
+  "records": [
+    {
+      "changeId": "CR-101",
+      "title": "Capture preferred customer contact window",
+      "sponsor": "Customer Service Director",
+      "requestedOutcome": "Let customers select a contact window and show it to assigned agents.",
+      "inScope": [
+        "customer portal intake",
+        "desktop agent view",
+        "mobile agent view",
+        "case API",
+        "warehouse extract",
+        "data dictionary"
+      ],
+      "outOfScope": [
+        "automatic appointment scheduling",
+        "outbound notification delivery"
+      ],
+      "proposedValues": [
+        "08:00-12:00 local",
+        "12:00-16:00 local",
+        "16:00-20:00 local",
+        "no preference"
+      ],
+      "timeZoneBasis": "customer service address",
+      "requiredOwners": [
+        "Customer Data Steward",
+        "Integration Owner",
+        "Customer Communications",
+        "Accessibility",
+        "Training",
+        "Release Manager"
+      ],
+      "targetRelease": "2026-09-12"
+    },
+    {
+      "changeId": "CR-102",
+      "title": "Close inactive cases after seven days",
+      "sponsor": "Customer Service Director",
+      "requestedOutcome": "Reduce the inactivity threshold from fourteen days to seven days for all open cases.",
+      "inScope": [
+        "automated closure job",
+        "open-case dashboard"
+      ],
+      "outOfScope": [],
+      "dayDefinition": "unknown",
+      "contactAttemptBehavior": "unknown",
+      "protectedCaseBehavior": "unknown",
+      "reopenBehavior": "unknown",
+      "requiredOwners": [
+        "Customer Operations Governance Council"
+      ],
+      "targetRelease": "2026-09-12"
+    },
+    {
+      "changeId": "CR-103",
+      "title": "Supervisor force-close without history",
+      "sponsor": "Contact-Center Supervisor",
+      "requestedOutcome": "Allow supervisors to close any case immediately without contact attempts, reason code, or retained status history.",
+      "inScope": [
+        "desktop agent view",
+        "case history",
+        "supervisor permissions"
+      ],
+      "outOfScope": [
+        "compliance review",
+        "audit reporting"
+      ],
+      "requiredOwners": [
+        "Release Manager"
+      ],
+      "targetRelease": "2026-09-12"
+    }
+  ]
+}

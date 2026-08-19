@@ -12,6 +12,9 @@ Start here for the August 19, 2026 Houston Business Analysts session.
 - Prompt pack: [prompt-pack.md](prompt-pack.md)
 - Run-ready prompts: [demo/prompts/README.md](demo/prompts/README.md)
 - Fictional vendor-onboarding demo: [demo/README.md](demo/README.md)
+- Additional BA practice corpora: [demo/corpora/README.md](demo/corpora/README.md)
+  - [Change-request impact analysis](demo/corpora/change-request-impact-analysis/README.md)
+  - [Stakeholder intake and prioritization](demo/corpora/stakeholder-intake-prioritization/README.md)
 - Framework-to-demo guide: [demo/framework-guidance.md](demo/framework-guidance.md)
 - Completed example workspace: [demo/workspace/README.md](demo/workspace/README.md)
 - Prepared verification report: [demo/workspace/verification-report.md](demo/workspace/verification-report.md)
@@ -35,6 +38,8 @@ Start here for the August 19, 2026 Houston Business Analysts session.
   recall.
 - Adapt the SOP, PRD, skill, and acceptance scenarios together so the sources,
   procedure, reusable workflow, and proof remain aligned.
+- Practice the pattern with change-impact or prioritization evidence before
+  introducing real organizational data.
 
 ## No installation required
 

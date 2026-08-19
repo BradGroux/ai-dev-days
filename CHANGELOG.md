@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added two populated business analyst practice corpora for change-request
+  impact analysis and stakeholder intake prioritization, including fictional
+  evidence, governing constraints, prompts, facilitator keys, and verification.
 - Published the Houston Business Analysts deck as a 25-page PDF assembled from
   dark-theme 1920x1080 slide captures with safe HTTPS link annotations.
 - Refined the Houston Business Analysts deck with a presenter introduction,
