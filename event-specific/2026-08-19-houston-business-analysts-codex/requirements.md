@@ -26,10 +26,10 @@ Attendees do not need to install Codex or bring a laptop. This is a presenter-le
 
 ## Published presentation artifact
 
-`slides.pdf` is the portable backup for the finalized HTML deck. It contains
-one dark-theme 1920x1080 screenshot per slide, assembled in slide order with
-safe HTTPS link annotations. Regenerate it from screenshots rather than using
-browser print-to-PDF.
+`slides.pdf` is the portable backup. It contains one dark-theme 1920x1080
+screenshot per slide, assembled in slide order with safe HTTPS link
+annotations. It is generated from screenshots rather than browser
+print-to-PDF.
 
 ## Room requirements
 

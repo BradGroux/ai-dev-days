@@ -12,7 +12,8 @@ Help business analysis practitioners see how their existing people, process, dat
 - confirm the projector, aspect ratio, display adapter, and power
 - confirm the whiteboard has working markers and an eraser
 - confirm with the HOUBAs organizer how the halfway and 15-minutes-remaining signals will be given
-- open the HTML deck, PDF backup, speaker notes, and this runbook
+- open the HTML deck, speaker notes, and this runbook; keep the approved
+  27-slide PDF available as the offline visual backup
 - run `node demo/prepare-live-workspace.mjs --reset` and open the generated
   `demo/.live-workspace/` in the primary Codex window
 - open [`demo/workspace/`](demo/workspace/) in a second Codex window for demo

@@ -18,7 +18,7 @@
 - [ ] `slides.html` opens locally.
 - [ ] The HTML deck is content-final before PDF generation.
 - [ ] `slides.pdf` opens locally and matches the final HTML deck.
-- [ ] The PDF has 25 pages rendered from 1920x1080 dark-theme screenshots.
+- [ ] The PDF has 27 pages rendered from 1920x1080 dark-theme screenshots.
 - [ ] Speaker notes match the 65-minute core.
 - [ ] Attendee page is public and readable on a phone.
 - [ ] Every QR code resolves from a phone not signed into Brad's accounts.

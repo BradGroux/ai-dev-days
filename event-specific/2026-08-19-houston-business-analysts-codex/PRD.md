@@ -48,12 +48,13 @@ The session should make one point unmistakable:
 By the end of the core session, attendees should be able to:
 
 1. explain why process quality and context quality matter more than chasing models
-2. identify the minimum artifacts needed to make a workflow AI-ready
-3. distinguish workspace guidance, memory, SOPs, PRDs, skills, and acceptance checks
-4. turn a messy current-state description into a structured workflow packet
-5. define data ownership, boundaries, exceptions, approvals, and evidence before automation
-6. use Codex to draft, challenge, and verify artifacts without surrendering business judgment
-7. name a small workflow they can prepare for AI assistance the following week
+2. explain where BA capabilities overlap with Forward Deployed Engineering and where FDE technical ownership goes farther
+3. identify the minimum artifacts needed to make a workflow AI-ready
+4. distinguish workspace guidance, memory, SOPs, PRDs, skills, and acceptance checks
+5. turn a messy current-state description into a structured workflow packet
+6. define data ownership, boundaries, exceptions, approvals, and evidence before automation
+7. use Codex to draft, challenge, and verify artifacts without surrendering business judgment
+8. name a small workflow they can prepare for AI assistance the following week
 
 ## Audience segments
 
@@ -84,6 +85,22 @@ result actually meets the business need.
 ### Core thesis
 
 The business analyst is the context architect: the person who helps people and agents agree on what is true, what is allowed, what happens next, and what evidence means the work is done.
+
+### Capability bridge
+
+Forward Deployed Engineering provides a current market example of work that
+combines business discovery, workflow understanding, stakeholder collaboration,
+delivery, and measurable impact. The comparison is a synthesis of IIBA's
+business analysis knowledge areas and OpenAI's published FDE role, not a claim
+that the roles are equivalent.
+
+The message for this audience is:
+
+> Keep the BA foundation. Add AI fluency and a more direct path from discovery
+> to delivery.
+
+The deck must preserve the distinction that FDEs are expected to code,
+integrate, deploy, and own production outcomes.
 
 ## The artifact stack
 
@@ -256,6 +273,8 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 | The demo becomes too technical | Keep terminal commands out of the main narrative and focus on the visible Markdown outputs. |
 | The room wants implementation detail | Use the final 25 minutes and checked-in references rather than derailing the core spine. |
 | Attendees mistake memory for policy | Repeat that required rules belong in checked-in guidance or documentation; memory is a recall layer. |
+| The FDE market statistic is mistaken for raw job counts | Label it as an indexed Indeed posting series, show the comparison period, and retain the publisher's correction in the source notes. |
+| The BA and FDE comparison implies role equivalence | State that the roles share a discovery-to-value foundation while FDEs add software, AI, deployment, and production ownership. |
 | A real audience scenario exposes sensitive details | Ask for a generic process category and fictionalize names, data, and exceptions before using it. |
 | Organizer assets are rendered incorrectly | Use the authentic extracted logos and verify every QR destination from the HTML deck. |
 
@@ -276,15 +295,18 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
   and escalates under the approved policy excerpt.
 - The deterministic reviewer and focused tests prove the same three outcomes,
   including sanctions-stop precedence and unknown-data clarification.
-- `node demo/verify-demo.mjs` passes without network access.
-- The HTML deck has 25 direct-addressable slides, defaults to dark mode, offers
+- `node demo/verify-demo.mjs --html-review` passes without network access while
+  the revised deck is under review.
+- The HTML deck has 27 direct-addressable slides, defaults to dark mode, offers
   light mode, and includes keyboard, full-screen, and visible navigation.
+- Slides 9 and 10 use sourced FDE market and role information, distinguish
+  indexed posting growth from raw job counts, and preserve the difference
+  between shared BA capabilities and FDE technical ownership.
 - The deck puts Improving on slide 2, introduces Brad after the organizer
   slides, and makes HOUBAs feedback plus the Start Small, Think Big community
   call to action the final 50:50 slide.
 - The speaker notes preserve a 65-minute core and 25-minute extension.
-- The PDF has 25 16:9 pages, one embedded 1920x1080 image per page, and only
-  safe HTTPS link annotations.
+- The approved 27-slide HTML deck and high-resolution PDF are in parity.
 
 ### Complete event package
 
@@ -296,10 +318,12 @@ The final 25 minutes can expand into a scenario clinic, Q&A, or additional thoug
 - Every live source and output is fictional, public-safe, and checked into the packet.
 - The final deck includes the organizer's host, community, and feedback inserts.
 - The Improving host recognition is slide 2, source slide 1 is omitted, and the combined HOUBAs feedback and Start Small, Think Big call to action is the final audience-facing slide.
+- The approved PDF has 27 16:9 pages, one embedded 1920x1080 image per page,
+  and only safe HTTPS link annotations that match the HTML source.
 - The HTML deck, speaker notes, demo, prompts, and fallback outputs pass the
   repository audit and publication scan.
-- The final PDF is generated after approval from dark-theme 1920x1080
-  screenshots and visually checked against the HTML deck.
+- The final PDF was generated from dark-theme 1920x1080 screenshots and
+  visually checked against the HTML deck.
 
 ## Open inputs
 

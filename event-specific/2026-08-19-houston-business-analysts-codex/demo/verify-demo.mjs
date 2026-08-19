@@ -9,6 +9,7 @@ import { REQUIRED_FIELDS, reviewVendor } from "./lib/vendor-review.mjs";
 const demoDir = dirname(fileURLToPath(import.meta.url));
 const eventDir = dirname(demoDir);
 const execFileAsync = promisify(execFile);
+const htmlReviewOnly = process.argv.includes("--html-review");
 
 const requiredFiles = [
   "source/stakeholder-notes.md",
@@ -369,56 +370,58 @@ for (const relativePath of requiredEventFiles) {
 }
 
 const slides = await readFile(join(eventDir, "slides.html"), "utf8");
-const pdfBuffer = await readFile(join(eventDir, "slides.pdf"));
-const pdf = pdfBuffer.toString("latin1");
-if (!pdf.startsWith("%PDF-")) {
-  throw new Error("slides.pdf must be a valid PDF file.");
-}
+if (!htmlReviewOnly) {
+  const pdfBuffer = await readFile(join(eventDir, "slides.pdf"));
+  const pdf = pdfBuffer.toString("latin1");
+  if (!pdf.startsWith("%PDF-")) {
+    throw new Error("slides.pdf must be a valid PDF file.");
+  }
 
-const countPdfSignal = (pattern) => [...pdf.matchAll(pattern)].length;
-const pdfPageCount = countPdfSignal(/\/Type\s*\/Page\b/g);
-const pdfImageCount = countPdfSignal(/\/Subtype\s*\/Image\b/g);
-const pdfWidthCount = countPdfSignal(/\/Width\s+1920\b/g);
-const pdfHeightCount = countPdfSignal(/\/Height\s+1080\b/g);
-const pdfMediaBoxCount = countPdfSignal(/\/MediaBox\s*\[\s*0\s+0\s+960\s+540\s*\]/g);
-const pdfLinks = [...pdf.matchAll(/\/URI\s*\(([^)]*)\)/g)].map(
-  (match) => match[1]
-);
-
-if (
-  pdfPageCount !== 25 ||
-  pdfImageCount !== 25 ||
-  pdfWidthCount !== 25 ||
-  pdfHeightCount !== 25 ||
-  pdfMediaBoxCount !== 25
-) {
-  throw new Error(
-    `PDF export mismatch: pages=${pdfPageCount}, images=${pdfImageCount}, widths=${pdfWidthCount}, heights=${pdfHeightCount}, mediaBoxes=${pdfMediaBoxCount}.`
+  const countPdfSignal = (pattern) => [...pdf.matchAll(pattern)].length;
+  const pdfPageCount = countPdfSignal(/\/Type\s*\/Page\b/g);
+  const pdfImageCount = countPdfSignal(/\/Subtype\s*\/Image\b/g);
+  const pdfWidthCount = countPdfSignal(/\/Width\s+1920\b/g);
+  const pdfHeightCount = countPdfSignal(/\/Height\s+1080\b/g);
+  const pdfMediaBoxCount = countPdfSignal(/\/MediaBox\s*\[\s*0\s+0\s+960\s+540\s*\]/g);
+  const pdfLinks = [...pdf.matchAll(/\/URI\s*\(([^)]*)\)/g)].map(
+    (match) => match[1]
   );
-}
 
-if (pdfLinks.length !== 20 || pdfLinks.some((link) => !link.startsWith("https://"))) {
-  throw new Error("PDF export must preserve exactly 20 safe HTTPS link annotations.");
-}
+  if (
+    pdfPageCount !== 27 ||
+    pdfImageCount !== 27 ||
+    pdfWidthCount !== 27 ||
+    pdfHeightCount !== 27 ||
+    pdfMediaBoxCount !== 27
+  ) {
+    throw new Error(
+      `PDF export mismatch: expected the approved 27-slide export; pages=${pdfPageCount}, images=${pdfImageCount}, widths=${pdfWidthCount}, heights=${pdfHeightCount}, mediaBoxes=${pdfMediaBoxCount}. Use --html-review only when reviewing HTML changes before a new PDF export.`
+    );
+  }
 
-const normalizeLink = (link) => link.replace(/\/$/, "");
-const htmlLinks = [...slides.matchAll(/<a\b[^>]*\bhref="(https:\/\/[^"#]+)"/g)].map(
-  (match) => match[1]
-);
-if (
-  JSON.stringify(pdfLinks.map(normalizeLink)) !==
-  JSON.stringify(htmlLinks.map(normalizeLink))
-) {
-  throw new Error("PDF link annotations do not match the visible HTML slide links.");
+  if (pdfLinks.some((link) => !link.startsWith("https://"))) {
+    throw new Error("PDF export must preserve only safe HTTPS link annotations.");
+  }
+
+  const normalizeLink = (link) => link.replace(/\/$/, "");
+  const htmlLinks = [...slides.matchAll(/<a\b[^>]*\bhref="(https:\/\/[^"#]+)"/g)].map(
+    (match) => match[1]
+  );
+  if (
+    JSON.stringify(pdfLinks.map(normalizeLink)) !==
+    JSON.stringify(htmlLinks.map(normalizeLink))
+  ) {
+    throw new Error("PDF link annotations do not match the visible HTML slide links.");
+  }
 }
 
 const slideIds = [...slides.matchAll(/id="slide(\d+)"/g)].map((match) =>
   Number(match[1])
 );
-const expectedSlideIds = Array.from({ length: 25 }, (_, index) => index + 1);
+const expectedSlideIds = Array.from({ length: 27 }, (_, index) => index + 1);
 
 if (JSON.stringify(slideIds) !== JSON.stringify(expectedSlideIds)) {
-  throw new Error("Expected exactly 25 sequential slide IDs.");
+  throw new Error("Expected exactly 27 sequential slide IDs.");
 }
 
 const requiredDeckSignals = [
@@ -455,7 +458,29 @@ if (
   throw new Error("Improving recognition must remain on slide 2.");
 }
 
-const feedbackSlide = slideMarkup(25);
+const marketSlide = slideMarkup(9);
+if (
+  !marketSlide.includes("≈729%") ||
+  !marketSlide.includes("FDE posting index") ||
+  !marketSlide.includes("not a raw count") ||
+  !marketSlide.includes("https://www.businessinsider.com/forward-deployed-engineer-jobs-in-demand-2026-5") ||
+  !marketSlide.includes("https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/")
+) {
+  throw new Error("Slide 9 must preserve the corrected FDE market signal and sources.");
+}
+
+const capabilitySlide = slideMarkup(10);
+if (
+  !capabilitySlide.includes("FDE work builds on capabilities business analysts already use.") ||
+  !capabilitySlide.includes("Shared foundation. Different delivery depth.") ||
+  !capabilitySlide.includes("expected to code, integrate, deploy, and own production outcomes") ||
+  !capabilitySlide.includes("https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/") ||
+  !capabilitySlide.includes("https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/")
+) {
+  throw new Error("Slide 10 must preserve the sourced BA and FDE capability distinction.");
+}
+
+const feedbackSlide = slideMarkup(27);
 if (
   !feedbackSlide.includes("How’d we do?") ||
   !feedbackSlide.includes("https://forms.gle/cjb44RPJdCzuygEQ8") ||
@@ -466,7 +491,7 @@ if (
   !feedbackSlide.includes("HOUBAS") ||
   !feedbackSlide.includes("September 30, 2026")
 ) {
-  throw new Error("HOUBAs feedback and SSTB call to action must remain on final slide 25.");
+  throw new Error("HOUBAs feedback and SSTB call to action must remain on final slide 27.");
 }
 
 if (slides.includes('id="helpButton"') || slides.includes('class="help"')) {
@@ -489,7 +514,7 @@ const socialLinks = [
   "https://www.linkedin.com/in/bradgroux/",
   "https://youtube.com/BradGroux"
 ];
-for (const markup of [presenterSlide, slideMarkup(23)]) {
+for (const markup of [presenterSlide, slideMarkup(25)]) {
   const positions = socialLinks.map((link) => markup.indexOf(link));
   if (
     positions.some((position) => position < 0) ||
@@ -497,18 +522,18 @@ for (const markup of [presenterSlide, slideMarkup(23)]) {
       (position, index) => index > 0 && position <= positions[index - 1]
     )
   ) {
-    throw new Error("Twitter, LinkedIn, and YouTube links must appear in that order on slides 4 and 23.");
+    throw new Error("Twitter, LinkedIn, and YouTube links must appear in that order on slides 4 and 25.");
   }
 }
 
-const resourceSlide = slideMarkup(23);
+const resourceSlide = slideMarkup(25);
 if (
   !resourceSlide.includes('class="link-hub"') ||
   !resourceSlide.includes('class="resource-directory"') ||
   !resourceSlide.includes("AI Dev Days") ||
   !resourceSlide.includes("AI-Native Operating Framework")
 ) {
-  throw new Error("Slide 23 must separate contact destinations from named event resources.");
+  throw new Error("Slide 25 must separate contact destinations from named event resources.");
 }
 
 for (const link of [
@@ -519,15 +544,15 @@ for (const link of [
   "https://github.com/BradGroux/ai-native-operating-framework"
 ]) {
   if (!resourceSlide.includes(link)) {
-    throw new Error(`Slide 23 is missing required link: ${link}`);
+    throw new Error(`Slide 25 is missing required link: ${link}`);
   }
 }
 
-if (!slideMarkup(12).includes("flex:0 0 auto")) {
-  throw new Error("Slide 12 content must remain vertically centered rather than top-weighted.");
+if (!slideMarkup(14).includes("flex:0 0 auto")) {
+  throw new Error("Slide 14 content must remain vertically centered rather than top-weighted.");
 }
 
-const verificationSlide = slideMarkup(19);
+const verificationSlide = slideMarkup(21);
 if (
   !verificationSlide.includes("V means verification") ||
   !verificationSlide.includes("Complete → PASS") ||
@@ -535,10 +560,11 @@ if (
   !verificationSlide.includes("Restricted → STOP")
 ) {
   throw new Error(
-    "Slide 19 must define the verification IDs and expected responses in plain language."
+    "Slide 21 must define the verification IDs and expected responses in plain language."
   );
 }
 
-console.log(
-  "PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, HTML deck, and high-resolution PDF verified."
+console.log(htmlReviewOnly
+  ? "PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, and 27-slide HTML deck verified; PDF parity intentionally skipped."
+  : "PASS: fictional demo fixtures, executable reviewer, prompts, staged workspace, traces, 27-slide HTML deck, and high-resolution PDF verified."
 );
