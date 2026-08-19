@@ -17,6 +17,19 @@ documents, which makes outcomes difficult to trace.
 Create a draft-only assistant that converts one fictional intake record into a
 consistent, source-cited review packet for the correct human owners.
 
+```mermaid
+flowchart LR
+    S["Policy, record, and data definitions"] --> A["Review assistant"]
+    A --> V["Validate fields"]
+    A --> R["Route human review lanes"]
+    A --> E["Preserve citations and questions"]
+    V --> P["Draft packet"]
+    R --> P
+    E --> P
+    P --> H["Accountable human reviewers"]
+    A -. "No approval, messaging, or system mutation" .-> X["External parties and ProcureFlow"]
+```
+
 ## Users
 
 - Procurement coordinator preparing the packet

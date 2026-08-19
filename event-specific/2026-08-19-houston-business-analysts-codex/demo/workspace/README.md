@@ -6,6 +6,21 @@ into reviewable responsibilities.
 
 ## Artifact map
 
+```mermaid
+flowchart LR
+    S["Approved policy and source records"] --> P["Process brief"]
+    S --> D["Data contract and glossary"]
+    P --> G["AGENTS.md<br/>standing guidance"]
+    D --> G
+    G --> O["SOP<br/>repeatable procedure"]
+    P --> R["PRD<br/>problem, scope, success"]
+    O --> K["Skill<br/>focused reusable workflow"]
+    R --> K
+    K --> A["Acceptance scenarios"]
+    A --> V["Verification report"]
+    M["Memory<br/>helpful recall only"] -. "context, never policy" .-> G
+```
+
 | File | Business question |
 |---|---|
 | [`AGENTS.md`](AGENTS.md) | What standing rules must Codex follow here? |

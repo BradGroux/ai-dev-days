@@ -3,6 +3,16 @@
 These scenarios are defined before live execution. They test business behavior,
 not writing style.
 
+```mermaid
+flowchart LR
+    A["V-001<br/>Complete and clear"] --> P["PASS<br/>Procurement + Finance"]
+    B["V-002<br/>Security inputs unknown"] --> C["CLARIFY<br/>Procurement + Finance + Security"]
+    D["V-003<br/>Possible sanctions match + rush"] --> S["STOP / ESCALATE<br/>Compliance"]
+    P --> H["Human review remains required"]
+    C --> H
+    S --> H
+```
+
 ## Scenario A: complete packet
 
 - Record: V-001 / REQ-2601

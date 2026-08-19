@@ -54,6 +54,21 @@ The assistant may standardize steps 2-5 into a draft review packet. It may:
 
 It may not perform steps 6-7, resolve domain flags, or contact anyone.
 
+```mermaid
+flowchart LR
+    subgraph assistant["Assistant-supported work"]
+        I["Submitted request"] --> V["Validate record"]
+        V --> R["Identify review lanes"]
+        R --> E["Cite rules and prepare questions"]
+        E --> P["Draft review packet"]
+    end
+    P --> H["Procurement and domain reviewers"]
+    subgraph human["Human-only authority"]
+        H --> D["Finance, Security, Legal, or Compliance decision"]
+        D --> C["Authorized ProcureFlow record creation"]
+    end
+```
+
 ## Decision model
 
 Apply outcomes in this order:

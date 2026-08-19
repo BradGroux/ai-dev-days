@@ -25,6 +25,18 @@ required.
 
 ## Learning progression
 
+```mermaid
+flowchart LR
+    P["Purpose<br/>Name the outcome"] --> C["Context<br/>Make the operating contract visible"]
+    C --> B["Capability bridge<br/>Connect BA and FDE practice"]
+    B --> F["Foundation<br/>People, process, data"]
+    F --> A["Artifacts<br/>Give each document one job"]
+    A --> H["Challenge<br/>Expose assumptions and conflicts"]
+    H --> O["Operation<br/>Turn context into repeatable work"]
+    O --> V["Assurance<br/>Pass, clarify, or stop"]
+    V --> N["Adoption<br/>Choose one reviewable next step"]
+```
+
 | Stage | Business analyst question | New operating concept | Evidence of learning |
 |---|---|---|---|
 | 1. Purpose | What outcome are we trying to reach? | Intent before acceleration | Attendee can state an outcome and proof, not just "use AI." |
