@@ -14,6 +14,19 @@ const requiredFiles = [
   "source/stakeholder-notes.md",
   "source/policy-excerpts.md",
   "source/sample-vendors.json",
+  "corpora/README.md",
+  "corpora/change-request-impact-analysis/README.md",
+  "corpora/change-request-impact-analysis/prompt.md",
+  "corpora/change-request-impact-analysis/facilitator-key.md",
+  "corpora/change-request-impact-analysis/source/stakeholder-notes.md",
+  "corpora/change-request-impact-analysis/source/policy-excerpts.md",
+  "corpora/change-request-impact-analysis/source/change-requests.json",
+  "corpora/stakeholder-intake-prioritization/README.md",
+  "corpora/stakeholder-intake-prioritization/prompt.md",
+  "corpora/stakeholder-intake-prioritization/facilitator-key.md",
+  "corpora/stakeholder-intake-prioritization/source/stakeholder-notes.md",
+  "corpora/stakeholder-intake-prioritization/source/prioritization-policy.md",
+  "corpora/stakeholder-intake-prioritization/source/intake-requests.json",
   ".gitignore",
   "framework-guidance.md",
   "prepare-live-workspace.mjs",
@@ -99,6 +112,86 @@ for (const record of fixtures.records) {
   const actual = reviewVendor(record).outcome;
   if (!expected || actual !== expected) {
     throw new Error(`${record.vendorId}: expected ${expected}, received ${actual}.`);
+  }
+}
+
+const practiceCorpora = [
+  {
+    directory: "change-request-impact-analysis",
+    recordsFile: "source/change-requests.json",
+    policyFile: "source/policy-excerpts.md",
+    idField: "changeId",
+    expectedResults: new Map([
+      ["CR-101", "READY FOR IMPACT REVIEW"],
+      ["CR-102", "CLARIFY"],
+      ["CR-103", "STOP / ESCALATE"]
+    ])
+  },
+  {
+    directory: "stakeholder-intake-prioritization",
+    recordsFile: "source/intake-requests.json",
+    policyFile: "source/prioritization-policy.md",
+    idField: "requestId",
+    expectedResults: new Map([
+      ["RQ-201", "READY FOR PRIORITIZATION"],
+      ["RQ-202", "CLARIFY"],
+      ["RQ-203", "ESCALATE"]
+    ])
+  }
+];
+
+for (const corpus of practiceCorpora) {
+  const corpusDir = join(demoDir, "corpora", corpus.directory);
+  const records = JSON.parse(
+    await readFile(join(corpusDir, corpus.recordsFile), "utf8")
+  );
+  if (records.fictional !== true || !Array.isArray(records.records)) {
+    throw new Error(`${corpus.directory} must contain an explicitly fictional records array.`);
+  }
+  if (records.records.length !== corpus.expectedResults.size) {
+    throw new Error(`${corpus.directory} has an unexpected prepared-record count.`);
+  }
+
+  const ids = records.records.map((record) => record[corpus.idField]);
+  if (ids.some((id) => !id) || new Set(ids).size !== ids.length) {
+    throw new Error(`${corpus.directory} must use unique, non-empty record identifiers.`);
+  }
+
+  const [readme, policy, prompt, key] = await Promise.all([
+    readFile(join(corpusDir, "README.md"), "utf8"),
+    readFile(join(corpusDir, corpus.policyFile), "utf8"),
+    readFile(join(corpusDir, "prompt.md"), "utf8"),
+    readFile(join(corpusDir, "facilitator-key.md"), "utf8")
+  ]);
+
+  for (const text of [readme, policy, key]) {
+    if (!text.toLowerCase().includes("fictional")) {
+      throw new Error(`${corpus.directory} is missing an explicit fictional-data marker.`);
+    }
+  }
+  for (const signal of ["Goal:", "Constraints:", "Done when:"]) {
+    if (!prompt.includes(signal)) {
+      throw new Error(`${corpus.directory}/prompt.md is missing ${signal}`);
+    }
+  }
+  for (const signal of [
+    "AI-Native Operating Framework",
+    "does not determine",
+    "Do not invent"
+  ]) {
+    if (!prompt.includes(signal)) {
+      throw new Error(`${corpus.directory}/prompt.md is missing boundary: ${signal}`);
+    }
+  }
+  for (const [recordId, result] of corpus.expectedResults) {
+    const expectedTablePrefix = `| ${recordId} | ${result} |`;
+    if (
+      !ids.includes(recordId) ||
+      !key.includes(expectedTablePrefix) ||
+      !key.includes(`${recordId} acceptance starters`)
+    ) {
+      throw new Error(`${corpus.directory} does not trace ${recordId} to ${result}.`);
+    }
   }
 }
 
