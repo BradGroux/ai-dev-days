@@ -14,6 +14,9 @@ Start with one sentence:
 
 Then complete the five columns.
 
+See the [completed vendor-onboarding example](ai-ready-workflow-worked-example.md)
+before filling in your own canvas.
+
 | People | Process | Data | Guardrails | Proof |
 |---|---|---|---|---|
 | Who owns the process? | What starts the work? | What data is required? | What must never happen? | What output is expected? |

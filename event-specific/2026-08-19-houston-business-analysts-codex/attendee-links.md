@@ -6,9 +6,11 @@ Start here for the August 19, 2026 Houston Business Analysts session.
 
 - Event packet: [README.md](README.md)
 - HTML slides: [slides.html](slides.html)
-- PDF slides: [slides.pdf](slides.pdf)
+- PDF slides: [slides.pdf](slides.pdf) - 27-page high-resolution backup
 - Curriculum map: [curriculum-map.md](curriculum-map.md)
 - AI-ready workflow workbook: [attendee-workbook.md](attendee-workbook.md)
+- Completed AI-ready workflow example:
+  [ai-ready-workflow-worked-example.md](ai-ready-workflow-worked-example.md)
 - Prompt pack: [prompt-pack.md](prompt-pack.md)
 - Run-ready prompts: [demo/prompts/README.md](demo/prompts/README.md)
 - Fictional vendor-onboarding demo: [demo/README.md](demo/README.md)

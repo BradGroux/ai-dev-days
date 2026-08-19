@@ -29,6 +29,25 @@ official documentation before the August 19, 2026 session.
   - source for the destination-port passage used as a common English rendering
     in the presentation
 
+## Business analysis and Forward Deployed Engineering
+
+- [IIBA BABOK knowledge areas](https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/)
+  - supports the BA side of the comparison: elicitation and collaboration,
+    current- and future-state analysis, risk, requirements verification and
+    validation, potential value, and solution evaluation
+- [OpenAI Forward Deployed Engineer role](https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/)
+  - supports the FDE side: discovery, technical scoping, system design, build,
+    rollout, customer and domain partnership, production adoption, measurable
+    workflow impact, and evaluation-driven feedback
+- [Business Insider: FDE posting growth](https://www.businessinsider.com/forward-deployed-engineer-jobs-in-demand-2026-5)
+  - reports Indeed data showing approximately 729% year-over-year growth from
+    April 2025 to April 2026
+  - the published correction says the underlying figures are indexed values
+    relative to January 2025, not raw counts of individual job posts
+
+The BA-to-FDE capability bridge is an event-specific synthesis of the IIBA and
+OpenAI role descriptions. Neither source claims the roles are equivalent.
+
 ## Workshop community
 
 - [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)

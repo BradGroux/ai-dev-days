@@ -160,6 +160,53 @@ li:before{
 .chain-item .icon-badge{margin:0 auto 11px}
 .chain-item strong{display:block;font-size:19px;margin-top:11px}
 .chain-item > span:not(.icon-badge){display:block;color:var(--muted);font-size:14px;line-height:1.34;margin-top:7px}
+.fde-market{display:grid;grid-template-columns:.72fr 1.28fr;gap:48px;align-items:center;margin-top:24px}
+.market-signal{border-right:1px solid var(--line);padding:8px 42px 8px 0}
+.market-number{
+  font-size:108px;line-height:.9;font-weight:950;letter-spacing:-.055em;
+  background:linear-gradient(100deg,var(--cyan),var(--blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+.market-label{font-size:23px;line-height:1.28;font-weight:820;margin-top:18px;max-width:430px}
+.market-period{font-size:17px;color:var(--muted);margin-top:10px}
+.market-caveat{font-size:14px;line-height:1.38;color:var(--muted);margin-top:17px;max-width:390px}
+.fde-definition h3{font-size:25px;color:var(--cyan)}
+.fde-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:18px}
+.fde-step{
+  position:relative;border-top:3px solid var(--cyan);padding:12px 5px 0;
+  text-align:center;font-size:15px;font-weight:850;min-height:48px
+}
+.fde-step:nth-child(2){border-color:var(--blue)}.fde-step:nth-child(3){border-color:var(--pink)}
+.fde-step:nth-child(4){border-color:var(--amber)}.fde-step:nth-child(5){border-color:var(--green)}
+.fde-step:not(:last-child):after{
+  content:"→";position:absolute;right:-9px;top:7px;color:var(--muted);font-size:15px;z-index:2
+}
+.fde-points{display:grid;gap:12px;margin-top:24px}
+.fde-point{border-left:3px solid var(--cyan);padding:7px 13px;font-size:18px;line-height:1.33;color:var(--muted)}
+.fde-point:nth-child(2){border-color:var(--blue)}.fde-point:nth-child(3){border-color:var(--green)}
+.fde-point strong{color:var(--ink)}
+.bridge-board{display:grid;gap:8px;margin-top:20px}
+.bridge-head,.bridge-band{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:center
+}
+.bridge-head{color:var(--muted);font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:0 16px 4px}
+.bridge-band{
+  position:relative;border:1px solid var(--line);border-left:4px solid var(--cyan);
+  border-radius:8px;background:var(--wash);padding:12px 16px;min-height:67px
+}
+.bridge-band:nth-child(3){border-left-color:var(--blue)}.bridge-band:nth-child(4){border-left-color:var(--pink)}
+.bridge-band:nth-child(5){border-left-color:var(--green)}
+.bridge-band strong{font-size:18px;line-height:1.22}.bridge-band span{font-size:16px;line-height:1.28;color:var(--muted)}
+.bridge-close{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch;margin-top:17px}
+.bridge-formula{
+  border-left:4px solid var(--cyan);background:color-mix(in srgb,var(--cyan) 8%,transparent);
+  padding:13px 17px;font-size:19px;line-height:1.32;font-weight:820
+}
+.bridge-distinction{
+  border-left:4px solid var(--amber);background:color-mix(in srgb,var(--amber) 8%,transparent);
+  padding:13px 17px;font-size:16px;line-height:1.35;color:var(--muted)
+}
+.bridge-distinction strong{color:var(--ink)}
 .markdown-demo{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center;margin-top:26px}
 .code{
   background:#050b11;border:1px solid #244455;border-radius:9px;padding:20px 22px;color:#dffcff;
@@ -533,7 +580,55 @@ li:before{
     </div>
   </section>
 
-  <section class="slide" id="slide9" data-title="Markdown">
+  <section class="slide" id="slide9" data-title="The FDE market signal">
+    <div class="kicker">Forward Deployed Engineering</div>
+    <h2>Companies are hiring for the business-to-AI bridge.</h2>
+    <div class="fde-market">
+      <div class="market-signal">
+        <div class="market-number">≈729%</div>
+        <div class="market-label">Year-over-year growth in Indeed’s FDE posting index</div>
+        <div class="market-period">April 2025 → April 2026</div>
+        <div class="market-caveat">Indexed to January 2025. This measures posting growth, not a raw count of individual jobs.</div>
+      </div>
+      <div class="fde-definition">
+        <h3>What Forward Deployed Engineers own</h3>
+        <div class="fde-flow">
+          <div class="fde-step">Discovery</div>
+          <div class="fde-step">Scope</div>
+          <div class="fde-step">Design</div>
+          <div class="fde-step">Build</div>
+          <div class="fde-step">Rollout</div>
+          <div class="fde-step">Measure</div>
+        </div>
+        <div class="fde-points">
+          <div class="fde-point"><strong>Embed with the business.</strong> Work directly with customer engineering and domain teams.</div>
+          <div class="fde-point"><strong>Carry ambiguity into delivery.</strong> Turn workflow needs into production systems.</div>
+          <div class="fde-point"><strong>Prove business impact.</strong> Measure adoption, workflow outcomes, and evaluation feedback.</div>
+        </div>
+      </div>
+    </div>
+    <div class="role-banner"><strong>The scarce capability:</strong> carrying business understanding into delivery.</div>
+    <div class="source">Sources: <a href="https://www.businessinsider.com/forward-deployed-engineer-jobs-in-demand-2026-5">Indeed data reported by Business Insider, May 16, 2026</a> · <a href="https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/">OpenAI FDE role</a></div>
+  </section>
+
+  <section class="slide" id="slide10" data-title="The BA and FDE capability bridge">
+    <div class="kicker">The capability bridge</div>
+    <h2>FDE work builds on capabilities business analysts already use.</h2>
+    <div class="bridge-board">
+      <div class="bridge-head"><span>BA foundation</span><span>FDE expression</span><span>Additional ownership</span></div>
+      <div class="bridge-band"><strong>Elicitation, stakeholders, current state</strong><span>Customer and domain discovery</span><span>Technical scoping</span></div>
+      <div class="bridge-band"><strong>Requirements, rules, future state</strong><span>Workflow and system design</span><span>Prototyping and building</span></div>
+      <div class="bridge-band"><strong>Risk, acceptance criteria, escalation</strong><span>Delivery tradeoffs and evaluations</span><span>Production verification</span></div>
+      <div class="bridge-band"><strong>Solution value, UAT, adoption</strong><span>Measurable workflow impact</span><span>Production iteration</span></div>
+    </div>
+    <div class="bridge-close">
+      <div class="bridge-formula">Keep the BA foundation. Add AI fluency and a more direct path from discovery to delivery.</div>
+      <div class="bridge-distinction"><strong>Shared foundation. Different delivery depth.</strong><br>FDEs are expected to code, integrate, deploy, and own production outcomes.</div>
+    </div>
+    <div class="source">Comparison synthesized from <a href="https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/">IIBA’s BABOK knowledge areas</a> and the <a href="https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/">OpenAI FDE role</a>.</div>
+  </section>
+
+  <section class="slide" id="slide11" data-title="Markdown">
     <div class="kicker">The shared work surface</div>
     <h2>Markdown makes context inspectable.</h2>
     <div class="markdown-demo">
@@ -558,7 +653,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide10" data-title="Evidence and definition">
+  <section class="slide" id="slide12" data-title="Evidence and definition">
     <div class="kicker">The artifact stack · foundation</div>
     <h2>Start with what is known, how work happens, and what the data means.</h2>
     <div class="artifact-grid">
@@ -569,7 +664,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide11" data-title="Guidance and execution">
+  <section class="slide" id="slide13" data-title="Guidance and execution">
     <div class="kicker">The artifact stack · operation</div>
     <h2>Give each kind of context one clear job.</h2>
     <div class="artifact-grid">
@@ -584,7 +679,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide12" data-title="Reuse and proof">
+  <section class="slide" id="slide14" data-title="Reuse and proof">
     <div class="kicker">The artifact stack · reuse and assurance</div>
     <h2>Package stable methods. Prove every important outcome.</h2>
     <div class="split" style="margin-top:28px;flex:0 0 auto">
@@ -601,7 +696,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide13" data-title="Vendor onboarding demo">
+  <section class="slide" id="slide15" data-title="Vendor onboarding demo">
     <div class="case-layout">
       <div>
         <div class="kicker">Fictional demonstration</div>
@@ -621,7 +716,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide14" data-title="Messy source notes">
+  <section class="slide" id="slide16" data-title="Messy source notes">
     <div class="kicker">Demo one · current-state discovery</div>
     <h2>What would you refuse to let the agent assume?</h2>
     <div class="evidence-board">
@@ -640,7 +735,7 @@ Prepare a review packet.
     <div class="safety"><strong>Audience challenge:</strong> name one exception, one undefined term, and one decision owner before we ask Codex for a process.</div>
   </section>
 
-  <section class="slide" id="slide15" data-title="Current-state result">
+  <section class="slide" id="slide17" data-title="Current-state result">
     <div class="kicker">Demo one · the useful output</div>
     <h2>The first win is not an answer. It is a better question set.</h2>
     <div class="status-columns">
@@ -663,7 +758,7 @@ Prepare a review packet.
     <div class="role-banner"><strong>BA move:</strong> do not reward the agent for filling a gap. Reward it for identifying the gap, its risk, and the person who can resolve it.</div>
   </section>
 
-  <section class="slide" id="slide16" data-title="Data contract">
+  <section class="slide" id="slide18" data-title="Data contract">
     <div class="kicker">Demo two · make meaning executable</div>
     <h2>A field name is not a data definition.</h2>
     <div class="data-table">
@@ -676,7 +771,7 @@ Prepare a review packet.
     <div class="safety"><strong>Ask every time:</strong> source, owner, validation, sensitivity, permitted use, freshness, and what happens when it is missing or wrong.</div>
   </section>
 
-  <section class="slide" id="slide17" data-title="Guidance versus memory">
+  <section class="slide" id="slide19" data-title="Guidance versus memory">
     <div class="kicker">Authority matters</div>
     <h2>Memory can help recall. It cannot quietly become policy.</h2>
     <div class="authority">
@@ -694,7 +789,7 @@ Prepare a review packet.
     <div class="authority-callout"><strong>Control:</strong> if the workflow must follow a rule every time, put it in reviewed guidance, policy, an SOP, or code—not only in memory.</div>
   </section>
 
-  <section class="slide" id="slide18" data-title="Operating packet">
+  <section class="slide" id="slide20" data-title="Operating packet">
     <div class="kicker">Demo two · turn context into operation</div>
     <h2>Three artifacts separate procedure, intent, and reuse.</h2>
     <div class="operating-packet">
@@ -714,7 +809,7 @@ Prepare a review packet.
     <div class="role-banner"><strong>Do not collapse these into one giant prompt.</strong> Separate artifacts make ownership, change review, and traceability easier.</div>
   </section>
 
-  <section class="slide" id="slide19" data-title="Acceptance scenarios">
+  <section class="slide" id="slide21" data-title="Acceptance scenarios">
     <div class="kicker">Verification before automation</div>
     <h2>Give every test case a clear expected response.</h2>
     <p class="scenario-key"><strong>V means verification.</strong> V-001, V-002, and V-003 are simple reference IDs so the team can discuss, rerun, and trace the same test cases.</p>
@@ -735,7 +830,7 @@ Prepare a review packet.
     <div class="role-banner"><strong>Reliable does not mean “always completes.”</strong> Reliable means it passes when allowed, clarifies when incomplete, and stops when it lacks authority.</div>
   </section>
 
-  <section class="slide" id="slide20" data-title="Live Codex run">
+  <section class="slide" id="slide22" data-title="Live Codex run">
     <div class="demo-bridge">
       <div>
         <div class="kicker">Live Codex workbench</div>
@@ -758,7 +853,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide21" data-title="Audience scenario canvas">
+  <section class="slide" id="slide23" data-title="Audience scenario canvas">
     <div class="kicker">Your turn · whiteboard exercise</div>
     <h2>Make one audience workflow AI-ready.</h2>
     <div class="canvas">
@@ -775,7 +870,7 @@ Prepare a review packet.
     <div class="canvas-question">What is the smallest reviewable win—not the largest possible automation?</div>
   </section>
 
-  <section class="slide" id="slide22" data-title="Five moves for Monday">
+  <section class="slide" id="slide24" data-title="Five moves for Monday">
     <div class="kicker">Start small</div>
     <h2>Five moves for Monday morning.</h2>
     <div class="monday">
@@ -787,7 +882,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide23" data-title="Resources and call to action">
+  <section class="slide" id="slide25" data-title="Resources and call to action">
     <div class="contact-grid">
       <img class="headshot" src="assets/brad-groux-headshot.png" alt="Brad Groux headshot">
       <div>
@@ -832,7 +927,7 @@ Prepare a review packet.
     </div>
   </section>
 
-  <section class="slide" id="slide24" data-title="Scenario clinic and questions">
+  <section class="slide" id="slide26" data-title="Scenario clinic and questions">
     <div class="kicker">20–25 minute extension</div>
     <h2>Bring a workflow, a concern, or a boundary.</h2>
     <p class="sub">Describe it generically. Leave out company names, customer information, credentials, and sensitive data.</p>
@@ -846,7 +941,7 @@ Prepare a review packet.
     <div class="role-banner"><strong>Three recurring questions:</strong> Who owns that decision? What happens when the data is missing? What would prove it worked?</div>
   </section>
 
-  <section class="slide" id="slide25" data-title="HOUBAs feedback and SSTB community">
+  <section class="slide" id="slide27" data-title="HOUBAs feedback and SSTB community">
     <div class="closing-grid">
       <div class="closing-panel">
         <img class="closing-logo" src="assets/houbas-logo.png" alt="Houston Business Analysts logo">

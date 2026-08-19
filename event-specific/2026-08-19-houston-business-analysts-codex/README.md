@@ -7,8 +7,8 @@
 - Facilitator: Brad Groux
 - Accountable packet owner: Brad Groux
 - Tool track: Codex
-- Status: curriculum, HTML deck, and high-resolution PDF complete; venue details
-  and the public event link are pending
+- Status: curriculum, 27-slide HTML deck, and high-resolution PDF complete;
+  venue details and the public event link are pending
 
 ## Confirmed title
 
@@ -62,7 +62,7 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 
 - [Product requirements](PRD.md)
 - [HTML slides](slides.html)
-- [PDF slides](slides.pdf)
+- [PDF slides](slides.pdf) - 27-page high-resolution backup
 - [65-minute speaker notes](speaker-notes-65-minute.md)
 - [Curriculum map](curriculum-map.md)
 - [Session plan](session-plan.md)
@@ -71,6 +71,7 @@ See the [timed session plan](session-plan.md) for the full run of show and drop-
 - [Organizer slide requirements](organizer-slide-requirements.md)
 - [Attendee links](attendee-links.md)
 - [AI-ready workflow workbook](attendee-workbook.md)
+- [Completed AI-ready workflow example](ai-ready-workflow-worked-example.md)
 - [Prompt pack](prompt-pack.md)
 - [Demo script](demo-script.md)
 - [Fictional demo workspace](demo/README.md)
@@ -109,10 +110,10 @@ venue details and public event link are still needed; see
 ## Published presentation boundary
 
 The packet includes the complete event documentation, curriculum map, editable
-HTML deck, high-resolution PDF, speaker notes, fictional demonstration,
-attendee workbook, prompts, references, and delivery runbooks. The HTML deck is
-the visual source of truth. The PDF is assembled from one dark-theme 1920x1080
-screenshot per `#slideN`; browser print-to-PDF is not used.
+HTML deck, speaker notes, fictional demonstration, attendee workbook, prompts,
+references, and delivery runbooks. The 27-slide HTML deck is the visual source
+of truth. The checked-in 27-page PDF is the parity backup, assembled from one
+dark-theme 1920x1080 screenshot per `#slideN`; browser print-to-PDF is not used.
 
 ## Slide controls
 

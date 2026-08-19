@@ -79,7 +79,7 @@ code and tests. `node demo/verify-demo.mjs` validates the integrated packet.
 
 ## Phase 3: presentation packet
 
-Status: HTML deck, curriculum, and high-resolution PDF complete
+Status: 27-slide HTML deck, curriculum, and high-resolution PDF complete
 
 Deliverables:
 
@@ -90,7 +90,7 @@ Deliverables:
 - [x] aligned `facilitator-runbook.md`
 - [x] aligned `fallback-plan.md`
 - [x] aligned `attendee-links.md`
-- [x] `slides.pdf` from dark-theme 1920x1080 screenshots
+- [x] `slides.pdf` regenerated from 27 dark-theme 1920x1080 screenshots
 
 Deck outline:
 
@@ -102,23 +102,25 @@ Deck outline:
 6. Seneca framing quote
 7. the context problem
 8. the business analyst as context architect
-9. Markdown as the shared work surface
-10. evidence and definition artifacts
-11. guidance and execution artifacts, including SOP and PRD definitions
-12. reuse and proof artifacts
-13. vendor-onboarding demo setup
-14. raw-notes audience challenge
-15. current-state result
-16. data contract
-17. workspace guidance versus memory
-18. SOP, PRD, and skill
-19. pass, clarify, and stop scenarios
-20. live Codex case with starter examples
-21. audience scenario canvas with starter examples
-22. five moves for Monday
-23. resources and call to action
-24. scenario clinic and Q&A
-25. HOUBAs feedback and Start Small, Think Big community call to action
+9. FDE market signal using corrected indexed-posting data
+10. BA and FDE capability bridge with the technical-ownership distinction
+11. Markdown as the shared work surface
+12. evidence and definition artifacts
+13. guidance and execution artifacts, including SOP and PRD definitions
+14. reuse and proof artifacts
+15. vendor-onboarding demo setup
+16. raw-notes audience challenge
+17. current-state result
+18. data contract
+19. workspace guidance versus memory
+20. SOP, PRD, and skill
+21. pass, clarify, and stop scenarios
+22. live Codex case with starter examples
+23. audience scenario canvas with starter examples
+24. five moves for Monday
+25. resources and call to action
+26. scenario clinic and Q&A
+27. HOUBAs feedback and Start Small, Think Big community call to action
 
 ### Verified framing quote
 
@@ -155,8 +157,7 @@ Build rules:
 - inspect every source screenshot and the rendered PDF pages after generation
 
 Exit gate: met. The HTML deck, notes, controls, organizer inserts, local assets,
-fallback path, and 25-page PDF work locally. The PDF contains one 1920x1080
-image per page and preserves safe HTTPS link annotations.
+fallback path, and 27-page high-resolution PDF work locally.
 
 ## Phase 4: rehearsal and organizer review
 
@@ -191,8 +192,8 @@ Also verify:
 - no transcript, private message, local path, secret, or real business record appears
 - the demo has a prepared output and a short verbal fallback
 - the HTML deck and speaker notes are present
-- `slides.pdf` has 25 16:9 pages, each backed by one 1920x1080 slide image
+- `slides.pdf` has 27 16:9 pages, each backed by one 1920x1080 slide image
 - PDF annotations are HTTPS-only and match visible links in the HTML deck
 
-Deck-specific QR, route, theme, keyboard, rendering, and speaker-note checks are
-part of Phase 3. PDF parity is verified after screenshot-based export.
+Deck-specific QR, route, theme, keyboard, rendering, PDF, and speaker-note
+checks are part of Phase 3.

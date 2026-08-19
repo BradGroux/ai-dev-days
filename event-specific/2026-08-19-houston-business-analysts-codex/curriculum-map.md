@@ -29,12 +29,13 @@ required.
 |---|---|---|---|
 | 1. Purpose | What outcome are we trying to reach? | Intent before acceleration | Attendee can state an outcome and proof, not just "use AI." |
 | 2. Context | What is true, allowed, next, and done? | Context as an operating contract | Attendee identifies a missing rule or decision owner. |
-| 3. Foundation | Who, how, and what data? | People, process, data, and durable Markdown | Attendee maps one workflow across the foundation chain. |
-| 4. Artifacts | Which document answers which business question? | Sources, process brief, data contract, glossary, guidance, memory, SOP, PRD, skill, and checks | Attendee assigns the right job and authority to each artifact. |
-| 5. Challenge | What must the agent not assume? | Facts, assumptions, conflicts, and open questions | Attendee produces a focused elicitation question. |
-| 6. Operation | How does approved context become repeatable work? | Standing guidance, SOP, PRD, and reusable skill | Attendee separates procedure, intent, and reuse. |
-| 7. Assurance | What happens on complete, incomplete, and prohibited cases? | PASS, CLARIFY, STOP / ESCALATE | Attendee defines three acceptance scenarios. |
-| 8. Adoption | What is the smallest safe next step? | One reviewable operating win | Attendee names a Monday-morning workflow and owner. |
+| 3. Capability bridge | Which of my existing skills carry into AI delivery? | Shared BA and FDE foundations with different delivery depth | Attendee names an overlap and the additional technical ownership expected of an FDE. |
+| 4. Foundation | Who, how, and what data? | People, process, data, and durable Markdown | Attendee maps one workflow across the foundation chain. |
+| 5. Artifacts | Which document answers which business question? | Sources, process brief, data contract, glossary, guidance, memory, SOP, PRD, skill, and checks | Attendee assigns the right job and authority to each artifact. |
+| 6. Challenge | What must the agent not assume? | Facts, assumptions, conflicts, and open questions | Attendee produces a focused elicitation question. |
+| 7. Operation | How does approved context become repeatable work? | Standing guidance, SOP, PRD, and reusable skill | Attendee separates procedure, intent, and reuse. |
+| 8. Assurance | What happens on complete, incomplete, and prohibited cases? | PASS, CLARIFY, STOP / ESCALATE | Attendee defines three acceptance scenarios. |
+| 9. Adoption | What is the smallest safe next step? | One reviewable operating win | Attendee names a Monday-morning workflow and owner. |
 
 ## BA practice to Codex artifact map
 
@@ -56,7 +57,7 @@ The session uses observable checks instead of a quiz.
 
 ### Check 1 - Identify ambiguity
 
-During slide 14, attendees identify:
+During slide 16, attendees identify:
 
 - one exception
 - one undefined term
@@ -66,7 +67,7 @@ Success: the group distinguishes evidence from an inferred rule.
 
 ### Check 2 - Assign artifact responsibility
 
-During slides 9-11, ask which artifact should hold a rule, procedure, desired
+During slides 12-14, ask which artifact should hold a rule, procedure, desired
 outcome, reusable method, and expected example.
 
 Success: the group does not collapse guidance, memory, SOP, PRD, skill, and
@@ -74,13 +75,13 @@ acceptance checks into one prompt.
 
 ### Check 3 - Predict the safe outcome
 
-Before slide 20's live run, attendees predict V-002.
+Before slide 22's live run, attendees predict V-002.
 
 Success: the group expects CLARIFY rather than a completed approval.
 
 ### Check 4 - Map a workflow
 
-During slide 21, the room supplies at least one item for people, process, data,
+During slide 23, the room supplies at least one item for people, process, data,
 guardrails, and proof.
 
 Success: the scenario has an owner, exception, data source, stop boundary, and
@@ -88,7 +89,7 @@ verifiable outcome before anyone proposes integration.
 
 ### Check 5 - Commit to a next move
 
-During slides 21-22, attendees privately name:
+During slides 23-24, attendees privately name:
 
 - one bounded workflow
 - its accountable owner
@@ -118,6 +119,12 @@ and stops when the authority or evidence is missing.
 
 Response: in an AI-supported workflow, context and acceptance evidence remain
 living operating assets. Business ownership continues after the first build.
+
+### "A Forward Deployed Engineer is just a renamed Business Analyst"
+
+Response: the roles share discovery, workflow, stakeholder, governance, and
+value-realization capabilities. FDEs add software and AI implementation,
+integration, deployment, and production ownership.
 
 ### "The demo proves production readiness"
 

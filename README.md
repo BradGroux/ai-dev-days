@@ -82,7 +82,7 @@ partners on turning requirements, process knowledge, and data definitions into
 durable, reviewable AI context.
 
 - Packet: [`event-specific/2026-08-19-houston-business-analysts-codex/README.md`](event-specific/2026-08-19-houston-business-analysts-codex/README.md)
-- Slides: [`slides.html`](event-specific/2026-08-19-houston-business-analysts-codex/slides.html) / [`slides.pdf`](event-specific/2026-08-19-houston-business-analysts-codex/slides.pdf)
+- Slides: [`slides.html`](event-specific/2026-08-19-houston-business-analysts-codex/slides.html) / [`slides.pdf`](event-specific/2026-08-19-houston-business-analysts-codex/slides.pdf) (27-slide high-resolution export)
 - Speaker notes: [`speaker-notes-65-minute.md`](event-specific/2026-08-19-houston-business-analysts-codex/speaker-notes-65-minute.md)
 - Curriculum map: [`curriculum-map.md`](event-specific/2026-08-19-houston-business-analysts-codex/curriculum-map.md)
 - Session plan: [`session-plan.md`](event-specific/2026-08-19-houston-business-analysts-codex/session-plan.md)

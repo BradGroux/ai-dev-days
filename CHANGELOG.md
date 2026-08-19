@@ -2,11 +2,13 @@
 
 ## Unreleased
 
+- Added a sourced two-slide BA and Forward Deployed Engineering capability
+  bridge to the HOUBAs deck, with corrected indexed-posting context and explicit
+  technical-ownership boundaries, then published the complete 27-page PDF from
+  dark-theme 1920x1080 captures.
 - Added two populated business analyst practice corpora for change-request
   impact analysis and stakeholder intake prioritization, including fictional
   evidence, governing constraints, prompts, facilitator keys, and verification.
-- Published the Houston Business Analysts deck as a 25-page PDF assembled from
-  dark-theme 1920x1080 slide captures with safe HTTPS link annotations.
 - Refined the Houston Business Analysts deck with a presenter introduction,
   simplified community slide, corrected icon alignment, explicit SOP and PRD
   definitions, scenario starters, and a combined HOUBAs feedback and Start

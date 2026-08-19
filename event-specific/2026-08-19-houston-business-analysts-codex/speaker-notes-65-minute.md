@@ -9,7 +9,7 @@
 - Exact prompts: [prompt-pack.md](prompt-pack.md)
 - Prepared result: [demo/workspace/verification-report.md](demo/workspace/verification-report.md)
 - Interaction: welcome relevant questions throughout; park deep implementation
-  questions for slide 24
+  questions for slide 26
 - Safety: use only the fictional source packet and generic audience scenarios
 
 The core is intentionally a 55-minute teaching spine with 10 minutes of
@@ -82,11 +82,11 @@ Time: 2 minutes
   <https://www.linkedin.com/in/bradgroux/>, <https://youtube.com/BradGroux>,
   <https://www.bradgroux.com>, <https://digitalmeld.io>, and <https://sstb.ai>.
 
-## 0:05-0:09 - Establish the room
+## 0:05-0:08 - Establish the room
 
 ### Slide 5 - Opening poll
 
-Time: 4 minutes
+Time: 3 minutes
 
 Ask all three questions as show-of-hands prompts. Take one short example after
 question three.
@@ -106,7 +106,7 @@ Transition:
 > Keep that example in mind. We are going to build a small operating model for
 > it before we talk about connecting anything.
 
-## 0:09-0:14 - Define the problem
+## 0:08-0:13 - Define the problem
 
 ### Slide 6 - Know the destination
 
@@ -138,11 +138,11 @@ Make the distinction explicit:
 - the workflow may still be unreliable
 - reliability depends on the surrounding operating context and verification
 
-## 0:14-0:19 - Reframe the BA role
+## 0:13-0:20 - Reframe the BA role and connect it to delivery
 
 ### Slide 8 - The context architect
 
-Time: 3 minutes
+Time: 2 minutes
 
 Walk left to right:
 
@@ -157,9 +157,64 @@ Ask:
 
 > Which part of this chain usually arrives last in your projects?
 
-Take two quick answers.
+Take one quick answer.
 
-### Slide 9 - Markdown
+### Slide 9 - The FDE market signal
+
+Time: 1.5 minutes
+
+Define the acronym on first use: Forward Deployed Engineer.
+
+Say:
+
+> Look past the title and look at the work: discovery, technical scoping,
+> system design, building, rollout, and measurable workflow impact. The market
+> is rewarding people who can carry business understanding into delivery.
+
+Make the metric boundary explicit:
+
+- approximately 729% is year-over-year growth in an Indeed posting index
+- 643 and 5,330 are indexed values relative to January 2025, not raw job counts
+- the statistic is a market signal, not a promise about any individual's career
+
+Do not turn this into salary commentary or imply that every BA should pursue an
+FDE job title.
+
+[Sources]
+
+- Indeed posting-index data and correction reported by Business Insider,
+  May 16, 2026:
+  <https://www.businessinsider.com/forward-deployed-engineer-jobs-in-demand-2026-5>.
+- OpenAI Forward Deployed Engineer role:
+  <https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/>.
+
+### Slide 10 - The BA and FDE capability bridge
+
+Time: 1.5 minutes
+
+Walk only two rows unless the room asks for more. Make the distinction before
+the comparison:
+
+> These are not the same role. FDEs are expected to code, integrate, deploy,
+> and own production outcomes. The shared foundation is discovery, workflow
+> understanding, governance, stakeholder collaboration, and value.
+
+Land on:
+
+> Keep the BA foundation. Add AI fluency and a more direct path from discovery
+> to delivery.
+
+This comparison is a synthesis of the two source descriptions, not a claim
+that IIBA or OpenAI equates the roles.
+
+[Sources]
+
+- IIBA BABOK knowledge areas:
+  <https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/>.
+- OpenAI Forward Deployed Engineer role:
+  <https://openai.com/careers/forward-deployed-engineer-%28fde%29-seattle-seattle/>.
+
+### Slide 11 - Markdown
 
 Time: 2 minutes
 
@@ -173,9 +228,14 @@ surface:
 Point to the stop conditions before the goal. That is the first visible signal
 that the artifact is an operating contract, not a clever prompt.
 
-## 0:19-0:26 - Teach the artifact stack
+Transition:
 
-### Slide 10 - Evidence and definition
+> The market is rewarding people who can carry business context into delivery.
+> Now let us make that context inspectable.
+
+## 0:20-0:27 - Teach the artifact stack
+
+### Slide 12 - Evidence and definition
 
 Time: 2 minutes
 
@@ -186,7 +246,7 @@ Teach the business question before the filename:
 - What does the data mean? Data contract.
 - Do we mean the same thing? Glossary.
 
-### Slide 11 - Guidance and execution
+### Slide 13 - Guidance and execution
 
 Time: 3 minutes
 
@@ -204,7 +264,7 @@ Repeat:
 
 > Memory is helpful recall, not policy.
 
-### Slide 12 - Reuse and proof
+### Slide 14 - Reuse and proof
 
 Time: 2 minutes
 
@@ -218,9 +278,9 @@ Checkpoint question:
 
 > Which artifact in your organization is most often missing or overloaded?
 
-## 0:26-0:34 - Demo one: expose ambiguity
+## 0:27-0:34 - Demo one: expose ambiguity
 
-### Slide 13 - Vendor onboarding
+### Slide 15 - Vendor onboarding
 
 Time: 2 minutes
 
@@ -239,9 +299,9 @@ Frame the guiding principle in one sentence:
 Use the concerns conversationally—Intent, Responsibility, Work, Control,
 Assurance, and Learning. Do not stop to teach a second framework curriculum.
 
-### Slide 14 - Messy source notes
+### Slide 16 - Messy source notes
 
-Time: 6 minutes
+Time: 5 minutes
 
 Give the room 45 seconds to inspect the statements. Ask for:
 
@@ -270,7 +330,7 @@ If generation exceeds 90 seconds, show the prepared process brief and continue.
 
 ## 0:34-0:41 - Make ambiguity reviewable
 
-### Slide 15 - The useful output
+### Slide 17 - The useful output
 
 Time: 4 minutes
 
@@ -286,7 +346,7 @@ Say:
 > The first reliable output is often not an answer. It is a smaller, better
 > decision set.
 
-### Slide 16 - Data contract
+### Slide 18 - Data contract
 
 Time: 3 minutes
 
@@ -304,7 +364,7 @@ Ask:
 
 ## 0:41-0:50 - Turn context into operation
 
-### Slide 17 - Guidance versus memory
+### Slide 19 - Guidance versus memory
 
 Time: 3 minutes
 
@@ -314,7 +374,7 @@ Contrast authority:
 - memory helps orientation and recall
 - a required rule must survive a forgotten or unavailable memory
 
-### Slide 18 - Operating packet
+### Slide 20 - Operating packet
 
 Time: 3 minutes
 
@@ -327,7 +387,7 @@ Use one business rule to show separation:
 Do not collapse them into a giant prompt. Separation gives each artifact an
 owner and a change history.
 
-### Slide 19 - Acceptance scenarios
+### Slide 21 - Acceptance scenarios
 
 Time: 3 minutes
 
@@ -348,7 +408,7 @@ is not necessarily PASS: a correct stop can be the most valuable result.
 
 ## 0:50-0:55 - Demo two: run a bounded case
 
-### Slide 20 - Live Codex run
+### Slide 22 - Live Codex run
 
 Time: 5 minutes
 
@@ -392,7 +452,7 @@ Use the two on-slide examples if the room needs help generalizing the pattern:
 
 ## 0:55-1:02 - Audience scenario canvas
 
-### Slide 21 - Make one workflow AI-ready
+### Slide 23 - Make one workflow AI-ready
 
 Time: 7 minutes
 
@@ -407,6 +467,10 @@ Good candidates:
 
 If the room is quiet, start with either on-slide seed: change-request impact
 analysis or stakeholder intake prioritization.
+
+Use the
+[completed vendor-onboarding canvas](ai-ready-workflow-worked-example.md) as a
+quick model if the room needs to see a finished example before contributing.
 
 Fill one item in each whiteboard column:
 
@@ -427,7 +491,7 @@ proof. Drop extra process detail.
 
 ## 1:02-1:05 - Core close
 
-### Slide 22 - Five moves for Monday
+### Slide 24 - Five moves for Monday
 
 Time: 2 minutes
 
@@ -437,7 +501,7 @@ Move quickly. Emphasize:
 - one exception currently carried in people's heads
 - one pass, one clarify, and one stop case before external connections
 
-### Slide 23 - Resources and call to action
+### Slide 25 - Resources and call to action
 
 Time: 1 minute
 
@@ -465,7 +529,7 @@ Close the core with:
 
 ## 1:05-1:28 - Scenario clinic and Q&A
 
-### Slide 24 - Bring a workflow, concern, or boundary
+### Slide 26 - Bring a workflow, concern, or boundary
 
 Time: 23 minutes
 
@@ -512,7 +576,7 @@ public packet rather than using real organizational data in the room.
 
 ## 1:28-1:30 - Feedback and release
 
-### Slide 25 - HOUBAs feedback and SSTB community
+### Slide 27 - HOUBAs feedback and SSTB community
 
 Time: 2 minutes
 
@@ -533,17 +597,17 @@ Time: 2 minutes
 If 5 minutes behind:
 
 - show the prepared output for Prompt 01 instead of waiting for generation
-- teach only `screening_result` on slide 16
+- teach only `screening_result` on slide 18
 
 If 10 minutes behind:
 
-- combine slides 17 and 18 into a two-minute authority explanation
+- combine slides 19 and 20 into a two-minute authority explanation
 - show the deterministic V-002 result rather than running Prompt 05 live
 
 If 15 minutes behind:
 
 - move the whiteboard exercise into the extension
-- protect slides 19, 22, and 23
+- protect slides 21, 24, and 25
 - still finish the core at 65 minutes
 
 Never drop:
