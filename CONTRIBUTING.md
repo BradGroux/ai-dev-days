@@ -1,6 +1,6 @@
 # SOP: Contributing to AI Dev Days
 
-**Status:** Version 1.0.0<br>
+**Status:** Version 1.1.0<br>
 **Accountable owner:** Founding steward or future governing body<br>
 **Process manager:** Program maintainer<br>
 **Prepared:** 2026-07-30<br>

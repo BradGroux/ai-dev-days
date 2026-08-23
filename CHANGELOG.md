@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+No changes yet.
+
+## 1.1.0 - 2026-08-22
+
+- Added the Houston Business Analysts HTML deck, curriculum map, 65-minute
+  speaker notes, organizer assets, and deck verification, then published the
+  approved 27-page high-resolution PDF.
 - Added a sourced two-slide BA and Forward Deployed Engineering capability
   bridge to the HOUBAs deck, with corrected indexed-posting context and explicit
   technical-ownership boundaries, then published the complete 27-page PDF from
@@ -21,6 +28,14 @@
 - Completed the HOUBAs executable demonstration with staged Codex workspaces,
   run-ready prompts, framework guidance, a deterministic vendor-review CLI,
   and focused behavior tests.
+- Added Mermaid diagrams to the HOUBAs PRD, curriculum map, build plan, session
+  plan, worked example, and demo guide to make the delivery model easier to
+  teach and review.
+- Updated Beaver Badges development dependencies to PostCSS 8.5.26,
+  `@types/react-dom` 19.2.4, and Vite 8.2.1 after isolated install, audit,
+  typecheck, build, visual-smoke, and full repository validation.
+- Corrected the HOUBAs HTML deck's initial slide counter to match its 27-slide
+  source and generated PDF.
 
 ## 1.0.0 - 2026-08-03
 
@@ -56,9 +71,7 @@
 - Added repository and event-path migration guidance.
 - Added the August 19, 2026 Houston Business Analysts first-pass event packet,
   attendee workbook, prompts, runbooks, and verified fictional vendor-onboarding
-  demo workspace; added the BA-focused HTML deck, curriculum map, speaker notes,
-  organizer assets, and deck verification while deferring the PDF until final
-  slide approval.
+  demo workspace; presentation slides remain deferred.
 - Added the June 1, 2026 GitHub Build creator demo packet with deck, prompt pack, speaker notes, fallback plan, and Discord QR asset.
 - Added repository audit, external link checking, and a GitHub Actions quality workflow.
 - Added Dependabot coverage for Beaver Badges app dependencies and GitHub Actions.

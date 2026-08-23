@@ -75,7 +75,7 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 
 ## Featured Event Packets
 
-### Upcoming: Houston Business Analysts - August 19, 2026
+### Featured packet: Houston Business Analysts - August 19, 2026
 
 Interactive session for business analysis practitioners and business-technology
 partners on turning requirements, process knowledge, and data definitions into
