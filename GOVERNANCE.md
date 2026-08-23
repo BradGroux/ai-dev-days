@@ -1,6 +1,6 @@
 # AI Dev Days Governance
 
-**Status:** AI Dev Days version 1.0.0<br>
+**Status:** AI Dev Days version 1.1.0<br>
 **Founding steward:** Brad Groux<br>
 **Prepared:** 2026-07-30
 

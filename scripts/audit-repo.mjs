@@ -29,6 +29,7 @@ const requiredFiles = [
   'docs/research-and-education-method.md',
   'docs/release-process.md',
   'docs/releases/v1.0.0.md',
+  'docs/releases/v1.1.0.md',
   'research/README.md',
   'research/source-note-template.md',
   'research/digital-meld-operating-research.md',
