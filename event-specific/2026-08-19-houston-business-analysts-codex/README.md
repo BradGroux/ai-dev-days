@@ -62,6 +62,7 @@ flowchart LR
 - Attending: [attendee links](attendee-links.md) and
   [AI-ready workflow workbook](attendee-workbook.md)
 - Presenting: [HTML slides](slides.html), [PDF slides](slides.pdf),
+  [individual 1080p PNGs](slides-png/README.md),
   [65-minute speaker notes](speaker-notes-65-minute.md), and
   [curriculum map](curriculum-map.md)
 - Facilitating: [session plan](session-plan.md),
@@ -78,6 +79,7 @@ flowchart LR
 - [Product requirements](PRD.md)
 - [HTML slides](slides.html)
 - [PDF slides](slides.pdf) - 27-page high-resolution backup
+- [Individual 1080p slide PNGs](slides-png/README.md) - 27 numbered images
 - [65-minute speaker notes](speaker-notes-65-minute.md)
 - [Curriculum map](curriculum-map.md)
 - [Session plan](session-plan.md)
@@ -129,6 +131,8 @@ HTML deck, speaker notes, fictional demonstration, attendee workbook, prompts,
 references, and delivery runbooks. The 27-slide HTML deck is the visual source
 of truth. The checked-in 27-page PDF is the parity backup, assembled from one
 dark-theme 1920x1080 screenshot per `#slideN`; browser print-to-PDF is not used.
+The [`slides-png/`](slides-png/README.md) folder exposes those 27 source images
+individually at their native 1920x1080 resolution.
 
 ## Slide controls
 
