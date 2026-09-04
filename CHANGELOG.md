@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Updated the transitive Browserslist development dependency to resolve the release audit advisory.
+
 - Added the approved Aggie Innovators 31-slide presentation and 1920x1080 screenshot-based PDF, 90-minute curriculum, and Aggie Launchpad demo kit.
 
 ## 1.1.0 - 2026-08-22
