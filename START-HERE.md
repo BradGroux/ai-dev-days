@@ -30,6 +30,13 @@ Start with:
 6. [Publication safety](PUBLICATION-SAFETY.md)
 7. [Governance](GOVERNANCE.md)
 
+## I am preparing for Aggie Innovators on September 14
+
+Start with the [Own your operating model, rent your tools curriculum draft](event-specific/2026-09-14-aggie-innovators/README.md).
+It includes the 90-minute plan, slide storyboard, paired Codex/Buzz demo, attendee
+worksheet, and gift setup requirements. The HTML/PDF deck and reference app are built. Actual paired demo evidence and
+attendee redemption testing remain pending.
+
 ## I am preparing for or attending the Houston Business Analysts session
 
 Start with the August 19, 2026 event packet:

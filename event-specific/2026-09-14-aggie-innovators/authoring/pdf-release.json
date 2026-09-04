@@ -1,0 +1,16 @@
+{
+  "approval": "Brad approved current HTML slides in this conversation on 2026-09-04",
+  "theme": "dark",
+  "pages": 31,
+  "capture_pixels": [
+    1920,
+    1080
+  ],
+  "page_points": [
+    960,
+    540
+  ],
+  "https_annotations": 14,
+  "html_sha256": "982bd713c7f93dc990fd42f47252d52a7481a3f5f85001958b0137f6c4578b70",
+  "pdf_sha256": "f1e5b924a7e6a4cae2db9d6e689651866c23f0f543d1ff7ade32d2e852abd84c"
+}

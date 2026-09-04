@@ -1,0 +1,219 @@
+[
+  {
+    "title": "Own your operating model.<br><em>Rent your tools.</em>",
+    "kicker": "Aggie Innovators · September 14, 2026",
+    "body": "<p class=\"lead\">The next project should start further ahead.</p><div class=\"byline\">Brad Groux <span>Co-founder, Digital Meld</span></div><div class=\"ownership\"><span>Purpose</span><span>Decisions</span><span>Procedures</span><span>Evidence</span><span>Memory</span></div>",
+    "notes": "0:00–0:01. Welcome back to Aggie Innovators. Explain rent as replaceable tool choices, including local tools. We will build one project twice and inspect the difference.",
+    "cls": "hero"
+  },
+  {
+    "title": "Three years of research.<br>Products in use.",
+    "kicker": "The practitioner view",
+    "body": "<div class=\"split\"><div class=\"portrait\"><img src=\"assets/brad-groux-headshot.png\" alt=\"Brad Groux\"><div><h3>Brad Groux</h3><p>Digital Meld co-founder<br>Buzz and OpenClaw Contributor<br>Veritas Kanban creator</p></div></div><div class=\"lines\"><div><b>Research</b><span>AI-Native Operating Framework</span></div><div><b>Delivery</b><span>Veritas Kanban and OpenClaw contributions</span></div><div><b>Teaching</b><span>AI Dev Days and Start Small, Think Big</span></div></div></div>",
+    "notes": "0:01–0:04. Three years comes from Brad’s supplied experience. Tell one concrete story about repeatedly reconstructing context. These are public bodies of work, not quantified customer results. Do not imply ownership of OpenClaw or Buzz.",
+    "cls": ""
+  },
+  {
+    "title": "AI can lose the context<br>that makes your work yours.",
+    "kicker": "The cost of starting over",
+    "body": "<p class=\"definition\">A new conversation may not know your team’s decisions, your definition of “done,” or why you rejected an earlier idea.</p><div class=\"rail\"><article><h3>You repeat the background.</h3><p>Who the work serves, what matters, and what has already been tried.</p></article><article><h3>The same mistakes return.</h3><p>A discarded idea comes back. An old assumption becomes a new answer.</p></article><article><h3>The next person starts cold.</h3><p>The result survives, but the reasoning and unfinished work stay in your chat.</p></article></div><div class=\"example\"><b>For example:</b> your team decided to exclude pending sales from the weekly revenue report. A new chat includes them again because it never received that decision.</div>",
+    "notes": "0:04–0:06. Ask for hands: used AI this week; had to repeat context; received a plausible answer that missed a requirement. Take two short examples. Connect the answers to the work, not prompt-writing tricks.",
+    "cls": ""
+  },
+  {
+    "title": "Keep your way of working.<br>Change the tools when you need to.",
+    "kicker": "What the theme means",
+    "body": "<p class=\"definition\">Your operating model is how work gets done: what you are trying to achieve, who decides, how you check quality, and what you learn.</p><div class=\"contrast\"><article><h3>What you should own</h3><p>Requirements, procedures, decisions, sources, and the record of what happened.</p><p>Keep them in formats your people and tools can read.</p></article><article class=\"old\"><h3>What you can replace</h3><p>The model, chat app, coding assistant, or task-management tool.</p><p>A better tool should not require rebuilding your organization’s knowledge.</p></article></div><div class=\"example\"><b>For example:</b> an expense report still needs receipts and a manager’s approval when you switch accounting software. Your rules belong to your business; the software helps carry them out.</div>",
+    "notes": "0:06–0:07. Explain that this is a process demonstration, not a model benchmark. The preparation effort is part of the intervention. Never promise that the baseline will fail.",
+    "cls": ""
+  },
+  {
+    "title": "A model is the trained system<br>that generates an answer.",
+    "kicker": "AI foundations / model",
+    "body": "<p class=\"definition\">An AI model learns patterns from training data. When you give it input, it uses those learned patterns to generate an output. A language model generates text one piece at a time.</p><div class=\"journey\"><div>Your input<small>Question, instructions, documents, images</small></div><span>→</span><div>Trained model<small>Uses learned patterns and the supplied context</small></div><span>→</span><div>Generated output<small>An explanation, draft, code, or proposed tool action</small></div></div><div class=\"rail\"><article><h3>Training is its background.</h3><p>Broad learned patterns are not the same as knowing your current project.</p></article><article><h3>Context is what it sees now.</h3><p>Your prompt, conversation, and supplied or retrieved information.</p></article><article><h3>An answer needs checking.</h3><p>A fluent response can still contain incorrect facts or unsupported assumptions.</p></article></div>",
+    "notes": "0:07–0:09. Keep it simple: the trained system processes context and generates outputs. A model name is not an application name. Persistent project knowledge depends on the surrounding system and what is retrieved.",
+    "cls": ""
+  },
+  {
+    "title": "An agent uses AI to take actions<br>toward a goal.",
+    "kicker": "AI foundations / agent",
+    "body": "<p class=\"definition\">An AI agent uses a model to decide what to do next, uses tools to do it, and responds to the results. It can carry out several steps instead of stopping at an answer.</p><div class=\"journey\"><div>Goal<small>Prepare a weekly sales report</small></div><span>→</span><div>Action<small>Read orders and calculate revenue</small></div><span>→</span><div>Feedback<small>Two orders are still pending</small></div><span>→</span><div>Next step<small>Exclude them and explain why</small></div></div><div class=\"example\"><b>The difference:</b> a chatbot can explain how to prepare a report. An agent can read the source files, build it, check it, and save the result. It still needs limits and a human owner.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "A harness is the software<br>that lets a model do useful work.",
+    "kicker": "AI foundations / harness",
+    "body": "<p class=\"definition\">The harness connects the model to its environment. It supplies context, makes tools available, controls what actions are allowed, and returns results so the model can continue.</p><div class=\"harness\"><div class=\"harness-label\">Harness</div><div class=\"harness-grid\"><span>Files + instructions</span><span>Tools + integrations</span><b>Model</b><span>Permissions + limits</span><span>Results + work state</span></div></div><div class=\"example\"><b>For example:</b> Codex gives a model access to project files and development tools. The model proposes an action; the harness executes it within the configured permissions.</div>",
+    "notes": "0:11–0:14. Explain roles may overlap in products. Ask: if the model changes, should the spending approval rule change? No. Tool capability may change, but business authority remains explicit.",
+    "cls": ""
+  },
+  {
+    "title": "Aggie Launchpad:<br>from an idea to a useful experiment.",
+    "kicker": "Our demo / student entrepreneurship",
+    "body": "<p class=\"definition\">Jordan wants to start Campus Cycle: a bicycle-repair pickup service for students. Before building the business, Jordan needs to learn whether students will actually use it.</p><div class=\"rail\"><article><h3>The app we will build</h3><p>A founder dashboard connecting assumptions, customer evidence, a pilot experiment, and next decisions.</p></article><article><h3>What we know so far</h3><p>20 interviews. 12 students expressed interest. Six reserved a free pilot slot. Nobody has paid.</p></article><article><h3>The decision ahead</h3><p>Run a small pilot if at least five reservations remain active. Jordan decides whether to proceed.</p></article></div><div class=\"example\"><b>The challenge:</b> two students cancel. Does the app still say “ready to launch,” or help the founder understand what changed? <span class=\"mini-label\">All people and research data are fictional.</span></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "An attractive startup dashboard<br>can still tell the wrong story.",
+    "kicker": "Aggie Launchpad / starting from a brief",
+    "body": "<p class=\"definition\">“Build an app to help me validate my startup idea” is easy to ask. The useful result depends on what the app treats as evidence.</p><div class=\"rail\"><article><h3>Interest ≠ a reservation</h3><p>A positive interview response does not mean a student booked a pilot slot.</p></article><article><h3>A reservation ≠ a sale</h3><p>A free pilot can test participation. It cannot prove willingness to pay.</p></article><article><h3>A target ≠ approval</h3><p>Meeting five reservations allows a founder review. It does not authorize a launch.</p></article></div><div class=\"example\">A useful dashboard makes uncertainty visible instead of turning every positive signal into “validated.”</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Can the founder make<br>a better decision?",
+    "kicker": "What useful output should answer",
+    "body": "<div class=\"rail\"><article><h3>What do we know?</h3><p>Show interview interest and active reservations separately, with their sources.</p></article><article><h3>What are we testing?</h3><p>At least five active reservations for a free pickup pilot. Paid demand remains untested.</p></article><article><h3>What happens next?</h3><p>Recalculate after cancellations, flag a missed target, and name the decision owner.</p></article></div><div class=\"example\"><b>The test of the app:</b> can another teammate explain the evidence and next decision without reading Jordan’s entire chat history?</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Different tools.<br>Different jobs.",
+    "kicker": "A map, not a leaderboard",
+    "body": "<div class=\"map\"><div><b>Agent work</b><span>Codex · Claude Code · Grok Build · DeepSeek Harness</span></div><div><b>Model execution</b><span>Ollama</span></div><div><b>Personal agent environment</b><span>OpenClaw</span></div><div><b>Collaboration + work state</b><span>Buzz · Veritas Kanban</span></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Claude Code",
+    "kicker": "A coding-agent harness",
+    "body": "<div class=\"cards\"><article><h3>Read</h3><p>Understand files and project context.</p></article><article><h3>Act</h3><p>Edit code and run permitted commands.</p></article><article><h3>Check</h3><p>Inspect results and iterate.</p></article></div><p class=\"proof\">Claude is a model family. Claude Code is the tool around it.</p><a class=\"source\" href=\"https://code.claude.com/docs/en/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code documentation ↗</a>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Ollama",
+    "kicker": "Model runtime",
+    "body": "<div class=\"split\"><div class=\"product-copy\"><p class=\"definition\">Ollama runs and serves models so you can use them from a chat interface, an app, or an agent harness. It supports local models and cloud options.</p><h3>Why you would use it</h3><p>Choose where a model runs and connect it to the tools you already use.</p><a href=\"https://docs.ollama.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Explore Ollama ↗</a></div><div class=\"product-visual\"><div class=\"bar\">Ollama / Aggie Launchpad</div><div class=\"entry\">Choose a model<small>Select a local download or a cloud-backed model.</small></div><div class=\"entry\">Ask about the source<small>“How many active pilot reservations do we have?”</small></div><div class=\"entry\">Use the response<small>Your app or harness receives the model’s output.</small></div><div class=\"mini-label\">Illustrative workflow</div></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Grok Build",
+    "kicker": "Coding-agent harness",
+    "body": "<div class=\"split\"><div class=\"product-copy\"><p class=\"definition\">Grok Build is a coding agent that works with a project’s files and development tools. It can help turn a request into changes you can inspect.</p><h3>Why you would use it</h3><p>Build or revise software while keeping the project, instructions, and results together.</p><a href=\"https://docs.x.ai/build/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Explore Grok Build ↗</a></div><div class=\"product-visual\"><div class=\"bar\">Grok Build / Aggie Launchpad</div><div class=\"entry\">Understand the project<small>Read the founder brief and existing app.</small></div><div class=\"entry\">Make a change<small>Add a warning when reservations fall below the target.</small></div><div class=\"entry\">Check the result<small>Verify the reservation count and inspect the changed files.</small></div><div class=\"mini-label\">Illustrative workflow</div></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "OpenClaw",
+    "kicker": "Personal-agent environment",
+    "body": "<div class=\"split\"><div class=\"product-copy\"><p class=\"definition\">OpenClaw connects AI models, tools, and communication channels so an assistant can work with information and perform configured tasks.</p><h3>Why you would use it</h3><p>Bring recurring work to an assistant that has the right context and access.</p><a href=\"https://docs.openclaw.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Explore OpenClaw ↗</a></div><div class=\"product-visual\"><div class=\"bar\">OpenClaw / Aggie Launchpad</div><div class=\"entry\">Ask a useful question<small>“What do we know about customer demand?”</small></div><div class=\"entry\">Consult the context<small>12 expressed interest; six reserved. Paid demand is untested.</small></div><div class=\"entry\">Return a next action<small>Jordan needs to review the pilot evidence.</small></div><div class=\"mini-label\">Illustrative workflow</div></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Buzz",
+    "kicker": "A workspace for people and agents",
+    "body": "<div class=\"split\"><div class=\"product-copy\"><p class=\"definition\">Buzz is a shared workspace where humans and AI agents collaborate around conversations, projects, and artifacts.</p><h3>Why you would use it</h3><p>Keep a team’s questions, work, and review in a place where someone else can pick them up.</p><a href=\"https://github.com/block/buzz\" target=\"_blank\" rel=\"noopener noreferrer\">Explore Buzz ↗</a></div><div class=\"product-visual\"><div class=\"bar\">Buzz / Aggie Launchpad</div><div class=\"entry\">Jordan · founder<small>“Here is the updated experiment.”</small></div><div class=\"entry\">Agent · review<small>“Four reservations remain. Jordan must review the pilot.”</small></div><div class=\"entry\">Next person · continuation<small>The plan, decision, and next owner remain together.</small></div><div class=\"mini-label\">Illustrative workflow</div></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "DeepSeek Harness",
+    "kicker": "Developer preview",
+    "body": "<div class=\"split\"><div class=\"product-copy\"><p class=\"definition\">DeepSeek Harness is an extensible agent environment built around plugins. Models, tools, sessions, and other capabilities can be composed through configuration.</p><h3>Why you would use it</h3><p>Explore how an agent is assembled and inspect the record of what it actually did.</p><a href=\"https://www.deepseek.com/harness/en/\" target=\"_blank\" rel=\"noopener noreferrer\">Explore DeepSeek Harness ↗</a></div><div class=\"product-visual\"><div class=\"bar\">DeepSeek Harness / Aggie Launchpad</div><div class=\"entry\">Compose the agent<small>Choose the model, tools, and operating mode.</small></div><div class=\"entry\">Carry out the work<small>Read the brief and check the experiment evidence.</small></div><div class=\"entry\">Inspect the trajectory<small>See the context, tool calls, and results.</small></div><div class=\"mini-label\">Illustrative workflow</div></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Veritas Kanban",
+    "kicker": "A shared view of the work",
+    "body": "<div class=\"split\"><div class=\"product-copy\"><p class=\"definition\">Veritas Kanban is a local-first task board with optional AI agent orchestration. It makes ownership, status, and completion criteria visible.</p><h3>Why you would use it</h3><p>Coordinate human and agent work without relying on a chat message to tell you what is done.</p><a href=\"https://github.com/BradGroux/veritas-kanban\" target=\"_blank\" rel=\"noopener noreferrer\">Explore Veritas Kanban ↗</a></div><div class=\"product-visual\"><div class=\"bar\">Veritas Kanban / Aggie Launchpad</div><div class=\"entry\">To do · Jordan<small>Review the pilot reservation evidence.</small></div><div class=\"entry\">Blocked · Jordan<small>Decide what to do after two cancellations.</small></div><div class=\"entry\">Done means evidence<small>Attach the source record and accepted decision.</small></div><div class=\"mini-label\">Illustrative workflow</div></div></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Memory keeps the reasoning<br>with the work.",
+    "kicker": "What the next conversation needs",
+    "body": "<div class=\"rail\"><article><h3>Current facts</h3><p>Six active reservations at the start. They are for a free pilot, not paying customers.</p></article><article><h3>Decisions and reasons</h3><p>Jordan chose five reservations as the minimum to review a pilot. This is a local experiment target.</p></article><article><h3>Open questions</h3><p>Will students pay? Can pickup and repairs be delivered reliably? Neither has been tested.</p></article></div><div class=\"example\"><b>A useful memory:</b> “Do not describe interview interest as sales. Preserve the source counts and the reason for each decision.”</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "What are we building?<br>How do we do it?",
+    "kicker": "Project Requirements Document + Standard Operating Procedure",
+    "body": "<div class=\"compare\"><article><div class=\"label\">Project Requirements Document</div><h3>Define the result.</h3><p>The dashboard must distinguish interest, reservations, cancellations, and paid demand.</p><blockquote>Show active reservations and compare them with the five-reservation target.</blockquote></article><div class=\"versus\">+</div><article><div class=\"label\">Standard Operating Procedure</div><h3>Define the work.</h3><p>Read evidence, apply updates, check counts, identify exceptions, and save the handoff.</p><blockquote>Target missed? Flag it and ask Jordan to decide. Never invent approval.</blockquote></article></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "The AI-Native<br>Operating Framework",
+    "kicker": "A way to define how people and AI work together",
+    "body": "<div class=\"concerns\"><article><h3>Intent</h3><p>What outcome are we responsible for?</p></article><article><h3>Responsibility</h3><p>Who owns the work and decisions?</p></article><article><h3>Work</h3><p>What inputs, actions, and handoffs are needed?</p></article><article><h3>Control</h3><p>What limits and exceptions apply?</p></article><article><h3>Assurance</h3><p>What evidence makes the result acceptable?</p></article><article><h3>Learning</h3><p>What do we retain and improve?</p></article></div><a class=\"framework-link\" href=\"https://github.com/BradGroux/ai-native-operating-framework\" target=\"_blank\" rel=\"noopener noreferrer\">Read the open framework → github.com/BradGroux/ai-native-operating-framework</a><div class=\"example\"><b>Example:</b> two cancellations leave four active reservations against a target of five. The agent flags the gap; Jordan decides whether to recruit, revise, or pause. Save the decision and its evidence.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Give the next experiment<br>something useful to inherit.",
+    "kicker": "Putting the framework into practice",
+    "body": "<div class=\"rail\"><article><h3>Requirements</h3><p>Keep interview interest, reservations, and paid demand separate. Show sources and uncertainty.</p></article><article><h3>Procedure</h3><p>Recount when evidence changes. Compare with the target. Route the next decision to the founder.</p></article><article><h3>Memory</h3><p>Retain the hypothesis, target, source records, decision history, and unanswered questions.</p></article></div><div class=\"example\"><b>A reusable rule:</b> “Never turn an expression of interest into a paying customer.” That correction should survive the next project and the next tool.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Make the evidence visible.<br>Keep the assumptions visible, too.",
+    "kicker": "Aggie Launchpad / work with the framework",
+    "body": "<div class=\"rail\"><article><h3>Observed in the scenario</h3><p>20 interviews, 12 expressions of interest, six initial free-pilot reservations.</p></article><article><h3>Still an assumption</h3><p>Students will pay for pickup. The team can deliver repairs at a sustainable cost.</p></article><article><h3>A bounded experiment</h3><p>Use five active reservations as the threshold for reviewing a small free pilot.</p></article></div><div class=\"example\"><b>What changes in the app:</b> separate evidence cards, an explicit experiment target, and a pending founder decision. No blanket “business validated” badge.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "New evidence should change<br>the next decision.",
+    "kicker": "The experiment changes",
+    "body": "<div class=\"journey\"><div>Two students cancel<small>Six initial reservations − two cancellations</small></div><span>→</span><div>Four remain active<small>Below the target of five</small></div><span>→</span><div>Jordan reviews<small>Recruit more, revise the experiment, or pause</small></div></div><div class=\"example\"><b>What the app should do:</b> update the count and status, retain the original six, and flag the decision. Twelve interested interviewees do not fill the missing reservation.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "The next teammate needs<br>the learning, not just the app.",
+    "kicker": "A handoff that supports a decision",
+    "body": "<div class=\"contrast\"><article class=\"old\"><h3>“Students love the idea.”</h3><p>The next teammate cannot tell who committed, what changed, or whether anyone tested payment.</p></article><article><h3>“Four reservations remain.”</h3><p>Two canceled. The target is five. Jordan must decide what comes next. Paid demand is still untested.</p></article></div><div class=\"example\"><b>Save with the handoff:</b> the hypothesis, source records, original and current counts, target, decision owner, and next unanswered question.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Evidence for the next decision.",
+    "kicker": "Aggie Launchpad / illustrative app mockup",
+    "cls": "crew-mockup-slide",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "body": "<div class=\"crew-app\"><div class=\"crew-appbar\"><strong>Aggie Launchpad / Campus Cycle</strong><span>Experiment: free bicycle-repair pickup pilot</span></div><div class=\"crew-metrics\"><article><small>Interview interest</small><strong>12 / 20</strong><span>Interest reported · not sales</span></article><article><small>Active reservations</small><strong>4 / 5 target</strong><span>Six initial − two canceled</span></article><article class=\"crew-alert\"><small>Decision needed</small><strong>Target missed</strong><span>Jordan · review pending</span></article></div><div class=\"crew-columns\"><article><h3>Evidence and assumptions</h3><div class=\"crew-row\"><b>Observed</b><span>Four active reservations for a free pilot.</span></div><div class=\"crew-row\"><b>Untested</b><span>Whether students will pay for pickup and repairs.</span></div><div class=\"crew-row\"><b>Next choice</b><span>Jordan: recruit, revise, or pause. No decision recorded.</span></div></article><article><h3>Handoff for the next teammate</h3><p>Two reservations were canceled. The five-reservation threshold has not changed.</p><p>Do not describe the venture as validated. Review the pilot before proceeding.</p><div class=\"crew-saved\">Saved with the experiment<br><span>Sources · counts · target · decision history</span></div></article></div></div><p class=\"mini-label\">Illustrative design, not measured agent output. A free-pilot reservation does not establish willingness to pay.</p>"
+  },
+  {
+    "title": "The value compounds<br>when the knowledge stays.",
+    "kicker": "Why this matters beyond one demo",
+    "body": "<div class=\"journey\"><div>First project<small>Clarify the rules and check the result</small></div><span>→</span><div>Next project<small>Reuse the rules and accepted lessons</small></div><span>→</span><div>New tool or teammate<small>Bring the operating knowledge with you</small></div></div><div class=\"rail\"><article><h3>Less re-explaining</h3><p>Requirements and decisions no longer depend on one chat.</p></article><article><h3>More consistent work</h3><p>The same approval rules and quality checks travel with the task.</p></article><article><h3>Easier change</h3><p>Replace a tool without discarding what your team has learned.</p></article></div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Start with one decision<br>you want AI to help you make.",
+    "kicker": "A practical first step",
+    "body": "<p class=\"definition\">Choose a customer experiment, research summary, weekly report, or project handoff. Write a short working agreement before asking AI to help.</p><div class=\"rail\"><article><h3>What counts as evidence?</h3><p>“Separate customer behavior from what people say they might do.”</p></article><article><h3>Who decides?</h3><p>“The founder accepts the next experiment. AI proposes and checks.”</p></article><article><h3>What should survive?</h3><p>“Save the sources, decision, reasoning, and next question.”</p></article></div><div class=\"example\"><b>Your first move:</b> write those three answers for your own task, try them with your current tool, and retain the corrections.</div>",
+    "notes": "Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.",
+    "cls": ""
+  },
+  {
+    "title": "Your first year of SSTB.ai<br>is on us.",
+    "kicker": "For new members attending today",
+    "body": "<div class=\"gift-layout\"><div><div style=\"display:flex;align-items:center;gap:24px;margin-bottom:24px\"><img style=\"width:100px;height:100px;border-radius:14px\" src=\"assets/sstb-logo.png\" alt=\"SSTB logo\"><strong style=\"font-size:34px;line-height:1.15\">Start Small,<br>Think Big.</strong></div><p class=\"definition\">Keep learning, building, and sharing<br>with the SSTB community.</p><p><strong>No payment card required.</strong><br>365 days of membership access.</p><p>Redeem by <strong>September 16, 8 PM Central.</strong><br>Use the email approved at event check-in.</p></div><div class=\"gift-right\"><a href=\"https://sstb.ai/invitation?code=B7DC79\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"gift-qr\" src=\"assets/attendee-pass-qr.png\" alt=\"Scan to claim the Aggie Innovators SSTB access pass\"></a><p>Scan to claim your year.</p><span class=\"mini-label\">New members · approved attendees only</span></div></div>",
+    "notes": "1:22–1:26. Offer requirements confirmed by Brad. Administrative activation and redemption verification remain separate. Replace the placeholder panel with the actual tested attendee link/QR before presenting; do not treat the SSTB homepage as the redemption path. No payment card and no automatic charge.",
+    "cls": ""
+  },
+  {
+    "title": "Make the next project<br>start further ahead.",
+    "kicker": "Your next move",
+    "body": "<div class=\"lines\"><div><b>Pick one workflow.</b><span>Choose something you repeat.</span></div><div><b>Name the owner.</b><span>Make decisions and authority explicit.</span></div><div><b>Define one check.</b><span>Say what evidence will make you accept the result.</span></div><div><b>Keep the lesson.</b><span>Save the context the next person needs.</span></div></div>",
+    "notes": "1:26–1:28. Close with action, not a tool shopping list. Invite them to apply this to a project, organization, research workflow, or business process.",
+    "cls": ""
+  },
+  {
+    "title": "Keep building.",
+    "kicker": "Resources and follow-up",
+    "body": "<div class=\"split\"><div class=\"resource-links\"><a href=\"https://github.com/BradGroux/ai-dev-days\" target=\"_blank\" rel=\"noopener noreferrer\">AI Dev Days <small>Presentation and learning materials</small></a><a href=\"https://github.com/BradGroux/ai-native-operating-framework\" target=\"_blank\" rel=\"noopener noreferrer\">AI-Native Operating Framework <small>The open operating framework</small></a><a href=\"https://sstb.ai\" target=\"_blank\" rel=\"noopener noreferrer\">SSTB.ai <small>Start Small, Think Big</small></a><a href=\"https://www.linkedin.com/in/bradgroux/\" target=\"_blank\" rel=\"noopener noreferrer\">Brad Groux <small>Connect on LinkedIn</small></a><a href=\"https://digitalmeld.io\" target=\"_blank\" rel=\"noopener noreferrer\">Digital Meld <small>Research and product delivery</small></a></div><div class=\"qr-panel\"><img src=\"assets/resources-qr.png\" alt=\"QR code for AI Dev Days on GitHub\"><p>Start with the source.</p><small>github.com/BradGroux/ai-dev-days</small></div></div>",
+    "notes": "1:28–1:30. Leave resource slide visible for Q&A. The repository root is a verified existing URL; do not imply the new packet has been published until it has. Gift QR is separate and must point to verified redemption.",
+    "cls": ""
+  }
+]
