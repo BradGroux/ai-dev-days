@@ -1,4 +1,4 @@
-import type { Location } from './types'
+import type { Location } from './types.ts'
 
 const storageKey = 'beaver-badges.progress.v1'
 
@@ -19,10 +19,19 @@ export function loadSavedLocations(seedLocations: Location[]): Location[] {
     const raw = window.localStorage.getItem(storageKey)
     if (!raw) return seedLocations
 
-    const parsed = JSON.parse(raw) as StoredProgress
-    if (!Array.isArray(parsed.locations)) return seedLocations
+    const parsed = JSON.parse(raw)
+    if (!parsed || !Array.isArray(parsed.locations)) return seedLocations
 
-    const progressById = new Map(parsed.locations.map((location) => [location.id, location]))
+    const valid = parsed.locations.filter((value: unknown): value is StoredLocationProgress => {
+      if (!value || typeof value !== 'object') return false
+      const item = value as Partial<StoredLocationProgress>
+      return typeof item.id === 'string' && typeof item.visited === 'boolean' &&
+        (item.visitedAt === undefined || (typeof item.visitedAt === 'string' &&
+          /^\d{4}-\d{2}-\d{2}$/.test(item.visitedAt) &&
+          !Number.isNaN(Date.parse(item.visitedAt)) &&
+          new Date(item.visitedAt).toISOString().slice(0, 10) === item.visitedAt))
+    })
+    const progressById = new Map<string, StoredLocationProgress>(valid.map((item: StoredLocationProgress) => [item.id, item]))
     return seedLocations.map((location) => {
       const savedLocation = progressById.get(location.id)
       if (!savedLocation) return location
@@ -30,7 +39,7 @@ export function loadSavedLocations(seedLocations: Location[]): Location[] {
       return {
         ...location,
         visited: savedLocation.visited,
-        visitedAt: savedLocation.visitedAt,
+        visitedAt: savedLocation.visited ? savedLocation.visitedAt : undefined,
       }
     })
   } catch {
@@ -39,12 +48,17 @@ export function loadSavedLocations(seedLocations: Location[]): Location[] {
 }
 
 export function saveLocations(locations: Location[]) {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') return false
 
   const payload: StoredProgress = {
     locations: locations.map(({ id, visited, visitedAt }) => ({ id, visited, visitedAt })),
   }
-  window.localStorage.setItem(storageKey, JSON.stringify(payload))
+  try {
+    window.localStorage.setItem(storageKey, JSON.stringify(payload))
+    return true
+  } catch {
+    return false
+  }
 }
 
 export function resetLocations(seedLocations: Location[]): Location[] {
@@ -55,6 +69,11 @@ export function resetLocations(seedLocations: Location[]): Location[] {
 }
 
 export function clearSavedLocations() {
-  if (typeof window === 'undefined') return
-  window.localStorage.removeItem(storageKey)
+  if (typeof window === 'undefined') return false
+  try {
+    window.localStorage.removeItem(storageKey)
+    return true
+  } catch {
+    return false
+  }
 }

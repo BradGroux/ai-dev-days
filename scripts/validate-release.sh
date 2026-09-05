@@ -11,7 +11,7 @@ fi
 
 cd "$repository_root"
 
-for required_command in bash git node npm ruby; do
+for required_command in bash git node npm ruby gitleaks; do
   if ! command -v "$required_command" >/dev/null 2>&1; then
     echo "Required validation command is unavailable: $required_command" >&2
     exit 1
@@ -21,9 +21,12 @@ done
 git diff --check
 
 ./scripts/publication-scan.sh
+node scripts/check-edition.mjs
+node --test scripts/check-edition.test.mjs
 node scripts/audit-repo.mjs
 node scripts/check-external-links.mjs
 
+node --test event-specific/2026-08-19-houston-business-analysts-codex/demo/test/vendor-review.test.mjs
 node event-specific/2026-08-19-houston-business-analysts-codex/demo/verify-demo.mjs
 
 ruby -e \
@@ -39,6 +42,7 @@ ruby -e \
 (
   cd projects/beaver-badges/app
   npm audit --audit-level=high
+  node --test scripts/storage.test.mjs
   npm run check
   npm run smoke:visual
 )

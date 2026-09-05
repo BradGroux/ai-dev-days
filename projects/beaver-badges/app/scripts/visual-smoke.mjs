@@ -63,6 +63,32 @@ async function smokeBeaverBadges(browser) {
   await page.close()
 }
 
+async function smokeStorageFailure(browser) {
+  const page = await browser.newPage({viewport:{width:390,height:844}})
+  const errors=[]
+  page.on('pageerror', error=>errors.push(error.message))
+  await page.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('storage denied')}})})
+  await page.goto(appUrl)
+  await page.getByRole('status').waitFor()
+  await page.locator('input[type="checkbox"]').first().check()
+  await page.getByRole('button',{name:'Reset progress'}).click()
+  await page.getByText('0 of 5 stops visited').waitFor()
+  await assertNoHorizontalOverflow(page,'storage notice mobile')
+  await page.screenshot({path:path.join(screenshotDir,'storage-unavailable-mobile.png'),fullPage:true})
+  if(errors.length) throw new Error(errors.join('; '))
+  await page.close()
+  const demo=await browser.newPage()
+  demo.on('pageerror',error=>errors.push(error.message))
+  await demo.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('storage denied')}})})
+  await demo.goto(pathToFileURL(path.join(repoRoot,'event-specific/2026-07-21-personal-ai-agents-live/demo/app/index.html')).href)
+  await demo.getByText('Seed data loaded',{exact:true}).waitFor()
+  await demo.locator('#toggle-simulated').uncheck()
+  await demo.getByText('Storage unavailable; changes stay in this tab. Export before closing.',{exact:true}).waitFor()
+  await demo.screenshot({path:path.join(screenshotDir,'personal-ai-storage-unavailable.png'),fullPage:false})
+  if(errors.length) throw new Error(errors.join('; '))
+  await demo.close()
+}
+
 async function smokeArchitectureShowcase(browser) {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })
   const architectureUrl = pathToFileURL(path.join(repoRoot, 'docs/openclaw-architecture-showcase.html')).href
@@ -100,6 +126,7 @@ try {
   browser = await chromium.launch()
   await smokeBeaverBadges(browser)
   await smokeArchitectureShowcase(browser)
+  await smokeStorageFailure(browser)
   console.log(`Visual smoke passed. Screenshots: ${screenshotDir}`)
 } catch (error) {
   throw error

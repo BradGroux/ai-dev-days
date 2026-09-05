@@ -1,6 +1,6 @@
 # SOP: Contributing to AI Dev Days
 
-**Status:** Version 1.1.0<br>
+**Status:** Edition 2026.09.05<br>
 **Accountable owner:** Founding steward or future governing body<br>
 **Process manager:** Program maintainer<br>
 **Prepared:** 2026-07-30<br>
@@ -153,7 +153,7 @@ Prefer primary and authoritative sources. A substantive note records:
 - a recommended disposition.
 
 Claims about shared ecosystem principles cite the adopted
-[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+[Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05).
 Claims about a specific framework cite that framework's canonical source.
 Research may inform a proposal but cannot amend Commons, another product, or
 AI Dev Days silently.

@@ -1,7 +1,7 @@
 # AI-Native Operating Framework Teaching Alignment
 
 AI Dev Days is an independent learning community that adopts
-[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+[Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05).
 This product-local guide applies only when an event or lesson selects the
 [AI-Native Operating Framework](https://github.com/BradGroux/ai-native-operating-framework)
 as subject matter or a practical method to explore.

@@ -61,9 +61,28 @@ repository, and navigation references use AI Dev Days.
 
 The current relationship is:
 
-- Open Framework Commons v1.0.0 supplies shared principles and boundaries;
+- Open Framework Commons v2026.09.05 supplies shared principles and boundaries;
 - AI Dev Days owns its learning community, methods, curriculum, events,
   governance, and releases;
 - AI Dev Days may teach or apply the AI-Native Operating Framework without
   inheriting its method or becoming its training module; and
 - OpenClaw, Codex, and other tools provide implementation contexts.
+
+## Calendar editions from 2026.09.05
+
+New program editions use `YYYY.MM.DD`, with annotated tags `vYYYY.MM.DD`, using
+the UTC publication date. A further publication on that date uses `.1`, then
+`.2`, compared numerically. If publication slips across UTC midnight, update
+active metadata before tagging. The date identifies the reviewed content;
+release notes separately explain changed choices and compatibility.
+
+No historical version, citation, tag, release, decision or date-first event
+folder is renamed. Beaver Badges package `0.0.1`, its npm lockfile format and
+storage key `beaver-badges.progress.v1` remain independent. Calendar strings
+with zero-padded components are not inserted into npm semantic-version fields.
+
+Commons adoption is now v2026.09.05; optional AI-Native teaching compatibility
+remains v1.0.0. See [Decision 0004](decisions/0004-calendar-editions-and-commons-2026-09-05.md)
+for exact identities, authority, rationale and changed reader decisions.
+Historical video transcripts are replaced with source dispositions in the
+current edition; this does not establish rights for previously distributed copies.

@@ -16,6 +16,7 @@ const seedLocations = locationsSeed as Location[]
 
 export default function App() {
   const [locations, setLocations] = useState<Location[]>(() => loadSavedLocations(seedLocations))
+  const [persistent, setPersistent] = useState(true)
   const [selectedRegion, setSelectedRegion] = useState<RegionFilter>('All')
 
   const regions = useMemo(() => getRegionFilters(locations), [locations])
@@ -30,7 +31,7 @@ export default function App() {
   )
 
   useEffect(() => {
-    saveLocations(locations)
+    setPersistent(saveLocations(locations))
   }, [locations])
 
   function toggleVisited(id: string) {
@@ -48,7 +49,7 @@ export default function App() {
   }
 
   function resetProgress() {
-    clearSavedLocations()
+    setPersistent(clearSavedLocations())
     setLocations(resetLocations(seedLocations))
   }
 
@@ -58,6 +59,7 @@ export default function App() {
 
       <div className="main-shell">
         <HeroSection progress={progress} />
+        {!persistent && <p role="status">Progress is available in this tab only because browser storage is unavailable. Export it before closing. Previously saved progress may return after reload.</p>}
         <SummaryGrid
           filteredLocationCount={filteredLocations.length}
           selectedRegion={selectedRegion}

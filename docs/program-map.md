@@ -73,7 +73,7 @@ flowchart TB
 
 The boundary is deliberate:
 
-- [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+- [Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
   is authoritative for the shared principles and boundaries AI Dev Days adopts
   by reference.
 - [AI Dev Days](../CHARTER.md) is authoritative for its purpose, method,

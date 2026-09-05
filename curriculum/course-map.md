@@ -18,7 +18,7 @@ The subject is not "prompting tricks." The subject is operator skill:
 - decide what ships
 
 AI Dev Days owns this course map. Its shared philosophical foundation is
-[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+[Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05).
 The [AI-Native Operating Framework teaching alignment](../docs/ai-native-operating-framework-alignment.md)
 is available when a lesson selects that framework. OpenClaw is the current
 reference tool track, not a program or framework requirement.

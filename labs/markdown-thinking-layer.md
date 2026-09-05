@@ -30,7 +30,7 @@ Before writing or sharing anything, read this out loud:
 
 Do not put secrets, API keys, private data, client information, sensitive personal notes, or anything confidential in a public repository, shared file, screenshot, or projected prompt.
 
-When in doubt, keep it local.
+Use fictional or approved public-safe inputs only. A local file read by a cloud-backed agent can be sent to its provider. Do not put confidential values in these notes or prompts; keep them outside the agent workspace.
 
 ## Step 1 — Create `workshop-memory.md`
 
@@ -63,11 +63,10 @@ This is useful because: ...
 - Useful outputs worth saving:
 - Things I want the agent to remember next time:
 
-## Data I should not expose
-- Secrets/API keys:
-- Private data:
-- Sensitive notes:
-- Anything I should keep out of public repos:
+## Excluded data categories (names only, never values)
+- Credentials and API keys are excluded.
+- Private client and personal data are excluded.
+- Use fictional examples throughout this exercise.
 
 ## First agent instruction
 - Agent name:
@@ -88,7 +87,7 @@ This is useful because: ...
 Prompt OpenClaw:
 
 ```text
-Read my workshop-memory.md file and use it as context.
+Read my workshop-memory.md file and quote its fictional goal to confirm you have the right file. Stop if you cannot read it; do not guess its contents.
 
 Before you propose a plan, ask me three qualifying questions.
 
@@ -180,8 +179,8 @@ The README outline should include:
 - OpenClaw used the Markdown file as context
 - OpenClaw asked qualifying questions before proposing a plan
 - `agent-plan.md` exists
-- the attendee can explain how Markdown helped the agent produce better output
-- the attendee understands what not to publish publicly
+- the attendee can compare the input and output, including what improved or did not improve
+- the attendee understands what must not enter the provider context or be published
 
 ## Facilitator notes
 
@@ -190,4 +189,8 @@ The README outline should include:
 - The win is not perfect syntax. The win is durable, reviewable context.
 - Reinforce that task lists are a natural bridge from thinking into agent work.
 - Reinforce that Obsidian is optional for the agent, but useful for the human.
-- Reinforce that GitHub is public by default unless they know otherwise.
+- Check the repository visibility and sharing permissions before publishing.
+
+## Timing and fallback
+
+Allow 20 minutes: 5 for the note, 5 for questions, 5 for the plan, and 5 for human review. Obsidian and GitHub are optional. If setup takes more than 5 minutes, use the [offline practice](offline-practice.md) with the same output rubric. Readable plain text or a partner reading aloud can replace the tool interface.

@@ -144,7 +144,7 @@ function policyIds(outcome) {
   return ids;
 }
 
-function confirmedFacts(record) {
+function submittedFacts(record) {
   const fields = [
     "businessOwner",
     "serviceDescription",
@@ -158,7 +158,7 @@ function confirmedFacts(record) {
 
   return fields
     .filter((field) => field in record)
-    .map((field) => ({ field, value: record[field] }));
+    .map((field) => ({ field, value: record[field], status: fieldIssue(field, record[field]) ? "unresolved" : "format checked; not independently verified" }));
 }
 
 export function reviewVendor(record) {
@@ -211,7 +211,7 @@ export function reviewVendor(record) {
     vendorId: record.vendorId ?? "UNKNOWN",
     requestId: record.requestId ?? "UNKNOWN",
     legalName: record.legalName ?? "Unknown vendor",
-    confirmedFacts: confirmedFacts(record),
+    submittedFacts: submittedFacts(record),
     missing,
     policyIds: policyIds(outcome),
     lanes,
@@ -237,9 +237,9 @@ export function formatReviewPacket(review) {
     `- Vendor: ${review.vendorId} — ${review.legalName}`,
     `- Request: ${review.requestId}`,
     "",
-    "## Confirmed facts",
+    "## Submitted evidence",
     "",
-    ...review.confirmedFacts.map(({ field, value }) => `- \`${field}\` = \`${scalar(value)}\``),
+    ...review.submittedFacts.map(({ field, value, status }) => `- \`${field}\` = \`${scalar(value)}\` (${status})`),
     "",
     "## Missing or conflicting information",
     "",

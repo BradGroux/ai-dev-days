@@ -32,3 +32,5 @@ Routine event adaptations, tool updates, editorial corrections, and raw
 research do not need a decision record unless they change program meaning.
 
 Use [`TEMPLATE.md`](TEMPLATE.md) for a new proposal.
+
+4. [Decision 0004: Calendar editions and Commons adoption](0004-calendar-editions-and-commons-2026-09-05.md)

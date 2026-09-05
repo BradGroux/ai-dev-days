@@ -6,27 +6,23 @@ Show why OpenClaw is more than a chatbot: it can use durable Markdown context, a
 
 AI literacy focus: practice directing AI effectively with clear context, useful constraints, and a reusable memory artifact.
 
-## Step 1 — Create an OpenClaw workspace folder
+## Step 1 — Locate the selected workspace
 
-Mac/Linux:
+Use the workspace configured for the selected OpenClaw agent, following the
+[official workspace guide](https://docs.openclaw.ai/concepts/agent-workspace).
+Creating a folder does not configure an agent to use it. Ask a helper to confirm
+the selected workspace without projecting configuration or credentials.
 
-```bash
-mkdir -p ~/ai-dev-days
-cd ~/ai-dev-days
-```
-
-Windows PowerShell:
-
-```powershell
-mkdir $HOME\ai-dev-days
-cd $HOME\ai-dev-days
-```
+If it is unavailable, create the note in a plain-text editor and paste only the
+fictional exercise content into the selected chat, or use the
+[offline practice](offline-practice.md). Do not broaden filesystem permissions
+or change a working agent configuration just to complete the exercise.
 
 ## Step 2 — Understand why Markdown matters
 
 Markdown is not just formatting. It is structured plain text that people can read, agents can parse, GitHub can render, and Obsidian can organize.
 
-Before publishing anything to GitHub or a shared workspace, do not include secrets, API keys, private data, client information, or sensitive personal notes.
+Use fictional or approved public-safe content only. A local note read by a cloud-backed agent can leave the machine. Never put secrets, API keys, private client data, or sensitive notes in this exercise.
 
 ## Step 3 — Create `workshop-memory.md`
 
@@ -68,7 +64,7 @@ The next useful thing for me is: <one action>
 Prompt:
 
 ```text
-Read my workshop-memory.md note and turn it into a cleaner project goal, a first agent instruction, a task list, and one risk I should watch. Ask me three questions before you propose the plan.
+Read my workshop-memory.md note (or the fictional note pasted below), quote its goal to confirm the input, and turn it into a cleaner project goal, a first agent instruction, a task list, and one risk I should watch. Ask me three questions before you propose the plan.
 ```
 
 ## Step 5 — Save the improved result
@@ -83,8 +79,10 @@ Create `workshop-goal-summary.md` with:
 
 ## Done means
 
-- `workshop-memory.md` exists in the OpenClaw workspace
-- OpenClaw used the memory context, agent instruction, and task list
+- `workshop-memory.md` exists and the input route (workspace, safe paste, or offline) is recorded
+- the output refers to the supplied goal, instruction, and task list
 - `workshop-goal-summary.md` exists
-- attendee can explain how memory changed the answer
+- attendee can describe what changed or remained uncertain
 - attendee can explain what they still need to review before trusting the output
+
+Allow 15 minutes: 5 to write, 5 to respond, 5 to review. Stop tool troubleshooting after 5 minutes and take the offline route.
