@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
+import { execFileSync } from 'node:child_process'
 import path from 'node:path'
 
 const root = process.cwd()
@@ -210,7 +211,7 @@ async function runChecks() {
   await Promise.all(Array.from({ length: Math.min(concurrency, entries.length) }, worker))
 }
 
-walk(root)
+files.push(...execFileSync('git', ['ls-files', '-z'], {encoding:'utf8'}).split('\0').filter(name => checkedExtensions.has(path.extname(name))).map(name => path.join(root, name)))
 for (const file of files) {
   collectUrls(file)
 }

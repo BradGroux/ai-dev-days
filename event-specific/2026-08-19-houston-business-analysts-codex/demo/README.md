@@ -4,6 +4,14 @@ This demo models a business analyst's workbench for a fictional company,
 Northstar Field Services. It turns intentionally messy stakeholder notes into
 a reviewable process packet and validates three prepared vendor cases.
 
+## Current maintenance correction (2026-09-05)
+
+The executable reviewer now labels supplied values as submitted evidence and
+marks unresolved values. Format checks do not independently verify a business
+fact. Historical event decks and prepared prose retain their point-in-time
+wording; use the current executable and this correction for future teaching.
+PASS still means ready for human review, never vendor approval.
+
 ## Folder map
 
 ```mermaid

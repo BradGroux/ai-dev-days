@@ -4,7 +4,7 @@ This context defines event and curriculum terms that have specific meaning in
 AI Dev Days materials.
 
 The adopted
-[Open Framework Commons v1.0.0 context](https://github.com/BradGroux/open-framework-commons/blob/v1.0.0/CONTEXT.md)
+[Open Framework Commons v2026.09.05 context](https://github.com/BradGroux/open-framework-commons/blob/v2026.09.05/CONTEXT.md)
 defines shared ecosystem terms. Local terms below describe AI Dev Days
 educational or tool-specific context and do not amend Commons or another
 ecosystem product.

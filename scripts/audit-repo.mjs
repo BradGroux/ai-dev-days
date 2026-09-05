@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
+import { execFileSync } from 'node:child_process'
 import path from 'node:path'
 import { verifyEmbeddedSeed } from './sync-personal-ai-agents-seed.mjs'
 
@@ -45,7 +46,8 @@ const requiredFiles = [
 const failures = []
 const warnings = []
 let suppressedWarnings = 0
-const files = []
+const publicPaths = new Set(execFileSync('git', ['ls-files', '-z'], {encoding:'utf8'}).split('\0').filter(Boolean))
+const files = [...publicPaths].map(name => path.join(root, name))
 const maxWarningsToPrint = 60
 const intentionalRepeatedLocalLinks = new Set([
   'event-specific/2026-05-14-infragard-ai-agent-workshop/demo-script.md::prompt-pack.md',
@@ -104,7 +106,9 @@ function checkLocalLinks(filePath, text) {
     if (isExternalLink(normalized)) continue
 
     const target = path.resolve(path.dirname(filePath), decodeURIComponent(normalized))
-    if (!fs.existsSync(target)) {
+    const targetRelative = path.relative(root, target)
+    const published = publicPaths.has(targetRelative) || [...publicPaths].some(name => name.startsWith(targetRelative + '/'))
+    if (!published || !fs.existsSync(target) || fs.lstatSync(target).isSymbolicLink()) {
       failures.push(`${relative(filePath)} references missing local target: ${rawLink}`)
     }
   }
@@ -194,7 +198,7 @@ function validateEventMetadata() {
 
   const eventDirectories = fs
     .readdirSync(path.join(root, 'event-specific'), { withFileTypes: true })
-    .filter((entry) => entry.isDirectory() && !entry.name.startsWith('_'))
+    .filter((entry) => entry.isDirectory() && !entry.name.startsWith('_') && [...publicPaths].some(name => name.startsWith(`event-specific/${entry.name}/`)))
     .map((entry) => entry.name)
     .sort()
   const metadataBySlug = new Map(metadata.events.map((event) => [event.slug, event]))
@@ -418,7 +422,7 @@ function validatePersonalAiAgentsSeed() {
   }
 }
 
-walk(root)
+// Inventory comes from Git; untracked local files cannot satisfy publication links.
 validateRequiredFiles()
 validateProgramMethod()
 validateAppScripts()

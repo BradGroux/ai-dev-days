@@ -3,7 +3,7 @@
 This folder contains the reusable teaching path for AI Dev Days.
 
 AI Dev Days adopts
-[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+[Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
 as its shared philosophical foundation while owning this curriculum and its
 learning method independently. An event or lesson may select the
 [AI-Native Operating Framework teaching alignment](../docs/ai-native-operating-framework-alignment.md)

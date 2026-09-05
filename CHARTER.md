@@ -1,9 +1,10 @@
 # AI Dev Days Charter
 
-**Status:** AI Dev Days version 1.1.0<br>
+**Status:** AI Dev Days edition 2026.09.05<br>
 **Founding steward:** Brad Groux<br>
 **Prepared:** 2026-07-30<br>
-**Effective date:** 2026-08-03
+**Original charter effective date:** 2026-08-03<br>
+**Current edition effective date:** 2026-09-05
 
 ## Preamble
 
@@ -79,17 +80,20 @@ commitments are:
 
 ## Open Framework Commons Adoption
 
-AI Dev Days adopts Open Framework Commons v1.0.0 as its shared philosophical
+AI Dev Days adopts Open Framework Commons v2026.09.05 as its shared philosophical
 foundation:
 
 - **Repository:** [BradGroux/open-framework-commons](https://github.com/BradGroux/open-framework-commons)
-- **Adopted tag:** [`v1.0.0`](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
-- **Release commit:** [`a0f0d384e9010a65d1a21a324b4c912433d5e031`](https://github.com/BradGroux/open-framework-commons/commit/a0f0d384e9010a65d1a21a324b4c912433d5e031)
+- **Adopted tag:** [`v2026.09.05`](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
+- **Release commit:** [`8868a248457dd7b663563beb243c5ebcbb8ac360`](https://github.com/BradGroux/open-framework-commons/commit/8868a248457dd7b663563beb243c5ebcbb8ac360)
 
 Commons owns shared principles and boundaries only. AI Dev Days independently
 owns its curriculum, events, community practices, examples, research,
 governance, roadmap, and releases. Adoption does not make AI Dev Days a module,
 child product, framework, or implementation of Commons.
+
+Adoption rationale, authority and exact annotated provenance are recorded in
+[Decision 0004](decisions/0004-calendar-editions-and-commons-2026-09-05.md).
 
 ## Relationship to the AI-Native Operating Framework
 

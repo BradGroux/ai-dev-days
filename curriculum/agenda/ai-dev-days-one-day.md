@@ -4,7 +4,7 @@
 
 **Length:** 6-8 hours  
 **Style:** hands-on workshop  
-**Shared foundation:** Open Framework Commons v1.0.0
+**Shared foundation:** Open Framework Commons v2026.09.05
 
 **Selected teaching alignment:** AI-Native Operating Framework 1.0.0
 

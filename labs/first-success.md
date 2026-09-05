@@ -64,7 +64,7 @@ openclaw dashboard
 Use this exact prompt:
 
 ```text
-I am in the AI Dev Days OpenClaw track. Confirm my setup works, summarize what is working in three bullets, and give me one next step.
+Reply with "Workshop response received" and ask which fictional exercise I want to try. Do not claim that tools, permissions, or integrations have been verified.
 ```
 
 ## Checkpoint card
@@ -82,3 +82,8 @@ If you are not green after 10 minutes, move to helper/rescue lane. Do not burn t
 ## Next step
 
 For TAMU, this lab uses the workshop-provided Chat GPT 5.5 Microsoft Foundry key during onboarding. Do not start WhatsApp/mobile setup during the live lab; keep that as a facilitator demo after dashboard success.
+
+A model response verifies only this conversation path. The learner/helper checks
+the command and gateway evidence; the model cannot certify the whole setup.
+If the tool remains unavailable, use [offline practice](offline-practice.md) and
+record the tool checkpoint as incomplete rather than claiming a successful run.

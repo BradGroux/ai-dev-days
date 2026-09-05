@@ -21,7 +21,7 @@ Apply this order:
    [decisions](../decisions/README.md), and
    [`GOVERNANCE.md`](../GOVERNANCE.md) govern AI Dev Days.
 2. The adopted
-   [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+   [Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
    governs shared ecosystem principles and boundaries.
 3. A selected framework's canonical repository governs representations of its
    own meaning.

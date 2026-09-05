@@ -67,7 +67,7 @@ verification.
 
 Repeat this before GitHub, screenshots, shared files, or projected prompts:
 
-> Do not put secrets, API keys, private data, sensitive personal notes, or anything confidential in a public repository, shared file, screenshot, or projected prompt. When in doubt, keep it local.
+> Do not put secrets, API keys, private data, sensitive personal notes, or anything confidential in a public repository, shared file, screenshot, or projected prompt. Use fictional or approved public-safe inputs. Local files read by a cloud-backed agent may be sent to its provider. Keep confidential values out of exercise notes and agent workspaces.
 
 Use this AI literacy framing during the opening:
 
@@ -115,3 +115,7 @@ public-safe outcomes, evidence, exceptions, lessons, and approved maintenance
 actions. Separate facts, feedback, synthesis, and approved lessons. Give each
 material finding a disposition rather than treating attendee data, repeated
 practice, or temporary chat history as program authority.
+
+## Participation and recovery
+
+Help and accommodation do not have to be earned through contribution. Learners may decline sharing, pairing, or continued participation. Offer the [offline exercise](labs/offline-practice.md) and plain-text materials. Prior help creates no obligation to publish an artifact or join a service.

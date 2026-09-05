@@ -1,6 +1,6 @@
 # AI Dev Days Governance
 
-**Status:** AI Dev Days version 1.1.0<br>
+**Status:** AI Dev Days edition 2026.09.05<br>
 **Founding steward:** Brad Groux<br>
 **Prepared:** 2026-07-30
 
@@ -20,7 +20,7 @@ Apply this order when program materials conflict:
 2. [`CHARTER.md`](CHARTER.md).
 3. Accepted records under [`decisions/`](decisions/README.md).
 4. The adopted
-   [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+   [Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
    for shared ecosystem principles and boundaries.
 5. The canonical
    [research and education method](docs/research-and-education-method.md).
@@ -31,8 +31,8 @@ Apply this order when program materials conflict:
 10. Research notes, planning records, and history.
 
 Commons does not own AI Dev Days' local decisions, and changes to Commons do
-not alter the adopted `v1.0.0` baseline automatically. If local guidance
-appears to conflict with Commons, stop and surface the conflict. A named
+not alter the adopted `v2026.09.05` baseline automatically. If local guidance
+appears to conflict with Commons, pause the disputed action and use the bounded conflict process below. A named
 framework remains canonical only for representations of its own method; AI Dev
 Days cannot approve a change on that product's behalf.
 
@@ -289,3 +289,29 @@ Review this document when:
 - repeated publication, accessibility, or tool-drift failures occur;
 - an appeal exposes unclear authority; or
 - a release reveals a missing control.
+
+## Prospective calendar editions and bounded conflicts
+
+From edition 2026.09.05, use the UTC publication date and annotated immutable
+`vYYYY.MM.DD` tags; further same-day publications append `.1`, `.2`, and so on.
+Preserve old releases and their original compatibility decisions. Compare dated
+editions chronologically and suffixes numerically. The identifier says when,
+not whether a reader's decisions remain compatible; release notes must explain
+changes to permissions, responsibilities, scope and learning expectations.
+Independent runtime packages and selected teaching versions are separate.
+
+For a conflict, pause only the disputed action or representation. Record the
+exact adopted Commons tag/commit, statements in tension, evidence and uncertainty,
+responsible local authority, and material dissent. The product owner decides
+local correction, narrowing, deviation, rejection or deferral; Commons decides
+its own meaning. A deferral needs an owner and revisit trigger. Silence or a
+new unadopted edition is not approval. Other safe work may continue.
+
+Adoption records state affected guidance, rationale, authority, exact provenance,
+exceptions and deferrals. If exceptions exist, say adoption is with those
+deviations rather than claiming full agreement. Chosen values need an accountable
+rationale; empirical outcome claims need relevant evidence. Neither a simulated
+case nor a passing build supplies practitioner or learner validation.
+
+[Decision 0004](decisions/0004-calendar-editions-and-commons-2026-09-05.md)
+applies these rules and supersedes historical retagging permissions prospectively.

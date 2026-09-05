@@ -109,3 +109,10 @@ test("a known-missing tax document clarifies rather than rejecting", () => {
   assert.equal(review.outcome, OUTCOMES.CLARIFY);
   assert.deepEqual(review.missing.map(({ field }) => field), ["taxDocumentStatus"]);
 });
+
+ test("submitted invalid and unknown evidence is never called confirmed", () => {
+  const review = reviewVendor({...byId.get("V-001"), rushRequested:"no", accessesCompanyData:"unknown"});
+  assert.equal(review.submittedFacts.find(item => item.field === "rushRequested").status, "unresolved");
+  assert.equal(review.submittedFacts.find(item => item.field === "accessesCompanyData").status, "unresolved");
+  assert.ok(review.submittedFacts.find(item => item.field === "businessOwner").status.includes("not independently verified"));
+});

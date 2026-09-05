@@ -547,7 +547,9 @@ function exportState() {
 }
 
 function resetState() {
-  localStorage.removeItem(STORAGE_KEY);
+  try { localStorage.removeItem(STORAGE_KEY); } catch {
+    setStatus("Storage unavailable; reset applies to this tab only. Saved state may return after reload.", "error");
+  }
   state.local = defaultLocalState();
   renderAll();
 }
@@ -555,14 +557,27 @@ function resetState() {
 function loadLocalState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-    return saved ? { ...defaultLocalState(), ...saved } : defaultLocalState();
+    const clean = defaultLocalState();
+    if (!saved || typeof saved !== 'object') return clean;
+    if (typeof saved.showSimulatedActivity === 'boolean') clean.showSimulatedActivity = saved.showSimulatedActivity;
+    for (const [id, item] of Object.entries(saved.escalations || {})) {
+      if (['__proto__', 'constructor', 'prototype'].includes(id) || !item || typeof item !== 'object') continue;
+      const patch = {};
+      for (const field of ['owner', 'status', 'note']) if (typeof item[field] === 'string') patch[field] = item[field];
+      clean.escalations[id] = patch;
+    }
+    for (const [id, item] of Object.entries(saved.evidence || {})) {
+      if (!['__proto__', 'constructor', 'prototype'].includes(id) && typeof item?.reviewed === 'boolean') clean.evidence[id] = {reviewed:item.reviewed};
+    }
+    return clean;
   } catch {
     return defaultLocalState();
   }
 }
 
 function saveLocalState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.local));
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.local)); }
+  catch { setStatus('Storage unavailable; changes stay in this tab. Export before closing.', 'error'); }
 }
 
 function defaultLocalState() {

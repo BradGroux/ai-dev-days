@@ -1,5 +1,21 @@
 # Changelog
 
+## [2026.09.05] - 2026-09-05
+
+- Adopt Commons v2026.09.05 at 8868a248457dd7b663563beb243c5ebcbb8ac360;
+  keep optional AI-Native v1.0.0 and independent package versions.
+- Begin prospective UTC calendar editions without changing historical identities.
+- Correct lab privacy/workspace/PASS paths and supply a concrete offline exercise.
+- Recover Beaver Badges from denied storage and malformed progress; validate
+  pending Vite, React plugin and React DOM type development updates.
+- Label vendor packet values as submitted evidence with validation limits.
+- Replace current full video transcript copies with source/rights dispositions;
+  preserve historical commits and explicitly supersede unsafe setup guidance.
+- Add clean-start release instructions, edition checks, adverse tests, redacted
+  secret scanning, tracked inventory and published release identity verification.
+- Retain unverified event delivery, field effectiveness, specialist review and
+  historical rights limits in the audit and release notes.
+
 ## Unreleased
 
 - Updated the transitive Browserslist development dependency to resolve the release audit advisory.

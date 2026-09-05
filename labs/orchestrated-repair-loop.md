@@ -11,9 +11,9 @@ AI literacy focus: evaluate AI outputs, repair failures, and keep the human resp
 ## Done Means
 
 - a builder creates an artifact
-- a reviewer finds at least one issue
-- a diagnoser writes a patch plan
-- the builder creates a second version
+- a reviewer tests the contract and records PASS or an evidenced failure
+- for a failure, a diagnoser writes a patch plan and the builder creates a second version
+- for PASS, the human may accept without manufacturing a defect
 - the human decides whether to accept it
 
 ## Step 1 - Create the Builder Prompt
@@ -83,9 +83,9 @@ Act as the Diagnoser. Read visit-streak-plan-v1.md and visit-streak-review.md. W
 <one thing to watch>
 ```
 
-If the review passes, ask the reviewer to invent one realistic edge case and continue anyway.
+If the review passes, preserve PASS and continue to Step 6 using version 1. No diagnosis or version 2 is required. To practice repair, make a separate copy deliberately omitting the streak-breaking rule, label it a seeded training failure, repeat Step 3, and then run the diagnosis prompt above. This is a fictional mutation, not a defect discovered in the original.
 
-## Step 5 - Ask Builder for Version 2
+## Step 5 - Ask Builder for Version 2 (failed review only)
 
 Prompt:
 
@@ -120,3 +120,7 @@ Answer:
 ```text
 What did the repair loop catch that a single prompt might have missed?
 ```
+
+## Timing and fallback
+
+Allow 20 minutes: 5 to draft, 5 to review, 5 to repair if needed, and 5 for the human decision. Use the [offline practice](offline-practice.md) when tools are unavailable; a partner can perform each role. A no-change acceptance is a valid outcome.

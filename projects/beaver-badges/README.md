@@ -17,7 +17,7 @@ Track location visits, unlock badges, and show how a small product can be shaped
 
 ## Run the app
 
-From this folder:
+From the repository root, using Node 24 and npm:
 
 ```bash
 cd projects/beaver-badges/app
@@ -35,7 +35,7 @@ npm ci
 npm run check
 ```
 
-The check runs TypeScript validation and a production build. A successful check means the workshop demo app is ready enough to use.
+Run each command block from the repository root. The check runs TypeScript validation and a production build; event readiness additionally needs the browser smoke, facilitator preflight, and learner/fallback review.
 
 ## Visual smoke check
 

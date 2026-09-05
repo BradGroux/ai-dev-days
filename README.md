@@ -1,5 +1,7 @@
 # AI Dev Days
 
+**Current program edition:** 2026.09.05. See [release notes](docs/releases/v2026.09.05.md) and the [audit disposition](docs/reviews/edition-2026-09-05.md).
+
 > **Repository rename:** `BradGroux/openclaw-dev-days` became
 > `BradGroux/ai-dev-days` on July 30, 2026. GitHub redirects the former
 > repository URL. Existing clones can update their remote with
@@ -10,12 +12,12 @@ AI Dev Days is an independent learning community and event repository. It helps
 people investigate, define, perform, verify, and improve useful work with AI.
 
 AI Dev Days adopts
-[Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
+[Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
 as its shared philosophical foundation. The adopted release is pinned to:
 
 - repository: [BradGroux/open-framework-commons](https://github.com/BradGroux/open-framework-commons)
-- tag: [`v1.0.0`](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0)
-- release commit: [`a0f0d384e9010a65d1a21a324b4c912433d5e031`](https://github.com/BradGroux/open-framework-commons/commit/a0f0d384e9010a65d1a21a324b4c912433d5e031)
+- tag: [`v2026.09.05`](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05)
+- release commit: [`8868a248457dd7b663563beb243c5ebcbb8ac360`](https://github.com/BradGroux/open-framework-commons/commit/8868a248457dd7b663563beb243c5ebcbb8ac360)
 
 Commons supplies shared principles and boundaries; it is not a parent product
 or operating method. AI Dev Days independently owns its curriculum, events,
@@ -49,7 +51,7 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
 - Organizers: copy [`event-specific/_template/`](event-specific/_template/) for a new event.
 - Curriculum: use [`curriculum/README.md`](curriculum/README.md) and [`curriculum/course-map.md`](curriculum/course-map.md).
 - Shared foundation and independence: use [`CHARTER.md`](CHARTER.md) and the
-  adopted [Open Framework Commons v1.0.0](https://github.com/BradGroux/open-framework-commons/releases/tag/v1.0.0).
+  adopted [Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05).
 - Visual program orientation: use
   [`docs/program-map.md`](docs/program-map.md).
 - AI-Native Operating Framework teaching guide: use
@@ -201,7 +203,7 @@ the source citation and workshop mapping.
 4. Keep each event packet public-safe, source-backed, and easy to audit.
 5. Preserve useful evidence, decisions, handoffs, and lessons after each event.
 6. Exercise the complete research-to-education method through upcoming events
-   and use the evidence to improve version 1.x.
+   and use the evidence to improve future editions.
 
 ## Success criteria
 
