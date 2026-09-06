@@ -18,6 +18,10 @@
 
 ## Unreleased
 
+- Restored the complete pre-refactor TAMU OpenClaw event packet, including the
+  Beaver Badges app, curriculum, labs, agent resources, setup guides, and
+  facilitator materials from the final July OpenClaw Dev Days tree.
+
 - Updated the transitive Browserslist development dependency to resolve the release audit advisory.
 
 - Added the approved Aggie Innovators 31-slide presentation and 1920x1080 screenshot-based PDF, 90-minute curriculum, and Aggie Launchpad demo kit.

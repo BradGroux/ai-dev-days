@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Architecture Showcase</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #5b6673;
+      --line: #d6dde5;
+      --paper: #fbfcfd;
+      --surface: #ffffff;
+      --teal: #087f8c;
+      --coral: #c75146;
+      --amber: #b7791f;
+      --green: #327a4f;
+      --navy: #24476f;
+      --shadow: 0 16px 40px rgba(23, 32, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--teal);
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #f5f8fa;
+    }
+
+    .hero {
+      min-height: 58vh;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+      gap: 40px;
+      align-items: center;
+      padding: 48px 0 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(2.25rem, 6vw, 5.25rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 660px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: var(--surface);
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 2px 0 rgba(23, 32, 42, 0.04);
+    }
+
+    .button.primary {
+      border-color: var(--teal);
+      color: #ffffff;
+      background: var(--teal);
+    }
+
+    .control-plane {
+      position: relative;
+      min-height: 440px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(8, 127, 140, 0.06) 1px, transparent 1px),
+        linear-gradient(rgba(8, 127, 140, 0.06) 1px, transparent 1px),
+        #ffffff;
+      background-size: 26px 26px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .plane-title {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .diagram-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 340px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .node {
+      min-height: 72px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .node strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.95rem;
+    }
+
+    .node span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .gateway {
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 2px solid var(--teal);
+      background: #f0fbfc;
+    }
+
+    .gateway strong {
+      font-size: 1.35rem;
+    }
+
+    .runtime {
+      border-color: rgba(199, 81, 70, 0.55);
+      background: #fff7f6;
+    }
+
+    .memory {
+      border-color: rgba(183, 121, 31, 0.55);
+      background: #fff9ed;
+    }
+
+    .nodes {
+      border-color: rgba(50, 122, 79, 0.55);
+      background: #f2fbf5;
+    }
+
+    main {
+      padding: 40px 0 70px;
+    }
+
+    section {
+      margin-top: 38px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 170px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(23, 32, 42, 0.05);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #ffffff;
+      background: var(--navy);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .tag.teal { background: var(--teal); }
+    .tag.coral { background: var(--coral); }
+    .tag.amber { background: var(--amber); }
+    .tag.green { background: var(--green); }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      min-height: 150px;
+      padding: 44px 14px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin: 0 0 7px;
+      font-size: 0.98rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 1.18rem;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      padding: 10px 0 10px 16px;
+      border-left: 3px solid var(--teal);
+      color: var(--muted);
+    }
+
+    code {
+      padding: 2px 5px;
+      border: 1px solid #dfe5ec;
+      border-radius: 5px;
+      background: #f6f8fa;
+      color: #243447;
+      font-size: 0.92em;
+    }
+
+    .protocol {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .frame {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #111827;
+      color: #e5edf5;
+      overflow-wrap: anywhere;
+      min-height: 132px;
+    }
+
+    .frame h3 {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: 0.98rem;
+    }
+
+    .frame pre {
+      margin: 0;
+      white-space: pre-wrap;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      background: #ffffff;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .protocol {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .control-plane {
+        padding: 16px;
+      }
+
+      .diagram-grid,
+      .cards,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .gateway {
+        min-height: 150px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell hero">
+      <div>
+        <p class="eyebrow">OpenClaw Dev Days</p>
+        <h1>Architecture of a local-first agent control plane</h1>
+        <p class="lede">OpenClaw centers on one Gateway that routes people, clients, channels, nodes, tools, model calls, memory, and streamed agent work through a coherent loop.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#flow">Trace a request</a>
+          <a class="button" href="openclaw-architecture.md">Read the explainer</a>
+        </div>
+      </div>
+
+      <div class="control-plane" aria-label="OpenClaw high-level architecture diagram">
+        <p class="plane-title">Gateway-centric map</p>
+        <div class="diagram-grid">
+          <div class="stack">
+            <div class="node"><strong>Clients</strong><span>macOS app, CLI, web UI, automations</span></div>
+            <div class="node"><strong>Channels</strong><span>WhatsApp, Telegram, Slack, Discord, WebChat</span></div>
+            <div class="node"><strong>Operators</strong><span>humans asking for useful work</span></div>
+          </div>
+          <div class="node gateway">
+            <div>
+              <strong>Gateway</strong>
+              <span>WebSocket control plane, routing, pairing, events</span>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="node runtime"><strong>Agent Runtime</strong><span>context, model inference, tools, streaming</span></div>
+            <div class="node memory"><strong>Memory</strong><span>sessions, workspace files, Markdown context</span></div>
+            <div class="node nodes"><strong>Nodes</strong><span>device and host capabilities</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="components">
+      <div class="section-head">
+        <h2>Core Components</h2>
+        <p>The architecture is easier to teach when each part has a job title.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag teal">Gateway</span>
+          <h3>Always-on switchboard</h3>
+          <p>Owns routing, channels, WebSocket protocol, pairing, health, presence, heartbeat, cron, and agent stream events.</p>
+        </article>
+        <article class="card">
+          <span class="tag coral">Runtime</span>
+          <h3>Turns intent into work</h3>
+          <p>Assembles context, resolves models, runs the agent loop, calls tools, and returns streamed output.</p>
+        </article>
+        <article class="card">
+          <span class="tag amber">Context</span>
+          <h3>What the model sees</h3>
+          <p>Includes system prompt, workspace files, history, tool schemas, results, attachments, and compaction summaries.</p>
+        </article>
+        <article class="card">
+          <span class="tag green">Nodes</span>
+          <h3>Local capabilities</h3>
+          <p>Expose device or host commands such as canvas, camera, screen, location, browser, or headless work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="section-head">
+        <h2>Request Flow</h2>
+        <p>A practical trace from a person asking for work to OpenClaw returning a durable result.</p>
+      </div>
+      <div class="flow">
+        <article class="step">
+          <h3>Input arrives</h3>
+          <p>A client, channel, CLI command, heartbeat, or automation sends work into the Gateway.</p>
+        </article>
+        <article class="step">
+          <h3>Gateway routes</h3>
+          <p>The Gateway validates the request, resolves the surface, and emits or accepts the agent run.</p>
+        </article>
+        <article class="step">
+          <h3>Context assembles</h3>
+          <p>Workspace files, skills, session history, tool schemas, and runtime settings shape the prompt.</p>
+        </article>
+        <article class="step">
+          <h3>Model and tools act</h3>
+          <p>The model reasons, calls tools, uses nodes when needed, and streams assistant and tool deltas.</p>
+        </article>
+        <article class="step">
+          <h3>State persists</h3>
+          <p>The transcript, metadata, memory, and final response remain available for future runs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="loop">
+      <div class="section-head">
+        <h2>Agent Loop</h2>
+        <p>The loop is the real execution path, not a decorative chat wrapper.</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>What happens inside a run</h3>
+          <ul class="list">
+            <li>Resolve the session key, workspace, model, auth profile, and run settings.</li>
+            <li>Load relevant skills and bootstrap files into the prompt-building path.</li>
+            <li>Serialize runs per session so tool work and transcript writes stay consistent.</li>
+            <li>Bridge assistant, tool, and lifecycle streams back through Gateway events.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>What facilitators should say</h3>
+          <ul class="list">
+            <li>Gateway is where work enters and leaves.</li>
+            <li>Runtime is where context, models, tools, and state come together.</li>
+            <li>Markdown files are durable context, not just notes.</li>
+            <li>Verification belongs in the workflow before real-world automation expands.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="protocol">
+      <div class="section-head">
+        <h2>Wire Protocol</h2>
+        <p>The teaching version: connect first, request with ids, stream events back.</p>
+      </div>
+      <div class="protocol">
+        <article class="frame">
+          <h3>Connect</h3>
+          <pre>{
+  "type": "connect",
+  "params": {
+    "role": "client"
+  }
+}</pre>
+        </article>
+        <article class="frame">
+          <h3>Request</h3>
+          <pre>{
+  "type": "req",
+  "id": "run-101",
+  "method": "agent",
+  "params": { }
+}</pre>
+        </article>
+        <article class="frame">
+          <h3>Event</h3>
+          <pre>{
+  "type": "event",
+  "event": "agent",
+  "payload": {
+    "stream": "tool"
+  }
+}</pre>
+        </article>
+      </div>
+    </section>
+
+    <section id="guardrails">
+      <div class="section-head">
+        <h2>Operating Guardrails</h2>
+        <p>Keep the first win local, visible, and easy to verify.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag teal">Local first</span>
+          <h3>Loopback before remote</h3>
+          <p>Prove the Gateway, dashboard, and first response before adding remote access or messaging channels.</p>
+        </article>
+        <article class="card">
+          <span class="tag amber">Pairing</span>
+          <h3>Trust devices deliberately</h3>
+          <p>New clients and nodes should have clear identity and approval expectations.</p>
+        </article>
+        <article class="card">
+          <span class="tag coral">Secrets</span>
+          <h3>Keep private data out</h3>
+          <p>Never put keys, client data, credentials, or sensitive notes in public workshop materials.</p>
+        </article>
+        <article class="card">
+          <span class="tag green">Verify</span>
+          <h3>Inspect before scaling</h3>
+          <p>Use health checks, status, context inspection, and human approval before risky automation.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      Sources: <a href="https://docs.openclaw.ai/concepts/architecture">OpenClaw Gateway architecture</a>, <a href="https://docs.openclaw.ai/concepts/agent-loop">OpenClaw Agent Loop</a>, <a href="https://docs.openclaw.ai/concepts/context">OpenClaw Context</a>, and <a href="https://docs.openclaw.ai/architecture">OpenClaw Architecture</a>.
+    </div>
+  </footer>
+</body>
+</html>
