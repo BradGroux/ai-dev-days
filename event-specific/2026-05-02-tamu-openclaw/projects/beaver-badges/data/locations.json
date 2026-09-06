@@ -1,0 +1,7 @@
+[
+  {"id":"bastrop-tx","name":"Buc-ee's Bastrop","city":"Bastrop","state":"TX","region":"Central Texas","visited":false},
+  {"id":"new-braunfels-tx","name":"Buc-ee's New Braunfels","city":"New Braunfels","state":"TX","region":"Central Texas","visited":false},
+  {"id":"madisonville-tx","name":"Buc-ee's Madisonville","city":"Madisonville","state":"TX","region":"North Texas","visited":false},
+  {"id":"wharton-tx","name":"Buc-ee's Wharton","city":"Wharton","state":"TX","region":"Gulf Coast","visited":false},
+  {"id":"terrell-tx","name":"Buc-ee's Terrell","city":"Terrell","state":"TX","region":"North Texas","visited":false}
+]

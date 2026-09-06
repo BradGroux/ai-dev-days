@@ -6,11 +6,11 @@ Use this checklist the night before and morning of the workshop.
 
 - [ ] Open the workshop repo: https://github.com/BradGroux/ai-dev-days
 - [ ] Open attendee links: `event-specific/2026-05-02-tamu-openclaw/attendee-links.md`
-- [ ] Open agenda: `curriculum/agenda/tamu-2026-05-02.md`
+- [ ] Open agenda: `event-specific/2026-05-02-tamu-openclaw/curriculum/agenda/tamu-2026-05-02.md`
 - [ ] Open facilitator runbook: `event-specific/2026-05-02-tamu-openclaw/facilitator-runbook.md`
-- [ ] Open first success lab: `labs/first-success.md`
-- [ ] Open Markdown thinking lab: `labs/markdown-thinking-layer.md`
-- [ ] Open Beaver Badges README: `projects/beaver-badges/README.md`
+- [ ] Open first success lab: `event-specific/2026-05-02-tamu-openclaw/labs/first-success.md`
+- [ ] Open Markdown thinking lab: `event-specific/2026-05-02-tamu-openclaw/labs/markdown-thinking-layer.md`
+- [ ] Open Beaver Badges README: `event-specific/2026-05-02-tamu-openclaw/projects/beaver-badges/README.md`
 
 ## Room setup
 
@@ -47,7 +47,7 @@ Use this checklist the night before and morning of the workshop.
 From the repo root:
 
 ```bash
-cd projects/beaver-badges/app
+cd event-specific/2026-05-02-tamu-openclaw/projects/beaver-badges/app
 npm ci
 npm run build
 npm run dev

@@ -53,7 +53,7 @@ These are optional. You do not need them to complete the workshop, but they can 
 
 AI-assisted OpenClaw install guide:
 
-- [`../../setup-guides/ai-assisted-openclaw-install.md`](../../setup-guides/ai-assisted-openclaw-install.md)
+- [`setup-guides/ai-assisted-openclaw-install.md`](setup-guides/ai-assisted-openclaw-install.md)
 
 ## Optional messaging/channel software
 
