@@ -41,6 +41,9 @@ css+='''
 css+='''
 h3:has(.concept-icon),.harness-label:has(.concept-icon),.lines b:has(.concept-icon){display:flex;align-items:center;gap:10px}.concept-icon{flex:0 0 auto;align-items:center;justify-content:center;margin-right:0}.concept-icon svg{display:block}.qr-panel{display:flex;flex-direction:column;align-items:center}.qr-panel .profile-links{width:100%;grid-template-columns:max-content max-content;justify-content:center;gap:48px}
 '''
+css+='''
+#slide30 .lines>div{grid-template-columns:330px 1fr}
+'''
 html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Own your operating model, rent your tools · Aggie Innovators</title><style>'+css+'</style></head><body><main id="stage"><img class="logo" src="assets/digital-meld-logo.png" alt="Digital Meld">'
 def heading(title):
  first,separator,second=title.partition('<br>')
