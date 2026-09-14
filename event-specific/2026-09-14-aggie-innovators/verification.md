@@ -153,3 +153,7 @@ the contact sheet. All 62 HTML/theme layouts passed without overflow or script
 errors; reference app checks also passed. PDF: 6,214,136 bytes. Current HTML/PDF
 hashes recorded in authoring/pdf-release.json. Earlier pending-PDF notes are
 superseded. Publication remains blocked by active GitHub CI triggers.
+
+## Certification revision PDF
+
+Brad approved regeneration of the certification revision on September 14. Re-captured 31 slides at 1920x1080 with controls hidden; zero overflow or script errors. Verified 31 pages at 960x540 points, each embedding one 1920x1080 image, with 26 HTTPS links. Reference app checks passed. Current PDF: 6,222,032 bytes; hashes updated in pdf-release.json.
