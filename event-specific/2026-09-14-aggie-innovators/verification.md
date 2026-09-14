@@ -137,3 +137,19 @@ memory, harness, framework concerns, operating documents, evidence/assumptions,
 and next-step slides. Icons retain text labels and are hidden from screen readers.
 Copied the source icon license. All 62 slide/theme layouts passed; visually
 reviewed the framework slide. PDF unchanged; publication remains blocked by CI.
+
+## Final September 14 PDF and walkthrough
+
+Brad authorized finalizing current slides and regenerating the PDF. The presenter
+walkthrough now specifies preparation, exact shared prompts, first/second builds,
+identical updates, fresh Buzz handoffs, evidence comparison, timing, and recovery.
+Speaker notes are slide-specific. No actual agent comparison result is claimed.
+
+Captured all 31 dark-theme slides at 1920×1080 with controls hidden. Assembled
+one full-resolution screenshot per 960×540-point 16:9 PDF page. Verified each
+embedded image is 1920×1080, all 31 pages have matching geometry, and all 26 link
+annotations are HTTPS. Re-rendered all pages at 1920×1080 and visually reviewed
+the contact sheet. All 62 HTML/theme layouts passed without overflow or script
+errors; reference app checks also passed. PDF: 6,214,136 bytes. Current HTML/PDF
+hashes recorded in authoring/pdf-release.json. Earlier pending-PDF notes are
+superseded. Publication remains blocked by active GitHub CI triggers.

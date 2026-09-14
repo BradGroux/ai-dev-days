@@ -42,3 +42,9 @@ count and page order. The built HTML and PDF have passed initial layout and pari
 Brad reviews attendee questions, actual demo evidence, and unredeemed gift support issues. Record
 accepted lessons separately from suggestions; update reusable curriculum only through the program's
 normal approval process. Publish only public-safe material with explicit authorization.
+
+## Final demo execution
+
+Use the [numbered presenter walkthrough](demo-script.md) for preparation, exact
+prompts, evidence updates, fresh Buzz contexts, comparison, and recovery. Preserve
+both actual outputs. Do not replace the handoff comparison with the illustrative app.

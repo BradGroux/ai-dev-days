@@ -1,5 +1,5 @@
 {
-  "approval": "Brad approved current HTML slides in this conversation on 2026-09-04",
+  "approval": "Brad authorized finalizing current slides and regenerating PDF on September 14, 2026",
   "theme": "dark",
   "pages": 31,
   "capture_pixels": [
@@ -10,7 +10,7 @@
     960,
     540
   ],
-  "https_annotations": 14,
-  "html_sha256": "982bd713c7f93dc990fd42f47252d52a7481a3f5f85001958b0137f6c4578b70",
-  "pdf_sha256": "f1e5b924a7e6a4cae2db9d6e689651866c23f0f543d1ff7ade32d2e852abd84c"
+  "https_annotations": 26,
+  "html_sha256": "176bcc4e2f5c0188b05245a3cf07a3f88af323f9442fb23d77d0ce3d4952720f",
+  "pdf_sha256": "0b398a99402951748f66126652ae2b62aea974d5d2c58b3a8265f85a66bef610"
 }

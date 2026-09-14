@@ -30,8 +30,8 @@ in HTML; only HTTPS links are annotated in the portable PDF.
 ## Required approval gate
 
 Do not generate or regenerate a PDF until Brad explicitly signs off on the current
-HTML slides. Brad approved the current slides on September 4, 2026; slides.pdf now
-contains that approved 31-slide dark-theme export. Future content changes require
+HTML slides. Brad finalized the current slides on September 14, 2026; slides.pdf now
+contains that finalized 31-slide dark-theme export. Future content changes require
 new signoff before replacing the PDF. Export hashes are in pdf-release.json.
 
 ## Theme support
