@@ -2,7 +2,7 @@
 
 Aggie Innovators · September 14, 2026 · Brad Groux / Digital Meld
 
-**Status: HTML slides approved and PDF locked on September 4, 2026.** The revised 31-slide HTML deck, speaker notes, interactive reference app,
+**Status: September 14 HTML design revision awaiting review. PDF retains the September 4 approved baseline.** The revised 31-slide HTML deck, speaker notes, interactive reference app,
 presenter console, and isolated rehearsal setup are complete. The Heartbeat no-card offer is saved
 and configuration-verified. Actual paired tool runs, attendee approval list, end-to-end gift
 redemption, and publication remain outstanding.
@@ -36,7 +36,7 @@ claim about a provider's legal terms or that every tool is subscription software
 ## Open the presentation
 
 - [HTML slide deck](slides.html): arrows to navigate and a fullscreen icon.
-- [Approved PDF slide deck](slides.pdf): 31 dark-theme pages assembled from 1920×1080 screenshots, with clickable HTTPS links.
+- [September 4 baseline PDF](slides.pdf): 31 dark-theme pages assembled from 1920×1080 screenshots. It does not yet include the September 14 design revision.
 - [Speaker notes](speaker-notes.md): the full 90-minute run.
 - [Demo console](demo/index.html): exact prompts, timer, and evidence scorecard.
 - [Aggie Launchpad reference app](demo/reference-app/index.html): working illustrative output.

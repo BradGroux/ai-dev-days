@@ -120,3 +120,14 @@ geometry, and all 14 link annotations use HTTPS. Re-rendered all PDF pages at
 errors during capture. PDF size: 5,670,473 bytes. Approval and HTML/PDF SHA-256
 hashes recorded in authoring/pdf-release.json. Prior obsolete-PDF status above
 is superseded by this entry. Actual agent-demo rehearsals remain outstanding.
+
+## September 14 design revision
+
+Copied the left accent and second-row heading gradients from the HUG Motivational
+Monday deck. Removed Digital Meld from the footer. Added copied social icons and
+website links to the opening and closing slides, with accessible platform labels.
+Checked 31 slides in each theme at 1920×1080: 62 layouts, zero overflow or script
+errors. Visually compared the reference and inspected the revised opening and
+closing slides. PDF remains the September 4 approved baseline pending new signoff.
+Publication is blocked by GitHub CI policy: quality.yml runs on pull_request and
+push to master. Repository automation controls were not modified.
