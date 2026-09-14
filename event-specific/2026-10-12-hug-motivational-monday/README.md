@@ -12,8 +12,7 @@
 **Status:** Brad approved the current 13-slide deck for PDF export on September
 14, 2026. The high-resolution PDF is generated and verified locally. Attendee
 gift redemption still requires an eligible-user test before distribution.
-The HTML opening slide now includes Brad's completed certifications; the PDF
-retains the prior opening slide pending approval for a new export.
+The HTML and recreated PDF opening slide include Brad's completed certifications.
 
 ## Purpose
 
