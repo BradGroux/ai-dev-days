@@ -10,7 +10,7 @@ Protect the first win. The workshop succeeds when attendees get one working Open
 - Open the repo and attendee links page.
 - Have the SSTB Discord link ready: https://discord.gg/Gmfkm7QVSF
 - Confirm Mac and Windows setup guides are easy to reach.
-- Confirm the Beaver Badges app can run from `projects/beaver-badges/app`.
+- Confirm the Beaver Badges app can run from `event-specific/2026-05-02-tamu-openclaw/projects/beaver-badges/app`.
 - Prepare screenshots for the first-hour Markdown/Obsidian discussion.
 - Prepare rescue/demo machine in case attendee installs stall.
 
@@ -28,15 +28,15 @@ Safety line to repeat if setup information is shared there:
 
 - Attendee links: `event-specific/2026-05-02-tamu-openclaw/attendee-links.md`
 - SSTB Discord: https://discord.gg/Gmfkm7QVSF
-- Agenda: `curriculum/agenda/tamu-2026-05-02.md`
-- First success lab: `labs/first-success.md`
-- Markdown thinking lab: `labs/markdown-thinking-layer.md`
+- Agenda: `event-specific/2026-05-02-tamu-openclaw/curriculum/agenda/tamu-2026-05-02.md`
+- First success lab: `event-specific/2026-05-02-tamu-openclaw/labs/first-success.md`
+- Markdown thinking lab: `event-specific/2026-05-02-tamu-openclaw/labs/markdown-thinking-layer.md`
 
 ## Optional Codex/Claude Code support
 
 Some attendees may arrive with Codex CLI or Claude Code access. Point them to:
 
-- `setup-guides/ai-assisted-openclaw-install.md`
+- `event-specific/2026-05-02-tamu-openclaw/setup-guides/ai-assisted-openclaw-install.md`
 
 Keep this as an optional helper path. Do not let coding-assistant setup block the main OpenClaw install flow.
 
