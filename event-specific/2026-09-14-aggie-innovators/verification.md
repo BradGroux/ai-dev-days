@@ -120,3 +120,36 @@ geometry, and all 14 link annotations use HTTPS. Re-rendered all PDF pages at
 errors during capture. PDF size: 5,670,473 bytes. Approval and HTML/PDF SHA-256
 hashes recorded in authoring/pdf-release.json. Prior obsolete-PDF status above
 is superseded by this entry. Actual agent-demo rehearsals remain outstanding.
+
+## September 14 design revision
+
+Copied the left accent and second-row heading gradients from the HUG Motivational
+Monday deck. Removed Digital Meld from the footer. Added copied social icons and
+website links to the opening and closing slides, with accessible platform labels.
+Checked 31 slides in each theme at 1920×1080: 62 layouts, zero overflow or script
+errors. Visually compared the reference and inspected the revised opening and
+closing slides. PDF remains the September 4 approved baseline pending new signoff.
+Publication is blocked by GitHub CI policy: quality.yml runs on pull_request and
+push to master. Repository automation controls were not modified.
+
+Added HUG-style inline SVG concept icons to ownership/tool choice, read-act-check,
+memory, harness, framework concerns, operating documents, evidence/assumptions,
+and next-step slides. Icons retain text labels and are hidden from screen readers.
+Copied the source icon license. All 62 slide/theme layouts passed; visually
+reviewed the framework slide. PDF unchanged; publication remains blocked by CI.
+
+## Final September 14 PDF and walkthrough
+
+Brad authorized finalizing current slides and regenerating the PDF. The presenter
+walkthrough now specifies preparation, exact shared prompts, first/second builds,
+identical updates, fresh Buzz handoffs, evidence comparison, timing, and recovery.
+Speaker notes are slide-specific. No actual agent comparison result is claimed.
+
+Captured all 31 dark-theme slides at 1920×1080 with controls hidden. Assembled
+one full-resolution screenshot per 960×540-point 16:9 PDF page. Verified each
+embedded image is 1920×1080, all 31 pages have matching geometry, and all 26 link
+annotations are HTTPS. Re-rendered all pages at 1920×1080 and visually reviewed
+the contact sheet. All 62 HTML/theme layouts passed without overflow or script
+errors; reference app checks also passed. PDF: 6,214,136 bytes. Current HTML/PDF
+hashes recorded in authoring/pdf-release.json. Earlier pending-PDF notes are
+superseded. Publication remains blocked by active GitHub CI triggers.
