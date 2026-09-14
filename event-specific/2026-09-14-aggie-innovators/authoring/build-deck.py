@@ -35,6 +35,9 @@ css+='''
 h1 em{display:inline-block;padding-bottom:.16em;margin-bottom:-.16em;color:transparent;font-style:normal;background:linear-gradient(to right,var(--magenta),var(--blue),var(--accent));background-clip:text;-webkit-background-clip:text}
 .social-stack{display:grid;gap:10px}.social-link{display:inline-flex;align-items:center;gap:10px;color:var(--ink);font-size:20px;text-decoration:none;line-height:26px}.social-link svg{width:26px;height:26px;fill:currentColor;flex:0 0 auto}.link-label{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:750;margin-bottom:10px}.web-links{display:grid;gap:10px}.web-links a{font-size:20px;color:var(--ink);text-decoration:none;line-height:26px}.profile-links{display:grid;grid-template-columns:1fr 1fr;gap:30px}.hero .profile-links{position:absolute;right:88px;bottom:88px}.qr-panel .profile-links{text-align:left;margin-top:24px}
 '''
+css+='''
+.concept-icon{display:inline-flex;vertical-align:middle;color:var(--accent);margin-right:10px;font-style:normal}.concept-icon svg{width:28px;height:28px;stroke-width:1.5}.rail article:nth-child(2) .concept-icon,.concerns article:nth-child(2) .concept-icon{color:var(--blue)}.rail article:nth-child(3) .concept-icon,.concerns article:nth-child(3) .concept-icon{color:var(--magenta)}.concerns article:nth-child(4) .concept-icon{color:var(--gold)}
+'''
 html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Own your operating model, rent your tools · Aggie Innovators</title><style>'+css+'</style></head><body><main id="stage"><img class="logo" src="assets/digital-meld-logo.png" alt="Digital Meld">'
 def heading(title):
  first,separator,second=title.partition('<br>')

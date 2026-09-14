@@ -131,3 +131,9 @@ errors. Visually compared the reference and inspected the revised opening and
 closing slides. PDF remains the September 4 approved baseline pending new signoff.
 Publication is blocked by GitHub CI policy: quality.yml runs on pull_request and
 push to master. Repository automation controls were not modified.
+
+Added HUG-style inline SVG concept icons to ownership/tool choice, read-act-check,
+memory, harness, framework concerns, operating documents, evidence/assumptions,
+and next-step slides. Icons retain text labels and are hidden from screen readers.
+Copied the source icon license. All 62 slide/theme layouts passed; visually
+reviewed the framework slide. PDF unchanged; publication remains blocked by CI.
