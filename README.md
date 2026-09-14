@@ -74,6 +74,7 @@ Start with [`START-HERE.md`](START-HERE.md) if you are not sure which file you n
   [`docs/releases/`](docs/releases/).
 - Rename and path migration: see [`MIGRATION.md`](MIGRATION.md).
 - Event metadata: see [`event-specific/events.json`](event-specific/events.json) and [`event-specific/refresh-checklist.md`](event-specific/refresh-checklist.md).
+- Slide production: see the [Presentation Production SOP](event-specific/presentation-sop.md).
 
 ## Featured Event Packets
 

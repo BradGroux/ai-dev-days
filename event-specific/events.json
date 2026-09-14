@@ -1,6 +1,31 @@
 {
   "events": [
     {
+      "slug": "2026-10-12-hug-motivational-monday",
+      "title": "Build in Public and Trust Yourself to Figure It Out",
+      "date": "2026-10-12",
+      "status": "planned",
+      "audience": "H.U.G. students, interns, mentors, and emerging professionals",
+      "listedInRoot": false,
+      "entrypoint": "event-specific/2026-10-12-hug-motivational-monday/README.md",
+      "agenda": "event-specific/2026-10-12-hug-motivational-monday/speaker-notes-20-minute.md",
+      "setupPath": "event-specific/2026-10-12-hug-motivational-monday/day-before-checklist.md",
+      "facilitatorRunbook": "event-specific/2026-10-12-hug-motivational-monday/facilitator-runbook.md",
+      "requiredFiles": [
+        "event-specific/2026-10-12-hug-motivational-monday/README.md",
+        "event-specific/2026-10-12-hug-motivational-monday/attendee-links.md",
+        "event-specific/2026-10-12-hug-motivational-monday/requirements.md",
+        "event-specific/2026-10-12-hug-motivational-monday/facilitator-runbook.md",
+        "event-specific/2026-10-12-hug-motivational-monday/fallback-plan.md",
+        "event-specific/2026-10-12-hug-motivational-monday/day-before-checklist.md",
+        "event-specific/2026-10-12-hug-motivational-monday/post-event-review.md",
+        "event-specific/2026-10-12-hug-motivational-monday/slides.html",
+        "event-specific/2026-10-12-hug-motivational-monday/slide-storyboard.md",
+        "event-specific/2026-10-12-hug-motivational-monday/speaker-notes-20-minute.md",
+        "event-specific/2026-10-12-hug-motivational-monday/reference-links.md"
+      ]
+    },
+    {
       "slug": "2026-09-14-aggie-innovators",
       "title": "Own your operating model, rent your tools",
       "date": "2026-09-14",

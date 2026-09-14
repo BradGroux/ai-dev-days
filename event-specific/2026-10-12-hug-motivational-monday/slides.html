@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,">
+<title>Build in public and trust yourself to figure it out · H.U.G. Motivational Monday</title><style>
+:root {
+  color-scheme: dark;
+  --bg: #071016;
+  --panel: #0d1821;
+  --ink: #edf6fb;
+  --muted: #a3bccd;
+  --line: #294657;
+  --accent: #5eead4;
+  --blue: #60a5fa;
+  --magenta: #f472b6;
+  --gold: #e8c589;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050b10;
+  color: var(--ink);
+  font-family: Roboto, Inter, system-ui, sans-serif;
+}
+#stage {
+  width: 1600px;
+  height: 900px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale, 1));
+  transform-origin: center;
+  background: var(--bg);
+}
+.slide {
+  display: none;
+  position: absolute;
+  inset: 0;
+  padding: 108px 88px 78px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 98% 2%, transparent 0 112px, rgba(96,165,250,.07) 114px 153px, transparent 155px),
+    radial-gradient(circle at 98% 2%, transparent 0 178px, rgba(244,114,182,.05) 180px 220px, transparent 222px),
+    var(--bg);
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  background: linear-gradient(var(--accent), var(--blue), var(--magenta));
+}
+.slide.active { display: block; }
+.kicker {
+  margin: 0 0 20px;
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+h1 {
+  max-width: 1320px;
+  margin: 0 0 34px;
+  font-size: 72px;
+  font-weight: 790;
+  letter-spacing: -2.4px;
+  line-height: 1.04;
+}
+h1 em {
+  display: inline-block;
+  padding-bottom: .16em;
+  margin-bottom: -.16em;
+  color: transparent;
+  font-style: normal;
+  background: linear-gradient(to right, var(--magenta), var(--blue), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+p { margin: 0; color: var(--muted); font-size: 28px; line-height: 1.42; }
+a { color: var(--accent); }
+.lead { max-width: 1040px; color: var(--ink); font-size: 37px; line-height: 1.4; }
+.hero h1 { margin-top: 58px; font-size: 91px; }
+.byline { margin-top: 68px; font-size: 29px; }
+.byline span { display: block; margin-top: 9px; color: var(--muted); font-size: 20px; }
+.story-grid { display: grid; grid-template-columns: 360px 1fr; gap: 68px; align-items: center; }
+.portrait { text-align: center; }
+.portrait img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; }
+.portrait blockquote { margin: 22px 0 0; padding-left: 18px; border-left: 4px solid var(--gold); color: var(--ink); font-size: 28px; font-weight: 400; letter-spacing: normal; line-height: 1.42; text-align: left; }
+.opportunity-trail { display: grid; }
+.opportunity-trail div {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.opportunity-trail b { color: var(--accent); font-size: 29px; }
+.opportunity-trail span { color: var(--muted); font-size: 24px; line-height: 1.35; }
+.brand-question { max-width: 1180px; margin: 66px 0 70px; color: var(--ink); font-size: 54px; font-weight: 720; line-height: 1.2; }
+.evidence-line { display: flex; gap: 0; border-top: 1px solid var(--line); }
+.evidence-line span { flex: 1; padding: 26px 28px 0 0; color: var(--muted); font-size: 26px; }
+.evidence-line span + span { padding-left: 28px; border-left: 1px solid var(--line); }
+.failure-sequence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 42px; }
+.failure-sequence div { min-height: 215px; padding: 34px; border-top: 3px solid var(--line); background: var(--panel); }
+.failure-sequence .highlight { border-color: var(--accent); }
+.failure-sequence strong { display: block; color: var(--muted); font-size: 18px; letter-spacing: 2px; }
+.failure-sequence b { display: block; margin-top: 58px; font-size: 34px; }
+.statement { max-width: 1240px; margin-top: 42px; color: var(--ink); font-size: 32px; }
+.community-slide .big-idea { color: var(--ink); font-size: 51px; font-weight: 730; line-height: 1.28; }
+.community-slide .side-note { position: absolute; right: 90px; bottom: 118px; width: 600px; padding-left: 28px; border-left: 4px solid var(--gold); font-size: 27px; }
+.book-lines { display: grid; margin-top: 18px; }
+.book-lines div { display: grid; grid-template-columns: 440px 1fr 270px; align-items: center; padding: 20px 0; border-top: 1px solid var(--line); }
+.book-lines b { font-size: 36px; }
+.book-lines span { color: var(--muted); font-size: 24px; }
+.book-lines strong { color: var(--accent); font-size: 31px; text-align: right; }
+.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 42px; }
+.process div { min-height: 275px; padding: 30px 26px; border-top: 3px solid var(--line); background: var(--panel); }
+.process div:last-child { border-color: var(--accent); }
+.process strong { display: block; min-height: 88px; font-size: 30px; line-height: 1.2; }
+.process span { display: block; color: var(--muted); font-size: 23px; line-height: 1.45; }
+blockquote { margin: 14px 0 46px; color: var(--ink); font-size: 54px; font-weight: 720; line-height: 1.2; }
+.empathy-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 62px; align-items: stretch; }
+.empathy-layout > div { padding: 28px 32px; border-left: 4px solid var(--accent); background: var(--panel); }
+.empathy-layout b { display: block; font-size: 31px; line-height: 1.25; }
+.empathy-layout span { display: block; margin-top: 18px; color: var(--muted); font-size: 22px; line-height: 1.4; }
+.case-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.case-flow div { min-height: 265px; padding: 31px; border-top: 3px solid var(--line); background: var(--panel); }
+.case-flow .highlight { border-color: var(--accent); }
+.case-flow span { display: block; margin-bottom: 48px; color: var(--muted); font-size: 18px; letter-spacing: 1.8px; text-transform: uppercase; }
+.case-flow b { font-size: 30px; line-height: 1.32; }
+.proof { margin-top: 28px; color: var(--accent); font-size: 23px; }
+.concept-icon { display: inline-flex; color: var(--accent); flex: 0 0 auto; }
+.concept-icon svg { width: 54px; height: 54px; stroke-width: 1.5; }
+.evidence-line > span { display: flex; align-items: center; gap: 18px; }
+.evidence-line .concept-icon { display: flex; margin: 0; }
+.evidence-line > span:nth-child(2) .concept-icon, .failure-sequence > div:nth-child(2) .concept-icon, .process > div:nth-child(2) .concept-icon { color: var(--blue); }
+.evidence-line > span:nth-child(3) .concept-icon, .failure-sequence > div:nth-child(3) .concept-icon, .process > div:nth-child(3) .concept-icon { color: var(--magenta); }
+.process > div:nth-child(4) .concept-icon { color: var(--gold); }
+.failure-sequence > div { position: relative; }
+.failure-sequence b { display: flex; align-items: center; gap: 18px; }
+.failure-sequence .concept-icon { position: static; }
+.community-visual { position: absolute; right: 160px; top: 310px; }
+.community-visual svg { width: 220px; height: 220px; stroke-width: 1; }
+.book-lines b { display: flex; align-items: center; gap: 20px; }
+.book-lines .concept-icon svg { width: 44px; height: 44px; }
+.process > div { min-height: 335px; }
+.process strong { display: flex; align-items: center; gap: 18px; }
+.process .concept-icon { margin: 0; }
+.process .concept-icon svg, .failure-sequence .concept-icon svg { width: 44px; height: 44px; }
+.aurelius-quote { margin: 26px 0 0; padding-left: 24px; border-left: 4px solid var(--gold); font-size: 32px; line-height: 1.3; }
+.aurelius-quote cite { display: block; margin-top: 12px; color: var(--muted); font-size: 18px; font-style: normal; font-weight: 400; }
+.sources { position: absolute; left: 88px; right: 88px; bottom: 55px; z-index: 6; color: var(--muted); font-size: 16px; }
+.sources summary { cursor: pointer; width: fit-content; }
+.sources[open] { background: var(--panel); padding: 10px 18px; border: 1px solid var(--line); }
+.sources ul { margin: 8px 0 0; padding-left: 22px; line-height: 1.4; }
+.sources a { text-decoration: underline; }
+.empathy-layout .concept-icon { margin-bottom: 20px; }
+.closing-visual { position: absolute; right: 130px; top: 400px; }
+.closing-visual svg { width: 180px; height: 180px; stroke-width: 1; }
+.bakery-visual { position: absolute; right: 130px; top: 170px; }
+.bakery-visual svg { width: 160px; height: 160px; stroke-width: 1.2; color: var(--gold); }
+.venn-slide h1 { display: none; }
+.venn-wrap { position: absolute; inset: 0; display: grid; place-items: center; }
+.venn-wrap canvas { width: 1350px; height: 705px; }
+.quote-slide h1 { font-size: 59px; }
+.big-quote { max-width: 1320px; margin-top: 54px; color: var(--ink); font-size: 54px; }
+.quote-note { margin-top: 42px; padding-left: 26px; border-left: 4px solid var(--gold); font-size: 28px; }
+.closing { max-width: 1100px; }
+.closing p { padding: 13px 0; color: var(--muted); font-size: 31px; }
+.closing strong { display: block; margin-top: 40px; color: var(--ink); font-size: 44px; line-height: 1.25; }
+.links { position: absolute; right: 88px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.link-label { margin-bottom: 10px; color: var(--muted); font-size: 14px; font-weight: 760; letter-spacing: 2px; text-transform: uppercase; }
+.social-stack { display: grid; gap: 10px; }
+.social-link { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-size: 20px; font-weight: 400; text-decoration: none; }
+.social-link svg { width: 26px; height: 26px; fill: currentColor; flex: 0 0 auto; }
+.web-links { display: grid; gap: 10px; }
+.web-links a { color: var(--ink); font-size: 20px; text-decoration: none; }
+.social-link, .web-links a { display: flex; align-items: center; height: 26px; line-height: 26px; }
+.links a:hover { color: var(--accent); }
+.gift-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
+.gift-layout p { font-size: 26px; margin: 22px 0; }
+.gift-layout .gift-right { text-align: center; }
+.gift-qr { width: 280px; border: 12px solid white; border-radius: 8px; }
+.mini-label { font-size: 19px; color: var(--muted); }
+.logo { position: absolute; top: 25px; left: 76px; width: 168px; z-index: 3; }
+.footer { position: absolute; bottom: 23px; left: 88px; right: 88px; display: flex; justify-content: space-between; color: #87a3b5; font-size: 16px; z-index: 4; }
+.controls { position: absolute; top: 24px; right: 44px; display: flex; gap: 8px; z-index: 5; }
+button { display: grid; place-items: center; min-width: 42px; min-height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: var(--ink); cursor: pointer; font: 16px Roboto, system-ui, sans-serif; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.progress { position: absolute; bottom: 0; height: 4px; background: var(--accent); z-index: 5; }
+.export .controls { visibility: hidden; }
+.theme-moon { display: none; }
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f1f6fa;
+  --panel: #ffffff;
+  --ink: #102331;
+  --muted: #415c6e;
+  --line: #bdccd6;
+  --accent: #08766b;
+  --blue: #225eb3;
+  --magenta: #a33175;
+  --gold: #805512;
+}
+:root[data-theme="light"] body { background: #dce7ee; }
+:root[data-theme="light"] .logo { width: 180px; top: 19px; left: 70px; padding: 9px 12px; border-radius: 7px; background: #071016; }
+:root[data-theme="light"] .theme-sun { display: none; }
+:root[data-theme="light"] .theme-moon { display: block; }
+:root[data-theme="light"] .footer { color: #4c687a; }
+</style></head>
+<body><main id="stage"><img class="logo" src="assets/digital-meld-logo.png" alt="Digital Meld"><section id="slide1" class="slide hero" aria-label="Slide 1: Build in public. Trust yourself to figure it out."><div class="kicker">H.U.G. Motivational Monday · October 12, 2026</div><h1>Build in public.<br><em>Trust yourself to figure it out.</em></h1><p class="lead">In an AI world, the personal touch matters more.</p><div class="byline">Brad Groux<span>Co-Founder • CEO • Builder • Speaker • AI Educator &amp; Evangelist</span></div><div class="links">
+            <div>
+              <div class="link-label">Follow</div>
+              <div class="social-stack" aria-label="Brad Groux social profiles">
+            <a class="social-link" href="https://twitter.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://www.linkedin.com/in/bradgroux/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://youtube.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg><span>@bradgroux</span></a>
+              </div>
+            </div>
+            <div>
+              <div class="link-label">Visit</div>
+              <div class="web-links">
+                <a href="https://www.bradgroux.com">bradgroux.com</a>
+                <a href="https://digitalmeld.io">digitalmeld.io</a>
+                <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
+          </div>
+</section><section id="slide2" class="slide " aria-label="Slide 2: What public work made possible"><div class="kicker">The opportunity trail</div><h1>What public work<br><em>made possible</em></h1><div class="story-grid"><div class="portrait"><img src="assets/brad-groux-headshot.png" alt="Brad Groux"><blockquote>I wish I had started sooner</blockquote></div><div class="opportunity-trail"><div><b>Shared the work</b><span>People could inspect how I contributed.</span></div><div><b>Joined the OpenClaw team</b><span>Public work created the opportunity.</span></div><div><b>Worked with GitHub</b><span>Hosted an event and recorded a video and podcast.</span></div><div><b>More invitations followed</b><span>About a dozen speaking engagements and appearances.</span></div></div></div></section><section id="slide3" class="slide " aria-label="Slide 3: Personal brand is accumulated evidence"><div class="kicker">The AI future gets more personal</div><h1>Personal brand is<br><em>accumulated evidence</em></h1><div class="brand-question">What do people expect from you<br>before you enter the room?</div><div class="evidence-line"><span><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" />
+  <path d="m18 15 4-4" />
+  <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" />
+</svg>
+</i>Useful work</span><span><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" />
+</svg>
+</i>Visible corrections</span><span><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg>
+</i>Community contribution</span></div></section><section id="slide4" class="slide " aria-label="Slide 4: Share the failures too"><div class="kicker">Building in public</div><h1>Share the failures too</h1><div class="failure-sequence"><div><strong>01</strong><b><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" />
+  <path d="M6.453 15h11.094" />
+  <path d="M8.5 2h7" />
+</svg>
+</i>What I tried</b></div><div><strong>02</strong><b><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+  <path d="M12 9v4" />
+  <path d="M12 17h.01" />
+</svg>
+</i>What happened</b></div><div class="highlight"><strong>03</strong><b><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
+</svg>
+</i>What I changed</b></div></div><p class="statement">People recognize their own setbacks in yours. The correction shows how you respond.</p></section><section id="slide5" class="slide community-slide" aria-label="Slide 5: Community changes the work"><div class="kicker">Give back without keeping score</div><h1>Community changes<br><em>the work</em></h1><p class="big-idea">Help someone.<br>Teach what you know.<br>Show up when hands are needed.</p><p class="side-note">Community work exposes you to people and problems outside your bubble. Those relationships outlast any platform.</p><div class="community-visual"><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg>
+</i></div></section><section id="slide6" class="slide " aria-label="Slide 6: Three books. Three practices."><div class="kicker">Ideas I return to</div><h1>Three books.<br><em>Three practices.</em></h1><div class="book-lines"><div><b><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 5v16" />
+  <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
+</svg>
+</i>Meditations</b><span>Marcus Aurelius</span><strong>Consistency</strong></div><div><b><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+</svg>
+</i>Nuts!</b><span>Kevin and Jackie Freiberg</span><strong>Why not?</strong></div><div><b><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" />
+  <path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95" />
+  <path d="m2 15 6 6" />
+  <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91" />
+</svg>
+</i>Leaders Eat Last</b><span>Simon Sinek</span><strong>Serve first</strong></div></div><blockquote class="aurelius-quote">“Waste no more time arguing what a good man should be. Be one.”<cite>Marcus Aurelius, Meditations 10.16</cite></blockquote><details class="sources" open><summary>Sources</summary><ul><li><a href="https://www.goodreads.com/book/show/34582559-meditations" target="_blank" rel="noopener noreferrer">Meditations — Marcus Aurelius</a></li><li><a href="https://www.goodreads.com/book/show/56456" target="_blank" rel="noopener noreferrer">Nuts!: Southwest Airlines’ Crazy Recipe for Business and Personal Success — Kevin Freiberg and Jackie Freiberg</a></li><li><a href="https://www.goodreads.com/book/show/16144853-leaders-eat-last" target="_blank" rel="noopener noreferrer">Leaders Eat Last: Why Some Teams Pull Together and Others Don’t — Simon Sinek</a></li></ul></details></section><section id="slide7" class="slide " aria-label="Slide 7: Confidence needs a process"><div class="kicker">Faith in your ability to figure things out</div><h1>Confidence needs<br><em>a process</em></h1><div class="process"><div><strong><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" />
+</svg>
+</i>Learn enough</strong><span>Use AI to learn the language.</span></div><div><strong><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+  <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" />
+</svg>
+</i>Ask better questions</strong><span>Find the people who know the work.</span></div><div><strong><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" />
+  <path d="M6.453 15h11.094" />
+  <path d="M8.5 2h7" />
+</svg>
+</i>Try something small</strong><span>Make the next step reviewable.</span></div><div><strong><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 6 7 17l-5-5" />
+  <path d="m22 10-7.5 7.5L13 16" />
+</svg>
+</i>Check the result</strong><span>Let evidence and experts correct you.</span></div></div></section><section id="slide8" class="slide " aria-label="Slide 8: Empathy before implementation"><div class="kicker">How we approach customer problems</div><h1>Empathy before<br><em>implementation</em></h1><blockquote>“Show me how the work happens today.”</blockquote><div class="empathy-layout"><p>Customers usually describe a symptom. The people doing the work reveal the real problem.</p><div><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
+  <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4" />
+</svg>
+</i><b>McKinsey & Company<br>for geeks</b><span>Consulting curiosity close enough to build and verify the solution.</span></div></div></section><section id="slide9" class="slide " aria-label="Slide 9: I know code. I don’t know dough."><div class="kicker">A fictional bakery challenge</div><h1>I know code.<br><em>I don’t know dough.</em></h1><div class="case-flow"><div><span>The problem</span><b>Favorites sell out. Other bread goes unsold.</b></div><div><span>Learn before building</span><b>Use AI to learn the business. Ask the baker what the sales data misses.</b></div><div class="highlight"><span>The small test</span><b>Recommend tomorrow’s bake quantities. The baker reviews. Track waste and sellouts.</b></div></div><p class="proof">The baker knows dough. You bring a way to test the next batch.</p><div class="bakery-visual"><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10.2 18H4.774a1.5 1.5 0 0 1-1.352-.97 11 11 0 0 1 .132-6.487" />
+  <path d="M18 10.2V4.774a1.5 1.5 0 0 0-.97-1.352 11 11 0 0 0-6.486.132" />
+  <path d="M18 5a4 3 0 0 1 4 3 2 2 0 0 1-2 2 10 10 0 0 0-5.139 1.42" />
+  <path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14" />
+  <path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676" />
+</svg>
+</i></div></section><section id="slide10" class="slide venn-slide" aria-label="Slide 10: What deserves your focus"><div class="kicker">The overlap</div><h1>What deserves<br><em>your focus</em></h1><div class="venn-wrap"><canvas id="focus-venn" width="900" height="470" role="img" aria-label="Two overlapping circles. The left circle is things that matter. The right circle is things you can control. An arrow points upward from what you should focus on into the overlap."></canvas></div></section><section id="slide11" class="slide quote-slide" aria-label="Slide 11: How badly do you want it?"><div class="kicker">Eric Thomas · The Hip Hop Preacher</div><h1>How badly do<br><em>you want it?</em></h1><blockquote class="big-quote">“When you want to succeed as bad as you want to breathe, then you'll be successful.”</blockquote><p class="quote-note">Desire is fuel. Process gives it direction.</p><details class="sources" open><summary>Sources</summary><ul><li><a href="https://ericthomas.com/" target="_blank" rel="noopener noreferrer">Eric Thomas — official site</a></li><li><a href="https://www.youtube.com/watch?v=6vuetQSwFW8" target="_blank" rel="noopener noreferrer">Eric Thomas: How Bad Do You Want It? — speech video</a></li></ul></details></section><section id="slide12" class="slide closing-slide" aria-label="Slide 12: One useful thing this week"><div class="kicker">Your next move</div><h1>One useful thing<br><em>this week</em></h1><div class="closing"><p>Publish something you learned, made, or corrected.</p><p>Put it where people in your field can find it.</p><strong>If I can do this, you can do this.<br>Start small, think big.</strong></div><div class="links">
+            <div>
+              <div class="link-label">Follow</div>
+              <div class="social-stack" aria-label="Brad Groux social profiles">
+            <a class="social-link" href="https://twitter.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://www.linkedin.com/in/bradgroux/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://youtube.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg><span>@bradgroux</span></a>
+              </div>
+            </div>
+            <div>
+              <div class="link-label">Visit</div>
+              <div class="web-links">
+                <a href="https://www.bradgroux.com">bradgroux.com</a>
+                <a href="https://digitalmeld.io">digitalmeld.io</a>
+                <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
+          </div>
+<div class="closing-visual"><i class="concept-icon" aria-hidden="true"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" />
+</svg>
+</i></div></section><section id="slide13" class="slide gift-slide" aria-label="Slide 13: Your first year of SSTB.ai is on us."><div class="kicker">For new members attending today</div><h1>Your first year of SSTB.ai<br><em>is on us.</em></h1><div class="gift-layout"><div><div style="display:flex;align-items:center;gap:24px;margin-bottom:24px"><img style="width:100px;height:100px;border-radius:14px" src="assets/sstb-logo.png" alt="SSTB logo"><strong style="font-size:34px;line-height:1.15">Start Small,<br>Think Big.</strong></div><p class="definition">Keep learning, building, and sharing<br>with the SSTB community.</p><p><strong>No payment card required.</strong><br>365 days of membership access.</p><p>Redeem by <strong>October 14, 8 PM Central.</strong><br>Use the email approved at event check-in.</p></div><div class="gift-right"><a href="https://go.sstb.ai/hug2026" target="_blank" rel="noopener noreferrer"><img class="gift-qr" src="assets/attendee-pass-qr.png" alt="Scan to claim the H.U.G. Motivational Monday SSTB access pass"></a><p>Scan to claim your year.</p><p><a href="https://go.sstb.ai/hug2026">go.sstb.ai/hug2026</a></p><span class="mini-label">New members · approved attendees only</span></div></div></section>
+<nav class="controls" aria-label="Presentation controls">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
+    <svg class="theme-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    <svg class="theme-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg>
+  </button>
+  <button id="fullscreen" aria-label="Enter fullscreen" title="Fullscreen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+</nav>
+
+<footer class="footer"><span>H.U.G. Motivational Monday</span><span id="counter"></span></footer><div class="progress" id="progress"></div></main>
+<script>
+const slides = [...document.querySelectorAll('.slide')];
+let current = 0;
+const byId = id => document.getElementById(id);
+const themeKey = 'hug-motivational-monday-theme';
+let savedTheme;
+try { savedTheme = localStorage.getItem(themeKey); } catch {}
+
+function drawVenn() {
+  const canvas = byId('focus-venn');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = 2700;
+  canvas.height = 1410;
+  ctx.setTransform(3, 0, 0, 3, 0, 0);
+  const styles = getComputedStyle(document.documentElement);
+  const ink = styles.getPropertyValue('--ink').trim();
+  const accent = styles.getPropertyValue('--accent').trim();
+  const muted = styles.getPropertyValue('--muted').trim();
+  const left = { x: 335, y: 190, r: 160 };
+  const right = { x: 565, y: 190, r: 160 };
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.beginPath(); ctx.arc(left.x, left.y, left.r, 0, Math.PI * 2); ctx.clip();
+  ctx.beginPath(); ctx.arc(right.x, right.y, right.r, 0, Math.PI * 2); ctx.clip();
+  ctx.strokeStyle = accent; ctx.lineWidth = 3;
+  for (let x = 250; x < 660; x += 18) {
+    ctx.beginPath(); ctx.moveTo(x, 30); ctx.lineTo(x - 220, 390); ctx.stroke();
+  }
+  ctx.restore();
+  ctx.strokeStyle = ink; ctx.lineWidth = 5;
+  [left, right].forEach(circle => { ctx.beginPath(); ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2); ctx.stroke(); });
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = ink; ctx.font = '700 24px Roboto, system-ui, sans-serif';
+  const labels = [['THINGS THAT', 'MATTER'], ['THINGS YOU', 'CAN CONTROL']];
+  const metrics = labels.flat().map(text => ctx.measureText(text));
+  const ascent = Math.max(...metrics.map(metric => metric.actualBoundingBoxAscent));
+  const descent = Math.max(...metrics.map(metric => metric.actualBoundingBoxDescent));
+  const firstBaseline = left.y - 19 + (ascent - descent) / 2;
+  const centers = [(left.x - left.r + right.x - right.r) / 2, (left.x + left.r + right.x + right.r) / 2];
+  labels.forEach((lines, column) => lines.forEach((text, row) => ctx.fillText(text, centers[column], firstBaseline + row * 38)));
+  ctx.strokeStyle = accent; ctx.fillStyle = accent; ctx.lineWidth = 5;
+  ctx.beginPath(); ctx.moveTo(450, 330); ctx.lineTo(450, 370); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(438, 332); ctx.lineTo(450, 316); ctx.lineTo(462, 332); ctx.fill();
+  ctx.font = '800 25px Roboto, system-ui, sans-serif';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('WHAT YOU SHOULD FOCUS ON', 450, 420);
+}
+
+function setTheme(theme, persist = false) {
+  document.documentElement.dataset.theme = theme;
+  const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  byId('theme-toggle').setAttribute('aria-label', label);
+  byId('theme-toggle').title = label;
+  if (persist) {
+    savedTheme = theme;
+    try { localStorage.setItem(themeKey, theme); } catch {}
+  }
+  drawVenn();
+}
+
+const systemTheme = matchMedia('(prefers-color-scheme: light)');
+setTheme(['light', 'dark'].includes(savedTheme) ? savedTheme : (systemTheme.matches ? 'light' : 'dark'));
+byId('theme-toggle').onclick = () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+systemTheme.addEventListener('change', () => { if (!['light', 'dark'].includes(savedTheme)) setTheme(systemTheme.matches ? 'light' : 'dark'); });
+
+function scale() {
+  document.documentElement.style.setProperty('--scale', Math.min(innerWidth / 1600, innerHeight / 900));
+}
+function show(index) {
+  current = Math.max(0, Math.min(slides.length - 1, index));
+  slides.forEach((slide, slideIndex) => {
+    slide.classList.toggle('active', slideIndex === current);
+    slide.setAttribute('aria-hidden', slideIndex !== current);
+  });
+  byId('counter').textContent = `${current + 1} / ${slides.length}`;
+  byId('progress').style.width = `${(current + 1) / slides.length * 100}%`;
+  history.replaceState(null, '', `#slide${current + 1}`);
+  drawVenn();
+}
+function fromHash() {
+  const match = location.hash.match(/^#slide(\d+)$/);
+  show(match ? Number(match[1]) - 1 : 0);
+}
+byId('prev').onclick = () => show(current - 1);
+byId('next').onclick = () => show(current + 1);
+byId('fullscreen').onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+addEventListener('keydown', event => {
+  if (event.target.closest('button,a,input,textarea,summary')) return;
+  if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(current + 1); }
+  if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(current - 1); }
+  if (event.key === 'Home') show(0);
+  if (event.key === 'End') show(slides.length - 1);
+});
+addEventListener('resize', scale);
+addEventListener('hashchange', fromHash);
+if (new URLSearchParams(location.search).has('export')) document.body.classList.add('export');
+scale();
+fromHash();
+</script></body></html>
