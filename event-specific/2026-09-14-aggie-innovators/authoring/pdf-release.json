@@ -1,5 +1,5 @@
 {
-  "approval": "Brad authorized finalizing current slides and regenerating PDF on September 14, 2026",
+  "approval": "Brad approved certification revision and authorized recreating PDF on September 14, 2026",
   "theme": "dark",
   "pages": 31,
   "capture_pixels": [
@@ -11,6 +11,6 @@
     540
   ],
   "https_annotations": 26,
-  "html_sha256": "176bcc4e2f5c0188b05245a3cf07a3f88af323f9442fb23d77d0ce3d4952720f",
-  "pdf_sha256": "0b398a99402951748f66126652ae2b62aea974d5d2c58b3a8265f85a66bef610"
+  "html_sha256": "7fce542b0c5b30b719e82ba8b92f85c089bd923ad30d9b47470e400eb0e868d0",
+  "pdf_sha256": "c6519c16f7e408a9c6f3ad6318d277db80cbea36791a4ff4a83ff7b7daec5a00"
 }
