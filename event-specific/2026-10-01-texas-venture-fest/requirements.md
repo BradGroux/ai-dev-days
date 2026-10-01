@@ -1,47 +1,41 @@
-# Requirements
+# Presenter Requirements
 
-Bring the items below so you can spend the workshop building instead of fighting setup.
+This is a panel presentation. Attendees do not need accounts, software, or
+devices for Brad's segment.
 
-## Required hardware
+## Presenter hardware
 
-> Panel talk: no attendee setup required. The list below applies to the presenter machine.
+- Charged laptop and power adapter
+- HDMI or USB-C display adapter confirmed for the venue
+- Presentation clicker with a tested spare battery
+- Modern browser with the local deck available
+- USB drive containing the complete event folder
 
-- Mac or Windows laptop
-- Charger / power adapter
-- Ability to install software on your machine
-- Reliable Wi-Fi access
-- Modern browser
+## Presenter files
 
-## Required accounts and access
+- [HTML slides](slides.html)
+- [Speaker notes](speaker-notes-20-minute.md)
+- [Fallback plan](fallback-plan.md)
+- Offline copy of the entire event folder, including `assets/`
+- Approved PDF backup after Brad approves the HTML and the PDF is exported
 
-- GitHub account: <https://github.com>
-- Access to the event community or communication channel
-- Access to event-approved AI tools and model provider information, if
-  applicable
-- Any permissions, data, or source material explicitly approved for the
-  workshop scenario
+## Access
 
-## Required software
+- Network access is useful for opening source links but is not required to run
+  the local deck.
+- No live account, API key, provider setup, or attendee installation is part of
+  the segment.
 
-- Visual Studio Code: <https://code.visualstudio.com/>
-- Git: <https://git-scm.com/>
-- Obsidian: <https://obsidian.md/>
-- Node.js LTS: <https://nodejs.org/>
-- Event-selected tool(s): `No attendee installs — panel presentation only. Presenter machine: modern browser with the deck, HDMI/USB-C adapter, clicker, backup of slides.html on a USB stick.`
+## Readiness criteria
 
-## Workshop baseline
-
-1. Read the event purpose, expected outcome, and safety boundaries.
-2. Confirm the selected tool and required access work.
-3. Create the event workspace and durable context file.
-4. Complete one useful action with the selected tool.
-5. Verify one reviewable result against the event's completion criteria.
-6. Record the next action, owner, or handoff.
-
-For an OpenClaw track, replace the tool placeholders with the approved
-OpenClaw installation, onboarding, provider, gateway, dashboard, and
-first-response requirements.
+- The deck renders in dark and light themes on the presenter display.
+- The Digital Meld logo and every slide asset load from the offline copy.
+- Keyboard, clicker, direct slide hashes, theme control, and fullscreen work.
+- The 20-minute notes have no placeholders and match the displayed copy.
+- A no-network path and a display-failure path have been rehearsed.
 
 ## Safety
 
-Do not post personal API keys, tokens, passwords, private data, or sensitive notes in chat, GitHub, screenshots, or shared files.
+Do not put secrets, API keys, tokens, credentials, private messages, attendee
+identities, or other sensitive information in the deck or projected browser.
+Use only the public-safe material in this event folder.

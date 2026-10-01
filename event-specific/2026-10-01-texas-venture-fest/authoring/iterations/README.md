@@ -1,7 +1,7 @@
 # Deck iterations — Texas Venture Fest, 2026-10-01
 
 Each render kept as its own file per the standing rule: version every
-iteration, never overwrite. The canonical deck is `../slides.html`
+iteration, never overwrite. The canonical deck is `../../slides.html`
 (currently the v5 content).
 
 - `slides-v1.html` — Sep 28 scaffold. 9-slide structure, Slide 4 carried
@@ -17,8 +17,9 @@ iteration, never overwrite. The canonical deck is `../slides.html`
 - `slides-v4.html` — Oct 1 ~11:18. Slide 5 rewritten from OpenClaw to Codex
   ("Codex: your agent, everywhere."), tying Dots/Spaces to the builder's side.
   Speaker notes and storyboard updated to match.
-- `slides-v5.html` content = current `../slides.html` — Oct 1 ~11:19.
+- `slides-v5.html` content = current `../../slides.html` — Oct 1 ~11:19.
   Brad's three Dots/Spaces lines woven into the slide 4 boxes.
 
-All versions rendered and screenshot-verified in local Firefox
-(node playwright 1.63) before handoff.
+The archived versions retain their original content. Their shared logo path was
+repaired so each version renders correctly from this directory. The canonical
+deck is the approval and export source.

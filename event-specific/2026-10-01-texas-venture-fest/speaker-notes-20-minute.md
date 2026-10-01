@@ -16,7 +16,14 @@ Panel: “AI Developer Ecosystems,” Texas Venture Fest Houston 2026 — The AI
 
 ## 4. DevDay, day after
 
-6:30–8:30. [TBD — written Sep 30 after DevDay.] The 2–3 announcements that actually move this map, what you tested hands-on at Fort Mason, and the operator’s read: adopt, watch, or ignore. Keep it to what changed a decision, not a recap.
+6:30–8:30. Lead with the plan changes: GPT-6.1 Sol at roughly one-fifth of
+Astra's token price, the Ultrafast tier, Pro 500, and Plus/Pro allowances in
+partner tools. Then move from announcements to experience. You saw the
+Dots-in-Teams reveal working with Slack context, found Dots voice calls useful
+for planning and handoffs, and watched Spaces build visualizations from shared
+team knowledge. Close with the operator's read: persistent agents and shared
+workspaces change the form factor, but your method remains portable. Own the
+method and rent the tool.
 
 ## 5. Codex: your agent, everywhere
 

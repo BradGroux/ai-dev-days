@@ -18,12 +18,15 @@ Total planned delivery: 20:00.
 
 ## Deliberate additions
 
-- The DevDay slide is a labeled placeholder until Brad returns from San Francisco; the structure is fixed so it can be filled in one pass.
-- Buzz is named as open-source tooling Brad contributes to and teaches; the exact line is flagged for Brad to sharpen before publish.
+- The DevDay slide prioritizes the announcements and hands-on observations
+  that changed Brad's operator view, rather than recapping the full keynote.
+- Buzz is named as open-source tooling Brad contributes to and teaches.
 - The GitHub material reuses Brad’s verified history (Secure Open Source Fund cohort, GitHub Build creator demo, Microsoft Build OSS Zone) rather than new claims.
 - The close mirrors Brad’s standing rule: own the method, rent the tool.
 
 ## Story status
 
-- Draft scaffold only. Not committed, not published. Brad reviews, then Codex spit-and-polish, then Brad approves before any export or publish.
-- Open items: DevDay slide content (Sep 30), Buzz line sharpening, panelist/moderator names, gift or attendee offer decision (none currently planned).
+- The nine-slide HTML candidate is synchronized with these notes and ready for
+  Brad's approval.
+- PDF export remains intentionally pending until Brad approves the current HTML
+  deck, as required by the presentation production SOP.

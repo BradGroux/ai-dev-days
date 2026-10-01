@@ -1,51 +1,43 @@
-# Day-Before Checklist
+# Presenter Checklist
 
-Use this checklist the night before and morning of the workshop.
+Use this checklist before leaving for the venue and again before the panel.
 
-## Repo and links
+## Deck and source
 
-- [ ] Open the workshop repo.
-- [ ] Open attendee links.
-- [ ] Open facilitator runbook.
-- [ ] Open the selected tool-track instructions.
-- [ ] Open the first-success and verification exercises.
-- [ ] Open sample project material.
-- [ ] Confirm the post-event review owner and location.
+- [ ] Brad approved the current HTML deck revision.
+- [ ] All nine slides were rendered at 1920 x 1080 in dark and light themes.
+- [ ] The Digital Meld logo and all other assets load offline.
+- [ ] Speaker notes and storyboard match the approved deck.
+- [ ] The approved dark-theme PDF was exported from screenshots, not browser
+      print rendering.
+- [ ] `./scripts/validate-release.sh` passes locally.
+- [ ] `./scripts/publication-scan.sh` passes locally.
 
-## Room setup
+## Presenter kit
 
-- [ ] Confirm Wi-Fi works on the presenter machine.
-- [ ] Confirm projector/display works.
-- [ ] Confirm audio works.
-- [ ] Increase terminal/editor/browser font sizes for projection.
-- [ ] Put the attendee links page on screen first.
-- [ ] Have the community/follow-up link ready.
+- [ ] Laptop is charged and the power adapter is packed.
+- [ ] HDMI or USB-C display adapter is packed and tested.
+- [ ] Clicker works and has a spare battery.
+- [ ] Complete event folder is stored on the laptop and USB drive.
+- [ ] Speaker notes are available on a private screen or second device.
 
-## Presenter machine
+## Venue check
 
-- [ ] Browser open to GitHub repo.
-- [ ] Terminal ready.
-- [ ] VS Code or editor ready.
-- [ ] Event-selected tool installation or access path checked.
-- [ ] Model or provider path checked, if applicable.
-- [ ] Demo workspace folder ready.
+- [ ] Venue display shows the full 16:9 stage without cropping.
+- [ ] Dark and light themes remain readable on the venue display.
+- [ ] Clicker, arrow keys, Home, End, theme control, and fullscreen work.
+- [ ] Browser notifications and unrelated tabs are closed or hidden.
+- [ ] Slide 1 is visible before the panel begins.
+- [ ] Moderator knows the segment timing and fallback plan.
 
-## Provider/API readiness
+## Recovery
 
-- [ ] Workshop-provided provider information is ready, if applicable.
-- [ ] Endpoint and exact deployment/model name are available, if applicable.
-- [ ] Safety reminder ready before anyone copies keys.
-- [ ] Fallback plan ready if provider setup gets slow.
+- [ ] Local HTML deck works without Wi-Fi.
+- [ ] Approved PDF backup opens on the presenter and backup machines.
+- [ ] Direct slide hashes reopen the intended slide.
+- [ ] The 10-minute and 5-minute compressed paths were rehearsed.
 
-## Framework and assurance
+## Closeout
 
-- [ ] Purpose, scope, expected outcome, and accountable owner are explicit.
-- [ ] Authority, approvals, safety boundaries, and escalation are explicit.
-- [ ] Normal, exception, and failure/recovery paths were walked through.
-- [ ] Completion criteria, checks, evidence, and reviewer are explicit.
-- [ ] Handoff and post-event learning owners are assigned.
-
-## Publication safety
-
-- [ ] From the repo root, run `./scripts/publication-scan.sh`.
-- [ ] Review [PUBLICATION-SAFETY.md](../../PUBLICATION-SAFETY.md).
+- [ ] Attendee links are ready to share.
+- [ ] Post-event review owner and location are confirmed.

@@ -58,11 +58,10 @@ research note, issue, decision record, or pull request.
 Identify any curriculum, template, setup, control, or source material that
 requires review. Link the tracking issue or pull request when one is created.
 
-## Learner continuation
+## Attendee continuation
 
-Record whether the approved continuation path was available and which
-public-safe evidence, if any, shows learners could continue after the event.
-Do not infer long-term use from attendance or a completed in-room demo.
+Record whether the public attendee links and follow-up path were available.
+Do not infer adoption, intent, or long-term use from attendance or questions.
 
 ## Retention and publication safety
 

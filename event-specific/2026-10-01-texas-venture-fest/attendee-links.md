@@ -1,21 +1,26 @@
 # Attendee Links
 
-Start here for `Texas Venture Fest Houston 2026 — The AI Edition`.
+Resources for the **AI Developer Ecosystems** panel at Texas Venture Fest
+Houston 2026.
 
-## Essential links
+No attendee account, installation, or workshop setup is required.
 
-- Workshop repo: <https://github.com/BradGroux/ai-dev-days>
-- Community/follow-up: `https://sstb.ai`
-- Event registration/info: `https://luma.com/texas-venture-fest-houston-2026`
+## Event and follow-up
 
-## Workshop flow
+- [Texas Venture Fest Houston 2026](https://luma.com/texas-venture-fest-houston-2026)
+- [AI Dev Days repository](https://github.com/BradGroux/ai-dev-days)
+- [Brad Groux](https://bradgroux.com/)
+- [Start Small, Think Big](https://sstb.ai/)
 
-1. [Requirements](requirements.md)
-2. [Mac setup](../../setup-guides/openclaw-mac.md)
-3. [Windows setup](../../setup-guides/openclaw-windows.md)
-4. [First success lab](../../labs/first-success.md)
-5. [Markdown thinking-layer lab](../../labs/markdown-thinking-layer.md)
+## Ecosystems discussed
 
-## Safety reminder
+- [OpenAI DevDay 2026 recap](https://openai.com/index/devday-2026-recap/)
+- [OpenClaw](https://github.com/openclaw/openclaw)
+- [Buzz](https://github.com/block/buzz)
+- [Meta Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)
+- [GitHub Secure Open Source Fund](https://github.com/open-source/github-secure-open-source-fund)
 
-Do not put secrets, API keys, private data, sensitive personal notes, or anything confidential in public repositories, shared files, screenshots, or projected prompts.
+## Takeaway
+
+Own your process, data, and judgment. Rent models, tools, and platforms. Verify
+the work before it touches production.

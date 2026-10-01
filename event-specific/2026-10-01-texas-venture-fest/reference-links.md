@@ -2,16 +2,22 @@
 
 ## Event source
 
-- [Texas Venture Fest Houston 2026 — The AI Edition (Luma)](https://luma.com/texas-venture-fest-houston-2026) — public agenda confirms the 1:40 PM “AI Developer Ecosystems” panel; panelists not listed publicly yet. Part of Texas Startup & Tech Week, Sep 28–Oct 2.
-- Organizer: Jesse Martinez (Invincible Spaces / The Innovation Hub). Invitation via iMessage; Brad registered and added the event to his calendar.
+- [Texas Venture Fest Houston 2026, The AI Edition](https://luma.com/texas-venture-fest-houston-2026): public event page for the October 1 program at The Innovation Hub.
 
 ## Ecosystems on the map
 
-- OpenAI DevDay 2026 — Brad attended Sep 29 at Fort Mason, San Francisco. [Official recap](https://openai.com/index/devday-2026-recap/); full 32-announcement dossier in this folder: `devday-2026-announcements-report.md`.
-- OpenClaw — local-first agent control plane; Brad is a former maintainer/liaison. [Confirm canonical repo URL before publish.]
-- Buzz — open-source tooling Brad contributes to and teaches. [Confirm canonical repo URL before publish.]
-- Muse — Meta’s personal AI agent.
-- GitHub Secure Open Source Fund — Brad is a cohort member. [Confirm program URL before publish.]
+- OpenAI DevDay 2026: Brad attended September 29 at Fort Mason in San
+  Francisco. See the [official recap](https://openai.com/index/devday-2026-recap/)
+  and the full 32-announcement dossier in
+  [`devday-2026-announcements-report.md`](devday-2026-announcements-report.md).
+- [OpenClaw](https://github.com/openclaw/openclaw): local-first agent control
+  plane; Brad is a former maintainer and liaison.
+- [Buzz](https://github.com/block/buzz): open-source tooling Brad contributes
+  to and teaches.
+- [Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/):
+  Meta's personal AI agent.
+- [GitHub Secure Open Source Fund](https://github.com/open-source/github-secure-open-source-fund):
+  Brad is a cohort member.
 
 ## Brad’s GitHub history referenced in the deck
 

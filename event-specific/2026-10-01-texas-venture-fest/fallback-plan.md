@@ -1,46 +1,45 @@
-# Fallback Plan
+# Panel Fallback Plan
 
-Use this if installs, network, accounts, or provider setup start consuming the room.
+Protect the 20-minute argument even when the display, network, or schedule
+changes.
 
-## Rule
+## Network unavailable
 
-Protect momentum. Do not let setup problems swallow the workshop.
+- Continue with the local HTML deck. It has no runtime network dependency.
+- Do not open source or social links during the segment.
+- Share [attendee-links.md](attendee-links.md) after the event.
 
-If a blocker takes more than 10 minutes, move the attendee to observe, pair, or use the rescue/demo path.
+## Display or browser problem
 
-## If Wi-Fi is unreliable
+1. Exit fullscreen and reconnect the display once.
+2. Reopen the local deck at the current `#slideN` hash.
+3. If the HTML deck remains unavailable, use the approved PDF backup.
+4. If neither deck is available, deliver from the speaker notes and preserve
+   the same nine-part story.
 
-- Keep the presenter machine connected if possible.
-- Move attendees into observation or pairing mode.
-- Use local screenshots and prepared repo materials.
-- Focus on concepts, prompts, Markdown files, and agent workflow.
+Do not spend more than two minutes troubleshooting while the panel is waiting.
 
-## If installs fail
+## Laptop unavailable
 
-- Put the attendee in the red lane.
-- Pair them with someone already running.
-- Use the presenter machine for the next live demo.
-- Revisit their machine during lunch or helper time.
+- Use the USB copy of the event folder on the designated backup machine.
+- Open `slides.html#slide1` in a modern browser.
+- If the backup machine cannot run the HTML deck, use the approved PDF.
 
-## If provider setup fails
+## Clicker unavailable
 
-- Confirm endpoint, key, deployment name, model name, or login method.
-- Move blocked attendees to observe, pair, or use the facilitator demo.
-- Return to provider troubleshooting after the room is stable.
+- Use the right and left arrow keys.
+- Use Home to return to Slide 1 and End to move to Slide 9.
 
-## Minimum viable workshop outcome
+## Time compressed
 
-Even if setup fails, attendees should leave with:
+For a 10-minute block, keep Slides 1, 2, 3, 4, 7, and 9. Summarize Slides 5,
+6, and 8 verbally inside the operator rule: own the method, rent the tool, and
+verify the work.
 
-- a clear purpose and expected outcome for one people-and-AI activity
-- durable, public-safe context
-- one reviewable artifact, worked example, or observation
-- an understanding of the human owner and decision boundary
-- a recorded next action or handoff
+For a 5-minute block, use Slides 1, 3, 7, and 9 only.
 
-## Stop and recovery
+## Content challenge
 
-Stop the affected activity when work becomes unsafe, unauthorized, materially
-incorrect, or impossible to verify. Move to the approved demo or observation
-path, preserve only public-safe evidence, identify the escalation owner, and
-record the recovery or follow-up action in the post-event review.
+If a factual claim is challenged and the source cannot be opened immediately,
+state the limitation and continue. Do not improvise a citation or extend a
+claim beyond the public reference packet.
