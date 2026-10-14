@@ -3,7 +3,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const base = process.env.HUG_BASE_URL || 'http://127.0.0.1:4178/event-specific/2026-10-12-hug-motivational-monday';
+const base = process.env.HUG_BASE_URL || 'http://127.0.0.1:4178/event-specific/2026-10-19-hug-motivational-monday';
 const out = process.env.HUG_RENDER_DIR || '/tmp/hug-motivational-monday-render';
 fs.mkdirSync(out, { recursive: true });
 

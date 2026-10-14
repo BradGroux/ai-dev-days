@@ -1,6 +1,6 @@
 # Attendee Links
 
-Start here for H.U.G. Motivational Monday on October 12, 2026.
+Start here for H.U.G. Motivational Monday on October 19, 2026.
 
 ## Speaker and community
 

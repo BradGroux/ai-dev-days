@@ -59,4 +59,4 @@ Sources:
 
 ## 13. Your first year of SSTB.ai is on us.
 
-19:30–20:00. Your first year of SSTB.ai is on us. New members attending today are eligible for 365 days of membership access, with no payment card required. Scan the QR or visit go.sstb.ai/hug2026. Redeem by October 14, 2026 at 8 PM Central using the email approved at event check-in. Access ends automatically after one year. Attendee approval and a full new-member redemption test remain required before distribution.
+19:30–20:00. Your first year of SSTB.ai is on us. New members attending today are eligible for 365 days of membership access, with no payment card required. Scan the QR or visit go.sstb.ai/hug2026. Redeem by October 21, 2026 at 8 PM Central using the email approved at event check-in. Access ends automatically after one year. Attendee approval and a full new-member redemption test remain required before distribution.
