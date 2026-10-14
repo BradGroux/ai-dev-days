@@ -86,3 +86,12 @@ remains v1.0.0. See [Decision 0004](decisions/0004-calendar-editions-and-commons
 for exact identities, authority, rationale and changed reader decisions.
 Historical video transcripts are replaced with source dispositions in the
 current edition; this does not establish rights for previously distributed copies.
+
+## October 2026 H.U.G. reschedule
+
+The H.U.G. Motivational Monday packet moved from
+`event-specific/2026-10-12-hug-motivational-monday/` to
+[`event-specific/2026-10-19-hug-motivational-monday/`](event-specific/2026-10-19-hug-motivational-monday/README.md).
+Update bookmarks to the new path. Edition `2026.10.14` includes the README
+improvements and prior H.U.G. packet updates; the Commons adoption stays pinned
+to `v2026.09.05`.
