@@ -1,6 +1,6 @@
 # AI Dev Days Research and Education Method
 
-**Status:** Edition 2026.09.05<br>
+**Status:** Edition 2026.10.14<br>
 **Owner:** AI Dev Days founding steward or delegated program maintainer<br>
 **Prepared:** 2026-07-30<br>
 **Commons adoption:** [Open Framework Commons v2026.09.05](https://github.com/BradGroux/open-framework-commons/releases/tag/v2026.09.05) at `8868a248457dd7b663563beb243c5ebcbb8ac360`
