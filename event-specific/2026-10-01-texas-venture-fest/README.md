@@ -28,6 +28,9 @@ Also add the new event to [`../events.json`](../events.json) so the repo audit c
 Tool and framework choices belong to the event's learning context. They do not
 change Commons, another ecosystem product, or AI Dev Days as a whole.
 
+The checked-in presentation is [slides.html](slides.html). A PDF export is not
+available in this event packet.
+
 ## Event files
 
 1. [Attendee links](attendee-links.md)
