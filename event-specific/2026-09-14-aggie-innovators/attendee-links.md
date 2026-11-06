@@ -1,6 +1,8 @@
 # Attendee links
 
-- [Event and RSVP](https://www.aggieinnovators.com/events/2026-09-14)
+- Historical event and RSVP address:
+  `https://www.aggieinnovators.com/events/2026-09-14` (returned HTTP 404 on
+  November 6, 2026; no current RSVP link is verified).
 - [Take-home worksheet](attendee-workbook.md)
 - [Fictional Aggie Launchpad brief](demo/source/venture-brief.md)
 - [Operating packet example](demo/context/README.md)

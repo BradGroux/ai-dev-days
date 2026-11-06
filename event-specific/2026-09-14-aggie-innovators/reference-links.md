@@ -20,7 +20,10 @@ Reviewed September 4, 2026. Tool surfaces can change before September 14; rechec
 
 ## Event and tool sources
 
-- [Aggie Innovators event](https://www.aggieinnovators.com/events/2026-09-14): event title, schedule, venue, speaker. Retrieved directly after research-browser retrieval failed.
+- Aggie Innovators historical event source:
+  `https://www.aggieinnovators.com/events/2026-09-14`. The original review recorded
+  the event title, schedule, venue and speaker after direct retrieval. The URL
+  returned HTTP 404 on November 6, 2026; it is no longer a verified live source.
 - [OpenAI Codex documentation entry](https://developers.openai.com/codex/): current retrieval
   redirects to ChatGPT Learn; use installed Codex and official documentation during rehearsal to
   verify the demonstrated surface.
