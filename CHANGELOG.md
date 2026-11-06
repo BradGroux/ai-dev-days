@@ -29,6 +29,10 @@
 
 ## Unreleased
 
+- Refresh both Beaver Badges dependency graphs, align current React/React DOM
+  versions, and update local browser tooling and pinned maintenance actions.
+- Correct archived presentation asset paths, unavailable event links, and
+  required-artifact metadata.
 - Restrict maintainer link validation to checked public connections and add
   isolated destination-policy tests to the local release gate.
 - Restored the complete pre-refactor TAMU OpenClaw event packet, including the
