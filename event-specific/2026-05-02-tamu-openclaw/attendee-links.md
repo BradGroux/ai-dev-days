@@ -4,7 +4,8 @@ Start here for the May 2 TAMU OpenClaw Dev Days workshop.
 
 ## Essential links
 
-- Registration: https://aggieinnovators.ai
+- Historical registration address: `https://aggieinnovators.ai` (returned HTTP 404
+  on November 6, 2026; no current registration link is verified).
 - Workshop repo: https://github.com/BradGroux/ai-dev-days
 - Start Small, Think Big Discord: https://discord.gg/Gmfkm7QVSF
 - Start Small, Think Big training: https://sstb.ai
