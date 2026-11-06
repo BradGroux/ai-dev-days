@@ -2,6 +2,7 @@
 import fs from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import path from 'node:path'
+import { checkPublicUrl, displayUrl, PublicUrlError } from './public-http.mjs'
 
 const root = process.cwd()
 const skipDirectories = new Set(['.git', 'node_modules', 'dist', '.vite'])
@@ -58,10 +59,14 @@ function normalizeUrl(rawUrl) {
   try {
     const parsed = new URL(trimUrl(rawUrl))
     if (!['http:', 'https:'].includes(parsed.protocol)) return null
+    if (parsed.username || parsed.password) {
+      failures.push('Credential-bearing URL is not allowed')
+      return null
+    }
     parsed.hash = ''
     return parsed.toString()
   } catch {
-    failures.push(`Invalid URL: ${rawUrl}`)
+    failures.push('Invalid HTTP(S) URL in repository content')
     return null
   }
 }
@@ -103,12 +108,12 @@ function validateSameRepositoryUrl(parsed, normalized, sourceFile) {
   const target = path.resolve(root, repositoryPath)
   const relativeTarget = path.relative(root, target)
   if (relativeTarget.startsWith('..') || path.isAbsolute(relativeTarget)) {
-    failures.push(`${normalized} resolves outside the repository (${relative(sourceFile)})`)
+    failures.push(`${displayUrl(normalized)} resolves outside the repository (${relative(sourceFile)})`)
     return true
   }
 
   if (!fs.existsSync(target)) {
-    failures.push(`${normalized} references missing repository path: ${repositoryPath} (${relative(sourceFile)})`)
+    failures.push(`${displayUrl(normalized)} references missing repository path (${relative(sourceFile)})`)
     return true
   }
 
@@ -156,42 +161,23 @@ function formatSourceList(sourceFiles) {
   return remainingCount > 0 ? `${visibleSources}, +${remainingCount} more` : visibleSources
 }
 
-async function fetchWithTimeout(url, method) {
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), timeoutMs)
-  try {
-    return await fetch(url, {
-      method,
-      redirect: 'follow',
-      signal: controller.signal,
-      headers: {
-        'user-agent': 'ai-dev-days-link-checker/1.0',
-      },
-    })
-  } finally {
-    clearTimeout(timeout)
-  }
-}
-
 async function checkUrl(url, sourceFiles) {
   let response
   try {
-    response = await fetchWithTimeout(url, 'HEAD')
-    if ([403, 405].includes(response.status)) {
-      response = await fetchWithTimeout(url, 'GET')
-    }
+    response = await checkPublicUrl(url, { timeoutMs })
   } catch (error) {
-    warnings.push(`${url} could not be checked: ${error.message}`)
+    const reason = error instanceof PublicUrlError ? error.message : 'network request failed'
+    warnings.push(`${displayUrl(url)} could not be checked: ${reason}`)
     return
   }
 
   if (hardFailureStatuses.has(response.status)) {
-    failures.push(`${url} returned ${response.status} (${[...sourceFiles].join(', ')})`)
+    failures.push(`${displayUrl(url)} returned ${response.status} (${[...sourceFiles].join(', ')})`)
     return
   }
 
   if (!response.ok) {
-    warnings.push(`${url} returned ${response.status}; not failing because external checks can be blocked`)
+    warnings.push(`${displayUrl(url)} returned ${response.status}; not failing because external checks can be blocked`)
   }
 }
 
@@ -227,7 +213,7 @@ console.log(`- URLs skipped: ${skippedUrls.size}`)
 if (skippedUrls.size > 0) {
   console.log('\nSkipped:')
   for (const { normalized, reason, sourceFiles } of skippedUrls.values()) {
-    console.log(`- ${normalized} (${reason}; ${formatSourceList(sourceFiles)})`)
+    console.log(`- ${displayUrl(normalized)} (${reason}; ${formatSourceList(sourceFiles)})`)
   }
 }
 

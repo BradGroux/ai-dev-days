@@ -3,7 +3,7 @@
 ## Event record
 
 - **Event:** H.U.G. Motivational Monday
-- **Date:** October 12, 2026
+- **Date:** October 19, 2026
 - **Speaker and accountable owner:** Brad Groux
 - **Review owner:** Brad Groux
 - **Approved revision:** `<COMMIT_OR_VERSION>`

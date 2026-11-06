@@ -1,6 +1,6 @@
 # H.U.G. Motivational Monday: Build in Public and Trust Yourself to Figure It Out
 
-- **Date:** Monday, October 12, 2026
+- **Date:** Monday, October 19, 2026
 - **Time:** 10:00 AM Eastern / 9:00 AM Central
 - **Length:** 20 minutes
 - **Format:** Virtual guest talk, recorded for the H.U.G. Leadership Archive
@@ -9,8 +9,9 @@
 - **Accountable owner and approval authority:** Brad Groux
 - **Event contact:** Naomi Calizar, H.U.G. Reading Program
 
-**Status:** Brad approved the current 13-slide deck for PDF export on September
-14, 2026. The high-resolution PDF is generated and verified locally. Attendee
+**Status:** The event was rescheduled to October 19, 2026. Brad approved the
+event-date and October 21 redemption-deadline updates for PDF export on
+October 14, 2026. The high-resolution PDF is generated and verified locally. Attendee
 gift redemption still requires an eligible-user test before distribution.
 The HTML and recreated PDF opening slide include Brad's completed certifications.
 

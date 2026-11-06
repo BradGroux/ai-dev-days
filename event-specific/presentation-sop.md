@@ -2,7 +2,7 @@
 
 Use this procedure when creating or revising an event deck. The
 [Aggie Innovators authoring workflow](2026-09-14-aggie-innovators/authoring/README.md)
-and [H.U.G. Motivational Monday workflow](2026-10-12-hug-motivational-monday/authoring/README.md)
+and [H.U.G. Motivational Monday workflow](2026-10-19-hug-motivational-monday/authoring/README.md)
 are working references, not templates to copy without reviewing the audience.
 
 ## 1. Establish the content and source

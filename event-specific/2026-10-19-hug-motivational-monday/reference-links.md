@@ -4,7 +4,8 @@
 
 - H.U.G. invitation email dated September 8, 2026, and Brad Groux's reply dated
   September 10, 2026. The email establishes the audience, virtual and recorded
-  format, 15-20 minute range, and October 12 selection. The scheduling time is
+  format, 15-20 minute range, and original October 12 selection. Brad confirmed
+  the event was rescheduled to October 19, 2026. The scheduling time is
   10:00 AM Eastern, equivalent to 9:00 AM Central.
 
 ## Quotation

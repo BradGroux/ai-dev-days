@@ -8,8 +8,8 @@ authors:
 repository-code: "https://github.com/BradGroux/ai-dev-days"
 url: "https://github.com/BradGroux/ai-dev-days"
 license: MIT
-version: "2026.09.05"
-date-released: 2026-09-05
+version: "2026.10.14"
+date-released: 2026-10-14
 abstract: >-
   An independent learning community and event repository that adopts Open
   Framework Commons v2026.09.05, with reusable curriculum, events, labs, tool

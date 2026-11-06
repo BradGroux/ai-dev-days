@@ -7,11 +7,15 @@ presenter console, and isolated rehearsal setup are complete. The Heartbeat no-c
 and configuration-verified. Actual paired tool runs, attendee approval list, end-to-end gift
 redemption, and publication remain outstanding.
 
-The [organizer's event page](https://www.aggieinnovators.com/events/2026-09-14) lists “Introduction
+The organizer's event page, recorded at
+`https://www.aggieinnovators.com/events/2026-09-14`, listed “Introduction
 to Agentic AI & Harnesses,” September 14, 6–8 PM, at ILSB Building, 301 Old Main Drive, College
 Station. The site uses the label CST but its event data specifies America/Chicago; use “Central” in
 attendee copy. Brad confirmed 90 minutes for the presentation and demos; the remaining published
 meeting time can accommodate questions and spillover.
+
+The recorded event URL returned HTTP 404 on November 6, 2026. It is retained as
+historical provenance, not an active event or RSVP link.
 
 ## The promise
 
