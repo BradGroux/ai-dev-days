@@ -29,6 +29,8 @@
 
 ## Unreleased
 
+- Restrict maintainer link validation to checked public connections and add
+  isolated destination-policy tests to the local release gate.
 - Restored the complete pre-refactor TAMU OpenClaw event packet, including the
   Beaver Badges app, curriculum, labs, agent resources, setup guides, and
   facilitator materials from the final July OpenClaw Dev Days tree.

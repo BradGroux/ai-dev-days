@@ -23,6 +23,7 @@ git diff --check
 ./scripts/publication-scan.sh
 node scripts/check-edition.mjs
 node --test scripts/check-edition.test.mjs
+node --test scripts/public-http.test.mjs
 node scripts/audit-repo.mjs
 node scripts/check-external-links.mjs
 
