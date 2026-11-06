@@ -55,6 +55,7 @@ Use this before publishing a new event packet or reusing an older one.
 
 ## Room Materials
 
+- [ ] Deck production follows the [Presentation Production SOP](presentation-sop.md), including HTML approval before PDF export.
 - [ ] Attendee links, requirements, facilitator runbook, fallback plan, day-before checklist, and agenda/pacing doc exist.
 - [ ] A post-event review exists and has an owner.
 - [ ] Safety wording is present in attendee and facilitator materials.

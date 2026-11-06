@@ -24,7 +24,7 @@ Separate facilitator reference; not displayed in the deck. Times are elapsed fro
 
 ## 6. An agent uses AI to take actions toward a goal.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Explain an agent through the sales-report example. The model chooses an action, tools return results, and a person retains responsibility.
 
 ## 7. A harness is the software that lets a model do useful work.
 
@@ -32,87 +32,87 @@ Use the Aggie Launchpad source brief and shared prompts. All data is fictional. 
 
 ## 8. Aggie Launchpad: from an idea to a useful experiment.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Introduce Campus Cycle and the founder. State 20 interviews, 12 interested, six free reservations, and target five. All research records are fictional. Open the common source brief.
 
 ## 9. An attractive startup dashboard can still tell the wrong story.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Distinguish interest, a free reservation, and paid demand. Start the raw-brief build using step 3 of demo-script.md. Give the same build allowance to both conditions.
 
 ## 10. Can the founder make a better decision?
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Inspect the actual first app and saved handoff. Review in the first Buzz context. Record corrections without predicting failure; then move to the tool tour.
 
 ## 11. Different tools. Different jobs.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Map the tool categories to the work. Each live demo performs one bounded task; Claude Code has no live demo.
 
 ## 12. Claude Code
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Explain read, act, check. Claude Code is the harness around the Claude model family. No live demo.
 
 ## 13. Ollama
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Show the selected Ollama model and whether it is local or cloud-backed. Supply the scenario facts and ask for the active reservation count.
 
 ## 14. Grok Build
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Show one software change in the prepared demo project: flag reservations below the target. Inspect the changed files and check behavior.
 
 ## 15. OpenClaw
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Supply the source through the configured OpenClaw context. Ask what is known about demand. Show evidence and limits, with no real outreach.
 
 ## 16. Buzz
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Explain the shared human/agent workspace. Show where the first review and artifacts live. The fresh continuation will use a separate context.
 
 ## 17. DeepSeek Harness
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Show the rehearsed DeepSeek Harness configuration and one inspectable action/trajectory. Use a labeled recording if the preview is unavailable.
 
 ## 18. Veritas Kanban
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Show tasks with owners and evidence. Jordan owns the pilot decision after cancellations. A task label does not establish approval.
 
 ## 19. Memory keeps the reasoning with the work.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Open context/MEMORY.md. Show current counts, their source, the selected target, and unknown paid demand. Memory must be updated when evidence changes.
 
 ## 20. What are we building? How do we do it?
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Open the actual PRD and SOP. Read one requirement and one exception rule. Requirements define the output; the procedure defines how work is handled.
 
 ## 21. The AI-Native Operating Framework
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Explain the six concerns using the founder decision example. Keep the framework link visible. These are questions about work, not mandatory tool steps.
 
 ## 22. Give the next experiment something useful to inherit.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Start the second build with the same source and prompt plus operating packet. Follow step 5 of demo-script.md. Keep settings and build allowance matched.
 
 ## 23. Make the evidence visible. Keep the assumptions visible, too.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Inspect the actual second output. Look for evidence versus assumptions and pending founder review. Do not label a free pilot as validated paid demand.
 
 ## 24. New evidence should change the next decision.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Apply U-01 to both builds. P05 and P06 cancel: four active, target five. Reapply once to check duplicate protection. Preserve previous artifacts.
 
 ## 25. The next teammate needs the learning, not just the app.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Start fresh Buzz contexts for each condition. Supply saved source/artifacts only and the same continuation prompt. Do not explain the scenario again.
 
 ## 26. Evidence for the next decision.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Use this mockup to point to the intended behavior. Show actual outputs and fresh Buzz responses for the comparison. The mockup itself is not a measured result.
 
 ## 27. The value compounds when the knowledge stays.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Complete the same rubric with actual evidence. Compare corrections, re-explanation, traceability, and continuation. If both succeed, report that honestly.
 
 ## 28. Start with one decision you want AI to help you make.
 
-Use the Aggie Launchpad source brief and shared prompts. All data is fictional. Distinguish interest, active free-pilot reservations, and untested paid demand. The shared update cancels two of six reservations, leaving four against a target of five. Jordan owns the decision. Show actual output honestly; the illustrative mockup is not a measured result.
+Give attendees the workbook exercise: one task, its evidence, its decision owner, and what should survive. Take a short example from the room.
 
 ## 29. Your first year of SSTB.ai is on us.
 

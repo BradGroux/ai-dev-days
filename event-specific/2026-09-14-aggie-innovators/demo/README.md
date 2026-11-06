@@ -17,3 +17,10 @@ The script refuses existing destinations. Both conditions receive the same ventu
 Run the same prompts and checks in both conditions. Keep actual outputs separate in private demo-only Buzz rooms. Record model/tool versions, settings, timestamps, corrections, evidence, and any inherited context. No measured outputs or scores exist yet.
 
 The reference starts with 20 interviews, 12 interested, and six unique free-pilot reservations. Canceling P05 and P06 leaves four against the unchanged target of five. Repeated updates do not double count. Jordan's review remains pending; paid demand remains untested. Local state and history persist; the app exports a Markdown handoff. Reset affects only this fictional demo state.
+
+## Run order
+
+Follow the [presenter walkthrough](../demo-script.md): prepare isolated inputs →
+raw-brief build and review → teach operating documents → operating-packet build and
+review → identical cancellations in both → fresh Buzz handoffs → evidence comparison.
+The handoff is the main payoff; reservation arithmetic is the exception check.

@@ -1,10 +1,10 @@
 # AI Dev Days Charter
 
-**Status:** AI Dev Days edition 2026.09.05<br>
+**Status:** AI Dev Days edition 2026.10.14<br>
 **Founding steward:** Brad Groux<br>
 **Prepared:** 2026-07-30<br>
 **Original charter effective date:** 2026-08-03<br>
-**Current edition effective date:** 2026-09-05
+**Current edition effective date:** 2026-10-14
 
 ## Preamble
 

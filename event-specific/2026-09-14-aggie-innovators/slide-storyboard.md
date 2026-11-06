@@ -1,7 +1,7 @@
 # Slide storyboard
 
 Current HTML: 31 slides, Aggie Launchpad scenario. Light and dark modes required.
-Brad approved these slides on September 4, 2026. The PDF is synchronized with this
+Brad finalized these slides on September 14, 2026. The PDF is synchronized with this
 31-slide deck using one 1920×1080 screenshot per page. Future revisions require signoff.
 
 | Slide | Headline | Purpose |

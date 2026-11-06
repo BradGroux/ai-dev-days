@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,">
+<title>AI developer ecosystems · Texas Venture Fest Houston 2026</title><style>
+:root {
+  color-scheme: dark;
+  --bg: #071016;
+  --panel: #0d1821;
+  --ink: #edf6fb;
+  --muted: #a3bccd;
+  --line: #294657;
+  --accent: #5eead4;
+  --blue: #60a5fa;
+  --magenta: #f472b6;
+  --gold: #e8c589;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050b10;
+  color: var(--ink);
+  font-family: Roboto, Inter, system-ui, sans-serif;
+}
+#stage {
+  width: 1600px;
+  height: 900px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale, 1));
+  transform-origin: center;
+  background: var(--bg);
+}
+.slide {
+  display: none;
+  position: absolute;
+  inset: 0;
+  padding: 108px 88px 78px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 98% 2%, transparent 0 112px, rgba(96,165,250,.07) 114px 153px, transparent 155px),
+    radial-gradient(circle at 98% 2%, transparent 0 178px, rgba(244,114,182,.05) 180px 220px, transparent 222px),
+    var(--bg);
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  background: linear-gradient(var(--accent), var(--blue), var(--magenta));
+}
+.slide.active { display: block; }
+.kicker {
+  margin: 0 0 20px;
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+h1 {
+  max-width: 1320px;
+  margin: 0 0 34px;
+  font-size: 72px;
+  font-weight: 790;
+  letter-spacing: -2.4px;
+  line-height: 1.04;
+}
+h1 em {
+  display: inline-block;
+  padding-bottom: .16em;
+  margin-bottom: -.16em;
+  color: transparent;
+  font-style: normal;
+  background: linear-gradient(to right, var(--magenta), var(--blue), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+p { margin: 0; color: var(--muted); font-size: 28px; line-height: 1.42; }
+a { color: var(--accent); }
+.lead { max-width: 1040px; color: var(--ink); font-size: 37px; line-height: 1.4; }
+.hero h1 { margin-top: 58px; font-size: 91px; }
+.byline { margin-top: 68px; font-size: 29px; }
+.byline span { display: block; margin-top: 9px; color: var(--muted); font-size: 20px; }
+.story-grid { display: grid; grid-template-columns: 360px 1fr; gap: 68px; align-items: center; }
+.portrait { text-align: center; }
+.portrait img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; }
+.portrait blockquote { margin: 22px 0 0; padding-left: 18px; border-left: 4px solid var(--gold); color: var(--ink); font-size: 28px; font-weight: 400; letter-spacing: normal; line-height: 1.42; text-align: left; }
+.opportunity-trail { display: grid; }
+.opportunity-trail div {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.opportunity-trail b { color: var(--accent); font-size: 29px; }
+.opportunity-trail span { color: var(--muted); font-size: 24px; line-height: 1.35; }
+.brand-question { max-width: 1180px; margin: 66px 0 70px; color: var(--ink); font-size: 54px; font-weight: 720; line-height: 1.2; }
+.evidence-line { display: flex; gap: 0; border-top: 1px solid var(--line); }
+.evidence-line span { flex: 1; padding: 26px 28px 0 0; color: var(--muted); font-size: 26px; }
+.evidence-line span + span { padding-left: 28px; border-left: 1px solid var(--line); }
+.failure-sequence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 42px; }
+.failure-sequence div { min-height: 215px; padding: 34px; border-top: 3px solid var(--line); background: var(--panel); }
+.failure-sequence .highlight { border-color: var(--accent); }
+.failure-sequence strong { display: block; color: var(--muted); font-size: 18px; letter-spacing: 2px; }
+.failure-sequence b { display: block; margin-top: 58px; font-size: 34px; }
+.statement { max-width: 1240px; margin-top: 42px; color: var(--ink); font-size: 32px; }
+.community-slide .big-idea { color: var(--ink); font-size: 51px; font-weight: 730; line-height: 1.28; }
+.community-slide .side-note { position: absolute; right: 90px; bottom: 118px; width: 600px; padding-left: 28px; border-left: 4px solid var(--gold); font-size: 27px; }
+.book-lines { display: grid; margin-top: 18px; }
+.book-lines div { display: grid; grid-template-columns: 440px 1fr 270px; align-items: center; padding: 20px 0; border-top: 1px solid var(--line); }
+.book-lines b { font-size: 36px; }
+.book-lines span { color: var(--muted); font-size: 24px; }
+.book-lines strong { color: var(--accent); font-size: 31px; text-align: right; }
+.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 42px; }
+.process div { min-height: 275px; padding: 30px 26px; border-top: 3px solid var(--line); background: var(--panel); }
+.process div:last-child { border-color: var(--accent); }
+.process strong { display: block; min-height: 88px; font-size: 30px; line-height: 1.2; }
+.process span { display: block; color: var(--muted); font-size: 23px; line-height: 1.45; }
+blockquote { margin: 14px 0 46px; color: var(--ink); font-size: 54px; font-weight: 720; line-height: 1.2; }
+.empathy-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 62px; align-items: stretch; }
+.empathy-layout > div { padding: 28px 32px; border-left: 4px solid var(--accent); background: var(--panel); }
+.empathy-layout b { display: block; font-size: 31px; line-height: 1.25; }
+.empathy-layout span { display: block; margin-top: 18px; color: var(--muted); font-size: 22px; line-height: 1.4; }
+.case-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.case-flow div { min-height: 265px; padding: 31px; border-top: 3px solid var(--line); background: var(--panel); }
+.case-flow .highlight { border-color: var(--accent); }
+.case-flow span { display: block; margin-bottom: 48px; color: var(--muted); font-size: 18px; letter-spacing: 1.8px; text-transform: uppercase; }
+.case-flow b { font-size: 30px; line-height: 1.32; }
+#slide4 .case-flow ul { margin: 0; padding-left: 28px; font-size: 25px; line-height: 1.4; }
+#slide4 .case-flow li { margin-bottom: 14px; }
+#slide4 .case-flow li::marker { color: var(--accent); }
+.proof { margin-top: 28px; color: var(--accent); font-size: 23px; }
+.concept-icon { display: inline-flex; color: var(--accent); flex: 0 0 auto; }
+.concept-icon svg { width: 54px; height: 54px; stroke-width: 1.5; }
+.evidence-line > span { display: flex; align-items: center; gap: 18px; }
+.evidence-line .concept-icon { display: flex; margin: 0; }
+.evidence-line > span:nth-child(2) .concept-icon, .failure-sequence > div:nth-child(2) .concept-icon, .process > div:nth-child(2) .concept-icon { color: var(--blue); }
+.evidence-line > span:nth-child(3) .concept-icon, .failure-sequence > div:nth-child(3) .concept-icon, .process > div:nth-child(3) .concept-icon { color: var(--magenta); }
+.process > div:nth-child(4) .concept-icon { color: var(--gold); }
+.failure-sequence > div { position: relative; }
+.failure-sequence b { display: flex; align-items: center; gap: 18px; }
+.failure-sequence .concept-icon { position: static; }
+.community-visual { position: absolute; right: 160px; top: 310px; }
+.community-visual svg { width: 220px; height: 220px; stroke-width: 1; }
+.book-lines b { display: flex; align-items: center; gap: 20px; }
+.book-lines .concept-icon svg { width: 44px; height: 44px; }
+.process > div { min-height: 335px; }
+.process strong { display: flex; align-items: center; gap: 18px; }
+.process .concept-icon { margin: 0; }
+.process .concept-icon svg, .failure-sequence .concept-icon svg { width: 44px; height: 44px; }
+.aurelius-quote { margin: 26px 0 0; padding-left: 24px; border-left: 4px solid var(--gold); font-size: 32px; line-height: 1.3; }
+.aurelius-quote cite { display: block; margin-top: 12px; color: var(--muted); font-size: 18px; font-style: normal; font-weight: 400; }
+.sources { position: absolute; left: 88px; right: 88px; bottom: 55px; z-index: 6; color: var(--muted); font-size: 16px; }
+.sources summary { cursor: pointer; width: fit-content; }
+.sources[open] { background: var(--panel); padding: 10px 18px; border: 1px solid var(--line); }
+.sources ul { margin: 8px 0 0; padding-left: 22px; line-height: 1.4; }
+.sources a { text-decoration: underline; }
+.empathy-layout .concept-icon { margin-bottom: 20px; }
+.closing-visual { position: absolute; right: 130px; top: 400px; }
+.closing-visual svg { width: 180px; height: 180px; stroke-width: 1; }
+.bakery-visual { position: absolute; right: 130px; top: 170px; }
+.bakery-visual svg { width: 160px; height: 160px; stroke-width: 1.2; color: var(--gold); }
+.venn-slide h1 { display: none; }
+.venn-wrap { position: absolute; inset: 0; display: grid; place-items: center; }
+.venn-wrap canvas { width: 1350px; height: 705px; }
+.quote-slide h1 { font-size: 59px; }
+.big-quote { max-width: 1320px; margin-top: 54px; color: var(--ink); font-size: 54px; }
+.quote-note { margin-top: 42px; padding-left: 26px; border-left: 4px solid var(--gold); font-size: 28px; }
+.closing { max-width: 1100px; }
+.closing p { padding: 13px 0; color: var(--muted); font-size: 31px; }
+.closing strong { display: block; margin-top: 40px; color: var(--ink); font-size: 44px; line-height: 1.25; }
+.links { position: absolute; right: 88px; bottom: 90px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.link-label { margin-bottom: 10px; color: var(--muted); font-size: 14px; font-weight: 760; letter-spacing: 2px; text-transform: uppercase; }
+.social-stack { display: grid; gap: 10px; }
+.social-link { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-size: 20px; font-weight: 400; text-decoration: none; }
+.social-link svg { width: 26px; height: 26px; fill: currentColor; flex: 0 0 auto; }
+.web-links { display: grid; gap: 10px; }
+.web-links a { color: var(--ink); font-size: 20px; text-decoration: none; }
+.social-link, .web-links a { display: flex; align-items: center; height: 26px; line-height: 26px; }
+.links a:hover { color: var(--accent); }
+.gift-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
+.gift-layout p { font-size: 26px; margin: 22px 0; }
+.gift-layout .gift-right { text-align: center; }
+.gift-qr { width: 280px; border: 12px solid white; border-radius: 8px; }
+.mini-label { font-size: 19px; color: var(--muted); }
+.logo { position: absolute; top: 25px; left: 76px; width: 168px; z-index: 3; }
+.footer { position: absolute; bottom: 23px; left: 88px; right: 88px; display: flex; justify-content: space-between; color: #87a3b5; font-size: 16px; z-index: 4; }
+.controls { position: absolute; top: 24px; right: 44px; display: flex; gap: 8px; z-index: 5; }
+button { display: grid; place-items: center; min-width: 42px; min-height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: var(--ink); cursor: pointer; font: 16px Roboto, system-ui, sans-serif; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.progress { position: absolute; bottom: 0; height: 4px; background: var(--accent); z-index: 5; }
+.export .controls { visibility: hidden; }
+.theme-moon { display: none; }
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f1f6fa;
+  --panel: #ffffff;
+  --ink: #102331;
+  --muted: #415c6e;
+  --line: #bdccd6;
+  --accent: #08766b;
+  --blue: #225eb3;
+  --magenta: #a33175;
+  --gold: #805512;
+}
+:root[data-theme="light"] body { background: #dce7ee; }
+:root[data-theme="light"] .logo { width: 180px; top: 19px; left: 70px; padding: 9px 12px; border-radius: 7px; background: #071016; }
+:root[data-theme="light"] .theme-sun { display: none; }
+:root[data-theme="light"] .theme-moon { display: block; }
+:root[data-theme="light"] .footer { color: #4c687a; }
+</style></head><body><main id="stage"><img class="logo" src="assets/digital-meld-logo.png" alt="Digital Meld"><section id="slide1" class="slide hero" aria-label="Slide 1: AI developer ecosystems."><div class="kicker">Texas Venture Fest Houston 2026 · The AI Edition · October 1</div><h1>AI developer<br><em>ecosystems.</em></h1><p class="lead">Fresh off OpenAI DevDay: a practical map of where agents actually get built now.</p><div class="byline">Brad Groux<span>Co-Founder • CEO • Builder • Speaker • AI Educator &amp; Evangelist</span><span>OpenAI Certified API Expert • ChatGPT Expert • Codex Expert</span></div><div class="links">
+            <div>
+              <div class="link-label">Follow</div>
+              <div class="social-stack" aria-label="Brad Groux social profiles">
+            <a class="social-link" href="https://twitter.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://www.linkedin.com/in/bradgroux/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://youtube.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg><span>@bradgroux</span></a>
+              </div>
+            </div>
+            <div>
+              <div class="link-label">Visit</div>
+              <div class="web-links">
+                <a href="https://www.bradgroux.com">bradgroux.com</a>
+                <a href="https://digitalmeld.io">digitalmeld.io</a>
+                <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
+          </div></section><section id="slide2" class="slide " aria-label="Slide 2: A model is a demo. An ecosystem is a business."><div class="kicker">First, what are we talking about</div><h1>A model is a demo.<br><em>An ecosystem is a business.</em></h1><div class="process"><div><strong>The model</strong><span>Weights and APIs. Commoditizing fast — table stakes, not the moat.</span></div><div><strong>The harness</strong><span>The agent loop: plan, act, verify, remember. Where the work actually happens.</span></div><div><strong>The tools</strong><span>Integrations, skills, and access — local and cloud. This is the leverage.</span></div><div><strong>The trust</strong><span>Distribution, security, and who vouches for the work. This is what enterprises buy.</span></div></div></section><section id="slide3" class="slide " aria-label="Slide 3: Five ecosystems. One operator."><div class="kicker">The map, September 2026</div><h1>Five ecosystems.<br><em>One operator.</em></h1><div class="opportunity-trail"><div><b>OpenAI</b><span>Frontier models, Codex, and the DevDay platform. The gravity well everything else orbits.</span></div><div><b>OpenClaw</b><span>Local-first control plane. My machine runs my agents — durable context, bounded access, visible workflow.</span></div><div><b>Buzz</b><span>Open-source tooling I contribute to and teach.</span></div><div><b>Muse</b><span>Meta’s personal agent. General-purpose help that works for one person: you.</span></div><div><b>GitHub</b><span>Where the developers already are — distribution plus the Secure Open Source Fund backing maintainers.</span></div></div></section><section id="slide4" class="slide " aria-label="Slide 4: DevDay, day after."><div class="kicker">Straight from San Francisco</div><h1>DevDay, <em>day after.</em></h1><div class="case-flow"><div><span>What was announced</span><ul><li><b>Plan changes:</b> GPT-6.1 Sol at a fifth of Astra's token price, a new Ultrafast tier, a $500/mo Pro 500 plan, Plus/Pro allowances spendable in 16 partner tools.</li><li><b>Dots:</b> always-on agents that work on your behalf 24/7, 4,000+ apps.</li><li><b>Spaces:</b> the shared team workspace.</li></ul></div><div><span>What I tested</span><ul><li><b>Dots:</b> caught the Dots-in-Teams reveal live — a persistent agent working real Slack context.</li><li><b>Voice calls</b> with Dots are great for planning and handoffs.</li><li><b>Spaces:</b> watched it build interactive visualizations off shared team knowledge.</li></ul></div><div class="highlight"><span>What changes</span><ul><li>Dots is a game changer — the agent moves from chat session to persistent worker.</li><li>The OpenClaw-like agent comes to Codex.</li><li>Spaces gives you and your teammates a place to collaborate.</li><li>Own the method, rent the tool.</li></ul></div></div></section><section id="slide5" class="slide " aria-label="Slide 5: Codex: your agent, everywhere."><div class="kicker">The builder's side</div><h1>Codex: <em>your agent, everywhere.</em></h1><blockquote>“Dots made agents always-on. Spaces made them shared. Codex is the builder's side of the same shift — the agent leaves the chat box and runs where your work lives.”</blockquote><div class="evidence-line"><span>Every surface — your machine, your phone, or the cloud</span><span>Reusable team environments — build once, the whole team runs it</span><span>Agents API in public beta — the managed Codex harness, computer use included</span></div></section><section id="slide6" class="slide " aria-label="Slide 6: GitHub is still where developers live."><div class="kicker">Distribution and trust</div><h1>GitHub is still<br><em>where developers live.</em></h1><div class="opportunity-trail"><div><b>Secure Open Source Fund</b><span>Cohort member. Funding that treats maintainers like infrastructure, not charity.</span></div><div><b>GitHub Build, June 2026</b><span>Creator demo at GitHub HQ — OpenClaw on stage in front of the ecosystem.</span></div><div><b>Microsoft Build OSS Zone</b><span>Two days on the conference floor with the people who ship open source.</span></div><div><b>Why it matters here</b><span>The largest developer distribution on earth — and it vouches for the work.</span></div></div></section><section id="slide7" class="slide " aria-label="Slide 7: Own the method. Rent the tool."><div class="kicker">The operator’s rule</div><h1>Own the method.<br><em>Rent the tool.</em></h1><p class="statement">Pick ecosystems the way an operator picks vendors. Your process, your data, and your judgment are the assets — the models and the tooling are rented.</p><div class="evidence-line"><span><b>Own:</b> process, data, judgment</span><span><b>Rent:</b> models, tools, platforms</span><span><b>Verify:</b> everything that touches production</span></div></section><section id="slide8" class="slide community-slide" aria-label="Slide 8: Verifiable work, human in the loop."><div class="kicker">Where this goes</div><h1>Verifiable work,<br><em>human in the loop.</em></h1><p class="big-idea">The next moat isn’t the model.<br>It’s the workflow you can audit.</p><p class="side-note">Agents that show their work earn enterprise trust. Black boxes don’t — no matter how good the demo looks.</p></section><section id="slide9" class="slide closing-slide" aria-label="Slide 9: Ship one thing in public."><div class="kicker">Your next move</div><h1>Ship one thing<br><em>in public.</em></h1><div class="closing"><p>Pick one ecosystem from this map.</p><p>Build one useful thing with it this week.</p><strong>Publish the trail.<br>Start small, think big.</strong></div><div class="links">
+            <div>
+              <div class="link-label">Follow</div>
+              <div class="social-stack" aria-label="Brad Groux social profiles">
+            <a class="social-link" href="https://twitter.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://www.linkedin.com/in/bradgroux/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0Z"/></svg><span>@bradgroux</span></a>
+            <a class="social-link" href="https://youtube.com/BradGroux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg><span>@bradgroux</span></a>
+              </div>
+            </div>
+            <div>
+              <div class="link-label">Visit</div>
+              <div class="web-links">
+                <a href="https://www.bradgroux.com">bradgroux.com</a>
+                <a href="https://digitalmeld.io">digitalmeld.io</a>
+                <a href="https://sstb.ai">sstb.ai</a>
+              </div>
+            </div>
+          </div></section><nav class="controls" aria-label="Presentation controls">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
+    <svg class="theme-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    <svg class="theme-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg>
+  </button>
+  <button id="fullscreen" aria-label="Enter fullscreen" title="Fullscreen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+</nav>
+
+<footer class="footer"><span>Texas Venture Fest Houston 2026 · AI Developer Ecosystems</span><span id="counter"></span></footer><div class="progress" id="progress"></div></main>
+<script>
+const slides = [...document.querySelectorAll('.slide')];
+let current = 0;
+const byId = id => document.getElementById(id);
+const themeKey = 'texas-venture-fest-theme';
+let savedTheme;
+try { savedTheme = localStorage.getItem(themeKey); } catch {}
+
+function drawVenn() {
+  const canvas = byId('focus-venn');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = 2700;
+  canvas.height = 1410;
+  ctx.setTransform(3, 0, 0, 3, 0, 0);
+  const styles = getComputedStyle(document.documentElement);
+  const ink = styles.getPropertyValue('--ink').trim();
+  const accent = styles.getPropertyValue('--accent').trim();
+  const muted = styles.getPropertyValue('--muted').trim();
+  const left = { x: 335, y: 190, r: 160 };
+  const right = { x: 565, y: 190, r: 160 };
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.beginPath(); ctx.arc(left.x, left.y, left.r, 0, Math.PI * 2); ctx.clip();
+  ctx.beginPath(); ctx.arc(right.x, right.y, right.r, 0, Math.PI * 2); ctx.clip();
+  ctx.strokeStyle = accent; ctx.lineWidth = 3;
+  for (let x = 250; x < 660; x += 18) {
+    ctx.beginPath(); ctx.moveTo(x, 30); ctx.lineTo(x - 220, 390); ctx.stroke();
+  }
+  ctx.restore();
+  ctx.strokeStyle = ink; ctx.lineWidth = 5;
+  [left, right].forEach(circle => { ctx.beginPath(); ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2); ctx.stroke(); });
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = ink; ctx.font = '700 24px Roboto, system-ui, sans-serif';
+  const labels = [['THINGS THAT', 'MATTER'], ['THINGS YOU', 'CAN CONTROL']];
+  const metrics = labels.flat().map(text => ctx.measureText(text));
+  const ascent = Math.max(...metrics.map(metric => metric.actualBoundingBoxAscent));
+  const descent = Math.max(...metrics.map(metric => metric.actualBoundingBoxDescent));
+  const firstBaseline = left.y - 19 + (ascent - descent) / 2;
+  const centers = [(left.x - left.r + right.x - right.r) / 2, (left.x + left.r + right.x + right.r) / 2];
+  labels.forEach((lines, column) => lines.forEach((text, row) => ctx.fillText(text, centers[column], firstBaseline + row * 38)));
+  ctx.strokeStyle = accent; ctx.fillStyle = accent; ctx.lineWidth = 5;
+  ctx.beginPath(); ctx.moveTo(450, 330); ctx.lineTo(450, 370); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(438, 332); ctx.lineTo(450, 316); ctx.lineTo(462, 332); ctx.fill();
+  ctx.font = '800 25px Roboto, system-ui, sans-serif';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('WHAT YOU SHOULD FOCUS ON', 450, 420);
+}
+
+function setTheme(theme, persist = false) {
+  document.documentElement.dataset.theme = theme;
+  const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  byId('theme-toggle').setAttribute('aria-label', label);
+  byId('theme-toggle').title = label;
+  if (persist) {
+    savedTheme = theme;
+    try { localStorage.setItem(themeKey, theme); } catch {}
+  }
+  drawVenn();
+}
+
+const systemTheme = matchMedia('(prefers-color-scheme: light)');
+setTheme(['light', 'dark'].includes(savedTheme) ? savedTheme : (systemTheme.matches ? 'light' : 'dark'));
+byId('theme-toggle').onclick = () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+systemTheme.addEventListener('change', () => { if (!['light', 'dark'].includes(savedTheme)) setTheme(systemTheme.matches ? 'light' : 'dark'); });
+
+function scale() {
+  document.documentElement.style.setProperty('--scale', Math.min(innerWidth / 1600, innerHeight / 900));
+}
+function show(index) {
+  current = Math.max(0, Math.min(slides.length - 1, index));
+  slides.forEach((slide, slideIndex) => {
+    slide.classList.toggle('active', slideIndex === current);
+    slide.setAttribute('aria-hidden', slideIndex !== current);
+  });
+  byId('counter').textContent = `${current + 1} / ${slides.length}`;
+  byId('progress').style.width = `${(current + 1) / slides.length * 100}%`;
+  history.replaceState(null, '', `#slide${current + 1}`);
+  drawVenn();
+}
+function fromHash() {
+  const match = location.hash.match(/^#slide(\d+)$/);
+  show(match ? Number(match[1]) - 1 : 0);
+}
+byId('prev').onclick = () => show(current - 1);
+byId('next').onclick = () => show(current + 1);
+byId('fullscreen').onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+addEventListener('keydown', event => {
+  if (event.target.closest('button,a,input,textarea,summary')) return;
+  if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(current + 1); }
+  if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(current - 1); }
+  if (event.key === 'Home') show(0);
+  if (event.key === 'End') show(slides.length - 1);
+});
+addEventListener('resize', scale);
+addEventListener('hashchange', fromHash);
+if (new URLSearchParams(location.search).has('export')) document.body.classList.add('export');
+scale();
+fromHash();
+</script></body></html>

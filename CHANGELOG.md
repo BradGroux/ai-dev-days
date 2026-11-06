@@ -1,5 +1,16 @@
 # Changelog
 
+## [2026.10.14] - 2026-10-14
+
+- Make Codex workshops and demos easier to find in the README; simplify the
+  introduction, workshop guidance, and community links.
+- Include the H.U.G. Motivational Monday packet and its approved 13-slide
+  high-resolution PDF with speaker notes, attendee resources, and gift setup.
+- Reschedule H.U.G. to October 19, 2026 and update the attendee-pass redemption
+  deadline to October 21 at 8 PM Central throughout the packet and slides.
+- Update calendar-edition metadata and citation; retain the existing Commons
+  adoption and independent application versions.
+
 ## [2026.09.05] - 2026-09-05
 
 - Adopt Commons v2026.09.05 at 8868a248457dd7b663563beb243c5ebcbb8ac360;
@@ -18,6 +29,8 @@
 
 ## Unreleased
 
+- Restrict maintainer link validation to checked public connections and add
+  isolated destination-policy tests to the local release gate.
 - Restored the complete pre-refactor TAMU OpenClaw event packet, including the
   Beaver Badges app, curriculum, labs, agent resources, setup guides, and
   facilitator materials from the final July OpenClaw Dev Days tree.
